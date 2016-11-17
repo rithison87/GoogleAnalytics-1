@@ -8,7 +8,7 @@ const metadataRequestUri = 'https://www.googleapis.com/analytics/v3/metadata/ga/
 const customMetricsMetadataRequestUri = 'https://www.googleapis.com/analytics/v3/management/accounts/'+accountId+'/webproperties/'+webPropertyId+'/customMetrics'
 const accessToken = 'ya29.Ci-XAz0oDLbyzBrYi_r7lBBnJHvOI09hIqwKUPsvjpAocWTatFLGG1FyPmjstk92kA'
 
-// configure settings to hit Metadata API
+// get metadata for standard metrics
 const getMetricsMetadata = (accessToken) => {
     const settings = {
         "async": true,
@@ -25,17 +25,14 @@ const getMetricsMetadata = (accessToken) => {
     return $.ajax(settings)
 }
 
-// remove deprecated metrics from metrics metadata array
+// remove deprecated metrics from standard metrics metadata array
 const filterMetricsMetadata = (response) => {
     const filteredMetadataItems = response.items.filter( (d) => d.attributes.status != 'DEPRECATED')
     const standardMetrics = filteredMetadataItems.map( (d) => d.id )
-    // console.log(metricMap)
-    // console.log("MetricMap")
-    // console.log(metricMap)
 	return standardMetrics
 }
 
-// configure settings to get custom metrics 
+// get metadata for custom metrics
 const getCustomMetricsMetadata = (accessToken) => {
     const settings = {
         "async": true,
@@ -52,35 +49,41 @@ const getCustomMetricsMetadata = (accessToken) => {
     return $.ajax(settings)
 }
 
+// remove inactive custom metrics from the custom metrics metadata array
 const filterCustomMetricsMetadata = (response) => {
-        //console.log(response)
         const filteredCustomMetricsMetadataItems = response.items.filter( (d) => d.active != false)
         const customMetrics = filteredCustomMetricsMetadataItems.map( (d) => d.id )
-        // console.log(customMetricMap)
         return customMetrics
-    }
+}
 
+// merge the standard and custom metrics metadata arrays and store them in metricsList
 const combinedMetricsMetadata = (accessToken, store) => {
 
 	const standardMetrics = getMetricsMetadata(accessToken)
 	standardMetrics
 		.then(filterMetricsMetadata)
 		.done( (result) => {
-			console.log(result)
-			store.metricsList.stringList.push(result)
+            for (let i = 0; i < result.length; i++) {
+               store.metricsList.stringList.push({
+                    uiobject: result[i],
+                    dataname: result[i]
+                });
+            }
+            console.log(store.metricsList)
 		})
     
     const customMetrics = getCustomMetricsMetadata(accessToken)
 	customMetrics
 		.then(filterCustomMetricsMetadata)
 		.done( (result) => {
-			console.log(result)
-			store.metricsList.stringList.push(result)
+            for (let i = 0; i < result.length; i++) {
+                store.metricsList.stringList.push({
+                    uiobject: result[i],
+                    dataname: result[i]
+                });
+            }
+            console.log(store.metricsList)
 		}) 
-
-// need to make each item 
-//let optionList = [{uiobject: 'test1', dataname: '1'}, {uiobject: 'test2', dataname: '2'}]
-
 }
-// merge metricsMetadata and customMetricsMetadata arrays
+
 export { getMetricsMetadata, getCustomMetricsMetadata, combinedMetricsMetadata };
