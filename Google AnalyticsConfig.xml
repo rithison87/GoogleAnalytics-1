@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--All paths are relative to this config file.
+	The variables [Engine.EngineDirectory], [Engine.PluginDirectory]
+	and [Engine.JavaScriptPluginDirectory] can also be used-->
+<AlteryxJavaScriptPlugin>
+  <EngineSettings EngineDllEntryPoint="Google Sheets Input\Supporting_Macros\GoogleSheetsInput.yxmc" EngineDll="Macro" SDKVersion="10.1"/>
+  <GuiSettings Html="Google AnalyticsGui.html" Icon="Google AnalyticsIcon.png" Help="HTML-GoogleSheetsInput.htm" SDKVersion="10.1">
+    <InputConnections>
+      <!--Connection Name="Input" AllowMultiple="False" Optional="True" Type="Connection" Label=""/-->
+    </InputConnections>
+    <OutputConnections>
+      <Connection Name="Output" AllowMultiple="False" Optional="False" Type="Connection" Label=""/>
+    </OutputConnections>
+  </GuiSettings>
+  <Properties>
+    <MetaInfo>
+      <NameIsFileName value="false" />
+      <Name>Google Analytics Prototype</Name>
+      <Description><![CDATA[Allows you to download data from a Google Sheets spreadsheet.                                                                             v1.0.0.1]]></Description>
+      <RootToolName></RootToolName>
+      <ToolVersion>1.0.0.1</ToolVersion>
+      <ToolInDb value="False" />
+      <CategoryName>Connectors</CategoryName>
+      <SearchTags>cloud,connector,input,web,internet,google,spreadsheet,sheets,connectors category,API,download,read</SearchTags>
+      <Author>Alteryx, Inc.</Author>
+      <Company>Alteryx, Inc.</Company>
+      <Copyright>2016 Alteryx, Inc.  All Rights Reserved.</Copyright>
+	  <DescriptionLink actual="" displayed="" />
+    </MetaInfo>
+  </Properties>
+</AlteryxJavaScriptPlugin>
