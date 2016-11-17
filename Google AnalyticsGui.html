@@ -117,6 +117,7 @@ Google Sheets Input GUI
         <br/>
         <a href="javascript:void(0)" onclick="displayFieldset(['#accessMethod']); myIFrame.location='https://www.google.com/accounts/Logout';">Change Login Credentials</a>
     </fieldset>
+        <alteryx-pluginwidget type="DropDown" id="metricsList" dataName="metricsList"></alteryx-pluginwidget>
 
 <!--Workbook fieldset -->
     <!--<fieldset id="workbooks" style="display:none">
@@ -172,6 +173,7 @@ Google Sheets Input GUI
     <fieldset id="token" style="display:none">
         <alteryx-pluginwidget type="TextBox" id="dataItemAccessToken" dataName="accessToken"></alteryx-pluginwidget>
         <alteryx-pluginwidget type="TextBox" id="dataItemView" dataName="view"></alteryx-pluginwidget>
+        
         <a href="#" style="display:none" id="logoutText" target='myIFrame' onclick="myIFrame.location='https://www.google.com/accounts/Logout';"></a>
         <iframe name='myIFrame' id="myIFrame" style='display:none'></iframe>
     </fieldset>
