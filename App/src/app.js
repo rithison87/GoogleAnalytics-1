@@ -39,7 +39,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
     store.client_id = manager.GetDataItem('client_id').value;
   })
 */
-
+  window.optionList = optionList
   window.store = store
 
   window.setFreshAccessToken = setFreshAccessToken
