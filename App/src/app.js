@@ -21,6 +21,9 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
 
   const store = new AyxStore(manager, collection)
+
+  let optionList = [{uiobject:'test1', dataname: 'test1 value'},
+                    {uiobject:'test2', dataname: 'test2 value'}]
 /*
   collection.forEach( (d) => {
     const dataItemName = d.key;

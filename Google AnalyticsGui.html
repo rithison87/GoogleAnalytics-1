@@ -69,7 +69,7 @@ Google Sheets Input GUI
 
 <body>
 <!-- 1st view - Online or Offline Mode -->
-    
+
     <fieldset id="accessMethod" style="display:block">
         <legend>Google Analytics Credentials</legend>
         <table>
@@ -118,7 +118,8 @@ Google Sheets Input GUI
         <a href="javascript:void(0)" onclick="displayFieldset(['#accessMethod']); myIFrame.location='https://www.google.com/accounts/Logout';">Change Login Credentials</a>
     </fieldset>
         <alteryx-pluginwidget type="DropDown" id="metricsList" dataName="metricsList"></alteryx-pluginwidget>
-
+        <alteryx-pluginwidget type="MultiSelectListBox" datatype="MultiStringSelector" id="listBoxTest" dataName="listBoxTest"
+          showsearchrow="true"></alteryx-pluginwidget>
 <!--Workbook fieldset -->
     <!--<fieldset id="workbooks" style="display:none">
         <legend>Select a Spreadsheet</legend>
@@ -151,7 +152,7 @@ Google Sheets Input GUI
         <a href="javascript:void(0)" onclick="changeCredentials(); myIFrame.location='https://www.google.com/accounts/Logout';">Change Login Credentials</a>
     </fieldset> -->
 
-<!--Config complete fieldset 
+<!--Config complete fieldset
     <fieldset id="configComplete" style="display:none">
         <legend>Configuration Summary</legend>
         <b>Spreadsheet</b><div id="configCompleteWorkbook"></div><br/>
@@ -173,7 +174,7 @@ Google Sheets Input GUI
     <fieldset id="token" style="display:none">
         <alteryx-pluginwidget type="TextBox" id="dataItemAccessToken" dataName="accessToken"></alteryx-pluginwidget>
         <alteryx-pluginwidget type="TextBox" id="dataItemView" dataName="view"></alteryx-pluginwidget>
-        
+
         <a href="#" style="display:none" id="logoutText" target='myIFrame' onclick="myIFrame.location='https://www.google.com/accounts/Logout';"></a>
         <iframe name='myIFrame' id="myIFrame" style='display:none'></iframe>
     </fieldset>
