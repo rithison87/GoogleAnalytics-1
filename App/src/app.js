@@ -17,6 +17,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'refresh_token', type: 'value'},
     {key: 'accessToken', type: 'value'},
     {key: 'metricsList', type: 'dropDown'},
+    {key: 'listBoxTest', type: 'dropDown'}
   ]
 
 
