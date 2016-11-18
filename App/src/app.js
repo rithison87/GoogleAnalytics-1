@@ -16,7 +16,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'client_secret', type: 'value'},
     {key: 'refresh_token', type: 'value'},
     {key: 'accessToken', type: 'value'},
-    {key: 'metricsList', type: 'dropDown'},
+    {key: 'metricsList', type: 'listBox'},
     {key: 'listBoxTest', type: 'listBox'}
   ]
 
@@ -53,6 +53,10 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.getCustomMetricsMetadata = metrics.getCustomMetricsMetadata
 
   window.combinedMetricsMetadata = metrics.combinedMetricsMetadata
+
+  window.standardMetricsStorePush = metrics.standardMetricsStorePush
+
+  window.customMetricsStorePush = metrics.customMetricsStorePush
 
 }
 
