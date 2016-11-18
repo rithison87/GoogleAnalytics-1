@@ -11,6 +11,9 @@ Alteryx.Gui.AfterLoad = (manager) => {
     document.getElementById('app')
   )*/
 
+  // Adds metrics.metricsSelectionCheck to UserDataChanged of metricsList
+  metrics.bindMetricCheck()
+
   const collection = [
     {key: 'client_id', type: 'value'},
     {key: 'client_secret', type: 'value'},
@@ -54,10 +57,11 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.combinedMetricsMetadata = metrics.combinedMetricsMetadata
 
-  window.standardMetricsStorePush = metrics.standardMetricsStorePush
+  window.metricsSelectionCheck = metrics.metricsSelectionCheck
 
-  window.customMetricsStorePush = metrics.customMetricsStorePush
+  window.bindMetricCheck = metrics.bindMetricCheck
 
+  window.noMetricsSelectedWarning = metrics.noMetricsSelectedWarning
 }
 
 
