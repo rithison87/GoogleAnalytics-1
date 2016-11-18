@@ -42,4 +42,4 @@ const getAcccountsAjaxCall = (accessToken) => {
     return $.ajax(settings)
 };
 
-export { populateAccountsList } 
+export { populateAccountsList }
