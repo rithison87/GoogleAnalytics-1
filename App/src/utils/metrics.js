@@ -1,4 +1,5 @@
 import AyxStore from '../stores/AyxStore'
+import {toJS} from 'mobx' 
 console.log('metrics.js file exported')
 // hard-coded IDs may be temp (discuss further)
 const profileId = '113553943'
@@ -60,30 +61,40 @@ const filterCustomMetricsMetadata = (response) => {
 const combinedMetricsMetadata = (accessToken, store) => {
 
 	const standardMetrics = getMetricsMetadata(accessToken)
-	standardMetrics
-		.then(filterMetricsMetadata)
-		.done( (result) => {
-            for (let i = 0; i < result.length; i++) {
-               store.metricsList.stringList.push({
-                    uiobject: result[i],
-                    dataname: result[i]
-                });
-            }
-            console.log(store.metricsList)
-		})
+	// standardMetrics
+	// 	.then(filterMetricsMetadata)
+	// 	.done(standardMetricsStorePush)
     
     const customMetrics = getCustomMetricsMetadata(accessToken)
-	customMetrics
-		.then(filterCustomMetricsMetadata)
-		.done( (result) => {
-            for (let i = 0; i < result.length; i++) {
-                store.metricsList.stringList.push({
-                    uiobject: result[i],
-                    dataname: result[i]
-                });
-            }
-            console.log(store.metricsList)
-		}) 
+	// customMetrics
+	// 	.then(filterCustomMetricsMetadata)
+	// 	.done(customMetricsStorePush)
+
+    Promise.all( [customMetrics, standardMetrics] ).then( (results) => {
+        console.log(results)
+    })
+        // .then(filterMetricsMetadata)
+        // .then(standardMetricsStorePush)
+        // .then(filterCustomMetricsMetadata)
+        // .then(customMetricsStorePush)
 }
 
-export { getMetricsMetadata, getCustomMetricsMetadata, combinedMetricsMetadata };
+// promise function to update metricsList store
+const standardMetricsStorePush = (result) => {
+    result.map( (d) => {
+        const newUiObj = d.substring(3, d.length)
+        store.metricsList.stringList.push({uiobject: newUiObj, dataname: d})
+    })
+    console.log(toJS(store.metricsList.stringList) )
+}
+
+// promise function to update metricsList store
+const customMetricsStorePush = (result) => {
+    result.map( (d) => {
+        const newUiObj = d.substring(3, d.length)
+        store.metricsList.stringList.push({uiobject: newUiObj, dataname: d})
+    })
+    console.log(toJS(store.metricsList.stringList) )
+}
+
+export { getMetricsMetadata, getCustomMetricsMetadata, combinedMetricsMetadata, standardMetricsStorePush, customMetricsStorePush };
