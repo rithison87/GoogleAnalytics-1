@@ -17,10 +17,14 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'refresh_token', type: 'value'},
     {key: 'accessToken', type: 'value'},
     {key: 'metricsList', type: 'dropDown'},
+    {key: 'listBoxTest', type: 'listBox'}
   ]
 
 
   const store = new AyxStore(manager, collection)
+
+  let optionList = [{uiobject:'test1', dataname: 'test1 value'},
+                    {uiobject:'test2', dataname: 'test2 value'}]
 /*
   collection.forEach( (d) => {
     const dataItemName = d.key;
@@ -35,7 +39,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
     store.client_id = manager.GetDataItem('client_id').value;
   })
 */
-
+  window.optionList = optionList
   window.store = store
 
   window.setFreshAccessToken = setFreshAccessToken
