@@ -1,4 +1,6 @@
 //Accounts menu functions
+
+//changes
 const populateAccountsList = (store) => {
   const token = store.accessToken
   const fetchAccounts = getAcccountsAjaxCall(token);
