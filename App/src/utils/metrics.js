@@ -1,4 +1,5 @@
 import AyxStore from '../stores/AyxStore'
+import {toJS} from 'mobx' 
 console.log('metrics.js file exported')
 // hard-coded IDs may be temp (discuss further)
 const profileId = '113553943'
@@ -63,27 +64,21 @@ const combinedMetricsMetadata = (accessToken, store) => {
 	standardMetrics
 		.then(filterMetricsMetadata)
 		.done( (result) => {
-            for (let i = 0; i < result.length; i++) {
-               store.metricsList.stringList.push({
-                    uiobject: result[i],
-                    dataname: result[i]
-                });
-            }
-            console.log(store.metricsList)
+            result.map((d) => {
+                store.metricsList.stringList.push({uiobject: d, dataname: d})
+            })
+            console.log(toJS(store.metricsList.stringList))
 		})
     
     const customMetrics = getCustomMetricsMetadata(accessToken)
 	customMetrics
 		.then(filterCustomMetricsMetadata)
 		.done( (result) => {
-            for (let i = 0; i < result.length; i++) {
-                store.metricsList.stringList.push({
-                    uiobject: result[i],
-                    dataname: result[i]
-                });
-            }
-            console.log(store.metricsList)
-		}) 
+            result.map((d) => {
+                store.metricsList.stringList.push({uiobject: d, dataname: d})
+            })
+            console.log(toJS(store.metricsList.stringList))
+        })
 }
 
 export { getMetricsMetadata, getCustomMetricsMetadata, combinedMetricsMetadata };
