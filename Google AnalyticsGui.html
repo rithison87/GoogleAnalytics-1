@@ -58,11 +58,7 @@ Google Sheets Input GUI
                 padding-left: 5%;
                 width:90%;
             }
-        }
-
-        alteryx-pluginwidget[dataname=firstRowContainsNames] label {
-            width: 75%;
-        }
+        }   
     </style>
 
 </head>
@@ -117,7 +113,7 @@ Google Sheets Input GUI
         <br/>
         <a href="javascript:void(0)" onclick="displayFieldset(['#accessMethod']); myIFrame.location='https://www.google.com/accounts/Logout';">Change Login Credentials</a>
     </fieldset>
-        <alteryx-pluginwidget type="DropDown" id="metricsList" dataName="metricsList"></alteryx-pluginwidget>
+        <alteryx-pluginwidget type="MultiSelectListBox" datatype="MultiStringSelector" id="metricsList" dataName="metricsList" showsearchrow="true"></alteryx-pluginwidget>
         <alteryx-pluginwidget type="MultiSelectListBox" datatype="MultiStringSelector" id="listBoxTest" dataName="listBoxTest"
           showsearchrow="true"></alteryx-pluginwidget>
 <!--Workbook fieldset -->
