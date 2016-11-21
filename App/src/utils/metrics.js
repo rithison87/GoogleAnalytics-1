@@ -30,7 +30,7 @@ const getMetricsMetadata = (accessToken) => {
 const filterMetricsMetadata = (response) => {
     const filteredMetadataItems = response.items.filter( (d) => d.attributes.status != 'DEPRECATED')
     const standardMetrics = filteredMetadataItems.map( (d) => d.id )
-	return standardMetrics
+    return standardMetrics
 }
 
 // get metadata for custom metrics
@@ -57,28 +57,55 @@ const filterCustomMetricsMetadata = (response) => {
         return customMetrics
 }
 
+// promise function to update metricsList store
+const metricsStorePush = (result) => {
+    result.map( (d) => {
+        const newUiObj = d.substring(3, d.length)
+        store.metricsList.stringList.push({uiobject: newUiObj, dataname: d})
+    })
+    console.log(toJS(store.metricsList.stringList) )
+}
+
 // merge the standard and custom metrics metadata arrays and store them in metricsList
 const combinedMetricsMetadata = (accessToken, store) => {
 
-	const standardMetrics = getMetricsMetadata(accessToken)
-	standardMetrics
-		.then(filterMetricsMetadata)
-		.done( (result) => {
-            result.map((d) => {
-                store.metricsList.stringList.push({uiobject: d, dataname: d})
-            })
-            console.log(toJS(store.metricsList.stringList))
-		})
-    
+    const standardMetrics = getMetricsMetadata(accessToken)
     const customMetrics = getCustomMetricsMetadata(accessToken)
-	customMetrics
-		.then(filterCustomMetricsMetadata)
-		.done( (result) => {
-            result.map((d) => {
-                store.metricsList.stringList.push({uiobject: d, dataname: d})
-            })
-            console.log(toJS(store.metricsList.stringList))
+
+    Promise.all([standardMetrics,customMetrics])
+        .then( (results) => {
+            const filteredCombined = filterMetricsMetadata(results[0]).concat(filterCustomMetricsMetadata(results[1]))
+            filteredCombined.sort()
+            return filteredCombined
+        })
+        .then( (results) => {
+            metricsStorePush(results)
         })
 }
 
-export { getMetricsMetadata, getCustomMetricsMetadata, combinedMetricsMetadata };
+// displays warning if no metrics are selection and if more than 10 metrics are selected
+const metricsSelectionCheck = () => {
+    if (store.metricsList.selection.length < 11) {
+        console.log("metrics selected: " + store.metricsList.selection.length)
+        // NEED TO ADD A .hide() WARNING
+    } else {
+        console.log("Max of 10 metrics: " + store.metricsList.selection.length)
+        // NEED TO ADD A .show() WARNING
+    }
+}
+
+// binds the metricsSelectionCheck to metricsList and runs it each time 
+const bindMetricCheck = () => {
+    Alteryx.Gui.manager.GetDataItem('metricsList').UserDataChanged.push(metricsSelectionCheck);
+}
+
+// Warning if no metrics are selection - trigger when they try to go to the next config window
+const noMetricsSelectedWarning = () => {
+    if (store.metricsList.selection.length < 1) {
+        console.log("must select at least 1 metric")
+        // NEED TO ADD A .show() WARNING
+    } else {
+        // NEED TO ADD A .hide() WARNING
+    }
+}
+export { getMetricsMetadata, getCustomMetricsMetadata, combinedMetricsMetadata, metricsStorePush, metricsSelectionCheck, bindMetricCheck, noMetricsSelectedWarning };
