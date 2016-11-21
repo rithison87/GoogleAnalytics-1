@@ -1,6 +1,7 @@
 import { autorun, autorunAsync, extendObservable, toJS } from 'mobx';
 import _ from 'lodash';
 // import store from '../stores/Storage';
+//something
 
 class ObservableStore {
   //Takes as arguments the alteryx manager,
@@ -44,11 +45,11 @@ class ObservableStore {
                     (
                       !(
                         _.isEqual(
-                            toJS(this[d.key].selection), 
+                            toJS(this[d.key].selection),
                             item.getValue()
-                        ) 
+                        )
                       )
-                    || 
+                    ||
                     !(
                         _.isEqual(
                           toJS(this[d.key].stringList),
