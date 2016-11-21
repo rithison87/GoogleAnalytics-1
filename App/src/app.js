@@ -19,7 +19,9 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'accessToken', type: 'value'},
     {key: 'metricsList', type: 'listBox'},
     {key: 'listBoxTest', type: 'listBox'},
-    {key: 'accountsList', type: 'dropDown'}
+    {key: 'accountsList', type: 'dropDown'},
+    {key: 'webPropertiesList', type: 'dropDown'},
+    {key: 'profilesList', type: 'dropDown'}
   ]
 
 
@@ -62,7 +64,12 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.populateAccountsList = accounts.populateAccountsList
 
-  window.populateProfilesList = accounts.populateProfilesList
+  window.populateWebPropertiesList = accounts.populateWebPropertiesList
+
+  window.populateProfilesMenu = accounts.populateProfilesMenu
+
+  populateAccountsList(store)
+  populateWebPropertiesList(store)
 
 }
 

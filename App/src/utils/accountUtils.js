@@ -68,11 +68,62 @@ const getAcccountSummariesAjaxCall = (accessToken) => {
     return $.ajax(settings)
 };
 
-const populateProfilesList = (store) => {
+const populateWebPropertiesList = (store) => {
   const fetchProfiles = getAcccountSummariesAjaxCall(store.accessToken);
 
-  fetchProfiles.done((results) => {console.log(results)});
+  const filterProfiles = (results) => {
+    const filteredResults = results.items.filter( (item) => {
+      return item.id === store.accountsList.selection
+    });
+    return filteredResults;
+  }
+
+  const flatten = (list) => list.reduce(
+    (a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []
+  );
+
+  const createProfilesList = (filteredProfiles) => {
+    const accountItem = filteredProfiles[0];
+    const webPropertiesList = accountItem.webProperties;
+    const profilesListOfLists = webPropertiesList.map( (webProperty) => {
+      const webPropsList = webProperty.profiles.map( (profile) => {
+        return { webPropertyId : webProperty.id,
+                 webPropertyName: webProperty.name,
+                 profileName: profile.name,
+                 profileId: profile.id
+               }
+      });
+      return webPropsList
+    })
+    store.webPropertiesList.data = flatten(profilesListOfLists);
+    store.profilesList.data = flatten(profilesListOfLists);
+    return flatten(profilesListOfLists);
+  }
+
+
+  const populateWebPropertiesMenuObjects = (webPropsList) => {
+    const webPropsMenuList = webPropsList.map( (webProp) => {
+      return { uiobject: webProp.webPropertyName, dataname: webProp.webPropertyId }
+    });
+    store.webPropertiesList.stringList = webPropsMenuList;
+    return webPropsMenuList;
+  }
+  fetchProfiles
+    .then(filterProfiles)
+    .then(createProfilesList)
+    .then(populateWebPropertiesMenuObjects)
+    .done((results) => {console.log(results)});
+}
+
+const populateProfilesMenu = (store) => {
+    const profilesList = store.profilesList.data.filter( (profile) => {
+      return profile.webPropertyId === store.webPropertiesList.selection
+    });
+    const profilesMenuList = profilesList.map( (profile) => {
+      return { uiobject: profile.profileName, dataname: profile.profileId }
+    });
+    store.profilesList.stringList = profilesMenuList
 }
 
 
-export { populateAccountsList, populateProfilesList }
+export { populateAccountsList, populateWebPropertiesList, populateProfilesMenu }

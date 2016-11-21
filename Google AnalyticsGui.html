@@ -113,7 +113,12 @@ Google Sheets Input GUI
         <br/>
         <a href="javascript:void(0)" onclick="displayFieldset(['#accessMethod']); myIFrame.location='https://www.google.com/accounts/Logout';">Change Login Credentials</a>
     </fieldset>
+        <label>Accounts Select</label>
         <alteryx-pluginwidget type="DropDown"  id="accountsList" dataName="accountsList"></alteryx-pluginwidget>
+        <label>WebProperties Select</label>
+        <alteryx-pluginwidget type="DropDown"  id="webPropertiesList" dataName="webPropertiesList"></alteryx-pluginwidget>
+        <label>Profiles Select</label>
+        <alteryx-pluginwidget type="DropDown"  id="profilesList" dataName="profilesList"></alteryx-pluginwidget>
         <alteryx-pluginwidget type="MultiSelectListBox" datatype="MultiStringSelector" id="metricsList" dataName="metricsList" showsearchrow="true"></alteryx-pluginwidget>
         <alteryx-pluginwidget type="MultiSelectListBox" datatype="MultiStringSelector" id="listBoxTest" dataName="listBoxTest"
           showsearchrow="true"></alteryx-pluginwidget>
