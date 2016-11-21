@@ -44,4 +44,35 @@ const getAcccountsAjaxCall = (accessToken) => {
     return $.ajax(settings)
 };
 
-export { populateAccountsList }
+/*
+****************************************************************************
+Profiles utils
+*/
+
+const getAcccountSummariesAjaxCall = (accessToken) => {
+    const auth = "Bearer " + accessToken
+    const url = "https://www.googleapis.com/analytics/v3/management/accountSummaries"
+
+    const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": url,
+        "method": "GET",
+        "dataType": "json",
+        "headers": {
+            "authorization": auth,
+            "cache-control": "no-cache",
+        }
+    };
+
+    return $.ajax(settings)
+};
+
+const populateProfilesList = (store) => {
+  const fetchProfiles = getAcccountSummariesAjaxCall(store.accessToken);
+
+  fetchProfiles.done((results) => {console.log(results)});
+}
+
+
+export { populateAccountsList, populateProfilesList }

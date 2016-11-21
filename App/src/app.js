@@ -62,6 +62,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.populateAccountsList = accounts.populateAccountsList
 
+  window.populateProfilesList = accounts.populateProfilesList
+
 }
 
 
