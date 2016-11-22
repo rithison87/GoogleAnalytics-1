@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Hello from './components/hello'
-import { populateAccountsList, setFreshAccessToken, getAccessTokenAjaxCall, login, gup, validateToken, displayFieldset } from './utils/utils'
+import { setFreshAccessToken, getAccessTokenAjaxCall, login, gup, validateToken, displayFieldset } from './utils/utils'
 import AyxStore from './stores/AyxStore'
 import * as metrics from './utils/metrics'
+import * as accounts from './utils/accountUtils'
 
 Alteryx.Gui.AfterLoad = (manager) => {
   /*ReactDOM.render(
@@ -17,7 +18,10 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'refresh_token', type: 'value'},
     {key: 'accessToken', type: 'value'},
     {key: 'metricsList', type: 'listBox'},
-    {key: 'listBoxTest', type: 'listBox'}
+    {key: 'listBoxTest', type: 'listBox'},
+    {key: 'accountsList', type: 'dropDown'},
+    {key: 'webPropertiesList', type: 'dropDown'},
+    {key: 'profilesList', type: 'dropDown'}
   ]
 
 
@@ -57,6 +61,15 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.standardMetricsStorePush = metrics.standardMetricsStorePush
 
   window.customMetricsStorePush = metrics.customMetricsStorePush
+
+  window.populateAccountsList = accounts.populateAccountsList
+
+  window.populateWebPropertiesList = accounts.populateWebPropertiesList
+
+  window.populateProfilesMenu = accounts.populateProfilesMenu
+
+  populateAccountsList(store)
+  populateWebPropertiesList(store)
 
 }
 
