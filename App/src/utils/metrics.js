@@ -28,9 +28,11 @@ const getMetricsMetadata = (accessToken) => {
 
 // remove deprecated metrics from standard metrics metadata array
 const filterMetricsMetadata = (response) => {
-    const filteredMetadataItems = response.items.filter( (d) => d.attributes.status != 'DEPRECATED')
-    const standardMetrics = filteredMetadataItems.map( (d) => d.id )
-    return standardMetrics
+    const filteredMetadataItems = response.items.filter( (d) => 
+        d.attributes.status != 'DEPRECATED' &&
+        d.attributes.type != 'DIMENSION'
+    )
+    return filteredMetadataItems
 }
 
 // get metadata for custom metrics
@@ -53,15 +55,25 @@ const getCustomMetricsMetadata = (accessToken) => {
 // remove inactive custom metrics from the custom metrics metadata array
 const filterCustomMetricsMetadata = (response) => {
         const filteredCustomMetricsMetadataItems = response.items.filter( (d) => d.active != false)
-        const customMetrics = filteredCustomMetricsMetadataItems.map( (d) => d.id )
-        return customMetrics
+        const reformattedCustomMetricsItems = filteredCustomMetricsMetadataItems.map( (d) => {
+            return {
+                id: d.id,
+                attributes: {
+                    uiName: d.name,
+                    accountId: d.accountId,
+                    scope: d.scope,
+                    type: d.type,
+                    webPropertyId: d.webPropertyId,
+                    }
+            }
+        })
+        return reformattedCustomMetricsItems
 }
 
 // promise function to update metricsList store
 const metricsStorePush = (result) => {
     result.map( (d) => {
-        const newUiObj = d.substring(3, d.length)
-        store.metricsList.stringList.push({uiobject: newUiObj, dataname: d})
+        store.metricsList.stringList.push({uiobject: d.attributes.uiName, dataname: d.id})
     })
     console.log(toJS(store.metricsList.stringList) )
 }
