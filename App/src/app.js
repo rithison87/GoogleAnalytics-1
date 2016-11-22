@@ -29,6 +29,10 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   const store = new AyxStore(manager, collection)
 
+  store.client_id = "734530915454-u7qs1p0dvk5d3i0hogfr0mpmdnjj24u2.apps.googleusercontent.com"
+  store.client_secret = "Fty30QrWsKLQW-TmyJdrk9qf"
+  store.refresh_token = "1/58fo4PUozzcHFs2VJaY23wxyHc-x3-pb-2dUbNw33W4"
+  
   let optionList = [{uiobject:'test1', dataname: 'test1 value'},
                     {uiobject:'test2', dataname: 'test2 value'}]
 

@@ -28,9 +28,11 @@ const getMetricsMetadata = (accessToken) => {
 
 // remove deprecated metrics from standard metrics metadata array
 const filterMetricsMetadata = (response) => {
-    const filteredMetadataItems = response.items.filter( (d) => d.attributes.status != 'DEPRECATED')
-    const standardMetrics = filteredMetadataItems.map( (d) => d.id )
-    return standardMetrics
+    const filteredMetadataItems = response.items.filter( (d) => 
+        d.attributes.status != 'DEPRECATED' &&
+        d.attributes.type != 'DIMENSION'
+    )
+    return filteredMetadataItems
 }
 
 // get metadata for custom metrics
@@ -53,15 +55,25 @@ const getCustomMetricsMetadata = (accessToken) => {
 // remove inactive custom metrics from the custom metrics metadata array
 const filterCustomMetricsMetadata = (response) => {
         const filteredCustomMetricsMetadataItems = response.items.filter( (d) => d.active != false)
-        const customMetrics = filteredCustomMetricsMetadataItems.map( (d) => d.id )
-        return customMetrics
+        const reformattedCustomMetricsItems = filteredCustomMetricsMetadataItems.map( (d) => {
+            return {
+                id: d.id,
+                attributes: {
+                    uiName: d.name,
+                    accountId: d.accountId,
+                    scope: d.scope,
+                    type: d.type,
+                    webPropertyId: d.webPropertyId,
+                    }
+            }
+        })
+        return reformattedCustomMetricsItems
 }
 
 // promise function to update metricsList store
 const metricsStorePush = (result) => {
     result.map( (d) => {
-        const newUiObj = d.substring(3, d.length)
-        store.metricsList.stringList.push({uiobject: newUiObj, dataname: d})
+        store.metricsList.stringList.push({uiobject: d.attributes.uiName, dataname: d.id})
     })
     console.log(toJS(store.metricsList.stringList) )
 }
@@ -75,7 +87,14 @@ const combinedMetricsMetadata = (accessToken, store) => {
     Promise.all([standardMetrics,customMetrics])
         .then( (results) => {
             const filteredCombined = filterMetricsMetadata(results[0]).concat(filterCustomMetricsMetadata(results[1]))
-            filteredCombined.sort()
+            filteredCombined.sort(function(a, b){
+                let uiNameA=a.attributes.uiName.toLowerCase(), uiNameB=b.attributes.uiName.toLowerCase()
+                if (uiNameA < uiNameB) //sort string ascending
+                    return -1 
+                if (uiNameA > uiNameB)
+                    return 1
+                return 0 //default return value (no sorting)
+            })
             return filteredCombined
         })
         .then( (results) => {
