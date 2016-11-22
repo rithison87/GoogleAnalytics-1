@@ -87,7 +87,14 @@ const combinedMetricsMetadata = (accessToken, store) => {
     Promise.all([standardMetrics,customMetrics])
         .then( (results) => {
             const filteredCombined = filterMetricsMetadata(results[0]).concat(filterCustomMetricsMetadata(results[1]))
-            filteredCombined.sort()
+            filteredCombined.sort(function(a, b){
+                let uiNameA=a.attributes.uiName.toLowerCase(), uiNameB=b.attributes.uiName.toLowerCase()
+                if (uiNameA < uiNameB) //sort string ascending
+                    return -1 
+                if (uiNameA > uiNameB)
+                    return 1
+                return 0 //default return value (no sorting)
+            })
             return filteredCombined
         })
         .then( (results) => {
