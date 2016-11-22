@@ -143,7 +143,17 @@ Google Sheets Input GUI
         <br/>
         <a href="javascript:void(0)" onclick="displayFieldset(['#accessMethod']); myIFrame.location='https://www.google.com/accounts/Logout';">Change Login Credentials</a>
     </fieldset>
-    
+
+<!-- Account/WebProperties/Profiles Selectors  --> 
+    <fieldset id="profileSelectors" style="display: show;">
+        <label>Accounts Select</label>
+        <alteryx-pluginwidget type="DropDown"  id="accountsList" dataName="accountsList"></alteryx-pluginwidget>
+        <label>WebProperties Select</label>
+        <alteryx-pluginwidget type="DropDown"  id="webPropertiesList" dataName="webPropertiesList"></alteryx-pluginwidget>
+        <label>Profiles Select</label>
+        <alteryx-pluginwidget type="DropDown"  id="profilesList" dataName="profilesList"></alteryx-pluginwidget>
+    </fieldset>
+
 <!-- Metrics fieldset -->
     <fieldset id="metrics" style="display:show"><!--Add a display:none during process story-->
         <legend>Select Metrics</legend>
