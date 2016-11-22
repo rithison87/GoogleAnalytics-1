@@ -19,7 +19,7 @@ const populateAccountsList = (store) => {
   fetchAccounts
     .then(parseAccounts)
     .done(setAccountsDropdownMenu)
-    .fail(handleApiFail)
+    //.fail(handleApiFail)
 }
 
 const getAcccountsAjaxCall = (accessToken) => {
@@ -227,4 +227,4 @@ const displayFieldset = (fieldsetName) => {
 }
 
 
-export { populateAccountsList, setFreshAccessToken, getAccessTokenAjaxCall, login, gup, validateToken, displayFieldset };
+export { setFreshAccessToken, getAccessTokenAjaxCall, login, gup, validateToken, displayFieldset };
