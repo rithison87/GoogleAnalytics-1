@@ -8,7 +8,9 @@ import * as accounts from './utils/accountUtils.js'
 import { toJS } from 'mobx'
 
 Alteryx.Gui.AfterLoad = (manager) => {
-  
+
+
+
 
   // Adds metrics.metricsSelectionCheck to UserDataChanged of metricsList
   metrics.bindMetricCheck()
