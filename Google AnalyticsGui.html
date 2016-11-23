@@ -89,7 +89,7 @@ Google Sheets Input GUI
                 padding-left: 5%;
                 width:90%;
             }
-        }   
+        }
     </style>
 
 </head>
@@ -144,7 +144,7 @@ Google Sheets Input GUI
         <a href="javascript:void(0)" onclick="displayFieldset(['#accessMethod']); myIFrame.location='https://www.google.com/accounts/Logout';">Change Login Credentials</a>
     </fieldset>
 
-<!-- Account/WebProperties/Profiles Selectors  --> 
+<!-- Account/WebProperties/Profiles Selectors  -->
     <fieldset id="profileSelectors" style="display: show;">
         <legend>Select Account/Profile</legend>
         <label>Accounts Select</label>
@@ -163,7 +163,8 @@ Google Sheets Input GUI
 <!-- Metrics fieldset -->
     <fieldset id="metrics" style="display:show"><!--Add a display:none during process story-->
         <legend>Select Metrics</legend>
-        <alteryx-pluginwidget type="MultiSelectListBox" datatype="MultiStringSelector" id="metricsList" dataName="metricsList" showsearchrow="true"></alteryx-pluginwidget>
+        <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
+          ismultiselect="true" issearchable="true" id="metricsList" dataName="metricsList" showsearchrow="true"></alteryx-pluginwidget>
         <div id="maxMetrics"></div>
         <div>
             <!-- Add id name and onclick function during process story -->
