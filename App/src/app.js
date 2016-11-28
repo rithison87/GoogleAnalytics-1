@@ -5,6 +5,7 @@ import { setFreshAccessToken, getAccessTokenAjaxCall, login, gup, validateToken,
 import AyxStore from './stores/AyxStore'
 import * as metrics from './utils/metrics'
 import * as accounts from './utils/accountUtils'
+import * as goals from './utils/goals'
 
 Alteryx.Gui.AfterLoad = (manager) => {
   /*ReactDOM.render(
@@ -18,10 +19,11 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'refresh_token', type: 'value'},
     {key: 'accessToken', type: 'value'},
     {key: 'metricsList', type: 'listBox'},
-    {key: 'listBoxTest', type: 'listBox'},
+    {key: 'goalsList', type: 'listBox'},
     {key: 'accountsList', type: 'dropDown'},
     {key: 'webPropertiesList', type: 'dropDown'},
-    {key: 'profilesList', type: 'dropDown'}
+    {key: 'profilesList', type: 'dropDown'},
+
   ]
 
 
@@ -67,6 +69,10 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.populateWebPropertiesList = accounts.populateWebPropertiesList
 
   window.populateProfilesMenu = accounts.populateProfilesMenu
+
+  window.populateGoalsList = goals.populateGoalsList
+
+  window.goalsStorePush = goals.goalsStorePush
 
   populateAccountsList(store)
   populateWebPropertiesList(store)
