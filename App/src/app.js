@@ -4,13 +4,11 @@ import Hello from './components/hello'
 import { setFreshAccessToken, getAccessTokenAjaxCall, login, gup, validateToken, displayFieldset } from './utils/utils'
 import AyxStore from './stores/AyxStore'
 import * as metrics from './utils/metrics'
+import * as dimensions from './utils/dimensions'
 import * as accounts from './utils/accountUtils.js'
 import { toJS } from 'mobx'
 
 Alteryx.Gui.AfterLoad = (manager) => {
-
-
-
 
   // Adds metrics.metricsSelectionCheck to UserDataChanged of metricsList
   metrics.bindMetricCheck()
@@ -24,8 +22,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'accountsList', type: 'dropDown'},
     {key: 'webPropertiesList', type: 'dropDown'},
     {key: 'profilesList', type: 'dropDown'},
+    {key: 'dimensionsList', type: 'listBox'},
   ]
-
 
   const store = new AyxStore(manager, collection)
 
@@ -69,6 +67,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.populateProfilesMenu = accounts.populateProfilesMenu
 
   window.toJS = toJS
+
+  window.dimensionsStorePush = dimensions.dimensionsStorePush
 
   populateAccountsList(store)
   populateWebPropertiesList(store)

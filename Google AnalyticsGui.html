@@ -167,6 +167,19 @@ Google Sheets Input GUI
         </div>
     </fieldset>
 
+<!-- Dimensions fieldset -->
+    <fieldset id="dimensions" style="display:show"><!--Add a display:none during process story-->
+        <legend>Select Dimensions</legend>
+        <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
+          ismultiselect="true" issearchable="true" id="dimensionsList" dataName="dimensionsList" showsearchrow="true"></alteryx-pluginwidget>
+<!--         <div id="maxMetrics"></div>
+        <div> -->
+            <!-- Add id name and onclick function during process story -->
+<!--             <button type="submit" style="float: right" id="" onclick="noMetricsSelectedWarning();">Next</button>
+            <button type="submit" style="float: right" id="" onclick="">Previous</button>
+        </div> -->
+    </fieldset>
+
 <!-- fieldset for the non-captured fields -->
     <fieldset id="token" style="display:none">
         <alteryx-pluginwidget type="TextBox" id="dataItemAccessToken" dataName="accessToken"></alteryx-pluginwidget>
