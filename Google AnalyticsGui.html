@@ -146,28 +146,18 @@ Google Sheets Input GUI
 
 <!-- Account/WebProperties/Profiles Selectors  -->
     <fieldset id="profileSelectors" style="display: show;">
+        <legend>Select Account/Profile</legend>
         <label>Accounts Select</label>
         <alteryx-pluginwidget type="DropDown"  id="accountsList" dataName="accountsList"></alteryx-pluginwidget>
         <label>WebProperties Select</label>
         <alteryx-pluginwidget type="DropDown"  id="webPropertiesList" dataName="webPropertiesList"></alteryx-pluginwidget>
         <label>Profiles Select</label>
         <alteryx-pluginwidget type="DropDown"  id="profilesList" dataName="profilesList"></alteryx-pluginwidget>
-        <alteryx-pluginwidget type="MultiSelectListBox" datatype="MultiStringSelector" id="metricsList" dataName="metricsList" showsearchrow="true"></alteryx-pluginwidget>
-        <alteryx-pluginwidget type="MultiSelectListBox" datatype="MultiStringSelector" id="goalsList" dataName="goalsList"
-          showsearchrow="true"></alteryx-pluginwidget>
-<!--Workbook fieldset -->
-    <!--<fieldset id="workbooks" style="display:none">
-        <legend>Select a Spreadsheet</legend>
-        <alteryx-pluginwidget type="ListBox" dataType="StringSelector" isSearchable="true" id="dataItemWorkbookID" dataName="workbookID" onclick="enable_toWorksheetList()"></alteryx-pluginwidget>
-        <br/>
         <div>
-            <button type="submit" style="float: right" id="toWorksheetList" onclick="get_worksheet_list();" disabled>Next</button>
-            <button type="secondary" style="float: right" id="backToCredentials" onclick="changeCredentials(); myIFrame.location='https://www.google.com/accounts/Logout';">Previous</button>
+            <!-- Add id name and onclick function during process story -->
+            <button type="submit" style="float: right" id="" onclick="noMetricsSelectedWarning();">Next</button>
+            <button type="submit" style="float: right" id="" onclick="">Previous</button>
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <a href="javascript:void(0)" onclick="changeCredentials(); myIFrame.location='https://www.google.com/accounts/Logout';">Change Login Credentials</a>
     </fieldset>
 
 <!-- Metrics fieldset -->
