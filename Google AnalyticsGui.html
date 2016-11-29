@@ -146,12 +146,18 @@ Google Sheets Input GUI
 
 <!-- Account/WebProperties/Profiles Selectors  -->
     <fieldset id="profileSelectors" style="display: show;">
+        <legend>Select Account/Profile</legend>
         <label>Accounts Select</label>
         <alteryx-pluginwidget type="DropDown"  id="accountsList" dataName="accountsList"></alteryx-pluginwidget>
         <label>WebProperties Select</label>
         <alteryx-pluginwidget type="DropDown"  id="webPropertiesList" dataName="webPropertiesList"></alteryx-pluginwidget>
         <label>Profiles Select</label>
         <alteryx-pluginwidget type="DropDown"  id="profilesList" dataName="profilesList"></alteryx-pluginwidget>
+        <div>
+            <!-- Add id name and onclick function during process story -->
+            <button type="submit" style="float: right" id="" onclick="noMetricsSelectedWarning();">Next</button>
+            <button type="submit" style="float: right" id="" onclick="">Previous</button>
+        </div>
     </fieldset>
 
 <!-- Metrics fieldset -->
@@ -179,6 +185,19 @@ Google Sheets Input GUI
             <div id="maxDimensions"></div>
         </div>
     </fieldset>
+
+<!-- Goals fieldset -->
+<fieldset id="metrics" style="display:show"><!--Add a display:none during process story-->
+        <legend>Select Goals</legend>
+        <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
+          ismultiselect="true" issearchable="true" id="goalsList" dataName="goalsList" showsearchrow="true"></alteryx-pluginwidget>
+        <div id="maxMetrics"></div>
+        <div>
+            <!-- Add id name and onclick function during process story -->
+            <button type="submit" style="float: right" id="" onclick="noMetricsSelectedWarning();">Next</button>
+            <button type="submit" style="float: right" id="" onclick="">Previous</button>
+        </div>
+    </fieldset>    
 
 <!-- fieldset for the non-captured fields -->
     <fieldset id="token" style="display:none">
