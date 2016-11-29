@@ -1,5 +1,6 @@
 import AyxStore from '../stores/AyxStore'
 import {toJS} from 'mobx' 
+import _ from 'lodash'
 
 
 const accountId = '226181'
@@ -26,13 +27,14 @@ const getGoalsListAjaxCall = (accessToken) => {
     return $.ajax(settings)
 }
 
-const populateGoalsList = (store) => {
+//populate Metrics Goals
+const populateMetricsGoalsList = (store) => {
 	
 	const fetchGoals = getGoalsListAjaxCall(store.accessToken);
 	
 	const parseGoals = (results) => {
 		console.log(results)
-    	const goals = results.items.filter( (d) => d.active != false)
+    const goals = results.items.filter( (d) => d.active != false )
 		const goalsList = goals.map((d) => {
       return {
       			uiobject: d.name, 
@@ -42,20 +44,70 @@ const populateGoalsList = (store) => {
     return goalsList
   }
 
-   	fetchGoals
+  const filterMetricsGoals = (goalsList) => {
+    const metricsGoals = goalsList.filter( (d) => _.includes(['VISIT_TIME_ON_SITE','VISIT_NUM_PAGES','EVENT'], d.type ))
+    return metricsGoals
 
-  		.then(parseGoals)
-  		.done((results) => {console.log(results)})
-  	
-}
-	
-const goalsStorePush = (results) => {
-    result.map( (d) => {
-        const newUiObj = d.substring(3, d.length)
-        store.goalsList.stringList.push({uiobject: newUiObj, dataname: d})
+  }
+
+  //push to metrics goals list - change widget name
+  const goalsStorePush = (results) => {
+    results.map( (d) => {
+        
+        store.goalsList.stringList.push({uiobject: d.uiobject, dataname: d.dataname})
     })
     console.log(toJS(store.goalsList.stringList) )
 }
+
+  fetchGoals
+
+    .then(parseGoals)
+    .then(filterMetricsGoals)
+  	.done(goalsStorePush)
+  	
+}
+
+//populate Metrics Goals
+const populateDimensionsGoalsList = (store) => {
+  
+  const fetchGoals = getGoalsListAjaxCall(store.accessToken);
+  
+  const parseGoals = (results) => {
+    console.log(results)
+    const goals = results.items.filter( (d) => d.active != false )
+    const goalsList = goals.map((d) => {
+      return {
+            uiobject: d.name, 
+            dataname: d.id,
+            type: d.type}
+    })
+    return goalsList
+  }
+
+  const filterDimensionGoals = (goalsList) => {
+    const dimensionGoals = goalsList.filter( (d) => _.includes(['URL_DESTINATION'], d.type ))
+    return dimensionGoals
+
+  }
+
+  //push to Dimensions goals list - change widget name
+  const goalsStorePush = (results) => {
+    results.map( (d) => {
+        
+        store.goalsList.stringList.push({uiobject: d.uiobject, dataname: d.dataname})
+    })
+    console.log(toJS(store.goalsList.stringList) )
+}
+
+  fetchGoals
+
+    .then(parseGoals)
+    .then(filterDimensionGoals)
+    .done(goalsStorePush)
+    
+}
 	
 
-export { populateGoalsList, goalsStorePush };
+	
+
+export { populateMetricsGoalsList };

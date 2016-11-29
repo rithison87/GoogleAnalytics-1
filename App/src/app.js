@@ -7,6 +7,7 @@ import * as metrics from './utils/metrics'
 import * as dimensions from './utils/dimensions'
 import * as accounts from './utils/accountUtils'
 import { toJS } from 'mobx'
+import * as goals from './utils/goals'
 
 Alteryx.Gui.AfterLoad = (manager) => {
 
@@ -20,6 +21,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'refresh_token', type: 'value'},
     {key: 'accessToken', type: 'value'},
     {key: 'metricsList', type: 'listBox'},
+    {key: 'goalsList', type: 'listBox'},
     {key: 'accountsList', type: 'dropDown'},
     {key: 'webPropertiesList', type: 'dropDown'},
     {key: 'profilesList', type: 'dropDown'},
@@ -31,7 +33,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
   store.client_id = "734530915454-u7qs1p0dvk5d3i0hogfr0mpmdnjj24u2.apps.googleusercontent.com"
   store.client_secret = "Fty30QrWsKLQW-TmyJdrk9qf"
   store.refresh_token = "1/58fo4PUozzcHFs2VJaY23wxyHc-x3-pb-2dUbNw33W4"
-  
+
   let optionList = [{uiobject:'test1', dataname: 'test1 value'},
                     {uiobject:'test2', dataname: 'test2 value'}]
 
@@ -70,7 +72,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.populateProfilesMenu = accounts.populateProfilesMenu
 
-  window.toJS = toJS
+  window.populateMetricsGoalsList = goals.populateMetricsGoalsList
 
   window.combinedDimensionsMetadata = dimensions.combinedDimensionsMetadata
 
