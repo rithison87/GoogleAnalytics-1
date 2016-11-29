@@ -87,7 +87,7 @@ const dimensionsStorePush = (result) => {
 // merge the standard and custom metrics metadata arrays and store them in dimensionsList
 const combinedDimensionsMetadata = (accessToken, store) => {
 
-    const standardMetrics = getDimensionsmetadata(accessToken)
+    const standardMetrics = getDimensionsMetadata(accessToken)
     const customMetrics = getCustomDimensionsMetadata(accessToken)
 
     Promise.all([standardMetrics,customMetrics])
@@ -112,24 +112,25 @@ const combinedDimensionsMetadata = (accessToken, store) => {
 const dimensionsSelectionCheck = () => {
     if (store.dimensionsList.selection.length < 8) {
         console.log("Dimensions selected: " + store.dimensionsList.selection.length)
-        document.getElementById('maxMetrics').className = ''
-        document.getElementById('maxMetrics').innerHTML = ''
+        document.getElementById('maxDimensions').className = ''
+        document.getElementById('maxDimensions').innerHTML = ''
     } else {
         console.log("Max of 7 dimensions: " + store.dimensionsList.selection.length)
-        document.getElementById('maxMetrics').className = 'tooMany'
-        document.getElementById('maxMetrics').innerHTML = '<div style="display:inline-block;vertical-align:middle;text-align:center;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAFMandsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAADRSURBVChTtZOxDcIwEEWZI/SIFaiZhREYhmFoKRApkOgo6IjoUCgIJrbxnfFxjh1jhPKlr7N/nr8URxndt4V2ztgkFupR4aSQi0LueODUH3AHQcweJI4LrIPJc4LkbYeArDd2mn0ApfwV+g1o9jM0zzzAiWcEPKuV1m2NhnUHGNujqrU2gowAJS4YckHGGvr9P5Dj4UvkdY0vDjNVGi8pJ+bXOOP9wx4m7CEPWOOgpDnM6dvwEpTJ4Xn3jFciTksLO0FJOf2UvAUcPzf8xea50C8xwHD+EY9YyQAAAABJRU5ErkJggg==" alt="warningIcon.png"/></div><div style="display:inline-block;vertical-align:middle;text-align:center;">&nbsp;&nbsp;Must select ten or fewer metrics</div>'
+        document.getElementById('maxDimensions').className = 'tooMany'
+        document.getElementById('maxDimensions').innerHTML = '<div style="display:inline-block;vertical-align:middle;text-align:center;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAFMandsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAADRSURBVChTtZOxDcIwEEWZI/SIFaiZhREYhmFoKRApkOgo6IjoUCgIJrbxnfFxjh1jhPKlr7N/nr8URxndt4V2ztgkFupR4aSQi0LueODUH3AHQcweJI4LrIPJc4LkbYeArDd2mn0ApfwV+g1o9jM0zzzAiWcEPKuV1m2NhnUHGNujqrU2gowAJS4YckHGGvr9P5Dj4UvkdY0vDjNVGi8pJ+bXOOP9wx4m7CEPWOOgpDnM6dvwEpTJ4Xn3jFciTksLO0FJOf2UvAUcPzf8xea50C8xwHD+EY9YyQAAAABJRU5ErkJggg==" alt="warningIcon.png"/></div><div style="display:inline-block;vertical-align:middle;text-align:left;margin-left:10px;">Must select seven or<br>fewer dimensions</div>'
     }
 }
 
 // Warning if no metrics are selection - trigger when they try to go to the next config window
 const noDimensionsSelectedWarning = () => {
     if (store.dimensionsList.selection.length < 1) {
-        console.log("must select at least 1 metric")
-        document.getElementById('maxMetrics').className = 'tooMany'
-        document.getElementById('maxMetrics').innerHTML = '<div style="display:inline-block;vertical-align:middle;text-align:center;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAFMandsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAADRSURBVChTtZOxDcIwEEWZI/SIFaiZhREYhmFoKRApkOgo6IjoUCgIJrbxnfFxjh1jhPKlr7N/nr8URxndt4V2ztgkFupR4aSQi0LueODUH3AHQcweJI4LrIPJc4LkbYeArDd2mn0ApfwV+g1o9jM0zzzAiWcEPKuV1m2NhnUHGNujqrU2gowAJS4YckHGGvr9P5Dj4UvkdY0vDjNVGi8pJ+bXOOP9wx4m7CEPWOOgpDnM6dvwEpTJ4Xn3jFciTksLO0FJOf2UvAUcPzf8xea50C8xwHD+EY9YyQAAAABJRU5ErkJggg==" alt="warningIcon.png"/></div><div style="display:inline-block;vertical-align:middle;text-align:center;">&nbsp;&nbsp;Must select one or more metrics</div>';
+        console.log("must select at least 1 dimension")
+        document.getElementById('maxDimensions').className = 'tooMany'
+        document.getElementById('maxDimensions').innerHTML = '<div style="display:inline-block;vertical-align:middle;text-align:center;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAFMandsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAADRSURBVChTtZOxDcIwEEWZI/SIFaiZhREYhmFoKRApkOgo6IjoUCgIJrbxnfFxjh1jhPKlr7N/nr8URxndt4V2ztgkFupR4aSQi0LueODUH3AHQcweJI4LrIPJc4LkbYeArDd2mn0ApfwV+g1o9jM0zzzAiWcEPKuV1m2NhnUHGNujqrU2gowAJS4YckHGGvr9P5Dj4UvkdY0vDjNVGi8pJ+bXOOP9wx4m7CEPWOOgpDnM6dvwEpTJ4Xn3jFciTksLO0FJOf2UvAUcPzf8xea50C8xwHD+EY9YyQAAAABJRU5ErkJggg==" alt="warningIcon.png"/></div><div style="display:inline-block;vertical-align:middle;text-align:left;margin-left:10px;">Must select one<br>or more dimensions</div>';
     } else {
-        document.getElementById('maxMetrics').className = ''
-        document.getElementById('maxMetrics').innerHTML = ''
+    	console.log("noDimensionsSelectedWarning else path")
+        document.getElementById('maxDimensions').className = ''
+        document.getElementById('maxDimensions').innerHTML = ''
     }
 }
 
@@ -138,4 +139,4 @@ const bindDimensionCheck = () => {
     Alteryx.Gui.manager.GetDataItem('dimensionsList').UserDataChanged.push(dimensionsSelectionCheck)
 }
 
-export { getDimensionsmetadata, getCustomDimensionsMetadata, combinedDimensionsMetadata, dimensionsStorePush, dimensionsSelectionCheck, bindDimensionCheck, noDimensionsSelectedWarning };
+export { getDimensionsMetadata, getCustomDimensionsMetadata, combinedDimensionsMetadata, dimensionsStorePush, dimensionsSelectionCheck, bindDimensionCheck, noDimensionsSelectedWarning };
