@@ -163,6 +163,7 @@ Google Sheets Input GUI
 <!-- Metrics fieldset -->
     <fieldset id="metrics" style="display:show"><!--Add a display:none during process story-->
         <legend>Select Metrics</legend>
+        <div id="selectedMetrics"></div>
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
           ismultiselect="true" issearchable="true" id="metricsList" dataName="metricsList" showsearchrow="true"></alteryx-pluginwidget>
         <div>
@@ -197,7 +198,7 @@ Google Sheets Input GUI
             <button type="submit" style="float: right" id="" onclick="noMetricsSelectedWarning();">Next</button>
             <button type="submit" style="float: right" id="" onclick="">Previous</button>
         </div>
-    </fieldset>    
+    </fieldset>
 
 <!-- fieldset for the non-captured fields -->
     <fieldset id="token" style="display:none">

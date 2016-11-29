@@ -8,6 +8,7 @@ import * as dimensions from './utils/dimensions'
 import * as accounts from './utils/accountUtils'
 import { toJS } from 'mobx'
 import * as goals from './utils/goals'
+import MetricMessage from './components/metricMessage'
 
 Alteryx.Gui.AfterLoad = (manager) => {
 
@@ -29,6 +30,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
   ]
 
   const store = new AyxStore(manager, collection)
+
+  ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'));
 
   store.client_id = "734530915454-u7qs1p0dvk5d3i0hogfr0mpmdnjj24u2.apps.googleusercontent.com"
   store.client_secret = "Fty30QrWsKLQW-TmyJdrk9qf"
