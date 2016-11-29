@@ -21,7 +21,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'refresh_token', type: 'value'},
     {key: 'accessToken', type: 'value'},
     {key: 'metricsList', type: 'listBox'},
-    {key: 'goalsList', type: 'listBox'},
+    {key: 'metricsGoalsList', type: 'listBox'},
+    {key: 'dimensionsGoalsList', type: 'listBox'},
     {key: 'accountsList', type: 'dropDown'},
     {key: 'webPropertiesList', type: 'dropDown'},
     {key: 'profilesList', type: 'dropDown'},
@@ -41,6 +42,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   metrics.combinedMetricsMetadata(store.accessToken, store)
   dimensions.combinedDimensionsMetadata(store.accessToken,store)
+  goals.populateMetricsGoalsList(store)
+  goals.populateDimensionsGoalsList(store)
 
   window.optionList = optionList
 
@@ -73,6 +76,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.populateProfilesMenu = accounts.populateProfilesMenu
 
   window.populateMetricsGoalsList = goals.populateMetricsGoalsList
+
+  window.populateDimensionsGoalsList = goals.populateDimensionsGoalsList
 
   window.combinedDimensionsMetadata = dimensions.combinedDimensionsMetadata
 
