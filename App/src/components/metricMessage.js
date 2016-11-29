@@ -1,7 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 
-const Metric = ( { metricName }) => <h2>{metricName}</h2>;
+const Metric = ( { metricName }) => <p>{metricName}</p>;
 
 function MetricList( { selections }) {
   return (
@@ -12,7 +12,6 @@ function MetricList( { selections }) {
     </div>
   );
 }
-
 
 class MetricMessage extends React.Component {
   constructor(props) {
