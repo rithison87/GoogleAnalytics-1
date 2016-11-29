@@ -80,6 +80,25 @@ Google Sheets Input GUI
             overflow:visible;
         }
 
+        .selectionMessage-outer {
+            min-height: 25px;
+            max-height: auto;
+            padding-top: 5px;
+            padding-left: 10px;
+            padding-right: 5px;
+            background-color: rgb(238,238,238);
+            border: rgb(187,187,187);
+            border-style: solid;
+            border-width: 1px;
+            width: 97%;
+        }
+
+        .selectionMessage-inner {
+            max-height: auto;
+            padding-left: 5px;
+            border-style: none;
+        }
+
         @media (max-width:407px) {
             .alignment_container {
                 padding-left:5%;
@@ -163,9 +182,11 @@ Google Sheets Input GUI
 <!-- Metrics fieldset -->
     <fieldset id="metrics" style="display:show"><!--Add a display:none during process story-->
         <legend>Select Metrics</legend>
-        <div id="selectedMetrics"></div>
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
           ismultiselect="true" issearchable="true" id="metricsList" dataName="metricsList" showsearchrow="true"></alteryx-pluginwidget>
+        <div class="selectionMessage-outer">Selected Metrics:
+            <div id="selectedMetrics" class="selectionMessage-inner"></div>
+        </div>
         <div>
             <!-- Add id name and onclick function during process story -->
             <button type="submit" style="float: right" id="" onclick="noMetricsSelectedWarning();">Next</button>
