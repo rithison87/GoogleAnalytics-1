@@ -4,16 +4,15 @@ import Hello from './components/hello'
 import { setFreshAccessToken, getAccessTokenAjaxCall, login, gup, validateToken, displayFieldset } from './utils/utils'
 import AyxStore from './stores/AyxStore'
 import * as metrics from './utils/metrics'
-import * as accounts from './utils/accountUtils.js'
+import * as dimensions from './utils/dimensions'
+import * as accounts from './utils/accountUtils'
 import { toJS } from 'mobx'
 
 Alteryx.Gui.AfterLoad = (manager) => {
 
-
-
-
   // Adds metrics.metricsSelectionCheck to UserDataChanged of metricsList
   metrics.bindMetricCheck()
+  dimensions.bindDimensionCheck()
 
   const collection = [
     {key: 'client_id', type: 'value'},
@@ -24,8 +23,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'accountsList', type: 'dropDown'},
     {key: 'webPropertiesList', type: 'dropDown'},
     {key: 'profilesList', type: 'dropDown'},
+    {key: 'dimensionsList', type: 'listBox'},
   ]
-
 
   const store = new AyxStore(manager, collection)
 
@@ -39,6 +38,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
   //create promise that will run combinedMetricsMetadata and show metrics fieldset
 
   metrics.combinedMetricsMetadata(store.accessToken, store)
+  dimensions.combinedDimensionsMetadata(store.accessToken,store)
 
   window.optionList = optionList
 
@@ -62,6 +62,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.noMetricsSelectedWarning = metrics.noMetricsSelectedWarning
 
+  window.noDimensionsSelectedWarning = dimensions.noDimensionsSelectedWarning
+
   window.populateAccountsList = accounts.populateAccountsList
 
   window.populateWebPropertiesList = accounts.populateWebPropertiesList
@@ -69,6 +71,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.populateProfilesMenu = accounts.populateProfilesMenu
 
   window.toJS = toJS
+
+  window.combinedDimensionsMetadata = dimensions.combinedDimensionsMetadata
 
   populateAccountsList(store)
   populateWebPropertiesList(store)
