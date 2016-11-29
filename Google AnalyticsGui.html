@@ -50,7 +50,7 @@ Google Sheets Input GUI
         }
 
         /* Warning message for selecting over 10 metrics */
-        #maxMetrics.tooMany:before {
+        .tooMany:before {
             background-color: transparent;
             border-left: 8px solid transparent;
             border-right: 8px solid transparent;
@@ -58,10 +58,10 @@ Google Sheets Input GUI
             content: "\00a0";
             height: 0px;
             position: relative;
-            top: -25px;
+            top: -34px; /*** Change this to vertically offset the little triangle on top of the error bubble relative to the bubble itself. ***/
             width: 0px;
         }
-        #maxMetrics.tooMany {
+        .tooMany {
             background-color: #FFFFFF;
             border: 1px solid #FFE599;
             border-radius: 5px;
@@ -69,13 +69,13 @@ Google Sheets Input GUI
             color: black;
             display: inline-block;
             font-family: 'Segoe UI', Arial, sans-serif;
-            font-size: .7em;
-            left: 162px;
-            top: 38px;
-            padding: 3px 5px 0px 5px;
-            position: static;
+            font-size: 1em;
+            top: 5px; /*** change this to vertically offset the error bubble from the list box. ***/
+            padding: 3px 5px 3px 5px;
+            position: relative;
             float: center;
         }
+
         .alteryx-grid-text-cell {
             overflow:visible;
         }
@@ -165,11 +165,24 @@ Google Sheets Input GUI
         <legend>Select Metrics</legend>
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
           ismultiselect="true" issearchable="true" id="metricsList" dataName="metricsList" showsearchrow="true"></alteryx-pluginwidget>
-        <div id="maxMetrics"></div>
         <div>
             <!-- Add id name and onclick function during process story -->
             <button type="submit" style="float: right" id="" onclick="noMetricsSelectedWarning();">Next</button>
             <button type="submit" style="float: right" id="" onclick="">Previous</button>
+            <div id="maxMetrics"></div>
+        </div>
+    </fieldset>
+
+<!-- Dimensions fieldset -->
+    <fieldset id="dimensions" style="display:show"><!--Add a display:none during process story-->
+        <legend>Select Dimensions</legend>
+        <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
+          ismultiselect="true" issearchable="true" id="dimensionsList" dataName="dimensionsList" showsearchrow="true"></alteryx-pluginwidget>
+        <div>
+            <!-- Add id name and onclick function during process story -->
+            <button type="submit" style="float: right" id="" onclick="noDimensionsSelectedWarning();">Next</button>
+            <button type="submit" style="float: right" id="" onclick="">Previous</button>
+            <div id="maxDimensions"></div>
         </div>
     </fieldset>
 
@@ -184,7 +197,7 @@ Google Sheets Input GUI
 
 <!-- API error messaging -->
     <div id="connectionStatusBox" style="display:none">
-            <div id="connectionStatus" class="button_alignment_container"></div>
+        <div id="connectionStatus" class="button_alignment_container"></div>
     </div>
 
     <div id="app">
