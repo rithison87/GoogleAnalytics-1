@@ -50,13 +50,13 @@ const populateMetricsGoalsList = (store) => {
 
   }
 
-  //push to metrics goals list - change widget name
+  //push to metrics goals list
   const goalsStorePush = (results) => {
     results.map( (d) => {
         
-        store.goalsList.stringList.push({uiobject: d.uiobject, dataname: d.dataname})
+        store.metricsGoalsList.stringList.push({uiobject: d.uiobject, dataname: d.dataname})
     })
-    console.log(toJS(store.goalsList.stringList) )
+    console.log(toJS(store.metricsGoalsList.stringList) )
 }
 
   fetchGoals
@@ -67,7 +67,7 @@ const populateMetricsGoalsList = (store) => {
   	
 }
 
-//populate Metrics Goals
+//populate Dimensions Goals
 const populateDimensionsGoalsList = (store) => {
   
   const fetchGoals = getGoalsListAjaxCall(store.accessToken);
@@ -90,13 +90,13 @@ const populateDimensionsGoalsList = (store) => {
 
   }
 
-  //push to Dimensions goals list - change widget name
+  //push to Dimensions goals list 
   const goalsStorePush = (results) => {
     results.map( (d) => {
         
-        store.goalsList.stringList.push({uiobject: d.uiobject, dataname: d.dataname})
+        store.dimensionsGoalsList.stringList.push({uiobject: d.uiobject, dataname: d.dataname})
     })
-    console.log(toJS(store.goalsList.stringList) )
+    console.log(toJS(store.dimensionsGoalsList.stringList) )
 }
 
   fetchGoals
@@ -110,4 +110,4 @@ const populateDimensionsGoalsList = (store) => {
 
 	
 
-export { populateMetricsGoalsList };
+export { populateMetricsGoalsList, populateDimensionsGoalsList };

@@ -187,18 +187,31 @@ Google Sheets Input GUI
         </div>
     </fieldset>
 
-<!-- Goals fieldset -->
+<!-- Metrics Goals fieldset -->
 <fieldset id="metrics" style="display:show"><!--Add a display:none during process story-->
-        <legend>Select Goals</legend>
+        <legend>Select Metric Goals</legend>
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
-          ismultiselect="true" issearchable="true" id="goalsList" dataName="goalsList" showsearchrow="true"></alteryx-pluginwidget>
+          ismultiselect="true" issearchable="true" id="metricsGoalsList" dataName="metricsGoalsList" showsearchrow="true"></alteryx-pluginwidget>
         <div id="maxMetrics"></div>
         <div>
             <!-- Add id name and onclick function during process story -->
             <button type="submit" style="float: right" id="" onclick="noMetricsSelectedWarning();">Next</button>
             <button type="submit" style="float: right" id="" onclick="">Previous</button>
         </div>
-    </fieldset>
+    </fieldset>  
+
+<!-- Dimensions Goals fieldset -->
+<fieldset id="metrics" style="display:show"><!--Add a display:none during process story-->
+        <legend>Select Dimension Goals</legend>
+        <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
+          ismultiselect="true" issearchable="true" id="dimensionsGoalsList" dataName="dimensionsGoalsList" showsearchrow="true"></alteryx-pluginwidget>
+        <div id="maxMetrics"></div>
+        <div>
+            <!-- Add id name and onclick function during process story -->
+            <button type="submit" style="float: right" id="" onclick="noMetricsSelectedWarning();">Next</button>
+            <button type="submit" style="float: right" id="" onclick="">Previous</button>
+        </div>
+    </fieldset>       
 
 <!-- fieldset for the non-captured fields -->
     <fieldset id="token" style="display:none">
