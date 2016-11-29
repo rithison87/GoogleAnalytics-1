@@ -70,9 +70,9 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.populateProfilesMenu = accounts.populateProfilesMenu
 
-  window.populateGoalsList = goals.populateGoalsList
+  window.populateMetricsGoalsList = goals.populateMetricsGoalsList
 
-  window.goalsStorePush = goals.goalsStorePush
+  
 
   populateAccountsList(store)
   populateWebPropertiesList(store)
