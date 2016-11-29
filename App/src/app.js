@@ -5,13 +5,14 @@ import { setFreshAccessToken, getAccessTokenAjaxCall, login, gup, validateToken,
 import AyxStore from './stores/AyxStore'
 import * as metrics from './utils/metrics'
 import * as dimensions from './utils/dimensions'
-import * as accounts from './utils/accountUtils.js'
+import * as accounts from './utils/accountUtils'
 import { toJS } from 'mobx'
 
 Alteryx.Gui.AfterLoad = (manager) => {
 
   // Adds metrics.metricsSelectionCheck to UserDataChanged of metricsList
   metrics.bindMetricCheck()
+  dimensions.bindDimensionCheck()
 
   const collection = [
     {key: 'client_id', type: 'value'},
@@ -37,6 +38,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
   //create promise that will run combinedMetricsMetadata and show metrics fieldset
 
   metrics.combinedMetricsMetadata(store.accessToken, store)
+  dimensions.combinedDimensionsMetadata(store.accessToken,store)
 
   window.optionList = optionList
 
@@ -60,6 +62,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.noMetricsSelectedWarning = metrics.noMetricsSelectedWarning
 
+  window.noDimensionsSelectedWarning = dimensions.noDimensionsSelectedWarning
+
   window.populateAccountsList = accounts.populateAccountsList
 
   window.populateWebPropertiesList = accounts.populateWebPropertiesList
@@ -68,7 +72,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.toJS = toJS
 
-  window.dimensionsStorePush = dimensions.dimensionsStorePush
+  window.combinedDimensionsMetadata = dimensions.combinedDimensionsMetadata
 
   populateAccountsList(store)
   populateWebPropertiesList(store)
