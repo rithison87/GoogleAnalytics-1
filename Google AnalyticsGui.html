@@ -52,28 +52,22 @@ Google Sheets Input GUI
         /* Warning message for selecting over 10 metrics */
         .tooMany:before {
             background-color: transparent;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-bottom: 8px solid #FFE599;
-            content: "\00a0";
             height: 0px;
-            position: relative;
-            top: -34px; /*** Change this to vertically offset the little triangle on top of the error bubble relative to the bubble itself. ***/
             width: 0px;
         }
         .tooMany {
-            background-color: #FFFFFF;
-            border: 1px solid #FFE599;
-            border-radius: 5px;
-            box-shadow: 0 2px 7px rgba(0, 0, 0, 0.65), 0 1px 0 #FFE599 inset;
-            color: black;
-            display: inline-block;
+            background-color: red;
+            border-radius: 0px;
+            color: white;
+            display: block;
             font-family: 'Segoe UI', Arial, sans-serif;
             font-size: 1em;
-            top: 5px; /*** change this to vertically offset the error bubble from the list box. ***/
+            margin-bottom: 5px;
+            margin-right: 5px;
             padding: 3px 5px 3px 5px;
-            position: relative;
-            float: center;
+            border: rgb(187,187,187);
+            border-style: solid;
+            border-width: 1px;
         }
 
         .alteryx-grid-text-cell {
@@ -91,7 +85,7 @@ Google Sheets Input GUI
             border: rgb(187,187,187);
             border-style: solid;
             border-width: 1px;
-            width: 97%;
+/*            width: 97%;*/
         }
 
         .selectionMessage-inner {
@@ -199,12 +193,12 @@ Google Sheets Input GUI
           ismultiselect="true" issearchable="true" id="metricsList" dataName="metricsList" showsearchrow="true"></alteryx-pluginwidget>
         <div class="selectionMessage-outer">Selected Metrics:
             <div id="selectedMetrics" class="selectionMessage-inner"></div>
+            <div id="maxMetrics"></div>
         </div>
         <div>
             <!-- Add id name and onclick function during process story -->
             <button type="submit" style="float: right" id="" onclick="noMetricsSelectedWarning();">Next</button>
             <button type="submit" style="float: right" id="" onclick="">Previous</button>
-            <div id="maxMetrics"></div>
         </div>
     </fieldset>
 
