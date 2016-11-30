@@ -110,8 +110,9 @@ const metricsSelectionCheck = () => {
         document.getElementById('maxMetrics').innerHTML = ''
     } else {
         console.log("Max of 10 metrics: " + store.metricsList.selection.length)
+        let excess = store.metricsList.selection.length - 10
         document.getElementById('maxMetrics').className = 'tooMany'
-        document.getElementById('maxMetrics').innerHTML = '<div style="display:inline-block;vertical-align:middle;text-align:center;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAFMandsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAADRSURBVChTtZOxDcIwEEWZI/SIFaiZhREYhmFoKRApkOgo6IjoUCgIJrbxnfFxjh1jhPKlr7N/nr8URxndt4V2ztgkFupR4aSQi0LueODUH3AHQcweJI4LrIPJc4LkbYeArDd2mn0ApfwV+g1o9jM0zzzAiWcEPKuV1m2NhnUHGNujqrU2gowAJS4YckHGGvr9P5Dj4UvkdY0vDjNVGi8pJ+bXOOP9wx4m7CEPWOOgpDnM6dvwEpTJ4Xn3jFciTksLO0FJOf2UvAUcPzf8xea50C8xwHD+EY9YyQAAAABJRU5ErkJggg==" alt="warningIcon.png"/></div><div style="display:inline-block;vertical-align:middle;text-align:left;margin-left:10px;">Must select ten<br>or fewer metrics</div>'
+        document.getElementById('maxMetrics').innerHTML = '<div>Maximum of ten metrics can be chosen.  Please remove '+excess+' metric(s).</div>'
     }
 }
 

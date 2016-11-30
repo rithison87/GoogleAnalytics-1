@@ -20,7 +20,7 @@ class MetricMessage extends React.Component {
       <div>
         {
           // onClick={() => this.clicked(idx)}
-          selections.map((selection, idx) => <button type="button" className="selectionMessage-btn">{selection}</button>)
+          selections.map((selection, idx) => <p className="selectionMessage-btn" key={idx}>{selection}</p>)
         }
       </div>
     );
