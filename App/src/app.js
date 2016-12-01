@@ -77,11 +77,11 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.combinedMetricsMetadata = metrics.combinedMetricsMetadata
 
-  window.metricsSelectionCheck = metrics.metricsSelectionCheck
+  // window.metricsSelectionCheck = metrics.metricsSelectionCheck
 
-  window.bindMetricCheck = metrics.bindMetricCheck
+  // window.bindMetricCheck = metrics.bindMetricCheck
 
-  window.noMetricsSelectedWarning = metrics.noMetricsSelectedWarning
+  // window.noMetricsSelectedWarning = metrics.noMetricsSelectedWarning
 
   window.noDimensionsSelectedWarning = dimensions.noDimensionsSelectedWarning
 

@@ -134,4 +134,4 @@ const combinedMetricsMetadata = (accessToken, store) => {
 //     Alteryx.Gui.manager.GetDataItem('metricsList').UserDataChanged.push(metricsSelectionCheck)
 // }
 
-export { getMetricsMetadata, getCustomMetricsMetadata, combinedMetricsMetadata, metricsStorePush, metricsSelectionCheck, bindMetricCheck, noMetricsSelectedWarning };
+export { getMetricsMetadata, getCustomMetricsMetadata, combinedMetricsMetadata, metricsStorePush };
