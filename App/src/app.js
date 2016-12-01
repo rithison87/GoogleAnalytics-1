@@ -6,15 +6,16 @@ import AyxStore from './stores/AyxStore'
 import * as metrics from './utils/metrics'
 import * as dimensions from './utils/dimensions'
 import * as accounts from './utils/accountUtils'
-import { toJS } from 'mobx'
+import { toJS, extendObservable } from 'mobx'
 import * as goals from './utils/goals'
 import MetricMessage from './components/metricMessage'
 
 Alteryx.Gui.AfterLoad = (manager) => {
 
   // Adds metrics.metricsSelectionCheck to UserDataChanged of metricsList
-  metrics.bindMetricCheck()
-  dimensions.bindDimensionCheck()
+  // bind functions no longer necessary due to metricMessage.js and dimensionMessage.js
+  // metrics.bindMetricCheck()
+  // dimensions.bindDimensionCheck()
 
   const collection = [
     {key: 'client_id', type: 'value'},
@@ -31,6 +32,18 @@ Alteryx.Gui.AfterLoad = (manager) => {
   ]
 
   const store = new AyxStore(manager, collection)
+
+  extendObservable(store,{
+    totalMetricsAndGoals: () => {
+      let total = store.metricsList.selection.length + store.metricsGoalsList.selection.length
+      return total;
+    }
+
+    // totalDimensionsAndGoals: () => {
+    //   let total = store.dimensionsList.selection.length + store.dimensionsGoalsList.selection.length
+    //   return total > 7;
+    // }
+  }) 
 
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'));
 

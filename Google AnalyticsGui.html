@@ -50,18 +50,20 @@ Google Sheets Input GUI
         }
 
         /* Warning message for selecting over 10 metrics */
-        .tooMany:before {
+/*        .tooMany:before {
             background-color: transparent;
             height: 0px;
             width: 0px;
-        }
-        .tooMany {
+            margin: 0px;
+        }*/
+        .warning {
             background-color: red;
             border-radius: 0px;
             color: white;
             display: block;
             font-family: 'Segoe UI', Arial, sans-serif;
             font-size: 1em;
+            margin-top: 5px;
             margin-bottom: 5px;
             margin-right: 5px;
             padding: 3px 5px 3px 5px;
@@ -192,8 +194,7 @@ Google Sheets Input GUI
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
           ismultiselect="true" issearchable="true" id="metricsList" dataName="metricsList" showsearchrow="true"></alteryx-pluginwidget>
         <div class="selectionMessage-outer">Selected Metrics:
-            <div id="selectedMetrics" class="selectionMessage-inner"></div>
-            <div id="maxMetrics"></div>
+            <div id="selectedMetrics"></div>
         </div>
         <div>
             <!-- Add id name and onclick function during process story -->
