@@ -1,6 +1,7 @@
 import { autorun, autorunAsync, extendObservable, toJS } from 'mobx';
 import _ from 'lodash';
 // import store from '../stores/Storage';
+//something
 
 class ObservableStore {
   //Takes as arguments the alteryx manager,
@@ -22,6 +23,18 @@ class ObservableStore {
                   ? { selection: item.getValue(), stringList: item.StringList.enums }
                   :JSON.parse(item.getValue())),
       });
+      if (d.type === 'listBox') {
+        extendObservable(this[d.key], {
+          selectedValues: () => {
+            return this[d.key].selection.map( (selVal) => {
+                let matchItems = this[d.key].stringList.filter( (optionItem) => {
+                  return optionItem.dataName === selVal;
+                });
+              return matchItems[0] ? matchItems[0].uiObject : 'Missing ' + selVal 
+            });
+          }
+        })
+      }
       this.allowChangeFlag = true;
       autorunAsync(() => {
         let dropDownBool = (d.type === 'dropDown');
