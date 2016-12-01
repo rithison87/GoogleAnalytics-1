@@ -1,7 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 import _ from 'lodash'
-import * as metrics from '../utils/metrics'
+//import * as metrics from '../utils/metrics'
 
 class MetricMessage extends React.Component {
   constructor(props) {

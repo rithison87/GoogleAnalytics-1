@@ -1,7 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 import _ from 'lodash'
-import * as dimensions from '../utils/dimensions'
+// import * as dimensions from '../utils/dimensions'
 
 class DimensionMessage extends React.Component {
   constructor(props) {

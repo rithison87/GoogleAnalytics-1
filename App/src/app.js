@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom'
 import Hello from './components/hello'
 import { setFreshAccessToken, getAccessTokenAjaxCall, login, gup, validateToken, displayFieldset } from './utils/utils'
 import AyxStore from './stores/AyxStore'
-import * as metrics from './utils/metrics'
-import * as dimensions from './utils/dimensions'
+// import * as metrics from './utils/metrics'
+// import * as dimensions from './utils/dimensions'
 import * as accounts from './utils/accountUtils'
+import * as metadataRequest from './utils/metadataRequest'
 import { toJS, extendObservable } from 'mobx'
 import * as goals from './utils/goals'
 import MetricMessage from './components/metricMessage'
@@ -65,10 +66,10 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   //create promise that will run combinedMetricsMetadata and show metrics fieldset
 
-  metrics.combinedMetricsMetadata(store.accessToken, store)
-  dimensions.combinedDimensionsMetadata(store.accessToken,store)
+  metadataRequest.pushCombinedMetadata(store)
   goals.populateMetricsGoalsList(store)
   goals.populateDimensionsGoalsList(store)
+
 
   window.optionList = optionList
 
