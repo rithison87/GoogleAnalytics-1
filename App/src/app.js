@@ -6,15 +6,17 @@ import AyxStore from './stores/AyxStore'
 import * as metrics from './utils/metrics'
 import * as dimensions from './utils/dimensions'
 import * as accounts from './utils/accountUtils'
-import { toJS } from 'mobx'
+import { toJS, extendObservable } from 'mobx'
 import * as goals from './utils/goals'
 import MetricMessage from './components/metricMessage'
+import DimensionMessage from './components/dimensionMessage'
 
 Alteryx.Gui.AfterLoad = (manager) => {
 
   // Adds metrics.metricsSelectionCheck to UserDataChanged of metricsList
-  metrics.bindMetricCheck()
-  dimensions.bindDimensionCheck()
+  // bind functions no longer necessary due to metricMessage.js and dimensionMessage.js
+  // metrics.bindMetricCheck()
+  // dimensions.bindDimensionCheck()
 
   const collection = [
     {key: 'client_id', type: 'value'},
@@ -32,7 +34,23 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   const store = new AyxStore(manager, collection)
 
+  extendObservable(store,{
+    totalMetricsAndGoals: () => {
+      let total = store.metricsList.selection.length + store.metricsGoalsList.selection.length
+      return total;
+    }
+  }) 
+
+  extendObservable(store,{
+    totalDimensionsAndGoals: () => {
+      let total = store.dimensionsList.selection.length + store.dimensionsGoalsList.selection.length
+      return total;
+    }
+  }) 
+
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'));
+    
+  ReactDOM.render(<DimensionMessage store={store} />, document.querySelector('#selectedDimensions'));
 
   store.client_id = "734530915454-u7qs1p0dvk5d3i0hogfr0mpmdnjj24u2.apps.googleusercontent.com"
   store.client_secret = "Fty30QrWsKLQW-TmyJdrk9qf"
@@ -64,13 +82,13 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.combinedMetricsMetadata = metrics.combinedMetricsMetadata
 
-  window.metricsSelectionCheck = metrics.metricsSelectionCheck
+  // window.metricsSelectionCheck = metrics.metricsSelectionCheck
 
-  window.bindMetricCheck = metrics.bindMetricCheck
+  // window.bindMetricCheck = metrics.bindMetricCheck
 
-  window.noMetricsSelectedWarning = metrics.noMetricsSelectedWarning
+  // window.noMetricsSelectedWarning = metrics.noMetricsSelectedWarning
 
-  window.noDimensionsSelectedWarning = dimensions.noDimensionsSelectedWarning
+  // window.noDimensionsSelectedWarning = dimensions.noDimensionsSelectedWarning
 
   window.populateAccountsList = accounts.populateAccountsList
 

@@ -1,25 +1,25 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 import _ from 'lodash'
-import * as metrics from '../utils/metrics'
+import * as dimensions from '../utils/dimensions'
 
-class MetricMessage extends React.Component {
+class DimensionMessage extends React.Component {
   constructor(props) {
     super(props);
     this.store = props.store;
   }
 
   addClass(total) {
-    return total < 1 || total > 10 ? 'warning' : ''
+    return total < 1 || total > 7 ? 'warning' : ''
   }
 
   messageText(total) {
     let text
     
     if (total < 1) {
-      text = 'At least one metric must be selected.';
-    } else if (total > 10) {
-      text = 'Maximum of ten metrics can be chosen.  Please remove metric(s).';
+      text = 'At least one dimension must be selected.';
+    } else if (total > 7) {
+      text = 'Maximum of seven dimensions can be chosen.  Please remove dimension(s).';
     } else {
       text = '';
     };
@@ -28,19 +28,19 @@ class MetricMessage extends React.Component {
   }
 
   render() {
-    let metrics = this.store.metricsList.selection
-    let goals = this.store.metricsGoalsList.selection
-    let total = this.store.totalMetricsAndGoals
+    let dimensions = this.store.dimensionsList.selection
+    let goals = this.store.dimensionsGoalsList.selection
+    let total = this.store.totalDimensionsAndGoals
     let text = this.messageText(total)
     let divClass = this.addClass(total)
 
     return (
       <div>
-        <div className="selectionMessage-outer">Selected Metrics:
+        <div className="selectionMessage-outer">Selected Dimensions:
           <div className="selectionMessage-inner">
             {
               // onClick={() => this.clicked(idx)}
-              metrics.map((selection, idx) => <p className="selectionMessage-btn" key={idx}>{selection}</p>)
+              dimensions.map((selection, idx) => <p className="selectionMessage-btn" key={idx}>{selection}</p>)
             }
           </div>
         Selected Goals:
@@ -49,7 +49,7 @@ class MetricMessage extends React.Component {
               goals.map((selection, idx) => <p className="selectionMessage-btn" key={idx}>{selection}</p>)
             }
           </div>
-          <div id="metricWarning" className={divClass}>
+          <div id="dimensionWarning" className={divClass}>
             {text}
           </div>
         </div>
@@ -58,4 +58,4 @@ class MetricMessage extends React.Component {
   }
 }
 
-export default observer(MetricMessage); 
+export default observer(DimensionMessage); 
