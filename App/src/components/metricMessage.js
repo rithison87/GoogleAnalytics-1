@@ -28,21 +28,30 @@ class MetricMessage extends React.Component {
   }
 
   render() {
-    let selections = this.store.metricsList.selection
+    let metrics = this.store.metricsList.selection
+    let goals = this.store.metricsGoalsList.selection
     let total = this.store.totalMetricsAndGoals
     let text = this.messageText(total)
     let divClass = this.addClass(total)
 
     return (
       <div>
-        <div className="selectionMessage-inner">
-          {
-            // onClick={() => this.clicked(idx)}
-            selections.map((selection, idx) => <p className="selectionMessage-btn" key={idx}>{selection}</p>)
-          }
-        </div>
-        <div id="metricWarning" className={divClass}>
-          {text}
+        <div className="selectionMessage-outer">Selected Metrics:
+          <div className="selectionMessage-inner">
+            {
+              // onClick={() => this.clicked(idx)}
+              metrics.map((selection, idx) => <p className="selectionMessage-btn" key={idx}>{selection}</p>)
+            }
+          </div>
+        Selected Goals:
+          <div className="selectionMessage-inner">
+            {
+              goals.map((selection, idx) => <p className="selectionMessage-btn" key={idx}>{selection}</p>)
+            }
+          </div>
+          <div id="metricWarning" className={divClass}>
+            {text}
+          </div>
         </div>
       </div>
     );
