@@ -1,6 +1,7 @@
 import { autorun, autorunAsync, extendObservable, toJS } from 'mobx';
 import _ from 'lodash';
 // import store from '../stores/Storage';
+//something
 
 class ObservableStore {
   //Takes as arguments the alteryx manager,

@@ -50,34 +50,62 @@ Google Sheets Input GUI
         }
 
         /* Warning message for selecting over 10 metrics */
-        .tooMany:before {
+/*        .tooMany:before {
             background-color: transparent;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-bottom: 8px solid #FFE599;
-            content: "\00a0";
             height: 0px;
-            position: relative;
-            top: -34px; /*** Change this to vertically offset the little triangle on top of the error bubble relative to the bubble itself. ***/
             width: 0px;
-        }
-        .tooMany {
-            background-color: #FFFFFF;
-            border: 1px solid #FFE599;
-            border-radius: 5px;
-            box-shadow: 0 2px 7px rgba(0, 0, 0, 0.65), 0 1px 0 #FFE599 inset;
-            color: black;
-            display: inline-block;
+            margin: 0px;
+        }*/
+        .warning {
+            background-color: red;
+            border-radius: 0px;
+            color: white;
+            display: block;
             font-family: 'Segoe UI', Arial, sans-serif;
             font-size: 1em;
-            top: 5px; /*** change this to vertically offset the error bubble from the list box. ***/
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: 5px;
             padding: 3px 5px 3px 5px;
-            position: relative;
-            float: center;
+            border: rgb(187,187,187);
+            border-style: solid;
+            border-width: 1px;
         }
 
         .alteryx-grid-text-cell {
             overflow:visible;
+        }
+
+        .selectionMessage-outer {
+            min-height: 25px;
+            max-height: auto;
+            margin-bottom: 5px;
+            padding-top: 5px;
+            padding-left: 10px;
+            padding-right: 5px;
+            background-color: rgb(238,238,238);
+            border: rgb(187,187,187);
+            border-style: solid;
+            border-width: 1px;
+/*            width: 97%;*/
+        }
+
+        .selectionMessage-inner {
+            max-height: auto;
+            margin-bottom: 5px;
+            padding-left: 5px;
+            border-style: none;
+        }
+
+        .selectionMessage-btn {
+            display: inline-block;
+            margin-top: 5px;
+            margin-right: 5px;
+            margin-bottom: 0px;
+            padding: 6px 10px 7px 10px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(187,187,187);
         }
 
         @media (max-width:407px) {
@@ -146,12 +174,18 @@ Google Sheets Input GUI
 
 <!-- Account/WebProperties/Profiles Selectors  -->
     <fieldset id="profileSelectors" style="display: show;">
+        <legend>Select Account/Profile</legend>
         <label>Accounts Select</label>
         <alteryx-pluginwidget type="DropDown"  id="accountsList" dataName="accountsList"></alteryx-pluginwidget>
         <label>WebProperties Select</label>
         <alteryx-pluginwidget type="DropDown"  id="webPropertiesList" dataName="webPropertiesList"></alteryx-pluginwidget>
         <label>Profiles Select</label>
         <alteryx-pluginwidget type="DropDown"  id="profilesList" dataName="profilesList"></alteryx-pluginwidget>
+        <div>
+            <!-- Add id name and onclick function during process story -->
+            <button type="submit" style="float: right" id="" onclick="noMetricsSelectedWarning();">Next</button>
+            <button type="submit" style="float: right" id="" onclick="">Previous</button>
+        </div>
     </fieldset>
 
 <!-- Metrics fieldset -->
@@ -159,11 +193,11 @@ Google Sheets Input GUI
         <legend>Select Metrics</legend>
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
           ismultiselect="true" issearchable="true" id="metricsList" dataName="metricsList" showsearchrow="true"></alteryx-pluginwidget>
+        <div id="selectedMetrics"></div>
         <div>
             <!-- Add id name and onclick function during process story -->
             <button type="submit" style="float: right" id="" onclick="noMetricsSelectedWarning();">Next</button>
             <button type="submit" style="float: right" id="" onclick="">Previous</button>
-            <div id="maxMetrics"></div>
         </div>
     </fieldset>
 
@@ -172,13 +206,39 @@ Google Sheets Input GUI
         <legend>Select Dimensions</legend>
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
           ismultiselect="true" issearchable="true" id="dimensionsList" dataName="dimensionsList" showsearchrow="true"></alteryx-pluginwidget>
+        <div id="selectedDimensions"></div>
         <div>
             <!-- Add id name and onclick function during process story -->
             <button type="submit" style="float: right" id="" onclick="noDimensionsSelectedWarning();">Next</button>
             <button type="submit" style="float: right" id="" onclick="">Previous</button>
-            <div id="maxDimensions"></div>
         </div>
     </fieldset>
+
+<!-- Metrics Goals fieldset -->
+<fieldset id="metrics" style="display:show"><!--Add a display:none during process story-->
+        <legend>Select Metric Goals</legend>
+        <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
+          ismultiselect="true" issearchable="true" id="metricsGoalsList" dataName="metricsGoalsList" showsearchrow="true"></alteryx-pluginwidget>
+        <div id="maxMetrics"></div>
+        <div>
+            <!-- Add id name and onclick function during process story -->
+            <button type="submit" style="float: right" id="" onclick="noMetricsSelectedWarning();">Next</button>
+            <button type="submit" style="float: right" id="" onclick="">Previous</button>
+        </div>
+    </fieldset>  
+
+<!-- Dimensions Goals fieldset -->
+<fieldset id="metrics" style="display:show"><!--Add a display:none during process story-->
+        <legend>Select Dimension Goals</legend>
+        <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
+          ismultiselect="true" issearchable="true" id="dimensionsGoalsList" dataName="dimensionsGoalsList" showsearchrow="true"></alteryx-pluginwidget>
+        <div id="maxMetrics"></div>
+        <div>
+            <!-- Add id name and onclick function during process story -->
+            <button type="submit" style="float: right" id="" onclick="noMetricsSelectedWarning();">Next</button>
+            <button type="submit" style="float: right" id="" onclick="">Previous</button>
+        </div>
+    </fieldset>       
 
 <!-- fieldset for the non-captured fields -->
     <fieldset id="token" style="display:none">
