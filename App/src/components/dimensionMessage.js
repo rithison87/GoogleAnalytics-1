@@ -10,15 +10,13 @@ class DimensionMessage extends React.Component {
   }
 
   addClass(total) {
-    return total < 1 || total > 7 ? 'warning' : ''
+    return total > 7 ? 'warning' : ''
   }
 
   messageText(total) {
     let text
     
-    if (total < 1) {
-      text = 'At least one dimension must be selected.';
-    } else if (total > 7) {
+    if (total > 7) {
       text = 'Maximum of seven dimensions can be chosen.  Please remove dimension(s).';
     } else {
       text = '';
