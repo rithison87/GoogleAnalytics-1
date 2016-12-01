@@ -15,7 +15,7 @@ class DimensionMessage extends React.Component {
 
   messageText(total) {
     let text
-    
+
     if (total > 7) {
       text = 'Maximum of seven dimensions can be chosen.  Please remove dimension(s).';
     } else {
@@ -26,8 +26,8 @@ class DimensionMessage extends React.Component {
   }
 
   render() {
-    let dimensions = this.store.dimensionsList.selection
-    let goals = this.store.dimensionsGoalsList.selection
+    let dimensions = this.store.dimensionsList.selectedValues
+    let goals = this.store.dimensionsGoalsList.selectedValues
     let total = this.store.totalDimensionsAndGoals
     let text = this.messageText(total)
     let divClass = this.addClass(total)
@@ -56,4 +56,4 @@ class DimensionMessage extends React.Component {
   }
 }
 
-export default observer(DimensionMessage); 
+export default observer(DimensionMessage);

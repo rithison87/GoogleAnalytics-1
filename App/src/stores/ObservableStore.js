@@ -30,7 +30,7 @@ class ObservableStore {
                 let matchItems = this[d.key].stringList.filter( (optionItem) => {
                   return optionItem.dataName === selVal;
                 });
-              return matchItems[0].uiObject ? matchItems[0].uiObject : null
+              return matchItems[0] ? matchItems[0].uiObject : 'Missing ' + selVal 
             });
           }
         })
