@@ -28,17 +28,7 @@ const getMetadata = (accessToken) => {
 
 // filter deprecated metrics & dimensions from standard metadata array
 const filterMetadata = (response) => {
-    // const filteredMetrics = response.items.filter(
-    // 	(d) => {return d.attributes.status != 'DEPRECATED' && d.attributes.type === 'METRIC'} )
-    // const filteredDimensions = response.items.filter(
-    // 	(d) => {return d.attributes.status != 'DEPRECATED' && d.attributes.type === 'DIMENSION'} )
-    // console.log('response filterMetadata()')
-    // console.log(response)
-
     return response.items.filter( (d) => {return d.attributes.status != 'DEPRECATED'} )
-    // console.log('activeStandard')
-    // console.log(activeStandard)
-    // return activeStandard // [filteredMetrics, filteredDimensions]
 }
 
 // get metadata for custom metrics or dimensions
@@ -64,27 +54,6 @@ const getCustomMetadata = (accessToken, metadataType) => {
 const filterCustomMetadata = (response) => {
     // this works on both custom metrics and dimensions, which is good
     return response.items.filter( (d) => d.active != false)
-    // const filteredCustomMetadataItems = response.items.filter( (d) => d.active != false)
-
-    // set METRIC or DIMENSION type for mapping functions to correctly identify the custom metadata
-    // const typeProperty =
-    // 	filteredCustomMetadataItems[0].kind === 'analytics#customMetric' ? 'METRIC' :
-    // 	filteredCustomMetadataItems[0].kind === 'analytics#customDimension' ? 'DIMENSION' : 'OTHER' // using OTHER in case of edge cases
-
-    // const reformattedCustomItems = filteredCustomMetadataItems.map( (d) => {
-    //         return {
-    //             id: d.id,
-    //             attributes: {
-    //                 uiName: d.name,
-    //                 accountId: d.accountId,
-    //                 scope: d.scope,
-    //                 dataType: d.type, /* d.type of custom metrics is actually data type; custom dimensions will be undefined, which is OK */
-    //                 webPropertyId: d.webPropertyId,
-    //                 type: typeProperty,
-    //                 }
-    //         }
-    // })
-    // return reformattedCustomItems
 }
 
 const mapCustomMetadata = (results) => {
@@ -139,9 +108,8 @@ const storePush = (results) => {
     	const storeType = d.attributes.type === 'METRIC' ? store.metricsList : store.dimensionsList 
         storeType.stringList.push( {uiobject: d.attributes.uiName, dataname: d.id} )
     })
-    console.log('test1') // appears in log
-    console.log(toJS(store.storeType.stringList) ) // do we need to console.log this? it does NOT appear
-    console.log('test2') // does NOT appear in log
+    console.log(toJS(store.metricsList.stringList) ) // do we need to console.log this? it does NOT appear
+    console.log(toJS(store.dimensionsList.stringList) ) // do we need to console.log this? it does NOT appear
 }
 
 // 	Top level function that contains promises for both Metrics and Dimensions
@@ -154,49 +122,7 @@ const pushCombinedMetadata = (store) => {
     Promise.all( promises )
     	.then( preSortMetadata )
     	.then( sortMetadata )
-    	.then( storePush )	
-    	// .then(
-    	// 	results => {
-    	// 		const filteredMetadata = filterMetadata(results[0])
-    	// 		const filteredCustomMetrics = filterCustomMetadata(results[1])
-    	// 		const filteredCustomDimensions = filterCustomMetadata(results[2])
-    	// 		const mappedCustomMetrics = mapCustomMetadata(filteredCustomMetrics)
-    	// 		const mappedCustomDimensions = mapCustomMetadata(filteredCustomDimensions)
-    	// 		// const combinedMetadata = 
-    	// 		return filteredMetadata
-    	// 				.concat(mappedCustomMetrics)
-    	// 				.concat(mappedCustomDimensions)
-    	// } )
-    	// .then( mapCustomMetadata )
-    		// const standardMetrics = filterMetadata(results[0])[0]
-    		// const filterMetrics = filterCustomMetadata(results[1])
-    		// return combineMetadata(standardMetrics, filterMetrics)
-    	// .then( sortMetadata )
-    	// .then( storePush )	
-
- 	/* 	promise that combines standard and custom METRICS;
- 		sorts it;
- 		then pushes to the METRICS LIST store */
-    // Promise.all( [metadata, customMetrics] )
-    // 	.then( results => {
-    // 		const standardMetrics = filterMetadata(results[0])[0] //
-    // 		const filterMetrics = filterCustomMetadata(results[1])
-    // 		return combineMetadata(standardMetrics, filterMetrics)
-    // 	} )
-    // 	.then( sortMetadata )
-    // 	.then( storePush )
-
- 	/* 	promise that combines standard and custom DIMENSIONS;
- 		sorts it;
- 		then pushes to the DIMENSIONS LIST store */
-    // Promise.all( [metadata, customDimensions] )
-    // 	.then( results => {
-    // 		const standardDimensions = filterMetadata(results[0])[1]
-    // 		const filterDimensions = filterCustomMetadata(results[1])
-    // 		return combineMetadata(standardDimensions, filterDimensions)
-    // 	} )
-    // 	.then( sortMetadata )
-    // 	.then( storePush )    	
+    	.then( storePush )	  	
 }
 
 export { getMetadata, filterMetadata, getCustomMetadata, pushCombinedMetadata, storePush, preSortMetadata };
