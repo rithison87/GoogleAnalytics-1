@@ -1,7 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 import _ from 'lodash'
-import * as dimensions from '../utils/dimensions'
+// import * as dimensions from '../utils/dimensions'
 
 class DimensionMessage extends React.Component {
   constructor(props) {
@@ -10,15 +10,13 @@ class DimensionMessage extends React.Component {
   }
 
   addClass(total) {
-    return total < 1 || total > 7 ? 'warning' : ''
+    return total > 7 ? 'warning' : ''
   }
 
   messageText(total) {
     let text
-    
-    if (total < 1) {
-      text = 'At least one dimension must be selected.';
-    } else if (total > 7) {
+
+    if (total > 7) {
       text = 'Maximum of seven dimensions can be chosen.  Please remove dimension(s).';
     } else {
       text = '';
@@ -28,8 +26,8 @@ class DimensionMessage extends React.Component {
   }
 
   render() {
-    let dimensions = this.store.dimensionsList.selection
-    let goals = this.store.dimensionsGoalsList.selection
+    let dimensions = this.store.dimensionsList.selectedValues
+    let goals = this.store.dimensionsGoalsList.selectedValues
     let total = this.store.totalDimensionsAndGoals
     let text = this.messageText(total)
     let divClass = this.addClass(total)
@@ -58,4 +56,4 @@ class DimensionMessage extends React.Component {
   }
 }
 
-export default observer(DimensionMessage); 
+export default observer(DimensionMessage);

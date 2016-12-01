@@ -1,7 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 import _ from 'lodash'
-import * as metrics from '../utils/metrics'
+//import * as metrics from '../utils/metrics'
 
 class MetricMessage extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class MetricMessage extends React.Component {
 
   messageText(total) {
     let text
-    
+
     if (total < 1) {
       text = 'At least one metric must be selected.';
     } else if (total > 10) {
@@ -28,8 +28,8 @@ class MetricMessage extends React.Component {
   }
 
   render() {
-    let metrics = this.store.metricsList.selection
-    let goals = this.store.metricsGoalsList.selection
+    let metrics = this.store.metricsList.selectedValues
+    let goals = this.store.metricsGoalsList.selectedValues
     let total = this.store.totalMetricsAndGoals
     let text = this.messageText(total)
     let divClass = this.addClass(total)
@@ -58,4 +58,4 @@ class MetricMessage extends React.Component {
   }
 }
 
-export default observer(MetricMessage); 
+export default observer(MetricMessage);
