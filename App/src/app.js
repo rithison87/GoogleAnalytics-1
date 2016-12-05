@@ -3,18 +3,21 @@ import ReactDOM from 'react-dom'
 import Hello from './components/hello'
 import { setFreshAccessToken, getAccessTokenAjaxCall, login, gup, validateToken, displayFieldset } from './utils/utils'
 import AyxStore from './stores/AyxStore'
-import * as metrics from './utils/metrics'
-import * as dimensions from './utils/dimensions'
+// import * as metrics from './utils/metrics'
+// import * as dimensions from './utils/dimensions'
 import * as accounts from './utils/accountUtils'
-import { toJS } from 'mobx'
+import * as metadataRequest from './utils/metadataRequest'
+import { toJS, extendObservable } from 'mobx'
 import * as goals from './utils/goals'
 import MetricMessage from './components/metricMessage'
+import DimensionMessage from './components/dimensionMessage'
 
 Alteryx.Gui.AfterLoad = (manager) => {
 
   // Adds metrics.metricsSelectionCheck to UserDataChanged of metricsList
-  metrics.bindMetricCheck()
-  dimensions.bindDimensionCheck()
+  // bind functions no longer necessary due to metricMessage.js and dimensionMessage.js
+  // metrics.bindMetricCheck()
+  // dimensions.bindDimensionCheck()
 
   const collection = [
     {key: 'client_id', type: 'value'},
@@ -30,10 +33,30 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'dimensionsList', type: 'listBox'},
   ]
 
+  //Instantiate the mobx store which will sync all dataItems
+  //specified in the collection.
   const store = new AyxStore(manager, collection)
 
-  ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'));
+ //Add computed value to store that tracks total selections for metrics and metric goals.
+  extendObservable(store,{
+    totalMetricsAndGoals: () => {
+      let total = store.metricsList.selection.length + store.metricsGoalsList.selection.length
+      return total;
+    }
+  })
+  //Add computed value to store that tracks total selections for dimensions and dimension goals.
+  extendObservable(store,{
+    totalDimensionsAndGoals: () => {
+      let total = store.dimensionsList.selection.length + store.dimensionsGoalsList.selection.length
+      return total;
+    }
+  })
 
+  //Render react component which handles Metric selection messaging.
+  ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'));
+  //Render react component which handles Dimension selection messaging.
+  ReactDOM.render(<DimensionMessage store={store} />, document.querySelector('#selectedDimensions'));
+  //hardcoded credentials for development only.
   store.client_id = "734530915454-u7qs1p0dvk5d3i0hogfr0mpmdnjj24u2.apps.googleusercontent.com"
   store.client_secret = "Fty30QrWsKLQW-TmyJdrk9qf"
   store.refresh_token = "1/58fo4PUozzcHFs2VJaY23wxyHc-x3-pb-2dUbNw33W4"
@@ -43,10 +66,10 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   //create promise that will run combinedMetricsMetadata and show metrics fieldset
 
-  metrics.combinedMetricsMetadata(store.accessToken, store)
-  dimensions.combinedDimensionsMetadata(store.accessToken,store)
+  metadataRequest.pushCombinedMetadata(store)
   goals.populateMetricsGoalsList(store)
   goals.populateDimensionsGoalsList(store)
+
 
   window.optionList = optionList
 
@@ -64,13 +87,13 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.combinedMetricsMetadata = metrics.combinedMetricsMetadata
 
-  window.metricsSelectionCheck = metrics.metricsSelectionCheck
+  // window.metricsSelectionCheck = metrics.metricsSelectionCheck
 
-  window.bindMetricCheck = metrics.bindMetricCheck
+  // window.bindMetricCheck = metrics.bindMetricCheck
 
-  window.noMetricsSelectedWarning = metrics.noMetricsSelectedWarning
+  // window.noMetricsSelectedWarning = metrics.noMetricsSelectedWarning
 
-  window.noDimensionsSelectedWarning = dimensions.noDimensionsSelectedWarning
+  // window.noDimensionsSelectedWarning = dimensions.noDimensionsSelectedWarning
 
   window.populateAccountsList = accounts.populateAccountsList
 
