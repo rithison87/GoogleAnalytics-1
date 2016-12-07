@@ -9,7 +9,7 @@ class AyxStore extends ObservableStore {
       const item = manager.GetDataItem(dataItemName)
       if (d.type === 'value') {
         item.UserDataChanged.push(() => {
-          store[d.key] = item.value;
+          store[d.key] = item.getValue();
         })
       } else if (d.type === 'dropDown') {
         item.UserDataChanged.push(() => {
