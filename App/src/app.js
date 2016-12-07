@@ -10,7 +10,7 @@ import * as metadataRequest from './utils/metadataRequest'
 import { toJS, extendObservable } from 'mobx'
 import * as goals from './utils/goals'
 import MetricMessage from './components/metricMessage'
-import DimensionMessage from './components/dimensionMessage'
+import DimensionMessage from './components/dimensionMessage.jsx'
 
 Alteryx.Gui.AfterLoad = (manager) => {
 
