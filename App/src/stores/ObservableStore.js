@@ -5,7 +5,7 @@ class ObservableStore {
   // Takes as arguments the alteryx manager,
   // and the key:value list of objects
   // to observe. List is made up of dataItem, and type (value or json) objects.
-  constructor(manager, collection) {
+  constructor (manager, collection) {
     collection.forEach((d) => {
       // store Alteryx dataItem object as "item"
       const item = manager.GetDataItemByDataName(d.key);

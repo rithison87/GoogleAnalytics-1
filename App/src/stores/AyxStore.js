@@ -1,7 +1,7 @@
 import ObservableStore from './ObservableStore';
 
 class AyxStore extends ObservableStore {
-  constructor(manager, collection) {
+  constructor (manager, collection) {
     super(manager, collection)
 
     collection.forEach((d) => {
