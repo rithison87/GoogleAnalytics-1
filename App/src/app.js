@@ -4,7 +4,7 @@ import { setFreshAccessToken, getAccessTokenAjaxCall, login, gup, validateToken,
 import AyxStore from './stores/AyxStore'
 import * as accounts from './utils/accountUtils'
 import * as metadataRequest from './utils/metadataRequest'
-import { toJS, extendObservable } from 'mobx'
+import { toJS, extendObservable, autorun } from 'mobx'
 import * as goals from './utils/goals'
 import MetricMessage from './components/metricMessage.jsx'
 import DimensionMessage from './components/dimensionMessage.jsx'
@@ -48,7 +48,27 @@ Alteryx.Gui.AfterLoad = (manager) => {
       return total;
     }
   })
+  // Using an autorun function to watch store.webPropertiesList.selection.  If
+  // it changes, trigger the accounts.populateProfilesMenu function.
+  autorun(() => {
+    if (store.webPropertiesList.selection !== '' && store.webPropertiesList.stringList.length > 0) {
+      accounts.populateProfilesMenu(store)
+    }
+  })
+  autorun(() => {
+    if (store.accessToken !== '' || store.accountsList.stringList.length < 1) {
+      accounts.populateAccountsList(store)
+      metadataRequest.pushCombinedMetadata(store)
+      goals.populateMetricsGoalsList(store)
+      goals.populateDimensionsGoalsList(store)
+    }
+  })
 
+  autorun(() => {
+    if (store.accountsList.selection !== '') {
+      accounts.populateWebPropertiesList(store);
+    }
+  })
   // Render react component which handles Metric selection messaging.
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'));
   // Render react component which handles Dimension selection messaging.
@@ -63,9 +83,9 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   // create promise that will run combinedMetricsMetadata and show metrics fieldset
 
-  metadataRequest.pushCombinedMetadata(store)
-  goals.populateMetricsGoalsList(store)
-  goals.populateDimensionsGoalsList(store)
+  // metadataRequest.pushCombinedMetadata(store)
+  // goals.populateMetricsGoalsList(store)
+  // goals.populateDimensionsGoalsList(store)
 
   window.optionList = optionList
 
@@ -88,6 +108,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.populateDimensionsGoalsList = goals.populateDimensionsGoalsList
 
   accounts.populateAccountsList(store)
-  accounts.populateWebPropertiesList(store)
+
+  // accounts.populateWebPropertiesList(store)
   // accounts.populateProfilesMenu(store)
 }
