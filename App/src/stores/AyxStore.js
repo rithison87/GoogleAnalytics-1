@@ -1,16 +1,15 @@
 import ObservableStore from './ObservableStore';
-import { autorun, computed, toJS } from 'mobx';
 
 class AyxStore extends ObservableStore {
-  constructor(manager, collection) {
+  constructor (manager, collection) {
     super(manager, collection)
 
-    collection.forEach( (d) => {
+    collection.forEach((d) => {
       const dataItemName = d.key;
       const item = manager.GetDataItem(dataItemName)
       if (d.type === 'value') {
         item.UserDataChanged.push(() => {
-          store[d.key] = item.value;
+          store[d.key] = item.getValue();
         })
       } else if (d.type === 'dropDown') {
         item.UserDataChanged.push(() => {
@@ -23,15 +22,8 @@ class AyxStore extends ObservableStore {
           store[d.key].selection = item.value;
         })
       }
-
     });
   }
 }
 
 export default AyxStore;
-
-/*
-  manager.GetDataItem('client_id').UserDataChanged.push(() => {
-    store.client_id = manager.GetDataItem('client_id').value;
-  })
-*/
