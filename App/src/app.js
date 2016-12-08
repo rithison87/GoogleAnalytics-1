@@ -51,11 +51,24 @@ Alteryx.Gui.AfterLoad = (manager) => {
   // Using an autorun function to watch store.webPropertiesList.selection.  If
   // it changes, trigger the accounts.populateProfilesMenu function.
   autorun(() => {
-    if (store.webPropertiesList.selection) {
+    if (store.webPropertiesList.selection !== '') {
       accounts.populateProfilesMenu(store)
     }
   })
+  autorun(() => {
+    if (store.accessToken !== '') {
+      accounts.populateAccountsList(store)
+      metadataRequest.pushCombinedMetadata(store)
+      goals.populateMetricsGoalsList(store)
+      goals.populateDimensionsGoalsList(store)
+    }
+  })
 
+  autorun(() => {
+    if (store.accountsList.selection !== '') {
+      accounts.populateWebPropertiesList(store);
+    }
+  })
   // Render react component which handles Metric selection messaging.
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'));
   // Render react component which handles Dimension selection messaging.
@@ -70,9 +83,9 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   // create promise that will run combinedMetricsMetadata and show metrics fieldset
 
-  metadataRequest.pushCombinedMetadata(store)
-  goals.populateMetricsGoalsList(store)
-  goals.populateDimensionsGoalsList(store)
+  // metadataRequest.pushCombinedMetadata(store)
+  // goals.populateMetricsGoalsList(store)
+  // goals.populateDimensionsGoalsList(store)
 
   window.optionList = optionList
 
@@ -94,7 +107,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.populateDimensionsGoalsList = goals.populateDimensionsGoalsList
 
-  accounts.populateAccountsList(store)
-  accounts.populateWebPropertiesList(store)
+  // accounts.populateWebPropertiesList(store)
   // accounts.populateProfilesMenu(store)
 }
