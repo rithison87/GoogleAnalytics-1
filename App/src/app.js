@@ -4,7 +4,7 @@ import { setFreshAccessToken, getAccessTokenAjaxCall, login, gup, validateToken,
 import AyxStore from './stores/AyxStore'
 import * as accounts from './utils/accountUtils'
 import * as metadataRequest from './utils/metadataRequest'
-import { toJS, extendObservable } from 'mobx'
+import { toJS, extendObservable, autorun } from 'mobx'
 import * as goals from './utils/goals'
 import MetricMessage from './components/metricMessage.jsx'
 import DimensionMessage from './components/dimensionMessage.jsx'
@@ -46,6 +46,13 @@ Alteryx.Gui.AfterLoad = (manager) => {
     totalDimensionsAndGoals: () => {
       let total = store.dimensionsList.selection.length + store.dimensionsGoalsList.selection.length
       return total;
+    }
+  })
+  // Using an autorun function to watch store.webPropertiesList.selection.  If
+  // it changes, trigger the accounts.populateProfilesMenu function.
+  autorun(() => {
+    if (store.webPropertiesList.selection) {
+      accounts.populateProfilesMenu(store)
     }
   })
 
