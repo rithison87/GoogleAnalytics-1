@@ -9,8 +9,10 @@ import * as accounts from './utils/accountUtils'
 import * as metadataRequest from './utils/metadataRequest'
 import { toJS, extendObservable } from 'mobx'
 import * as goals from './utils/goals'
+import * as segments from './utils/segments'
 import MetricMessage from './components/metricMessage'
 import DimensionMessage from './components/dimensionMessage'
+import SegmentMessage from './components/SegmentMessage'
 
 Alteryx.Gui.AfterLoad = (manager) => {
 
@@ -31,6 +33,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'webPropertiesList', type: 'dropDown'},
     {key: 'profilesList', type: 'dropDown'},
     {key: 'dimensionsList', type: 'listBox'},
+    {key: 'segmentsList', type: 'listBox'}
   ]
 
   //Instantiate the mobx store which will sync all dataItems
@@ -52,10 +55,19 @@ Alteryx.Gui.AfterLoad = (manager) => {
     }
   })
 
+  extendObservable(store,{
+    totalSegments: () => {
+      let total = store.segmentsList.selection.length 
+      return total;
+    }
+  })
+
   //Render react component which handles Metric selection messaging.
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'));
   //Render react component which handles Dimension selection messaging.
   ReactDOM.render(<DimensionMessage store={store} />, document.querySelector('#selectedDimensions'));
+  //Render react component which handles Segment selection messaging.
+  ReactDOM.render(<SegmentMessage store={store} />, document.querySelector('#selectedSegments'));
   //hardcoded credentials for development only.
   store.client_id = "734530915454-u7qs1p0dvk5d3i0hogfr0mpmdnjj24u2.apps.googleusercontent.com"
   store.client_secret = "Fty30QrWsKLQW-TmyJdrk9qf"
@@ -69,6 +81,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
   metadataRequest.pushCombinedMetadata(store)
   goals.populateMetricsGoalsList(store)
   goals.populateDimensionsGoalsList(store)
+  segments.populateSegmentsList(store)
 
 
   window.optionList = optionList
@@ -106,6 +119,10 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.populateDimensionsGoalsList = goals.populateDimensionsGoalsList
 
   window.combinedDimensionsMetadata = dimensions.combinedDimensionsMetadata
+
+  window.getSegmentsMetadata = segments.getSegmentsMetadata
+
+  window.populateSegmentsList = segments.populateSegmentsList
 
   populateAccountsList(store)
   populateWebPropertiesList(store)
