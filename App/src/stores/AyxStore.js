@@ -9,17 +9,17 @@ class AyxStore extends ObservableStore {
       const item = manager.GetDataItem(dataItemName)
       if (d.type === 'value') {
         item.UserDataChanged.push(() => {
-          store[d.key] = item.getValue();
+          this[d.key] = item.getValue();
         })
       } else if (d.type === 'dropDown') {
         item.UserDataChanged.push(() => {
-          store[d.key].stringList = item.StringList.enums;
-          store[d.key].selection = item.value;
+          this[d.key].stringList = item.StringList.enums;
+          this[d.key].selection = item.value;
         })
       } else if (d.type === 'listBox') {
         item.UserDataChanged.push(() => {
-          store[d.key].stringList = item.StringList.enums;
-          store[d.key].selection = item.value;
+          this[d.key].stringList = item.StringList.enums;
+          this[d.key].selection = item.value;
         })
       }
     });
