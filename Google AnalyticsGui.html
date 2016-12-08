@@ -221,6 +221,21 @@ Google Analytics Input GUI
         </div>
     </fieldset>
 
+<!-- Segments fieldset -->
+    <fieldset id="segments" style="display:block;"><!--Add a display:none during process story-->
+        <legend>Select Segments to Include (Optional)</legend>
+        <hr>
+        <p class="selectionLegend">Select up to four segments...</p>
+        <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
+          ismultiselect="true" issearchable="true" id="segmentsList" dataName="segmentsList" showsearchrow="true"></alteryx-pluginwidget>
+        <div id="selectedSegments"></div>
+        <div>
+            <!-- Add id name and onclick function during process story -->
+            <button type="submit" class="nextBtn" id="" onclick="">Next</button>
+            <button class="prevBtn" id="" onclick="">Previous</button>
+        </div>
+    </fieldset>    
+
 <!-- fieldset for the non-captured fields -->
     <fieldset id="token" style="display:none">
         <alteryx-pluginwidget type="TextBox" id="dataItemAccessToken" dataName="accessToken"></alteryx-pluginwidget>
