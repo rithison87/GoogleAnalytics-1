@@ -51,12 +51,12 @@ Alteryx.Gui.AfterLoad = (manager) => {
   // Using an autorun function to watch store.webPropertiesList.selection.  If
   // it changes, trigger the accounts.populateProfilesMenu function.
   autorun(() => {
-    if (store.webPropertiesList.selection !== '') {
+    if (store.webPropertiesList.selection !== '' && store.webPropertiesList.stringList.length > 0) {
       accounts.populateProfilesMenu(store)
     }
   })
   autorun(() => {
-    if (store.accessToken !== '') {
+    if (store.accessToken !== '' || store.accountsList.stringList.length < 1) {
       accounts.populateAccountsList(store)
       metadataRequest.pushCombinedMetadata(store)
       goals.populateMetricsGoalsList(store)
@@ -106,6 +106,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.populateMetricsGoalsList = goals.populateMetricsGoalsList
 
   window.populateDimensionsGoalsList = goals.populateDimensionsGoalsList
+
+  accounts.populateAccountsList(store)
 
   // accounts.populateWebPropertiesList(store)
   // accounts.populateProfilesMenu(store)
