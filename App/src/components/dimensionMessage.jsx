@@ -1,7 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react'
-import _ from 'lodash'
-import * as dimensions from '../utils/dimensions'
+
+const PropTypes = React.PropTypes
 
 class DimensionMessage extends React.Component {
   constructor(props) {
@@ -10,29 +10,27 @@ class DimensionMessage extends React.Component {
   }
 
   addClass(total) {
-    return total < 1 || total > 7 ? 'warning' : ''
+    return total > 7 ? 'warning' : ''
   }
 
   messageText(total) {
     let text
-    
-    if (total < 1) {
-      text = 'At least one dimension must be selected.';
-    } else if (total > 7) {
+
+    if (total > 7) {
       text = 'Maximum of seven dimensions can be chosen.  Please remove dimension(s).';
     } else {
       text = '';
-    };
+    }
 
     return text;
   }
 
   render() {
-    let dimensions = this.store.dimensionsList.selection
-    let goals = this.store.dimensionsGoalsList.selection
-    let total = this.store.totalDimensionsAndGoals
-    let text = this.messageText(total)
-    let divClass = this.addClass(total)
+    const dimensions = this.store.dimensionsList.selectedValues
+    const goals = this.store.dimensionsGoalsList.selectedValues
+    const total = this.store.totalDimensionsAndGoals
+    const text = this.messageText(total)
+    const divClass = this.addClass(total)
 
     return (
       <div>
@@ -40,13 +38,15 @@ class DimensionMessage extends React.Component {
           <div className="selectionMessage-inner">
             {
               // onClick={() => this.clicked(idx)}
-              dimensions.map((selection, idx) => <p className="selectionMessage-btn" key={idx}>{selection}</p>)
+              dimensions.map((selection, idx) => (
+                <p className="selectionMessage-btn" key={idx}>{selection}</p>))
             }
           </div>
         Selected Goals:
           <div className="selectionMessage-inner">
             {
-              goals.map((selection, idx) => <p className="selectionMessage-btn" key={idx}>{selection}</p>)
+              goals.map((selection, idx) => (
+                <p className="selectionMessage-btn" key={idx}>{selection}</p>))
             }
           </div>
           <div id="dimensionWarning" className={divClass}>
@@ -58,4 +58,8 @@ class DimensionMessage extends React.Component {
   }
 }
 
-export default observer(DimensionMessage); 
+DimensionMessage.propTypes = {
+  store: PropTypes.object
+}
+
+export default observer(DimensionMessage);

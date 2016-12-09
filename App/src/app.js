@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Hello from './components/hello'
 import { setFreshAccessToken, getAccessTokenAjaxCall, login, gup, validateToken, displayFieldset } from './utils/utils'
 import AyxStore from './stores/AyxStore'
-import * as metrics from './utils/metrics'
-import * as dimensions from './utils/dimensions'
 import * as accounts from './utils/accountUtils'
-import { toJS, extendObservable } from 'mobx'
+import * as metadataRequest from './utils/metadataRequest'
+import { toJS, extendObservable, autorun } from 'mobx'
 import * as goals from './utils/goals'
-import MetricMessage from './components/metricMessage'
-import DimensionMessage from './components/dimensionMessage'
+import MetricMessage from './components/metricMessage.jsx'
+import DimensionMessage from './components/dimensionMessage.jsx'
+import moment from 'moment'
+import * as picker from './utils/datePickers'
 
 Alteryx.Gui.AfterLoad = (manager) => {
 
@@ -30,39 +30,54 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'webPropertiesList', type: 'dropDown'},
     {key: 'profilesList', type: 'dropDown'},
     {key: 'dimensionsList', type: 'listBox'},
+    {key: 'startDatePicker', type: 'value'},
+    {key: 'endDatePicker', type: 'value'},
+    {key: 'preDefDropDown', type: 'value'},
   ]
 
+  // Instantiate the mobx store which will sync all dataItems
+  // specified in the collection.
   const store = new AyxStore(manager, collection)
 
-  extendObservable(store,{
+ // Add computed value to store that tracks total selections for metrics and metric goals.
+  extendObservable(store, {
     totalMetricsAndGoals: () => {
       let total = store.metricsList.selection.length + store.metricsGoalsList.selection.length
       return total;
     }
-  }) 
-
-  extendObservable(store,{
+  })
+  // Add computed value to store that tracks total selections for dimensions and dimension goals.
+  extendObservable(store, {
     totalDimensionsAndGoals: () => {
       let total = store.dimensionsList.selection.length + store.dimensionsGoalsList.selection.length
       return total;
     }
-  }) 
+  })
+  
+  // Using an autorun function to watch store.webPropertiesList.selection.  If
+  // it changes, trigger the accounts.populateProfilesMenu function.
+  autorun(() => {
+    if (store.preDefDropDown !== 'custom') {
+      store.startDatePicker = picker.setDates(store.preDefDropDown).start
+      store.endDatePicker = picker.setDates(store.preDefDropDown).end
+    }
+  })
 
+  // Render react component which handles Metric selection messaging.
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'));
-    
+  // Render react component which handles Dimension selection messaging.
   ReactDOM.render(<DimensionMessage store={store} />, document.querySelector('#selectedDimensions'));
+  // hardcoded credentials for development only.
+  store.client_id = '734530915454-u7qs1p0dvk5d3i0hogfr0mpmdnjj24u2.apps.googleusercontent.com'
+  store.client_secret = 'Fty30QrWsKLQW-TmyJdrk9qf'
+  store.refresh_token = '1/58fo4PUozzcHFs2VJaY23wxyHc-x3-pb-2dUbNw33W4'
 
-  store.client_id = "734530915454-u7qs1p0dvk5d3i0hogfr0mpmdnjj24u2.apps.googleusercontent.com"
-  store.client_secret = "Fty30QrWsKLQW-TmyJdrk9qf"
-  store.refresh_token = "1/58fo4PUozzcHFs2VJaY23wxyHc-x3-pb-2dUbNw33W4"
+  let optionList = [{uiobject: 'test1', dataname: 'test1 value'},
+                    {uiobject: 'test2', dataname: 'test2 value'}]
 
-  let optionList = [{uiobject:'test1', dataname: 'test1 value'},
-                    {uiobject:'test2', dataname: 'test2 value'}]
+  // create promise that will run combinedMetricsMetadata and show metrics fieldset
 
-  //create promise that will run combinedMetricsMetadata and show metrics fieldset
-
-  metrics.combinedMetricsMetadata(store.accessToken, store)
-  dimensions.combinedDimensionsMetadata(store.accessToken,store)
+  metadataRequest.pushCombinedMetadata(store)
   goals.populateMetricsGoalsList(store)
   goals.populateDimensionsGoalsList(store)
 
@@ -76,20 +91,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.displayFieldset = displayFieldset
 
-  window.getMetricsMetadata = metrics.getMetricsMetadata
-
-  window.getCustomMetricsMetadata = metrics.getCustomMetricsMetadata
-
-  window.combinedMetricsMetadata = metrics.combinedMetricsMetadata
-
-  // window.metricsSelectionCheck = metrics.metricsSelectionCheck
-
-  // window.bindMetricCheck = metrics.bindMetricCheck
-
-  // window.noMetricsSelectedWarning = metrics.noMetricsSelectedWarning
-
-  // window.noDimensionsSelectedWarning = dimensions.noDimensionsSelectedWarning
-
   window.populateAccountsList = accounts.populateAccountsList
 
   window.populateWebPropertiesList = accounts.populateWebPropertiesList
@@ -100,14 +101,13 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.populateDimensionsGoalsList = goals.populateDimensionsGoalsList
 
-  window.combinedDimensionsMetadata = dimensions.combinedDimensionsMetadata
+  window.moment = moment
 
-  populateAccountsList(store)
-  populateWebPropertiesList(store)
-  // populateProfilesMenu(store)
+  window.getDates = picker.getDates
+
+  window.setDates = picker.setDates
+
+  accounts.populateAccountsList(store)
+  accounts.populateWebPropertiesList(store)
+  // accounts.populateProfilesMenu(store)
 }
-
-
-
-//window.setFreshAccessToken = setFreshAccessToken;
-//window.getAccessTokenAjaxCall = getAccessTokenAjaxCall;
