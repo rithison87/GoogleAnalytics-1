@@ -8,6 +8,7 @@ import { toJS, extendObservable, autorun } from 'mobx'
 import * as goals from './utils/goals'
 import MetricMessage from './components/metricMessage.jsx'
 import DimensionMessage from './components/dimensionMessage.jsx'
+import * as moment from 'moment'
 
 Alteryx.Gui.AfterLoad = (manager) => {
 
@@ -27,7 +28,10 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'accountsList', type: 'dropDown'},
     {key: 'webPropertiesList', type: 'dropDown'},
     {key: 'profilesList', type: 'dropDown'},
-    {key: 'dimensionsList', type: 'listBox'}
+    {key: 'dimensionsList', type: 'listBox'},
+    {key: 'startDatePicker', type: 'value'},
+    {key: 'endDatePicker', type: 'value'},
+    {key: 'preDefDropDown', type: 'value'},
   ]
 
   // Instantiate the mobx store which will sync all dataItems
@@ -48,6 +52,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
       return total;
     }
   })
+  
   // Using an autorun function to watch store.webPropertiesList.selection.  If
   // it changes, trigger the accounts.populateProfilesMenu function.
   autorun(() => {
@@ -93,6 +98,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.populateMetricsGoalsList = goals.populateMetricsGoalsList
 
   window.populateDimensionsGoalsList = goals.populateDimensionsGoalsList
+
+  // window.moment = moment.moment()
 
   accounts.populateAccountsList(store)
   accounts.populateWebPropertiesList(store)
