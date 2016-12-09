@@ -102,34 +102,36 @@ const combinedMetricsMetadata = (accessToken, store) => {
         })
 }
 
+// COMMENTED OUT SECTIONS - NO LONGER NEEDED DUE TO metricMessage.js
 // displays warning if no metrics are selection and if more than 10 metrics are selected
-const metricsSelectionCheck = () => {
-    if (store.metricsList.selection.length < 11) {
-        console.log("metrics selected: " + store.metricsList.selection.length)
-        document.getElementById('maxMetrics').className = ''
-        document.getElementById('maxMetrics').innerHTML = ''
-    } else {
-        console.log("Max of 10 metrics: " + store.metricsList.selection.length)
-        document.getElementById('maxMetrics').className = 'tooMany'
-        document.getElementById('maxMetrics').innerHTML = '<div style="display:inline-block;vertical-align:middle;text-align:center;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAFMandsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAADRSURBVChTtZOxDcIwEEWZI/SIFaiZhREYhmFoKRApkOgo6IjoUCgIJrbxnfFxjh1jhPKlr7N/nr8URxndt4V2ztgkFupR4aSQi0LueODUH3AHQcweJI4LrIPJc4LkbYeArDd2mn0ApfwV+g1o9jM0zzzAiWcEPKuV1m2NhnUHGNujqrU2gowAJS4YckHGGvr9P5Dj4UvkdY0vDjNVGi8pJ+bXOOP9wx4m7CEPWOOgpDnM6dvwEpTJ4Xn3jFciTksLO0FJOf2UvAUcPzf8xea50C8xwHD+EY9YyQAAAABJRU5ErkJggg==" alt="warningIcon.png"/></div><div style="display:inline-block;vertical-align:middle;text-align:center;">&nbsp;&nbsp;Must select ten or fewer metrics</div>'
-    }
-}
+// const metricsSelectionCheck = () => {
+//     if (store.metricsList.selection.length < 11) {
+//         console.log("metrics selected: " + store.metricsList.selection.length)
+//         document.getElementById('maxMetrics').className = ''
+//         document.getElementById('maxMetrics').innerHTML = ''
+//     } else {
+//         console.log("Max of 10 metrics: " + store.metricsList.selection.length)
+//         let excess = store.metricsList.selection.length - 10
+//         document.getElementById('maxMetrics').className = 'tooMany'
+//         document.getElementById('maxMetrics').innerHTML = '<div>Maximum of ten metrics can be chosen.  Please remove '+excess+' metric(s).</div>'
+//     }
+// }
 
 // Warning if no metrics are selection - trigger when they try to go to the next config window
-const noMetricsSelectedWarning = () => {
-    if (store.metricsList.selection.length < 1) {
-        console.log("must select at least 1 metric")
-        document.getElementById('maxMetrics').className = 'tooMany'
-        document.getElementById('maxMetrics').innerHTML = '<div style="display:inline-block;vertical-align:middle;text-align:center;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAFMandsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAADRSURBVChTtZOxDcIwEEWZI/SIFaiZhREYhmFoKRApkOgo6IjoUCgIJrbxnfFxjh1jhPKlr7N/nr8URxndt4V2ztgkFupR4aSQi0LueODUH3AHQcweJI4LrIPJc4LkbYeArDd2mn0ApfwV+g1o9jM0zzzAiWcEPKuV1m2NhnUHGNujqrU2gowAJS4YckHGGvr9P5Dj4UvkdY0vDjNVGi8pJ+bXOOP9wx4m7CEPWOOgpDnM6dvwEpTJ4Xn3jFciTksLO0FJOf2UvAUcPzf8xea50C8xwHD+EY9YyQAAAABJRU5ErkJggg==" alt="warningIcon.png"/></div><div style="display:inline-block;vertical-align:middle;text-align:center;">&nbsp;&nbsp;Must select one or more metrics</div>';
-    } else {
-        document.getElementById('maxMetrics').className = ''
-        document.getElementById('maxMetrics').innerHTML = ''
-    }
-}
+// const noMetricsSelectedWarning = () => {
+//     if (store.metricsList.selection.length < 1) {
+//         console.log("must select at least 1 metric")
+//         document.getElementById('maxMetrics').className = 'warning'
+//         document.getElementById('maxMetrics').innerHTML = 'At least one metric must be selected.';
+//     } else {
+//         document.getElementById('maxMetrics').className = ''
+//         document.getElementById('maxMetrics').innerHTML = ''
+//     }
+// }
 
 // binds the metricsSelectionCheck to metricsList and runs it each time 
-const bindMetricCheck = () => {
-    Alteryx.Gui.manager.GetDataItem('metricsList').UserDataChanged.push(metricsSelectionCheck)
-}
+// const bindMetricCheck = () => {
+//     Alteryx.Gui.manager.GetDataItem('metricsList').UserDataChanged.push(metricsSelectionCheck)
+// }
 
-export { getMetricsMetadata, getCustomMetricsMetadata, combinedMetricsMetadata, metricsStorePush, metricsSelectionCheck, bindMetricCheck, noMetricsSelectedWarning };
+export { getMetricsMetadata, getCustomMetricsMetadata, combinedMetricsMetadata, metricsStorePush };

@@ -4,16 +4,19 @@ import Hello from './components/hello'
 import { setFreshAccessToken, getAccessTokenAjaxCall, login, gup, validateToken, displayFieldset } from './utils/utils'
 import AyxStore from './stores/AyxStore'
 import * as metrics from './utils/metrics'
+import * as dimensions from './utils/dimensions'
 import * as accounts from './utils/accountUtils'
-import { toJS } from 'mobx'
+import { toJS, extendObservable } from 'mobx'
+import * as goals from './utils/goals'
+import MetricMessage from './components/metricMessage'
+import DimensionMessage from './components/dimensionMessage'
 
 Alteryx.Gui.AfterLoad = (manager) => {
 
-
-
-
   // Adds metrics.metricsSelectionCheck to UserDataChanged of metricsList
-  metrics.bindMetricCheck()
+  // bind functions no longer necessary due to metricMessage.js and dimensionMessage.js
+  // metrics.bindMetricCheck()
+  // dimensions.bindDimensionCheck()
 
   const collection = [
     {key: 'client_id', type: 'value'},
@@ -21,13 +24,33 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'refresh_token', type: 'value'},
     {key: 'accessToken', type: 'value'},
     {key: 'metricsList', type: 'listBox'},
+    {key: 'metricsGoalsList', type: 'listBox'},
+    {key: 'dimensionsGoalsList', type: 'listBox'},
     {key: 'accountsList', type: 'dropDown'},
     {key: 'webPropertiesList', type: 'dropDown'},
     {key: 'profilesList', type: 'dropDown'},
+    {key: 'dimensionsList', type: 'listBox'},
   ]
 
-
   const store = new AyxStore(manager, collection)
+
+  extendObservable(store,{
+    totalMetricsAndGoals: () => {
+      let total = store.metricsList.selection.length + store.metricsGoalsList.selection.length
+      return total;
+    }
+  }) 
+
+  extendObservable(store,{
+    totalDimensionsAndGoals: () => {
+      let total = store.dimensionsList.selection.length + store.dimensionsGoalsList.selection.length
+      return total;
+    }
+  }) 
+
+  ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'));
+    
+  ReactDOM.render(<DimensionMessage store={store} />, document.querySelector('#selectedDimensions'));
 
   store.client_id = "734530915454-u7qs1p0dvk5d3i0hogfr0mpmdnjj24u2.apps.googleusercontent.com"
   store.client_secret = "Fty30QrWsKLQW-TmyJdrk9qf"
@@ -39,6 +62,9 @@ Alteryx.Gui.AfterLoad = (manager) => {
   //create promise that will run combinedMetricsMetadata and show metrics fieldset
 
   metrics.combinedMetricsMetadata(store.accessToken, store)
+  dimensions.combinedDimensionsMetadata(store.accessToken,store)
+  goals.populateMetricsGoalsList(store)
+  goals.populateDimensionsGoalsList(store)
 
   window.optionList = optionList
 
@@ -56,11 +82,13 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.combinedMetricsMetadata = metrics.combinedMetricsMetadata
 
-  window.metricsSelectionCheck = metrics.metricsSelectionCheck
+  // window.metricsSelectionCheck = metrics.metricsSelectionCheck
 
-  window.bindMetricCheck = metrics.bindMetricCheck
+  // window.bindMetricCheck = metrics.bindMetricCheck
 
-  window.noMetricsSelectedWarning = metrics.noMetricsSelectedWarning
+  // window.noMetricsSelectedWarning = metrics.noMetricsSelectedWarning
+
+  // window.noDimensionsSelectedWarning = dimensions.noDimensionsSelectedWarning
 
   window.populateAccountsList = accounts.populateAccountsList
 
@@ -68,7 +96,11 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.populateProfilesMenu = accounts.populateProfilesMenu
 
-  window.toJS = toJS
+  window.populateMetricsGoalsList = goals.populateMetricsGoalsList
+
+  window.populateDimensionsGoalsList = goals.populateDimensionsGoalsList
+
+  window.combinedDimensionsMetadata = dimensions.combinedDimensionsMetadata
 
   populateAccountsList(store)
   populateWebPropertiesList(store)
