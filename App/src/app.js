@@ -57,8 +57,9 @@ Alteryx.Gui.AfterLoad = (manager) => {
   // Using an autorun function to watch store.webPropertiesList.selection.  If
   // it changes, trigger the accounts.populateProfilesMenu function.
   autorun(() => {
-    if (store.webPropertiesList.selection) {
-      accounts.populateProfilesMenu(store)
+    if (store.preDefDropDown !== 'custom') {
+      store.startDatePicker = picker.setDates(store.preDefDropDown).start
+      store.endDatePicker = picker.setDates(store.preDefDropDown).end
     }
   })
 
@@ -102,7 +103,9 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.moment = moment
 
-  window.relDates = picker.relDates
+  window.getDates = picker.getDates
+
+  window.setDates = picker.setDates
 
   accounts.populateAccountsList(store)
   accounts.populateWebPropertiesList(store)
