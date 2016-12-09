@@ -8,7 +8,8 @@ import { toJS, extendObservable, autorun } from 'mobx'
 import * as goals from './utils/goals'
 import MetricMessage from './components/metricMessage.jsx'
 import DimensionMessage from './components/dimensionMessage.jsx'
-import * as moment from 'moment'
+import moment from 'moment'
+import * as picker from './utils/datePickers'
 
 Alteryx.Gui.AfterLoad = (manager) => {
 
@@ -99,7 +100,9 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.populateDimensionsGoalsList = goals.populateDimensionsGoalsList
 
-  // window.moment = moment.moment()
+  window.moment = moment
+
+  window.relDates = picker.relDates
 
   accounts.populateAccountsList(store)
   accounts.populateWebPropertiesList(store)
