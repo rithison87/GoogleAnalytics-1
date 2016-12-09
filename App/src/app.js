@@ -6,8 +6,10 @@ import * as accounts from './utils/accountUtils'
 import * as metadataRequest from './utils/metadataRequest'
 import { toJS, extendObservable, autorun } from 'mobx'
 import * as goals from './utils/goals'
+import * as segments from './utils/segments'
 import MetricMessage from './components/metricMessage.jsx'
 import DimensionMessage from './components/dimensionMessage.jsx'
+import SegmentMessage from './components/SegmentMessage'
 
 Alteryx.Gui.AfterLoad = (manager) => {
 
@@ -27,7 +29,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'accountsList', type: 'dropDown'},
     {key: 'webPropertiesList', type: 'dropDown'},
     {key: 'profilesList', type: 'dropDown'},
-    {key: 'dimensionsList', type: 'listBox'}
+    {key: 'dimensionsList', type: 'listBox'},
+    {key: 'segmentsList', type: 'listBox'}
   ]
 
   // Instantiate the mobx store which will sync all dataItems
@@ -51,28 +54,47 @@ Alteryx.Gui.AfterLoad = (manager) => {
   // Using an autorun function to watch store.webPropertiesList.selection.  If
   // it changes, trigger the accounts.populateProfilesMenu function.
   autorun(() => {
-    if (store.webPropertiesList.selection) {
+    if (store.webPropertiesList.selection !== '' && store.webPropertiesList.stringList.length > 0) {
       accounts.populateProfilesMenu(store)
     }
   })
+  autorun(() => {
+    if (store.accessToken !== '' || store.accountsList.stringList.length < 1) {
+      accounts.populateAccountsList(store)
+      metadataRequest.pushCombinedMetadata(store)
+      goals.populateMetricsGoalsList(store)
+      goals.populateDimensionsGoalsList(store)
+    }
+  })
 
+  autorun(() => {
+    if (store.accountsList.selection !== '') {
+      accounts.populateWebPropertiesList(store);
+    }
+  })
   // Render react component which handles Metric selection messaging.
+  extendObservable(store,{
+    totalSegments: () => {
+      let total = store.segmentsList.selection.length 
+      return total;
+    }
+  })
+
+  //Render react component which handles Metric selection messaging.
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'));
   // Render react component which handles Dimension selection messaging.
   ReactDOM.render(<DimensionMessage store={store} />, document.querySelector('#selectedDimensions'));
-  // hardcoded credentials for development only.
-  store.client_id = '734530915454-u7qs1p0dvk5d3i0hogfr0mpmdnjj24u2.apps.googleusercontent.com'
-  store.client_secret = 'Fty30QrWsKLQW-TmyJdrk9qf'
-  store.refresh_token = '1/58fo4PUozzcHFs2VJaY23wxyHc-x3-pb-2dUbNw33W4'
+  ReactDOM.render(<SegmentMessage store={store} />, document.querySelector('#selectedSegments'));
 
   let optionList = [{uiobject: 'test1', dataname: 'test1 value'},
                     {uiobject: 'test2', dataname: 'test2 value'}]
 
   // create promise that will run combinedMetricsMetadata and show metrics fieldset
 
-  metadataRequest.pushCombinedMetadata(store)
-  goals.populateMetricsGoalsList(store)
-  goals.populateDimensionsGoalsList(store)
+  // metadataRequest.pushCombinedMetadata(store)
+  // goals.populateMetricsGoalsList(store)
+  // goals.populateDimensionsGoalsList(store)
+  segments.populateSegmentsList(store)
 
   window.optionList = optionList
 
@@ -95,6 +117,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.populateDimensionsGoalsList = goals.populateDimensionsGoalsList
 
   accounts.populateAccountsList(store)
-  accounts.populateWebPropertiesList(store)
+
+  // accounts.populateWebPropertiesList(store)
   // accounts.populateProfilesMenu(store)
 }
