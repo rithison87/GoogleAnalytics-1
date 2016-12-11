@@ -90,7 +90,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
     }
   })
 
-  // Enforce start date should not be after end date
+  // Warn when start date is after end date
   autorun(() => {
     if (store.startIsAfterEnd) {
       // display error message that start date must not be after end date
