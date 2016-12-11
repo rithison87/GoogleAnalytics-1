@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { setFreshAccessToken, getAccessTokenAjaxCall, login, gup, validateToken, displayFieldset } from './utils/utils'
+import { setFreshAccessToken, login, displayFieldset } from './utils/utils'
 import AyxStore from './stores/AyxStore'
 import * as accounts from './utils/accountUtils'
 import * as metadataRequest from './utils/metadataRequest'
-import { toJS, extendObservable, autorun } from 'mobx'
+import { extendObservable, autorun } from 'mobx'
 import * as goals from './utils/goals'
 import * as segments from './utils/segments'
 import MetricMessage from './components/metricMessage.jsx'
@@ -56,17 +56,73 @@ Alteryx.Gui.AfterLoad = (manager) => {
       return total
     }
   })
-  
+
+  // Compute if startDatePicker value is greater than endDatePicker value
+  extendObservable(store, {
+    startIsAfterEnd: () => {
+      return store.startDatePicker > store.endDatePicker
+    }
+  })
+
+  // Compute start and end dates for currently selected preDefDropDown value
+  extendObservable(store, {
+    preDefStart: () => {
+      if (store.preDefDropDown === 'custom') {
+        return store.startDatePicker
+      } else {
+        return picker.setDates(store.preDefDropDown).start
+      }
+    },
+    preDefEnd: () => {
+      if (store.preDefDropDown === 'custom') {
+        return store.endDatePicker
+      } else {
+        return picker.setDates(store.preDefDropDown).end
+      }
+    }
+  })
+
+  // Compute if preDefined date values match currently set picker values
+  extendObservable(store, {
+    isCustomDate: () => {
+      return store.startDatePicker !== store.preDefStart ||
+             store.endDatePicker !== store.preDefEnd
+    }
+  })
+
+  // Warn when start date is after end date
+  autorun(() => {
+    if (store.startIsAfterEnd) {
+      // display error message that start date must not be after end date
+    }
+  })
+
+  // When a custom date is selected, switch preDefined selector to 'custom'
+  autorun(() => {
+    if (store.isCustomDate) {
+      store.preDefDropDown = 'custom'
+    }
+  })
+
   // Using an autorun function to watch store.webPropertiesList.selection.  If
   // it changes, trigger the accounts.populateProfilesMenu function.
   autorun(() => {
-    if (store.preDefDropDown !== 'custom') {
-      store.startDatePicker = picker.setDates(store.preDefDropDown).start
-      store.endDatePicker = picker.setDates(store.preDefDropDown).end
-    if (store.webPropertiesList.selection !== '' && store.webPropertiesList.stringList.length > 0) {
+    if (store.preDefDropDown) {
+      if (store.preDefDropDown !== 'custom') {
+        store.startDatePicker = store.preDefStart
+        store.endDatePicker = store.preDefEnd
+      }
+    }
+  })
+
+  // Populate profiles list if webproperties has no selection and no stringlist
+  autorun(() => {
+    if (store.webPropertiesList.selection !== '' &&
+        store.webPropertiesList.stringList.length > 0) {
       accounts.populateProfilesMenu(store)
     }
   })
+
   autorun(() => {
     if (store.accessToken !== '' || store.accountsList.stringList.length < 1) {
       accounts.populateAccountsList(store)
