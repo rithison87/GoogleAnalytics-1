@@ -51,10 +51,6 @@ const getDates = () => {
     'lastYear': {
       'start': LYStart,
       'end': LYEnd
-    },
-    'custom': {
-      'start': '',
-      'end': ''
     }
   }
 }
@@ -84,7 +80,7 @@ const setDates = preDefValue => {
       case 'lastYear':
         return date.lastYear
       default:
-        return date.custom
+        break
     }
   }
 }
