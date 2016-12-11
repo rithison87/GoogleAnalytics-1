@@ -51,35 +51,41 @@ const getDates = () => {
     'lastYear': {
       'start': LYStart,
       'end': LYEnd
+    },
+    'custom': {
+      'start': '',
+      'end': ''
     }
   }
 }
 
 // When a pre-defined date is selected, populate startDatePicker and endDatePicker
 const setDates = preDefValue => {
-  const date = getDates()
+  if (preDefValue !== 'custom') {
+    const date = getDates()
 
-  switch (preDefValue) {
-    case 'today':
-      return date.today
-    case 'yesterday':
-      return date.yesterday
-    case 'last7Days':
-      return date.last7Days
-    case 'lastWeek':
-      return date.lastWeek
-    case 'last30Days':
-      return date.last30Days
-    case 'lastMonth':
-      return date.lastMonth
-    case 'monthToDate':
-      return date.monthToDate
-    case 'yearToDate':
-      return date.yearToDate
-    case 'lastYear':
-      return date.lastYear
-    default:
-      break
+    switch (preDefValue) {
+      case 'today':
+        return date.today
+      case 'yesterday':
+        return date.yesterday
+      case 'last7Days':
+        return date.last7Days
+      case 'lastWeek':
+        return date.lastWeek
+      case 'last30Days':
+        return date.last30Days
+      case 'lastMonth':
+        return date.lastMonth
+      case 'monthToDate':
+        return date.monthToDate
+      case 'yearToDate':
+        return date.yearToDate
+      case 'lastYear':
+        return date.lastYear
+      default:
+        return date.custom
+    }
   }
 }
 

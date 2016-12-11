@@ -66,13 +66,27 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   // Compute start and end dates for currently selected preDefDropDown value
   extendObservable(store, {
-    if (store.preDefDropDown) {
-      preDefStart: () => {
-        return setDates(store.preDefDropDown).start
+    preDefStart: () => {
+      if (store.preDefDropDown === 'custom') {
+        return store.startDatePicker
+      } else {
+        return picker.setDates(store.preDefDropDown).start
       }
-      preDefEnd: () => {
-        return setDates(store.preDefDropDown).end
+    },
+    preDefEnd: () => {
+      if (store.preDefDropDown === 'custom') {
+        return store.endDatePicker
+      } else {
+        return picker.setDates(store.preDefDropDown).end
       }
+    }
+  })
+
+  // Compute if preDefined date values match currently set picker values
+  extendObservable(store, {
+    isCustomDate: () => {
+      return store.startDatePicker !== store.preDefStart ||
+             store.endDatePicker !== store.preDefEnd
     }
   })
 
@@ -85,13 +99,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   // When a custom date is selected, switch preDefined selector to 'custom'
   autorun(() => {
-    if (store.preDefStart && store.preDefEnd) {
-      if (store.startDatePicker !== store.preDefStart) {
-        store.preDefDropDown = 'custom'
-      }
-      if (store.endDatePicker !== picker.setDates(store.preDefDropDown).end) {
-        store.preDefDropDown = 'custom'
-      }
+    if (store.isCustomDate) {
+      store.preDefDropDown = 'custom'
     }
   })
 
@@ -100,8 +109,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
   autorun(() => {
     if (store.preDefDropDown) {
       if (store.preDefDropDown !== 'custom') {
-        store.startDatePicker = picker.setDates(store.preDefDropDown).start
-        store.endDatePicker = picker.setDates(store.preDefDropDown).end
+        store.startDatePicker = store.preDefStart
+        store.endDatePicker = store.preDefEnd
       }
     }
   })
