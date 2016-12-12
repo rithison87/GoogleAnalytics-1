@@ -42,30 +42,32 @@ Alteryx.Gui.AfterLoad = (manager) => {
   // specified in the collection.
   const store = new AyxStore(manager, collection)
 
- // Add computed value to store that tracks total selections for metrics and metric goals.
+  // Set Predefined dropdown to custom value if it is undefined.
+  if (!store.preDefDropDown) {
+    store.preDefDropDown = 'custom'
+  }
+
   extendObservable(store, {
+    // Add computed value to store that tracks total selections for metrics and metric goals.
     totalMetricsAndGoals: () => {
       let total = store.metricsList.selection.length + store.metricsGoalsList.selection.length
       return total
-    }
-  })
-  // Add computed value to store that tracks total selections for dimensions and dimension goals.
-  extendObservable(store, {
+    },
+    // Add computed value to store that tracks total selections for dimensions and dimension goals.
     totalDimensionsAndGoals: () => {
       let total = store.dimensionsList.selection.length + store.dimensionsGoalsList.selection.length
       return total
-    }
-  })
-
-  // Compute if startDatePicker value is greater than endDatePicker value
-  extendObservable(store, {
+    },
+    // Render react component which handles Metric selection messaging.
+    totalSegments: () => {
+      let total = store.segmentsList.selection.length
+      return total
+    },
+    // Compute if startDatePicker value is greater than endDatePicker value
     startIsAfterEnd: () => {
       return store.startDatePicker > store.endDatePicker
-    }
-  })
-
-  // Compute start and end dates for currently selected preDefDropDown value
-  extendObservable(store, {
+    },
+    // Compute start date for currently selected preDefDropDown value
     preDefStart: () => {
       if (store.preDefDropDown === 'custom') {
         return store.startDatePicker
@@ -73,17 +75,15 @@ Alteryx.Gui.AfterLoad = (manager) => {
         return picker.setDates(store.preDefDropDown).start
       }
     },
+    // Compute end date for currently selected preDefDropDown value
     preDefEnd: () => {
       if (store.preDefDropDown === 'custom') {
         return store.endDatePicker
       } else {
         return picker.setDates(store.preDefDropDown).end
       }
-    }
-  })
-
-  // Compute if preDefined date values match currently set picker values
-  extendObservable(store, {
+    },
+    // Compute if preDefined date values match currently set picker values
     isCustomDate: () => {
       return store.startDatePicker !== store.preDefStart ||
              store.endDatePicker !== store.preDefEnd
@@ -135,13 +135,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
   autorun(() => {
     if (store.accountsList.selection !== '') {
       accounts.populateWebPropertiesList(store)
-    }
-  })
-  // Render react component which handles Metric selection messaging.
-  extendObservable(store, {
-    totalSegments: () => {
-      let total = store.segmentsList.selection.length
-      return total
     }
   })
 
