@@ -4,28 +4,28 @@ import { observer } from 'mobx-react'
 const PropTypes = React.PropTypes
 
 class DimensionMessage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.store = props.store;
+  constructor (props) {
+    super(props)
+    this.store = props.store
   }
 
-  addClass(total) {
+  addClass (total) {
     return total > 7 ? 'warning' : ''
   }
 
-  messageText(total) {
+  messageText (total) {
     let text
 
     if (total > 7) {
-      text = 'Maximum of seven dimensions can be chosen.  Please remove dimension(s).';
+      text = 'Maximum of seven dimensions can be chosen.  Please remove dimension(s).'
     } else {
-      text = '';
+      text = ''
     }
 
-    return text;
+    return text
   }
 
-  render() {
+  render () {
     const dimensions = this.store.dimensionsList.selectedValues
     const goals = this.store.dimensionsGoalsList.selectedValues
     const total = this.store.totalDimensionsAndGoals
@@ -54,7 +54,7 @@ class DimensionMessage extends React.Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -62,4 +62,4 @@ DimensionMessage.propTypes = {
   store: PropTypes.object
 }
 
-export default observer(DimensionMessage);
+export default observer(DimensionMessage)

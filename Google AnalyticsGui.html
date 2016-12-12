@@ -104,6 +104,24 @@ Google Analytics Input GUI
             border-color: rgb(187,187,187);
         }
 
+        .datePicker {
+            display: inline-block;
+            max-width: 150px;
+            padding: 0px 5px 10px 0px;
+        }
+
+        #preDefDateRange {
+            max-width: 200px;
+        }
+
+        /*overriding a 5px margin set by the alteryx-config.css which sets a 5px margin for all input tags*/
+        /*in order to line the labels up between the drop down and the date pickers...*/
+        input {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+
 /*        @media (max-width:407px) {
             .alignment_container {
                 padding-left:5%;
@@ -234,7 +252,44 @@ Google Analytics Input GUI
             <button type="submit" class="nextBtn" id="" onclick="">Next</button>
             <button class="prevBtn" id="" onclick="">Previous</button>
         </div>
-    </fieldset>    
+    </fieldset>
+
+<!-- Date Pickers fieldset -->
+    <fieldset id="datePickers" style="display:block;"><!--Add a display:none during process story-->
+        <legend>Select Date Range of Analysis</legend>
+        <hr>
+        <div id="preDefDateRange">
+            <label for="preDefDropDown">Pre-defined Date Ranges</label>
+            <alteryx-pluginwidget type="DropDown" id="preDefDropDown" dataName="preDefDropDown">
+                <alteryx-option uiobject="Custom Date">custom</alteryx-option>
+                <alteryx-option uiobject="Today">today</alteryx-option>
+                <alteryx-option uiobject="Yesterday">yesterday</alteryx-option>
+                <alteryx-option uiobject="Last 7 Days">last7Days</alteryx-option>
+                <alteryx-option uiobject="Last Week">lastWeek</alteryx-option>
+                <alteryx-option uiobject="Last 30 Days">last30Days</alteryx-option>
+                <alteryx-option uiobject="Last Month">lastMonth</alteryx-option>
+                <alteryx-option uiobject="Month to Date">monthToDate</alteryx-option>
+                <alteryx-option uiobject="Year to Date">yearToDate</alteryx-option>
+                <alteryx-option uiobject="Last Year">lastYear</alteryx-option>
+            </alteryx-pluginwidget>
+        </div>
+        <br>
+        <div id="startDate" class="datePicker">
+            <label for="startDatePicker" class="datePickerLabel">Starting Date</label>
+            <alteryx-pluginwidget type="DateTimeField" dateFormat="YYYY-MM-DD" id="startDatePicker" dataType="SimpleDate" dataName="startDatePicker">
+            </alteryx-pluginwidget>
+        </div>
+        <div id="endDate" class="datePicker">
+            <label for="endDatePicker" class="datePickerLabel">Ending Date</label>
+            <alteryx-pluginwidget type="DateTimeField" dateFormat="YYYY-MM-DD" id="endDatePicker" dataType="SimpleDate" dataName="endDatePicker">
+            </alteryx-pluginwidget>
+        </div>
+        <div>
+            <!-- Add id name and onclick function during process story -->
+            <button type="submit" class="nextBtn" id="" onclick="">Next</button>
+            <button class="prevBtn" id="" onclick="">Previous</button>
+        </div>
+    </fieldset>
 
 <!-- fieldset for the non-captured fields -->
     <fieldset id="token" style="display:none">
