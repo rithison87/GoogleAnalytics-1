@@ -34,7 +34,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'startDatePicker', type: 'value'},
     {key: 'endDatePicker', type: 'value'},
     {key: 'preDefDropDown', type: 'value'},
-    {key: 'dimensionsList', type: 'listBox'},
     {key: 'segmentsList', type: 'listBox'}
   ]
 
@@ -97,15 +96,14 @@ Alteryx.Gui.AfterLoad = (manager) => {
     }
   })
 
-  // When a custom date is selected, switch preDefined selector to 'custom'
+  // Update preDefined selector to 'custom' when a custom date is selected
   autorun(() => {
     if (store.isCustomDate) {
       store.preDefDropDown = 'custom'
     }
   })
 
-  // Using an autorun function to watch store.webPropertiesList.selection.  If
-  // it changes, trigger the accounts.populateProfilesMenu function.
+  // Update
   autorun(() => {
     if (store.preDefDropDown) {
       if (store.preDefDropDown !== 'custom') {
