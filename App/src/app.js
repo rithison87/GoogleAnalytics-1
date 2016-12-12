@@ -120,6 +120,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
       metadataRequest.pushCombinedMetadata(store)
       goals.populateMetricsGoalsList(store)
       goals.populateDimensionsGoalsList(store)
+      segments.populateSegmentsList(store)
     }
   })
 
@@ -131,13 +132,17 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   // Render react component which handles Metric selection messaging.
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'))
+
   // Render react component which handles Dimension selection messaging.
   ReactDOM.render(<DimensionMessage store={store} />, document.querySelector('#selectedDimensions'))
+
   // Render react component which handles Segment selection messaging.
   ReactDOM.render(<SegmentMessage store={store} />, document.querySelector('#selectedSegments'))
+
   // Render react component which handles a warning message for End Date not at or after Start Date.
   ReactDOM.render(<DateMessage store={store} />, document.querySelector('#dateWarning'))
 
+  // REMOVE? - Pretty sure this is just test code that can be removed... ~Erik
   let optionList = [{uiobject: 'test1', dataname: 'test1 value'},
                     {uiobject: 'test2', dataname: 'test2 value'}]
 
@@ -145,10 +150,13 @@ Alteryx.Gui.AfterLoad = (manager) => {
   store.client_secret = '2qXTVfi_lkB5ZvutdZlWm9Dr'
   store.refresh_token = '1/-hh4BUqg51tYT4w-YevMPzJ6LuGmx4vzWbCgvUzCrz8'
 
+  accounts.populateAccountsList(store)
+  // accounts.populateWebPropertiesList(store)
+  // accounts.populateProfilesMenu(store)
   // metadataRequest.pushCombinedMetadata(store)
   // goals.populateMetricsGoalsList(store)
   // goals.populateDimensionsGoalsList(store)
-  segments.populateSegmentsList(store)
+  // segments.populateSegmentsList(store)
 
   window.optionList = optionList
 
@@ -175,9 +183,4 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.getDates = picker.getDates
 
   window.setDates = picker.setDates
-
-  accounts.populateAccountsList(store)
-
-  // accounts.populateWebPropertiesList(store)
-  // accounts.populateProfilesMenu(store)
 }
