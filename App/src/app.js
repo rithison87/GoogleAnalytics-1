@@ -42,23 +42,23 @@ Alteryx.Gui.AfterLoad = (manager) => {
   // specified in the collection.
   const store = new AyxStore(manager, collection)
 
-  // Set Predefined dropdown to custom value if it is undefined.
+  // Set Predefined dropdown to 'custom' value if it is undefined.
   if (!store.preDefDropDown) {
     store.preDefDropDown = 'custom'
   }
 
   extendObservable(store, {
-    // Add computed value to store that tracks total selections for metrics and metric goals.
+    // Compute total selections for metrics and metric goals for use in react messaging
     totalMetricsAndGoals: () => {
       let total = store.metricsList.selection.length + store.metricsGoalsList.selection.length
       return total
     },
-    // Add computed value to store that tracks total selections for dimensions and dimension goals.
+    // Compute total selections for dimensions and dimension goals for use in react messaging
     totalDimensionsAndGoals: () => {
       let total = store.dimensionsList.selection.length + store.dimensionsGoalsList.selection.length
       return total
     },
-    // Render react component which handles Metric selection messaging.
+    // Compute total number of selected segments, for use in react messaging
     totalSegments: () => {
       let total = store.segmentsList.selection.length
       return total
@@ -90,19 +90,27 @@ Alteryx.Gui.AfterLoad = (manager) => {
     }
   })
 
-  // When a custom date is selected, switch preDefined selector to 'custom'
+  // Update preDefined selector to 'custom' when a custom date is selected/entered
   autorun(() => {
     if (store.isCustomDate) {
       store.preDefDropDown = 'custom'
     }
   })
 
+  // Update Start and End date picker values to the selected predefined date range
   autorun(() => {
     if (store.preDefDropDown) {
       if (store.preDefDropDown !== 'custom') {
         store.startDatePicker = store.preDefStart
         store.endDatePicker = store.preDefEnd
       }
+    }
+  })
+
+  // Populate webPropertiesList when account has been chosen
+  autorun(() => {
+    if (store.accountsList.selection !== '') {
+      accounts.populateWebPropertiesList(store)
     }
   })
 
@@ -124,13 +132,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
     }
   })
 
-  autorun(() => {
-    if (store.accountsList.selection !== '') {
-      accounts.populateWebPropertiesList(store)
-    }
-  })
-
-  // Render react component which handles Metric selection messaging.
+  // Render react component which handles Metric selection messaging
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'))
 
   // Render react component which handles Dimension selection messaging.
@@ -183,5 +185,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.getDates = picker.getDates
 
   window.setDates = picker.setDates
+
   window.toJS = toJS
 }
