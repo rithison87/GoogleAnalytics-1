@@ -91,13 +91,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
     }
   })
 
-  // Warn when start date is after end date
-  // autorun(() => {
-  //   if (store.startIsAfterEnd) {
-      // display error message that start date must not be after end date
-  //   }
-  // })
-
   // When a custom date is selected, switch preDefined selector to 'custom'
   autorun(() => {
     if (store.isCustomDate) {
@@ -105,8 +98,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
     }
   })
 
-  // Using an autorun function to watch store.webPropertiesList.selection.  If
-  // it changes, trigger the accounts.populateProfilesMenu function.
   autorun(() => {
     if (store.preDefDropDown) {
       if (store.preDefDropDown !== 'custom') {
