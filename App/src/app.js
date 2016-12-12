@@ -58,6 +58,11 @@ Alteryx.Gui.AfterLoad = (manager) => {
       let total = store.dimensionsList.selection.length + store.dimensionsGoalsList.selection.length
       return total
     },
+    // Render react component which handles Metric selection messaging.
+    totalSegments: () => {
+      let total = store.segmentsList.selection.length
+      return total
+    },
     // Compute if startDatePicker value is greater than endDatePicker value
     startIsAfterEnd: () => {
       return store.startDatePicker > store.endDatePicker
@@ -130,13 +135,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
   autorun(() => {
     if (store.accountsList.selection !== '') {
       accounts.populateWebPropertiesList(store)
-    }
-  })
-  // Render react component which handles Metric selection messaging.
-  extendObservable(store, {
-    totalSegments: () => {
-      let total = store.segmentsList.selection.length
-      return total
     }
   })
 
