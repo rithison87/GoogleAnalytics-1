@@ -4,7 +4,7 @@ import { setFreshAccessToken, login, displayFieldset } from './utils/utils'
 import AyxStore from './stores/AyxStore'
 import * as accounts from './utils/accountUtils'
 import * as metadataRequest from './utils/metadataRequest'
-import { extendObservable, autorun } from 'mobx'
+import { extendObservable, autorun, toJS } from 'mobx'
 import * as goals from './utils/goals'
 import * as segments from './utils/segments'
 import MetricMessage from './components/metricMessage.jsx'
@@ -34,7 +34,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'startDatePicker', type: 'value'},
     {key: 'endDatePicker', type: 'value'},
     {key: 'preDefDropDown', type: 'value'},
-    {key: 'dimensionsList', type: 'listBox'},
     {key: 'segmentsList', type: 'listBox'}
   ]
 
@@ -129,6 +128,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
       metadataRequest.pushCombinedMetadata(store)
       goals.populateMetricsGoalsList(store)
       goals.populateDimensionsGoalsList(store)
+      segments.populateSegmentsList(store)
     }
   })
 
@@ -154,7 +154,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
   // metadataRequest.pushCombinedMetadata(store)
   // goals.populateMetricsGoalsList(store)
   // goals.populateDimensionsGoalsList(store)
-  segments.populateSegmentsList(store)
 
   window.optionList = optionList
 
@@ -181,6 +180,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.getDates = picker.getDates
 
   window.setDates = picker.setDates
+
+  window.toJS = toJS
 
   accounts.populateAccountsList(store)
 
