@@ -107,7 +107,7 @@ Google Analytics Input GUI
         .datePicker {
             display: inline-block;
             max-width: 150px;
-            padding: 0px 5px 0px 0px;
+            padding: 0px 5px 10px 0px;
         }
 
         #preDefDateRange {
@@ -239,20 +239,25 @@ Google Analytics Input GUI
         </div>
     </fieldset>
 
+<!-- Segments fieldset -->
+    <fieldset id="segments" style="display:block;"><!--Add a display:none during process story-->
+        <legend>Select Segments to Include (Optional)</legend>
+        <hr>
+        <p class="selectionLegend">Select up to four segments...</p>
+        <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
+          ismultiselect="true" issearchable="true" id="segmentsList" dataName="segmentsList" showsearchrow="true"></alteryx-pluginwidget>
+        <div id="selectedSegments"></div>
+        <div>
+            <!-- Add id name and onclick function during process story -->
+            <button type="submit" class="nextBtn" id="" onclick="">Next</button>
+            <button class="prevBtn" id="" onclick="">Previous</button>
+        </div>
+    </fieldset>
+
 <!-- Date Pickers fieldset -->
     <fieldset id="datePickers" style="display:block;"><!--Add a display:none during process story-->
         <legend>Select Date Range of Analysis</legend>
         <hr>
-        <div id="startDate" class="datePicker">
-            <label for="startDatePicker" class="datePickerLabel">Starting Date</label>
-            <alteryx-pluginwidget type="DateTimeField" dateFormat="YYYY-MM-DD" id="startDatePicker" dataType="SimpleDate" dataName="startDatePicker">
-            </alteryx-pluginwidget>
-        </div>
-        <div id="endDate" class="datePicker">
-            <label for="endDatePicker" class="datePickerLabel">Ending Date</label>
-            <alteryx-pluginwidget type="DateTimeField" dateFormat="YYYY-MM-DD" id="endDatePicker" dataType="SimpleDate" dataName="endDatePicker">
-            </alteryx-pluginwidget>
-        </div>
         <div id="preDefDateRange">
             <label for="preDefDropDown">Pre-defined Date Ranges</label>
             <alteryx-pluginwidget type="DropDown" id="preDefDropDown" dataName="preDefDropDown">
@@ -266,6 +271,17 @@ Google Analytics Input GUI
                 <alteryx-option uiobject="Month to Date">monthToDate</alteryx-option>
                 <alteryx-option uiobject="Year to Date">yearToDate</alteryx-option>
                 <alteryx-option uiobject="Last Year">lastYear</alteryx-option>
+            </alteryx-pluginwidget>
+        </div>
+        <br>
+        <div id="startDate" class="datePicker">
+            <label for="startDatePicker" class="datePickerLabel">Starting Date</label>
+            <alteryx-pluginwidget type="DateTimeField" dateFormat="YYYY-MM-DD" id="startDatePicker" dataType="SimpleDate" dataName="startDatePicker">
+            </alteryx-pluginwidget>
+        </div>
+        <div id="endDate" class="datePicker">
+            <label for="endDatePicker" class="datePickerLabel">Ending Date</label>
+            <alteryx-pluginwidget type="DateTimeField" dateFormat="YYYY-MM-DD" id="endDatePicker" dataType="SimpleDate" dataName="endDatePicker">
             </alteryx-pluginwidget>
         </div>
         <div>
