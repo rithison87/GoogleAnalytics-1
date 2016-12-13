@@ -16,7 +16,7 @@
     </Node>
     <Node ToolID="124">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54.25121" y="54" width="616" height="80" />
+        <Position x="54.25132" y="54" width="616" height="80" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -55,7 +55,7 @@ Google Analytics Input</Text>
       <ChildNodes>
         <Node ToolID="3">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="79" y="613.9702" />
+            <Position x="79.00018" y="613.9705" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -76,6 +76,8 @@ Google Analytics Input</Text>
                 <Field name="metricsGoalsList" />
                 <Field name="dimensionsGoalsList" />
                 <Field name="segmentsList" />
+                <Field name="advOptions" />
+                <Field name="maxResults" />
               </Fields>
               <Data>
                 <r>
@@ -94,6 +96,8 @@ Google Analytics Input</Text>
                   <c>____metricsGoalsList_placeholder____</c>
                   <c>____dimensionsGoalsList_placeholder____</c>
                   <c>____segmentsList_placeholder____</c>
+                  <c>______advOptions_placeholder_____</c>
+                  <c>_____maxResults_placeholder____</c>
                 </r>
               </Data>
             </Configuration>
@@ -119,6 +123,8 @@ Google Analytics Input</Text>
                 <Field name="metricsGoalsList" size="36" source="TextInput:" type="String" />
                 <Field name="dimensionsGoalsList" size="39" source="TextInput:" type="String" />
                 <Field name="segmentsList" size="32" source="TextInput:" type="String" />
+                <Field name="advOptions" size="33" source="TextInput:" type="String" />
+                <Field name="maxResults" size="31" source="TextInput:" type="String" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
@@ -143,7 +149,7 @@ Google Analytics Input</Text>
         </Node>
         <Node ToolID="95">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="246.9995" y="613.9705" />
+            <Position x="246.9995" y="613.9703" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -177,6 +183,8 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
                 <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
                 <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
                 <Field name="segmentsList" size="1500" source="TextInput:" type="V_WString" />
+                <Field name="advOptions" source="TextInput:" type="Bool" />
+                <Field name="maxResults" source="TextInput:" type="Int64" />
                 <Field name="Authorization" size="1500" source="Formula: 'Bearer ' + [accessToken]" type="V_WString" />
               </RecordInfo>
             </MetaInfo>
@@ -185,7 +193,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
         </Node>
         <Node ToolID="99">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="163" y="613.9694" />
+            <Position x="163.0001" y="613.9692" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -206,6 +214,8 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
                 <SelectField field="metricsGoalsList" selected="True" type="V_WString" size="1500" />
                 <SelectField field="dimensionsGoalsList" selected="True" type="V_WString" size="1500" />
                 <SelectField field="segmentsList" selected="True" type="V_WString" size="1500" />
+                <SelectField field="advOptions" selected="True" type="Bool" size="1" />
+                <SelectField field="maxResults" selected="True" type="Int64" size="8" />
                 <SelectField field="*Unknown" selected="True" />
               </SelectFields>
             </Configuration>
@@ -231,6 +241,8 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
                 <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
                 <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
                 <Field name="segmentsList" size="1500" source="TextInput:" type="V_WString" />
+                <Field name="advOptions" source="TextInput:" type="Bool" />
+                <Field name="maxResults" source="TextInput:" type="Int64" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
@@ -238,7 +250,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
         </Node>
         <Node ToolID="116">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="79" y="673.9709" width="228" height="40" />
+            <Position x="79" y="673.9707" width="228" height="40" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -258,7 +270,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
         </Node>
         <Node ToolID="115">
           <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-            <Position x="318" y="417.9703" width="444" height="393" />
+            <Position x="318.0001" y="417.9703" width="444" height="393" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -276,7 +288,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
           <ChildNodes>
             <Node ToolID="89">
               <GuiSettings Plugin="AlteryxGuiToolkit.Condition.Condition">
-                <Position x="368.0001" y="461.9703" width="59" height="59" />
+                <Position x="368.0002" y="461.9703" width="59" height="59" />
               </GuiSettings>
               <Properties>
                 <Configuration />
@@ -289,7 +301,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
             </Node>
             <Node ToolID="92">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
-                <Position x="367" y="613.9705" />
+                <Position x="367.0001" y="613.9705" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -317,6 +329,8 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
                     <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
                     <Field name="segmentsList" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="advOptions" source="TextInput:" type="Bool" />
+                    <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1500" source="Formula: 'Bearer ' + [accessToken]" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
@@ -337,6 +351,8 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
                     <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
                     <Field name="segmentsList" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="advOptions" source="TextInput:" type="Bool" />
+                    <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1500" source="Formula: 'Bearer ' + [accessToken]" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
@@ -345,7 +361,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
             </Node>
             <Node ToolID="94">
               <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-                <Position x="368" y="537.9703" width="59" height="59" />
+                <Position x="368.0001" y="537.9703" width="59" height="59" />
               </GuiSettings>
               <Properties>
                 <Configuration />
@@ -358,7 +374,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
             </Node>
             <Node ToolID="98">
               <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-                <Position x="572" y="653.9703" />
+                <Position x="572.0001" y="653.9703" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -397,7 +413,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
             </Node>
             <Node ToolID="114">
               <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-                <Position x="464" y="729.9702" width="192" height="56.00006" />
+                <Position x="464.0001" y="729.9703" width="192" height="56.00006" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -417,7 +433,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
             </Node>
             <Node ToolID="129">
               <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-                <Position x="343" y="677.9705" width="108" height="36" />
+                <Position x="343.0001" y="677.9706" width="108" height="36" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -438,7 +454,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="138">
               <GuiSettings>
-                <Position x="475" y="665.9704" />
+                <Position x="475.0001" y="665.9704" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -462,7 +478,7 @@ refresh_token=refresh_token
             </Node>
             <Node ToolID="93">
               <GuiSettings Plugin="AlteryxBasePluginsGui.DetourEnd.DetourEnd">
-                <Position x="678" y="606.0007" />
+                <Position x="678.0001" y="606.0006" />
               </GuiSettings>
               <Properties>
                 <Configuration />
@@ -488,6 +504,8 @@ refresh_token=refresh_token
                     <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
                     <Field name="segmentsList" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="advOptions" source="TextInput:" type="Bool" />
+                    <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1500" source="Formula: 'Bearer ' + [accessToken]" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
@@ -500,7 +518,7 @@ refresh_token=refresh_token
     </Node>
     <Node ToolID="107">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="2322" y="150" width="302" height="105" />
+        <Position x="2622" y="150" width="302" height="105" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -518,7 +536,7 @@ refresh_token=refresh_token
       <ChildNodes>
         <Node ToolID="104">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="2347" y="194" width="252" height="36" />
+            <Position x="2647" y="194" width="252" height="36" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -540,7 +558,7 @@ refresh_token=refresh_token
     </Node>
     <Node ToolID="113">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="55" y="154" width="2171" height="212.0005" />
+        <Position x="55" y="153.9997" width="2411" height="212.0008" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -558,7 +576,7 @@ refresh_token=refresh_token
       <ChildNodes>
         <Node ToolID="49">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="259.2512" y="198.0005" width="59" height="59" />
+            <Position x="259.2513" y="197.9997" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -571,7 +589,7 @@ refresh_token=refresh_token
         </Node>
         <Node ToolID="50">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="259.2512" y="282.0003" width="59" height="59" />
+            <Position x="259.2514" y="282.0002" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -584,7 +602,7 @@ refresh_token=refresh_token
         </Node>
         <Node ToolID="51">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="391.2513" y="198" width="59" height="59" />
+            <Position x="391.2514" y="198.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -597,7 +615,7 @@ refresh_token=refresh_token
         </Node>
         <Node ToolID="52">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="391.2512" y="282.0005" width="59" height="59" />
+            <Position x="391.2513" y="282.0005" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -610,7 +628,7 @@ refresh_token=refresh_token
         </Node>
         <Node ToolID="53">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="535.2512" y="198.0001" width="59" height="59" />
+            <Position x="535.2513" y="197.9997" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -623,7 +641,7 @@ refresh_token=refresh_token
         </Node>
         <Node ToolID="54">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="535.2512" y="282.0004" width="59" height="59" />
+            <Position x="535.2513" y="282.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -636,7 +654,7 @@ refresh_token=refresh_token
         </Node>
         <Node ToolID="56">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="151.2511" y="198.0002" width="59" height="59" />
+            <Position x="151.2513" y="197.9997" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -649,7 +667,7 @@ refresh_token=refresh_token
         </Node>
         <Node ToolID="57">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="151.2512" y="282.0004" width="59" height="59" />
+            <Position x="151.2513" y="282.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -766,7 +784,7 @@ refresh_token=refresh_token
         </Node>
         <Node ToolID="158">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="822" y="198.0001" width="59" height="59" />
+            <Position x="822.0001" y="198" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -779,7 +797,7 @@ refresh_token=refresh_token
         </Node>
         <Node ToolID="159">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1086" y="282" width="59" height="59" />
+            <Position x="1086" y="281.9999" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -805,7 +823,7 @@ refresh_token=refresh_token
         </Node>
         <Node ToolID="161">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="822" y="282.0003" width="59" height="59" />
+            <Position x="822.0001" y="282.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -818,7 +836,7 @@ refresh_token=refresh_token
         </Node>
         <Node ToolID="162">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="666" y="198.0002" width="59" height="59" />
+            <Position x="666.0001" y="198.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -831,7 +849,7 @@ refresh_token=refresh_token
         </Node>
         <Node ToolID="163">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="954" y="198.0001" width="59" height="59" />
+            <Position x="954.0001" y="198.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -870,7 +888,7 @@ refresh_token=refresh_token
         </Node>
         <Node ToolID="166">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="666" y="282.0004" width="59" height="59" />
+            <Position x="666.0002" y="282.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -883,7 +901,7 @@ refresh_token=refresh_token
         </Node>
         <Node ToolID="167">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="954" y="281.9999" width="59" height="59" />
+            <Position x="954.0001" y="281.9998" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -946,11 +964,63 @@ refresh_token=refresh_token
             </Annotation>
           </Properties>
         </Node>
+        <Node ToolID="172">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
+            <Position x="2262" y="198" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="1">
+              <Name>advOptions</Name>
+              <DefaultAnnotationText />
+              <Left value="True" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="174">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
+            <Position x="2382" y="198" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="1">
+              <Name>maxResults</Name>
+              <DefaultAnnotationText />
+              <Left value="True" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="175">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="2262" y="282" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="176">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="2382" y="282" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
       </ChildNodes>
     </Node>
     <Node ToolID="126">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="524.2512" y="73" width="132.9484" height="19" />
+        <Position x="524.2513" y="73" width="132.9484" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -968,7 +1038,7 @@ refresh_token=refresh_token
       <ChildNodes>
         <Node ToolID="125">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="534.2512" y="102" width="195" height="102" />
+            <Position x="534.2513" y="102" width="195" height="102" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -990,7 +1060,7 @@ refresh_token=refresh_token
     </Node>
     <Node ToolID="128">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="558.2512" y="102" width="98.89567" height="19" />
+        <Position x="558.2513" y="102" width="98.89567" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1008,7 +1078,7 @@ refresh_token=refresh_token
       <ChildNodes>
         <Node ToolID="127">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="568.2512" y="131" width="350" height="421.2" />
+            <Position x="568.2513" y="131" width="350" height="421.2" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1176,6 +1246,14 @@ Support Macro(s)
       <Origin ToolID="171" Connection="Action" />
       <Destination ToolID="3" Connection="Action" />
     </Connection>
+    <Connection name="#17" Wireless="True">
+      <Origin ToolID="175" Connection="Action" />
+      <Destination ToolID="3" Connection="Action" />
+    </Connection>
+    <Connection name="#18" Wireless="True">
+      <Origin ToolID="176" Connection="Action" />
+      <Destination ToolID="3" Connection="Action" />
+    </Connection>
     <Connection name="#1">
       <Origin ToolID="51" Connection="Question" />
       <Destination ToolID="52" Connection="Question" />
@@ -1231,6 +1309,14 @@ Support Macro(s)
     <Connection name="#1">
       <Origin ToolID="170" Connection="Question" />
       <Destination ToolID="171" Connection="Question" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="172" Connection="Question" />
+      <Destination ToolID="175" Connection="Question" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="174" Connection="Question" />
+      <Destination ToolID="176" Connection="Question" />
     </Connection>
   </Connections>
   <Properties>
@@ -1337,6 +1423,18 @@ Support Macro(s)
       <Constant>
         <Namespace>Question</Namespace>
         <Name>segmentsList</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>advOptions</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>maxResults</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
@@ -1544,6 +1642,30 @@ column	14</DynamicConfiguration>
 column	15</DynamicConfiguration>
               <DefaultConfiguration value="False" />
             </Action>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="175" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>3/Data/r[1]/c[16]</Destination>
+              <Mapping>Update Cell</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration>row	1
+column	16</DynamicConfiguration>
+              <DefaultConfiguration value="False" />
+            </Action>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="176" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>3/Data/r[1]/c[17]</Destination>
+              <Mapping>Update Cell</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration>row	1
+column	17</DynamicConfiguration>
+              <DefaultConfiguration value="False" />
+            </Action>
           </True>
         </NoCondition>
         <Condition>
@@ -1717,6 +1839,25 @@ column	15</DynamicConfiguration>
               <Description>segmentsList</Description>
               <Name>segmentsList</Name>
               <ToolId value="170" />
+              <Default />
+              <Password value="False" />
+              <Multiline value="False" />
+              <Hidden value="False" />
+            </Question>
+            <Question>
+              <Type>BooleanGroup</Type>
+              <Description>advOptions</Description>
+              <Name>advOptions</Name>
+              <ToolId value="172" />
+              <Questions />
+              <Default value="False" />
+              <Collapsable value="False" />
+            </Question>
+            <Question>
+              <Type>TextBox</Type>
+              <Description>maxResults</Description>
+              <Name>maxResults</Name>
+              <ToolId value="174" />
               <Default />
               <Password value="False" />
               <Multiline value="False" />

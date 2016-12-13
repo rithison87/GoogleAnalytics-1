@@ -35,7 +35,9 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'startDatePicker', type: 'value'},
     {key: 'endDatePicker', type: 'value'},
     {key: 'preDefDropDown', type: 'value'},
-    {key: 'segmentsList', type: 'listBox'}
+    {key: 'segmentsList', type: 'listBox'},
+    {key: 'advOptions', type: 'value'},
+    {key: 'maxResults', type: 'value'}
   ]
 
   // Instantiate the mobx store which will sync all dataItems
@@ -129,6 +131,17 @@ Alteryx.Gui.AfterLoad = (manager) => {
       goals.populateMetricsGoalsList(store)
       goals.populateDimensionsGoalsList(store)
       segments.populateSegmentsList(store)
+    }
+  })
+
+  // Displays the maxResults spinner input if advOptions is true else hides it
+  autorun(() => {
+    if (store.advOptions) {
+      document.getElementById('maxResults').style.display = 'block'
+    } else {
+      document.getElementById('maxResults').style.display = 'none'
+      // resets maxResults to default if advOptions is deselected
+      store.maxResults = 1000
     }
   })
 

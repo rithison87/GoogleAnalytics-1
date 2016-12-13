@@ -247,6 +247,13 @@ Google Analytics Input GUI
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
           ismultiselect="true" issearchable="true" id="segmentsList" dataName="segmentsList" showsearchrow="true"></alteryx-pluginwidget>
         <div id="selectedSegments"></div>
+        <div id="advOptions">
+            <alteryx-pluginwidget type="CheckBox" showAsToggle="true" id="advOptions" dataName="advOptions" text="Advanced Options"></alteryx-pluginwidget>
+        </div>
+        <div id="maxResults" style="margin-left: 20px;">
+            <label for="maxResults">Maximum Results</label>
+            <alteryx-pluginwidget type="NumericSpinner" id="maxResults" default="1000" min="0" max="10000" step="100" dataName="maxResults"></alteryx-pluginwidget>
+        </div>
         <div>
             <!-- Add id name and onclick function during process story -->
             <button type="submit" class="nextBtn" id="" onclick="">Next</button>
@@ -283,14 +290,17 @@ Google Analytics Input GUI
             <alteryx-pluginwidget type="DateTimeField" dateFormat="YYYY-MM-DD" id="endDatePicker" dataType="SimpleDate" dataName="endDatePicker"></alteryx-pluginwidget>
         </div>
         <div>
-          <div id="dateWarning"></div>
-          <!-- Add id name and onclick function during process story -->
+            <div id="dateWarning"></div>
           <div style="float: right">
+          <!-- Add id name and onclick function during process story -->
             <button type="submit" class="nextBtn" id="" onclick="">Next</button>
             <button class="prevBtn" id="" onclick="">Previous</button>
           </div>
         </div>
     </fieldset>
+
+
+
 
 <!-- fieldset for the non-captured fields -->
     <fieldset id="token" style="display:none">
