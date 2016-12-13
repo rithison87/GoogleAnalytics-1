@@ -12,7 +12,7 @@ class DateMessage extends React.Component {
   }
 
   addText (dateBool) {
-    return dateBool ? 'End Date cannot be before Start Date.' : ''
+    return dateBool ? 'Start date cannot be after End date.' : ''
   }
 
   render () {
