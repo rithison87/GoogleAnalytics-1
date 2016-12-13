@@ -110,8 +110,16 @@ Google Analytics Input GUI
             padding: 0px 5px 10px 0px;
         }
 
+        .form-control {
+            margin-top: 0px;
+        }
+
         #preDefDateRange {
             max-width: 200px;
+        }
+
+        #dateWarning {
+            float: left;
         }
 
         /*@media (max-width:407px) {
@@ -249,7 +257,6 @@ Google Analytics Input GUI
 <!-- Date Pickers fieldset -->
     <fieldset id="datePickers" style="display:block;"><!--Add a display:none during process story-->
         <legend>Select Dates to Include</legend>
-        <hr>
         <div id="preDefDateRange">
             <label for="preDefDropDown">Preset Date Range</label>
             <alteryx-pluginwidget type="DropDown" id="preDefDropDown" dataName="preDefDropDown">
@@ -275,11 +282,13 @@ Google Analytics Input GUI
             <label for="endDatePicker" class="datePickerLabel">End</label>
             <alteryx-pluginwidget type="DateTimeField" dateFormat="YYYY-MM-DD" id="endDatePicker" dataType="SimpleDate" dataName="endDatePicker"></alteryx-pluginwidget>
         </div>
-        <div id="dateWarning"></div>
         <div>
-            <!-- Add id name and onclick function during process story -->
+          <div id="dateWarning"></div>
+          <!-- Add id name and onclick function during process story -->
+          <div style="float: right">
             <button type="submit" class="nextBtn" id="" onclick="">Next</button>
             <button class="prevBtn" id="" onclick="">Previous</button>
+          </div>
         </div>
     </fieldset>
 
