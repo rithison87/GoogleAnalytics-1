@@ -1,6 +1,0 @@
-extends: standard 
-plugins:
-  - react
-rules:
-  semi: off
-  linebreak-style: off
