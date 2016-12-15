@@ -161,9 +161,15 @@ Alteryx.Gui.AfterLoad = (manager) => {
   let optionList = [{uiobject: 'test1', dataname: 'test1 value'},
                     {uiobject: 'test2', dataname: 'test2 value'}]
 
+  // ////// ALTERYX CREDS //////
   store.client_id = '934931015435-4ugtr9vvg2jiefrn9r8t1d8ato000bdq.apps.googleusercontent.com'
   store.client_secret = '2qXTVfi_lkB5ZvutdZlWm9Dr'
   store.refresh_token = '1/-hh4BUqg51tYT4w-YevMPzJ6LuGmx4vzWbCgvUzCrz8'
+
+  // ////// CHINESE CHARSET CREDS //////
+  // store.client_id = '762585493927-3mkdpr3960s48p03gqk9sm0u13co8aht.apps.googleusercontent.com`'
+  // store.client_secret = 'JNc1NiYYiDYFGhzQE1Ir_xsU'
+  // store.refresh_token = '1/8oUvgmJUO_HmZcx6tfChpdcmRfp_hcfSaXXK35QTEt8'
 
   accounts.populateAccountsList(store)
   // accounts.populateWebPropertiesList(store)
