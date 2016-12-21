@@ -122,6 +122,12 @@ Google Analytics Input GUI
             float: left;
         }
 
+        input:disabled {
+            opacity: .5;
+            background: #DDDDDD;
+            pointer-events: none;
+        }
+
         /*@media (max-width:407px) {
             .alignment_container {
                 padding-left:5%;
@@ -241,7 +247,7 @@ Google Analytics Input GUI
                 <button class="prevBtn" id="" onclick="">Previous</button>
               </div>
             </div>
-        </fieldset>    
+        </fieldset>   
 
 <!-- Metrics fieldset -->
     <fieldset id="metrics" style="display:block;"><!--Add a display:none during process story-->

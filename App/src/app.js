@@ -145,6 +145,53 @@ Alteryx.Gui.AfterLoad = (manager) => {
     }
   })
 
+  // when 10 metrics and metric goals are selected, set all unselected boxes to disabled
+  autorun(() => {
+    // argument constants
+    // const hackyAfterLoadTrigger = store.maxResults // needed to properly re-disable on afterload
+    const totalMetrics = store.totalMetricsAndGoals
+    const totalDimensions = store.totalDimensionsAndGoals
+    const totalMetricsThreshold = 10
+    const totalDimsThreshold = 7
+    const inputType1 = 'checkbox'
+    // const inputType2 = 'button' // (example)
+
+    // main function definition
+    const inputControl = (parentId, inputType, totalSelected, threshold) => {
+      const parentNode = document.getElementById(parentId)
+      const checkboxes = parentNode.querySelectorAll('input[type="' + inputType + '"]')
+
+      const disableUnchecked = (nodeArray) => {
+        for (let i = 0; i < nodeArray.length; i++) {
+          if (!nodeArray[i].checked) {
+            nodeArray[i].setAttribute('disabled', true)
+          }
+        }
+      }
+
+      const enableAll = (nodeArray) => {
+        for (let i = 0; i < nodeArray.length; i++) {
+          nodeArray[i].removeAttribute('disabled')
+        }
+      }
+
+      if (totalSelected >= threshold) {
+        disableUnchecked(checkboxes)
+      } else {
+        enableAll(checkboxes)
+      }
+    }
+
+    // Metrics and Metric Goals
+    inputControl('metricsList', inputType1, totalMetrics, totalMetricsThreshold)
+    inputControl('metricsGoalsList', inputType1, totalMetrics, totalMetricsThreshold)
+
+    // Dimensions and Dimension Goals
+    inputControl('dimensionsList', inputType1, totalDimensions, totalDimsThreshold)
+    inputControl('dimensionsGoalsList', inputType1, totalDimensions, totalDimsThreshold)
+    console.log('inputControl running...')
+  })
+
   // Render react component which handles Metric selection messaging
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'))
 
