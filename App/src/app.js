@@ -13,6 +13,7 @@ import moment from 'moment'
 import * as picker from './utils/datePickers'
 import SegmentMessage from './components/segmentMessage.jsx'
 import DateMessage from './components/dateMessage.jsx'
+import inputControl from './utils/inputControl'
 
 Alteryx.Gui.AfterLoad = (manager) => {
   // Adds metrics.metricsSelectionCheck to UserDataChanged of metricsList
@@ -145,6 +146,53 @@ Alteryx.Gui.AfterLoad = (manager) => {
     }
   })
 
+  // when 10 metrics and metric goals are selected, set all unselected boxes to disabled
+  autorun(() => {
+    // argument constants
+    const hackyAfterLoadTrigger = store.maxResults // needed to properly re-disable on afterload
+    const totalMetrics = store.totalMetricsAndGoals
+    const totalDimensions = store.totalDimensionsAndGoals
+    const totalMetricsThreshold = 10
+    const totalDimsThreshold = 7
+    const inputType1 = 'checkbox'
+    // const inputType2 = 'button' // (example)
+
+    // main function definition
+    const inputControl = (parentId, inputType, totalSelected, threshold) => {
+      const parentNode = document.getElementById(parentId)
+      const checkboxes = parentNode.querySelectorAll('input[type="' + inputType + '"]')
+
+      const disableUnchecked = (nodeArray) => {
+        for (let i = 0; i < nodeArray.length; i++) {
+          if (!nodeArray[i].checked) {
+            nodeArray[i].setAttribute('disabled', true)
+          }
+        }
+      }
+
+      const enableAll = (nodeArray) => {
+        for (let i = 0; i < nodeArray.length; i++) {
+          nodeArray[i].removeAttribute('disabled')
+        }
+      }
+
+      if (totalSelected >= threshold) {
+        disableUnchecked(checkboxes)
+      } else {
+        enableAll(checkboxes)
+      }
+    }
+
+    // Metrics and Metric Goals
+    inputControl('metricsList', inputType1, totalMetrics, totalMetricsThreshold)
+    inputControl('metricsGoalsList', inputType1, totalMetrics, totalMetricsThreshold)
+
+    // Dimensions and Dimension Goals
+    inputControl('dimensionsList', inputType1, totalDimensions, totalDimsThreshold)
+    inputControl('dimensionsGoalsList', inputType1, totalDimensions, totalDimsThreshold)
+    console.log('inputControl running...')
+  })
+
   // Render react component which handles Metric selection messaging
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'))
 
@@ -161,10 +209,21 @@ Alteryx.Gui.AfterLoad = (manager) => {
   let optionList = [{uiobject: 'test1', dataname: 'test1 value'},
                     {uiobject: 'test2', dataname: 'test2 value'}]
 
+  // const triggerInputControlOnLoad = () => {
+  //   const original = store.maxResults
+  //   console.log('trigger: store original val of ' + original)
+  //   store.maxResults += 1
+  //   console.log('trigger: set new val to ' + store.maxResults)
+  //   store.maxResults = original
+  //   console.log('trigger: reset val to ' + store.maxResults)
+  // }
+
+  // triggerInputControlOnLoad()
+
   // ////// ALTERYX CREDS //////
-  store.client_id = '934931015435-4ugtr9vvg2jiefrn9r8t1d8ato000bdq.apps.googleusercontent.com'
-  store.client_secret = '2qXTVfi_lkB5ZvutdZlWm9Dr'
-  store.refresh_token = '1/-hh4BUqg51tYT4w-YevMPzJ6LuGmx4vzWbCgvUzCrz8'
+  store.client_id = '734530915454-u7qs1p0dvk5d3i0hogfr0mpmdnjj24u2.apps.googleusercontent.com'
+  store.client_secret = 'Fty30QrWsKLQW-TmyJdrk9qf'
+  store.refresh_token = '1/58fo4PUozzcHFs2VJaY23wxyHc-x3-pb-2dUbNw33W4'
 
   // ////// CHINESE CHARSET CREDS //////
   // store.client_id = '762585493927-3mkdpr3960s48p03gqk9sm0u13co8aht.apps.googleusercontent.com`'
