@@ -1,6 +1,7 @@
-const inputControl = (parentId, totalSelected, threshold) => {
+// checkbox disable/enable function definition
+const inputControl = (parentId, inputType, totalSelected, threshold) => {
   const parentNode = document.getElementById(parentId)
-  const checkboxes = parentNode.querySelectorAll('input[type="checkbox"]')
+  const checkboxes = parentNode.querySelectorAll('input[type="' + inputType + '"]')
 
   const disableUnchecked = (nodeArray) => {
     for (let i = 0; i < nodeArray.length; i++) {
@@ -23,4 +24,4 @@ const inputControl = (parentId, totalSelected, threshold) => {
   }
 }
 
-export { inputControl }
+export default inputControl
