@@ -4,7 +4,7 @@ import { setFreshAccessToken, login, displayFieldset } from './utils/utils'
 import AyxStore from './stores/AyxStore'
 import * as accounts from './utils/accountUtils'
 import * as metadataRequest from './utils/metadataRequest'
-import { extendObservable, autorun, toJS } from 'mobx'
+import { extendObservable, autorun, autorunAsync, toJS } from 'mobx'
 import * as goals from './utils/goals'
 import * as segments from './utils/segments'
 import MetricMessage from './components/metricMessage.jsx'
@@ -13,7 +13,7 @@ import moment from 'moment'
 import * as picker from './utils/datePickers'
 import SegmentMessage from './components/segmentMessage.jsx'
 import DateMessage from './components/dateMessage.jsx'
-import inputControl from './utils/inputControl'
+import inputControl from './utils/inputControl.js'
 
 Alteryx.Gui.AfterLoad = (manager) => {
   // Adds metrics.metricsSelectionCheck to UserDataChanged of metricsList
@@ -64,6 +64,10 @@ Alteryx.Gui.AfterLoad = (manager) => {
     // Compute total number of selected segments, for use in react messaging
     totalSegments: () => {
       let total = store.segmentsList.selection.length
+      return total
+    },
+    allListsLength: () => {
+      let total = store.metricsList.stringList.length + store.metricsList.stringList.length + store.dimensionsList.stringList.length + store.dimensionsGoalsList.stringList.length + store.segmentsList.stringList.length
       return total
     },
     // Compute if startDatePicker value is greater than endDatePicker value
@@ -147,52 +151,32 @@ Alteryx.Gui.AfterLoad = (manager) => {
   })
 
   // when 10 metrics and metric goals are selected, set all unselected boxes to disabled
-  autorun(() => {
-    // argument constants
-    // const hackyAfterLoadTrigger = store.maxResults // needed to properly re-disable on afterload
+  autorunAsync(() => {
+    // checkbox disable/enable argument constants
+    const initialStateTrigger = store.allListsLength // monitors the stringList.lengths instead of selection.lengths
     const totalMetrics = store.totalMetricsAndGoals
     const totalDimensions = store.totalDimensionsAndGoals
+    const totalSegments = store.totalSegments
     const totalMetricsThreshold = 10
     const totalDimsThreshold = 7
-    const inputType1 = 'checkbox'
-    // const inputType2 = 'button' // (example)
-
-    // main function definition
-    const inputControl = (parentId, inputType, totalSelected, threshold) => {
-      const parentNode = document.getElementById(parentId)
-      const checkboxes = parentNode.querySelectorAll('input[type="' + inputType + '"]')
-
-      const disableUnchecked = (nodeArray) => {
-        for (let i = 0; i < nodeArray.length; i++) {
-          if (!nodeArray[i].checked) {
-            nodeArray[i].setAttribute('disabled', true)
-          }
-        }
-      }
-
-      const enableAll = (nodeArray) => {
-        for (let i = 0; i < nodeArray.length; i++) {
-          nodeArray[i].removeAttribute('disabled')
-        }
-      }
-
-      if (totalSelected >= threshold) {
-        disableUnchecked(checkboxes)
-      } else {
-        enableAll(checkboxes)
-      }
-    }
+    const totalSegmentsThreshold = 4
+    const inputType = 'checkbox'
 
     // Metrics and Metric Goals
-    inputControl('metricsList', inputType1, totalMetrics, totalMetricsThreshold)
-    inputControl('metricsGoalsList', inputType1, totalMetrics, totalMetricsThreshold)
+    inputControl('metricsList', inputType, totalMetrics, totalMetricsThreshold)
+    inputControl('metricsGoalsList', inputType, totalMetrics, totalMetricsThreshold)
 
     // Dimensions and Dimension Goals
-    inputControl('dimensionsList', inputType1, totalDimensions, totalDimsThreshold)
-    inputControl('dimensionsGoalsList', inputType1, totalDimensions, totalDimsThreshold)
-    console.log('inputControl running...')
-  })
+    inputControl('dimensionsList', inputType, totalDimensions, totalDimsThreshold)
+    inputControl('dimensionsGoalsList', inputType, totalDimensions, totalDimsThreshold)
 
+    // Segments
+    inputControl('segmentsList', inputType, totalSegments, totalSegmentsThreshold)
+    console.log('inputControl running...')
+  }, 100)
+  // autorunAsync only (sort of) works here because it delays the action here till AFTER the interface populates...
+  // not a good or predictable solution
+  // also makes the normal behavior sluggish...
 
   // Render react component which handles Metric selection messaging
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'))
@@ -238,6 +222,10 @@ Alteryx.Gui.AfterLoad = (manager) => {
   // goals.populateMetricsGoalsList(store)
   // goals.populateDimensionsGoalsList(store)
   // segments.populateSegmentsList(store)
+
+  let promiseTest = Promise.resolve(store.totalMetricsAndGoals)
+
+  console.log('promiseTest = ' + toJS(promiseTest))
 
   window.optionList = optionList
 
