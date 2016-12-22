@@ -211,7 +211,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
   store.refresh_token = '1/58fo4PUozzcHFs2VJaY23wxyHc-x3-pb-2dUbNw33W4'
 
   // ////// CHINESE CHARSET CREDS //////
-  // store.client_id = '762585493927-3mkdpr3960s48p03gqk9sm0u13co8aht.apps.googleusercontent.com`'
+  // store.client_id = '762585493927-3mkdpr3960s48p03gqk9sm0u13co8aht.apps.googleusercontent.com'
   // store.client_secret = 'JNc1NiYYiDYFGhzQE1Ir_xsU'
   // store.refresh_token = '1/8oUvgmJUO_HmZcx6tfChpdcmRfp_hcfSaXXK35QTEt8'
 
