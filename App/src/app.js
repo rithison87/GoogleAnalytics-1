@@ -66,10 +66,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
       let total = store.segmentsList.selection.length
       return total
     },
-    allListsLength: () => {
-      let total = store.metricsList.stringList.length + store.metricsList.stringList.length + store.dimensionsList.stringList.length + store.dimensionsGoalsList.stringList.length + store.segmentsList.stringList.length
-      return total
-    },
     // Compute if startDatePicker value is greater than endDatePicker value
     startIsAfterEnd: () => {
       return store.startDatePicker > store.endDatePicker
@@ -149,34 +145,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
       store.maxResults = 1000
     }
   })
-
-  // when 10 metrics and metric goals are selected, set all unselected boxes to disabled
-  autorunAsync(() => {
-    // checkbox disable/enable argument constants
-    const initialStateTrigger = store.allListsLength // monitors the stringList.lengths instead of selection.lengths
-    const totalMetrics = store.totalMetricsAndGoals
-    const totalDimensions = store.totalDimensionsAndGoals
-    const totalSegments = store.totalSegments
-    const totalMetricsThreshold = 10
-    const totalDimsThreshold = 7
-    const totalSegmentsThreshold = 4
-    const inputType = 'checkbox'
-
-    // Metrics and Metric Goals
-    inputControl('metricsList', inputType, totalMetrics, totalMetricsThreshold)
-    inputControl('metricsGoalsList', inputType, totalMetrics, totalMetricsThreshold)
-
-    // Dimensions and Dimension Goals
-    inputControl('dimensionsList', inputType, totalDimensions, totalDimsThreshold)
-    inputControl('dimensionsGoalsList', inputType, totalDimensions, totalDimsThreshold)
-
-    // Segments
-    inputControl('segmentsList', inputType, totalSegments, totalSegmentsThreshold)
-    console.log('inputControl running...')
-  }, 100)
-  // autorunAsync only (sort of) works here because it delays the action here till AFTER the interface populates...
-  // not a good or predictable solution
-  // also makes the normal behavior sluggish...
 
   // Render react component which handles Metric selection messaging
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'))
