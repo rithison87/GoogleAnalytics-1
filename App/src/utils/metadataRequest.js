@@ -135,27 +135,4 @@ const storePush = (results) => {
   console.log(toJS(store.dimensionsList.stringList))
 }
 
-const triggerInputControlOnLoad = () => {
-    const original = store.maxResults
-    console.log('trigger: store original val of ' + original)
-    store.maxResults += 1
-    console.log('trigger: set new val to ' + store.maxResults)
-    store.maxResults = original
-    console.log('trigger: reset val to ' + store.maxResults)
-}
-
-// 	Top level function that contains promises for both Metrics and Dimensions
-const pushCombinedMetadata = (store) => {
-	const metadata = getMetadata(store.accessToken)
-	const customMetrics = getCustomMetadata(store.accessToken, 'METRIC')
-	const customDimensions = getCustomMetadata(store.accessToken, 'DIMENSION')
-	const promises = [metadata, customMetrics, customDimensions]
-
-    Promise.all( promises )
-    	.then( preSortMetadata )
-    	.then( sortMetadata )
-    	.then( storePush )
-        .then( triggerInputControlOnLoad )  	
-}
-
 export { getMetadata, filterMetadata, getCustomMetadata, pushCombinedMetadata, storePush, preSortMetadata };
