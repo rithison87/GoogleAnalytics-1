@@ -13,7 +13,7 @@ import moment from 'moment'
 import * as picker from './utils/datePickers'
 import SegmentMessage from './components/segmentMessage.jsx'
 import DateMessage from './components/dateMessage.jsx'
-import inputControl from './utils/inputControl.js'
+import conditionallyEnable from './utils/interfaceStateControl'
 
 Alteryx.Gui.AfterLoad = (manager) => {
   // Adds metrics.metricsSelectionCheck to UserDataChanged of metricsList
@@ -146,6 +146,18 @@ Alteryx.Gui.AfterLoad = (manager) => {
     }
   })
 
+  // Disable Next Buttons until all page requirements are met
+  autorun(() => {
+    console.log('disable next button autorun triggered')
+    const conditions1 = [
+      store.accountsList.selection,
+      store.webPropertiesList.selection,
+      store.profilesList.selection
+    ]
+
+    conditionallyEnable('profileSelectorsNextBtn', conditions1)
+  })
+
   // Render react component which handles Metric selection messaging
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'))
 
@@ -192,8 +204,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
   // segments.populateSegmentsList(store)
 
   let promiseTest = Promise.resolve(store.totalMetricsAndGoals)
-
-  console.log('promiseTest = ' + toJS(promiseTest))
 
   window.optionList = optionList
 
