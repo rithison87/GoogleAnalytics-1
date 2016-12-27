@@ -70,7 +70,7 @@ const filterBadMetadata = (response) => {
         break
       }
     }
-    // push non-matches to the objArray
+    // push to returned array only if remove is still false
     if (!remove) {
       objArray.push(d)
     }
