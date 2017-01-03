@@ -41,8 +41,7 @@ const getMetadata = (accessToken) => {
 // filter out bad metadata
 const filterBadMetadata = (response) => {
   let objArray = []
-  let consoleArray = []
-  const matchArray = [
+  const excludeList = [
     'ga:contentGroupUniqueViewsXX',
     'ga:calcMetric_<NAME>',
     'ga:metricXX',
@@ -61,23 +60,21 @@ const filterBadMetadata = (response) => {
     'ga:customVarValueXX',
     'ga:productCategoryLevelXX'
   ]
+
   // loop through each item in matchArray to exclude bad metadata
   response.forEach(d => {
-    let match = false
-    for (let i = 0; i < matchArray.length; i++) {
-      if (matchArray[i] === d.id) {
-        match = true
+    let remove = false
+    for (let i = 0, l = excludeList.length; i < l; i++) {
+      if (excludeList[i] === d.id) {
+        remove = true
+        break
       }
     }
-    // push non-matches to the objArray
-    if (!match) {
+    // push to returned array only if remove is still false
+    if (!remove) {
       objArray.push(d)
-    } else {
-      consoleArray.push(d)
     }
   })
-  console.log('Excluded Bad Metadata')
-  console.log(consoleArray)
   return objArray
 }
 
@@ -179,4 +176,4 @@ const storePush = (results) => {
   // console.log(toJS(store.dimensionsList.stringList))
 }
 
-export { getMetadata, filterMetadata, getCustomMetadata, pushCombinedMetadata, storePush, preSortMetadata }
+export { getMetadata, filterMetadata, getCustomMetadata, pushCombinedMetadata, storePush, preSortMetadata };
