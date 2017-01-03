@@ -149,13 +149,13 @@ Alteryx.Gui.AfterLoad = (manager) => {
   // Disable Next Buttons until all page requirements are met
   autorun(() => {
     console.log('disable next button autorun triggered')
-    const conditions1 = [
+    const profileConditions = [
       store.accountsList.selection,
       store.webPropertiesList.selection,
       store.profilesList.selection
     ]
 
-    conditionallyEnable('profileSelectorsNextBtn', conditions1)
+    conditionallyEnable('profileSelectorsNextBtn', profileConditions)
   })
 
   // Render react component which handles Metric selection messaging
