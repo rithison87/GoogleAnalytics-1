@@ -45,19 +45,18 @@ const toggleDisabled = (elementId) => {
 const conditionallyEnable = (elementId, conditionArray) => {
   console.log('conditionallyEnable called...')
   const target = document.getElementById(elementId)
-  let condtionsMet = true
+  let conditionsMet = true
 
-  for (let i = 0, l = conditionArray.length; i < l; i++) {
-    console.log('condition value being evaluated: ' + conditionArray[i])
-    if (conditionArray[i] === '' || !conditionArray[i]) {
-      condtionsMet = false
-      break
+  // check if conditions are met (selections made by user)
+  conditionArray.forEach((d) => {
+    if (d === '' || !d) {
+      conditionsMet = false
     }
-  }
+  })
 
-  console.log('condtionsMet value: ' + condtionsMet)
+  console.log('conditionsMet value: ' + conditionsMet)
 
-  if (condtionsMet) {
+  if (conditionsMet) {
     // enable button
     console.log('enabling button "' + elementId + '"')
     target.removeAttribute('disabled')
