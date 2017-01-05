@@ -206,7 +206,7 @@ const ajaxSuccess = (data, textStatus) => {
 const displayFieldset = (fieldsetName) => {
 
    //Array containing all fieldsets
-   let fieldsetArray = ["#accessMethod", "#onlineCreds", "#offlineCreds"]
+   let fieldsetArray = ["#accessMethod", "#onlineCreds", "#offlineCreds", "#datePickers", "#profileSelectors", "#metrics", "#dimensions", "#segments"]
 
    //Do we need to exclude the one that's about to be shown?
    //Array containing all fieldsets except for fieldsetName
@@ -214,14 +214,13 @@ const displayFieldset = (fieldsetName) => {
 
 
    $(document).ready(() => {
-        //Hide each item in the hideArray
+        // Hide each item in the hideArray
         hideArray.forEach((v) => {
            $(v).hide()
         })
-        //Show the fieldset corresponding with fieldsetName
+        // Show the fieldset corresponding with fieldsetName
         fieldsetName.forEach((v) => {
            $(v).show()
-
         })
     })
 }
