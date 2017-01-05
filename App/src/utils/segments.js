@@ -36,7 +36,7 @@ const parseSegments = (results) => {
 
 const segmentsStorePush = (result) => {
   result.map((d) => {
-   store.segmentsList.stringList.push({uiobject: d.uiobject, dataname: d.dataname})
+    store.segmentsList.stringList.push({uiobject: d.uiobject, dataname: d.definition})
   })
 }
 
