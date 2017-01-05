@@ -39,7 +39,10 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'segmentsList', type: 'listBox'},
     {key: 'advOptions', type: 'value'},
     {key: 'maxResults', type: 'value'}
+    // {key: 'view', type: 'value'}
   ]
+
+  displayFieldset(['#accessMethod'])
 
   // Instantiate the mobx store which will sync all dataItems
   // specified in the collection.
@@ -157,6 +160,23 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
     conditionallyEnable('profileSelectorsNextBtn', profileConditions)
   })
+  // autorun(() => {
+  //   const dateConditions = [
+  //     //store.preDefDropDown.value,
+  //     store.startDatePicker,
+  //     store.endDatePicker
+  //   ]
+  //   console.log(dateConditions)
+  //   const isValidSelection = () => {
+  //     if (store.startDatePicker.value <= store.endDatePicker.value){
+  //       return true
+  //     } else {
+  //       return false
+  //     }
+  //   }
+  //
+  //   conditionallyEnable('datePickersNextBtn', dateConditions, isValidSelection)
+  // })
 
   // Render react component which handles Metric selection messaging
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'))
