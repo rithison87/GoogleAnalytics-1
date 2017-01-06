@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { setFreshAccessToken, login, displayFieldset } from './utils/utils'
+import { setFreshAccessToken, login, displayFieldset, setPage } from './utils/utils'
 import AyxStore from './stores/AyxStore'
 import * as accounts from './utils/accountUtils'
 import * as metadataRequest from './utils/metadataRequest'
@@ -38,11 +38,9 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'preDefDropDown', type: 'value'},
     {key: 'segmentsList', type: 'listBox'},
     {key: 'advOptions', type: 'value'},
-    {key: 'maxResults', type: 'value'}
-    // {key: 'view', type: 'value'}
+    {key: 'maxResults', type: 'value'},
+    {key: 'page', type: 'value'}
   ]
-
-  displayFieldset(['#accessMethod'])
 
   // Instantiate the mobx store which will sync all dataItems
   // specified in the collection.
@@ -94,6 +92,10 @@ Alteryx.Gui.AfterLoad = (manager) => {
       return store.startDatePicker !== store.preDefStart ||
              store.endDatePicker !== store.preDefEnd
     }
+  })
+
+  autorun(() => {
+    store.page === '' ? displayFieldset('#accessMethod') : displayFieldset(store.page)
   })
 
   // Update preDefined selector to 'custom' when a custom date is selected/entered
@@ -234,6 +236,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.login = login
 
   window.displayFieldset = displayFieldset
+
+  window.setPage = setPage
 
   window.populateAccountsList = accounts.populateAccountsList
 
