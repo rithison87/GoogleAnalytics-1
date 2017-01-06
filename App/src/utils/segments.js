@@ -1,4 +1,5 @@
 import AyxStore from '../stores/AyxStore'
+import _ from 'lodash'
 
 // hard-coded IDs may be temp (discuss further)
 const metadataRequestUri = 'https://www.googleapis.com/analytics/v3/management/segments'
@@ -33,6 +34,10 @@ const parseSegments = (results) => {
   })
   return segmentsList
 }
+// sort segmentsList using lodash
+const sortSegmentsList = (segmentsList) => {
+  return _.orderBy(segmentsList, [a => a.uiobject.toLowerCase()], ['asc'])
+}
 
 const segmentsStorePush = (result) => {
   result.map((d) => {
@@ -46,6 +51,7 @@ const populateSegmentsList = (store) => {
   fetchSegments
 
     .then(parseSegments)
+    .then(sortSegmentsList)
     .done(segmentsStorePush)
 }
 
