@@ -37,7 +37,7 @@ Google Analytics Input</Text>
     </Node>
     <Node ToolID="123">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="166" y="373.9703" width="1896" height="462" />
+        <Position x="166" y="373.9703" width="2550" height="462" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -129,23 +129,6 @@ Google Analytics Input</Text>
             </MetaInfo>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
-        </Node>
-        <Node ToolID="20">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-            <Position x="1978" y="613.9705" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <Name>Output</Name>
-              <Abbrev />
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name>Output</Name>
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
         </Node>
         <Node ToolID="95">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
@@ -518,7 +501,7 @@ R:  Offline method</Text>
         </Node>
         <Node ToolID="261">
           <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-            <Position x="888" y="440" width="1057" height="312" />
+            <Position x="888" y="440" width="973" height="312" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -548,8 +531,8 @@ R:  Offline method</Text>
                     <FormulaField field="metricsURL" type="V_WString" size="1500" expression="IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" />
                     <FormulaField field="dimensionsURL" type="V_WString" size="1500" expression="IF IsEmpty([dimensionsList])&#xA;	THEN IF IsEmpty([dimensionsGoalsList])&#xA;		THEN ''&#xA;		ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;		ENDIF&#xA;	ELSE IF IsNull([dimensionsGoalsList])&#xA;		THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;		ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;		ENDIF &#xA;	ENDIF" />
                     <FormulaField field="segmentURL" type="V_WString" size="1500" expression="IF IsEmpty([segmentsList])&#xA;	THEN ''&#xA;	ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" />
-                    <FormulaField field="max-resultsURL" type="V_WString" size="1500" expression="IF [advOptions]&#xA;	THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA;	ELSE ''&#xA;ENDIF" />
-                    <FormulaField field="fullQueryURL" type="V_WString" size="2500" expression="[baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" />
+                    <FormulaField field="max-resultsURL" type="V_WString" size="1500" expression="IF [advOptions]&#xA;	THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA;	ELSE '&amp;max-results=10000'&#xA;ENDIF" />
+                    <FormulaField field="fullQueryURL" type="V_WString" size="2500" expression="[baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" />
                   </FormulaFields>
                 </Configuration>
                 <Annotation DisplayMode="0">
@@ -586,8 +569,8 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                     <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
               </Properties>
@@ -657,8 +640,8 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                     <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
@@ -709,8 +692,8 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                     <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
@@ -744,7 +727,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
             </Node>
             <Node ToolID="260">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-                <Position x="1222" y="613.9705" />
+                <Position x="1218" y="618" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -782,8 +765,8 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                     <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
@@ -815,8 +798,8 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                     <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
@@ -827,7 +810,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
             </Node>
             <Node ToolID="270">
               <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-                <Position x="1318" y="469" width="617" height="158" />
+                <Position x="1318" y="469" width="533" height="158" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -845,7 +828,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
               <ChildNodes>
                 <Node ToolID="264">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
-                    <Position x="1412" y="498" />
+                    <Position x="1328" y="498" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -884,8 +867,8 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                         <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                         <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
-                        <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                        <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                         <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                         <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -897,7 +880,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                 </Node>
                 <Node ToolID="265">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-                    <Position x="1484" y="498" />
+                    <Position x="1400" y="498" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -935,8 +918,8 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                         <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                         <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
-                        <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                        <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                         <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                         <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -969,8 +952,8 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                         <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                         <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
-                        <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                        <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                         <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                         <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -982,7 +965,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                 </Node>
                 <Node ToolID="266">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
-                    <Position x="1630" y="498" />
+                    <Position x="1546" y="498" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -1011,7 +994,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                 </Node>
                 <Node ToolID="267">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-                    <Position x="1556" y="498" />
+                    <Position x="1472" y="498" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -1038,7 +1021,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                 </Node>
                 <Node ToolID="268">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.Message.Message">
-                    <Position x="1866" y="498" />
+                    <Position x="1782" y="498" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -1064,98 +1047,9 @@ startDateURL="&amp;start-date="+[startDatePicker]
                   </Properties>
                   <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMessage" />
                 </Node>
-                <Node ToolID="269">
-                  <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-                    <Position x="1328" y="498" />
-                  </GuiSettings>
-                  <Properties>
-                    <Configuration>
-                      <Mode>Simple</Mode>
-                      <Simple>
-                        <Field>DownloadData</Field>
-                        <Operator>Contains</Operator>
-                        <Operands>
-                          <Operand>"containsSampledData": true</Operand>
-                        </Operands>
-                      </Simple>
-                    </Configuration>
-                    <Annotation DisplayMode="0">
-                      <Name />
-                      <DefaultAnnotationText>Contains([DownloadData],"" + '"' + "containsSampledData" + '"' + ": true")</DefaultAnnotationText>
-                      <Left value="False" />
-                    </Annotation>
-                    <MetaInfo connection="True">
-                      <RecordInfo>
-                        <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
-                        <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                        <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="segmentsList" size="1500" source="Formula: // replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" type="V_WString" />
-                        <Field name="advOptions" source="TextInput:" type="Bool" />
-                        <Field name="maxResults" source="TextInput:" type="Int64" />
-                        <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
-                        <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
-                        <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
-                        <Field name="endDateURL" size="1500" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
-                        <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
-                        <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
-                        <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
-                        <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
-                        <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
-                        <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
-                        <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
-                      </RecordInfo>
-                    </MetaInfo>
-                    <MetaInfo connection="False">
-                      <RecordInfo>
-                        <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
-                        <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                        <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="segmentsList" size="1500" source="Formula: // replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" type="V_WString" />
-                        <Field name="advOptions" source="TextInput:" type="Bool" />
-                        <Field name="maxResults" source="TextInput:" type="Int64" />
-                        <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
-                        <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
-                        <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
-                        <Field name="endDateURL" size="1500" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
-                        <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
-                        <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
-                        <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
-                        <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
-                        <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
-                        <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
-                        <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
-                      </RecordInfo>
-                    </MetaInfo>
-                  </Properties>
-                  <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
-                </Node>
                 <Node ToolID="275">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-                    <Position x="1722" y="498" />
+                    <Position x="1638" y="498" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -1180,7 +1074,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                 </Node>
                 <Node ToolID="274">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-                    <Position x="1630" y="558" />
+                    <Position x="1546" y="558" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -1207,7 +1101,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                 </Node>
                 <Node ToolID="277">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-                    <Position x="1794" y="498" />
+                    <Position x="1710" y="498" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -1234,7 +1128,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
             </Node>
             <Node ToolID="262">
               <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-                <Position x="1328" y="702" width="144" height="40" />
+                <Position x="1319" y="702" width="144" height="40" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1294,8 +1188,8 @@ Error Messaging</Text>
                     <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                     <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                     <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1307,7 +1201,7 @@ Error Messaging</Text>
             </Node>
             <Node ToolID="258">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Message.Message">
-                <Position x="1412" y="647" />
+                <Position x="1400" y="647" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1349,8 +1243,8 @@ Error Messaging</Text>
                     <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                     <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                     <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1453,11 +1347,684 @@ URL</Text>
             </Node>
           </ChildNodes>
         </Node>
+        <Node ToolID="303">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="1878" y="438" width="813" height="326" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>JSON Response Parsing</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
+              <Disabled value="False" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="285">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+                <Position x="2140" y="467" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Field>JSON_Name</Field>
+                  <NumFields value="3" />
+                  <ErrorHandling>Last</ErrorHandling>
+                  <RootName>JSON_Name</RootName>
+                  <Delimeters value="." />
+                  <Flags value="0" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                    <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name3" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+            </Node>
+            <Node ToolID="287">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+                <Position x="2044" y="467" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Mode>Simple</Mode>
+                  <Simple>
+                    <Field>JSON_Name</Field>
+                    <Operator>Contains</Operator>
+                    <Operands>
+                      <Operand>columnHeaders.</Operand>
+                    </Operands>
+                  </Simple>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>Contains([JSON_Name],"columnHeaders.")</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="True">
+                  <RecordInfo>
+                    <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                    <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+                <MetaInfo connection="False">
+                  <RecordInfo>
+                    <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                    <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+            </Node>
+            <Node ToolID="289">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+                <Position x="2224" y="467" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Expression>REGEX_Match([JSON_Name], "columnHeaders.\d*.name")</Expression>
+                  <Mode>Custom</Mode>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>REGEX_Match([JSON_Name], "columnHeaders.\d*.name")</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="True">
+                  <RecordInfo>
+                    <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                    <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name3" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+                <MetaInfo connection="False">
+                  <RecordInfo>
+                    <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                    <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name3" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+            </Node>
+            <Node ToolID="290">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+                <Position x="2308" y="467" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <GroupFields />
+                  <HeaderField field="JSON_Name2" />
+                  <DataField field="JSON_ValueString" />
+                  <Methods>
+                    <Method method="Concat" />
+                    <Separator>,</Separator>
+                    <FieldSize value="2048" />
+                  </Methods>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field name="0" size="2048" source="CrossTab:Header:JSON_Name2:0:Concat:" type="V_WString" />
+                    <Field name="1" size="2048" source="CrossTab:Header:JSON_Name2:1:Concat:" type="V_WString" />
+                    <Field name="2" size="2048" source="CrossTab:Header:JSON_Name2:2:Concat:" type="V_WString" />
+                  </RecordInfo>
+                  <SortInfo>
+                  </SortInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+            </Node>
+            <Node ToolID="283">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+                <Position x="1960" y="527" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <JSON_Field>DownloadData</JSON_Field>
+                  <IncludeInOutput value="False" />
+                  <SingleField value="True" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                    <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+            </Node>
+            <Node ToolID="284">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="1888" y="527" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="False" />
+                  <SelectFields>
+                    <SelectField field="DownloadData" selected="True" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+            <Node ToolID="286">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+                <Position x="2044" y="575" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Mode>Simple</Mode>
+                  <Simple>
+                    <Field>JSON_Name</Field>
+                    <Operator>Contains</Operator>
+                    <Operands>
+                      <Operand>rows.</Operand>
+                    </Operands>
+                  </Simple>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>Contains([JSON_Name],"rows.")</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="True">
+                  <RecordInfo>
+                    <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                    <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+                <MetaInfo connection="False">
+                  <RecordInfo>
+                    <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                    <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+            </Node>
+            <Node ToolID="288">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+                <Position x="2140" y="575" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Field>JSON_Name</Field>
+                  <NumFields value="3" />
+                  <ErrorHandling>Last</ErrorHandling>
+                  <RootName>JSON_Name</RootName>
+                  <Delimeters value="." />
+                  <Flags value="0" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                    <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name3" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+            </Node>
+            <Node ToolID="291">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+                <Position x="2224" y="575" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <GroupFields>
+                    <Field field="JSON_Name2" />
+                  </GroupFields>
+                  <HeaderField field="JSON_Name3" />
+                  <DataField field="JSON_ValueString" />
+                  <Methods>
+                    <Method method="Concat" />
+                    <Separator>,</Separator>
+                    <FieldSize value="2048" />
+                  </Methods>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+                    <Field name="0" size="2048" source="CrossTab:Header:JSON_Name3:0:Concat:" type="V_WString" />
+                    <Field name="1" size="2048" source="CrossTab:Header:JSON_Name3:1:Concat:" type="V_WString" />
+                    <Field name="2" size="2048" source="CrossTab:Header:JSON_Name3:2:Concat:" type="V_WString" />
+                  </RecordInfo>
+                  <SortInfo>
+                    <Field field="JSON_Name2" order="Asc" />
+                  </SortInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+            </Node>
+            <Node ToolID="292">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+                <Position x="2478" y="467" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <ByName_ErrorMode>Warning</ByName_ErrorMode>
+                  <ByName_OutputMode>All</ByName_OutputMode>
+                  <Mode>ByName</Mode>
+                  <SetOutputOrder value="True" />
+                  <OutputOrder>
+                    <Connection>#1</Connection>
+                    <Connection>#2</Connection>
+                  </OutputOrder>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field name="0" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+                    <Field name="1" size="2048" source="CrossTab: (Multiple Sources)" type="V_WString" />
+                    <Field name="2" size="2048" source="CrossTab: (Multiple Sources)" type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+            </Node>
+            <Node ToolID="293">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+                <Position x="2550" y="467" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <RenameMode>FirstRow</RenameMode>
+                  <Fields orderChanged="False">
+                    <Field name="0" />
+                    <Field name="1" />
+                    <Field name="2" />
+                    <Field name="*Unknown" />
+                  </Fields>
+                  <Expression />
+                  <FirstRow>
+                    <OnError>Warn</OnError>
+                  </FirstRow>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field name="0" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+                    <Field name="1" size="2048" source="CrossTab: (Multiple Sources)" type="V_WString" />
+                    <Field name="2" size="2048" source="CrossTab: (Multiple Sources)" type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+            </Node>
+            <Node ToolID="294">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="2394" y="575" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="False" />
+                  <SelectFields>
+                    <SelectField field="JSON_Name2" selected="False" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field name="0" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+                    <Field name="1" size="2048" source="CrossTab:Header:JSON_Name3:1:Concat:" type="V_WString" />
+                    <Field name="2" size="2048" source="CrossTab:Header:JSON_Name3:2:Concat:" type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+            <Node ToolID="295">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+                <Position x="2044" y="695" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Expression>!Contains([JSON_Name],"columnHeaders.")
+AND
+!Contains([JSON_Name],"rows.")
+AND
+!([JSON_Name]="kind")
+AND
+!([JSON_Name]="id")
+AND
+!Contains([JSON_Name],"itemsPerPage")</Expression>
+                  <Mode>Custom</Mode>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>!Contains([JSON_Name],"columnHeaders.")
+AND
+!Contains([JSON_N...</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="True">
+                  <RecordInfo>
+                    <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                    <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+                <MetaInfo connection="False">
+                  <RecordInfo>
+                    <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                    <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+            </Node>
+            <Node ToolID="296">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+                <Position x="2140" y="695" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Field>JSON_Name</Field>
+                  <NumFields value="3" />
+                  <ErrorHandling>Last</ErrorHandling>
+                  <RootName>JSON_Name</RootName>
+                  <Delimeters value="." />
+                  <Flags value="0" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                    <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name3" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+            </Node>
+            <Node ToolID="297">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="2224" y="695" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="True" />
+                  <SelectFields>
+                    <SelectField field="JSON_Name" selected="False" />
+                    <SelectField field="JSON_Name1" selected="True" rename="Parameter" />
+                    <SelectField field="JSON_Name2" selected="True" rename="Category" />
+                    <SelectField field="JSON_ValueString" selected="True" rename="Detail" />
+                    <SelectField field="JSON_Name3" selected="False" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Parameter" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Category" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field name="Detail" size="1073741823" source="JSONParse: " type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+            <Node ToolID="298">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+                <Position x="2308" y="695" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Mode>Simple</Mode>
+                  <Simple>
+                    <Field>Category</Field>
+                    <Operator>IsNotEmpty</Operator>
+                  </Simple>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>!IsEmpty([Category])</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="True">
+                  <RecordInfo>
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Parameter" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Category" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field name="Detail" size="1073741823" source="JSONParse: " type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+                <MetaInfo connection="False">
+                  <RecordInfo>
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Parameter" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Category" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field name="Detail" size="1073741823" source="JSONParse: " type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+            </Node>
+            <Node ToolID="299">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+                <Position x="2394" y="695" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SortInfo locale="0">
+                    <Field field="Parameter" order="Ascending" />
+                    <Field field="Category" order="Descending" />
+                  </SortInfo>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>Parameter - Ascending
+Category - Descending</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Parameter" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Category" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field name="Detail" size="1073741823" source="JSONParse: " type="V_WString" />
+                  </RecordInfo>
+                  <SortInfo locale="0">
+                    <Field field="Parameter" order="Ascending" />
+                    <Field field="Category" order="Descending" />
+                  </SortInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+            </Node>
+            <Node ToolID="300">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+                <Position x="2478" y="695" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <ByName_ErrorMode>Warning</ByName_ErrorMode>
+                  <ByName_OutputMode>All</ByName_OutputMode>
+                  <Mode>ByName</Mode>
+                  <SetOutputOrder value="True" />
+                  <OutputOrder>
+                    <Connection>#1</Connection>
+                    <Connection>#2</Connection>
+                  </OutputOrder>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Parameter" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Category" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                    <Field name="Detail" size="1073741823" source="JSONParse: " type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+            </Node>
+            <Node ToolID="301">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+                <Position x="2622" y="695" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Name>Summary</Name>
+                  <Abbrev>S</Abbrev>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+            </Node>
+            <Node ToolID="302">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+                <Position x="2622" y="467" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Name>Data</Name>
+                  <Abbrev>D</Abbrev>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+            </Node>
+            <Node ToolID="305">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+                <Position x="2224" y="630" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <NumRows value="0" />
+                  <Fields>
+                    <Field name="0" />
+                  </Fields>
+                  <Data />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field name="0" size="1073741823" source="TextInput:" type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+            </Node>
+            <Node ToolID="306">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+                <Position x="2308" y="575" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <ByName_ErrorMode>Warning</ByName_ErrorMode>
+                  <ByName_OutputMode>All</ByName_OutputMode>
+                  <Mode>ByName</Mode>
+                  <SetOutputOrder value="False" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+                    <Field name="0" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+                    <Field name="1" size="2048" source="CrossTab:Header:JSON_Name3:1:Concat:" type="V_WString" />
+                    <Field name="2" size="2048" source="CrossTab:Header:JSON_Name3:2:Concat:" type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+            </Node>
+          </ChildNodes>
+        </Node>
       </ChildNodes>
     </Node>
     <Node ToolID="107">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="2734" y="150" width="302" height="105" />
+        <Position x="2694" y="150" width="302" height="105" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1475,7 +2042,7 @@ URL</Text>
       <ChildNodes>
         <Node ToolID="104">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="2759" y="194" width="252" height="36" />
+            <Position x="2719" y="194" width="252" height="36" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1497,7 +2064,7 @@ URL</Text>
     </Node>
     <Node ToolID="113">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="153.9997" width="2524" height="212.0008" />
+        <Position x="167" y="149.9999" width="2512" height="212.0009" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1515,7 +2082,7 @@ URL</Text>
       <ChildNodes>
         <Node ToolID="49">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="371.2513" y="197.9997" width="59" height="59" />
+            <Position x="472.2513" y="194" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1528,7 +2095,7 @@ URL</Text>
         </Node>
         <Node ToolID="50">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="371.2514" y="282.0002" width="59" height="59" />
+            <Position x="472.2514" y="278.0005" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1541,7 +2108,7 @@ URL</Text>
         </Node>
         <Node ToolID="51">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="503.2514" y="198.0001" width="59" height="59" />
+            <Position x="604.2514" y="194.0006" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1554,7 +2121,7 @@ URL</Text>
         </Node>
         <Node ToolID="52">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="503.2513" y="282.0005" width="59" height="59" />
+            <Position x="604.2513" y="278.0008" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1567,7 +2134,7 @@ URL</Text>
         </Node>
         <Node ToolID="53">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="647.2513" y="197.9997" width="59" height="59" />
+            <Position x="748.2513" y="194" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1580,7 +2147,7 @@ URL</Text>
         </Node>
         <Node ToolID="54">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="647.2513" y="282.0004" width="59" height="59" />
+            <Position x="748.2513" y="278.0007" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1593,7 +2160,7 @@ URL</Text>
         </Node>
         <Node ToolID="56">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="263.2513" y="197.9997" width="59" height="59" />
+            <Position x="364.2515" y="194.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1606,7 +2173,7 @@ URL</Text>
         </Node>
         <Node ToolID="57">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="263.2513" y="282.0001" width="59" height="59" />
+            <Position x="364.2514" y="278.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1619,7 +2186,7 @@ URL</Text>
         </Node>
         <Node ToolID="146">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="1198" y="198.0001" width="59" height="59" />
+            <Position x="1299" y="194.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1632,7 +2199,7 @@ URL</Text>
         </Node>
         <Node ToolID="148">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="1510" y="198.0001" width="59" height="59" />
+            <Position x="1611" y="194.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1645,7 +2212,7 @@ URL</Text>
         </Node>
         <Node ToolID="151">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Date.Date">
-            <Position x="1966" y="198.0001" width="59" height="59" />
+            <Position x="2067" y="194.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1658,7 +2225,7 @@ URL</Text>
         </Node>
         <Node ToolID="152">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Date.Date">
-            <Position x="2098" y="198.0001" width="59" height="59" />
+            <Position x="2199" y="194.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1671,7 +2238,7 @@ URL</Text>
         </Node>
         <Node ToolID="153">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="2254" y="198.0001" width="59" height="59" />
+            <Position x="2355" y="194.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1684,7 +2251,7 @@ URL</Text>
         </Node>
         <Node ToolID="154">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1966" y="282" width="59" height="59" />
+            <Position x="2067" y="278.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1697,7 +2264,7 @@ URL</Text>
         </Node>
         <Node ToolID="155">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="2098" y="282" width="59" height="59" />
+            <Position x="2199" y="278.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1710,7 +2277,7 @@ URL</Text>
         </Node>
         <Node ToolID="156">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="2254" y="282" width="59" height="59" />
+            <Position x="2355" y="278.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1723,7 +2290,7 @@ URL</Text>
         </Node>
         <Node ToolID="158">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="934.0001" y="198" width="59" height="59" />
+            <Position x="1035" y="194.0002" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1736,7 +2303,7 @@ URL</Text>
         </Node>
         <Node ToolID="159">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1198" y="281.9999" width="59" height="59" />
+            <Position x="1299" y="278.0002" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1749,7 +2316,7 @@ URL</Text>
         </Node>
         <Node ToolID="160">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1510" y="282" width="59" height="59" />
+            <Position x="1611" y="278.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1762,7 +2329,7 @@ URL</Text>
         </Node>
         <Node ToolID="161">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="934.0001" y="282.0003" width="59" height="59" />
+            <Position x="1035" y="278.0006" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1775,7 +2342,7 @@ URL</Text>
         </Node>
         <Node ToolID="162">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="778.0001" y="198.0001" width="59" height="59" />
+            <Position x="879.0001" y="194.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1788,7 +2355,7 @@ URL</Text>
         </Node>
         <Node ToolID="163">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="1066" y="198.0001" width="59" height="59" />
+            <Position x="1167" y="194.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1801,7 +2368,7 @@ URL</Text>
         </Node>
         <Node ToolID="164">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="1354" y="198.0001" width="59" height="59" />
+            <Position x="1455" y="194.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1814,7 +2381,7 @@ URL</Text>
         </Node>
         <Node ToolID="165">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="1678" y="198.0001" width="59" height="59" />
+            <Position x="1779" y="194.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1827,7 +2394,7 @@ URL</Text>
         </Node>
         <Node ToolID="166">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="778.0002" y="282.0001" width="59" height="59" />
+            <Position x="879.0002" y="278.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1840,7 +2407,7 @@ URL</Text>
         </Node>
         <Node ToolID="167">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1066" y="281.9998" width="59" height="59" />
+            <Position x="1167" y="278.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1853,7 +2420,7 @@ URL</Text>
         </Node>
         <Node ToolID="168">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1354" y="282" width="59" height="59" />
+            <Position x="1455" y="278.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1866,7 +2433,7 @@ URL</Text>
         </Node>
         <Node ToolID="169">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1678" y="282" width="59" height="59" />
+            <Position x="1779" y="278.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1879,7 +2446,7 @@ URL</Text>
         </Node>
         <Node ToolID="170">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="1810" y="198" width="59" height="59" />
+            <Position x="1911" y="194.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1892,7 +2459,7 @@ URL</Text>
         </Node>
         <Node ToolID="171">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1810" y="282" width="59" height="59" />
+            <Position x="1911" y="278.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1905,7 +2472,7 @@ URL</Text>
         </Node>
         <Node ToolID="172">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="2374" y="198" width="59" height="59" />
+            <Position x="2475" y="194.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1918,7 +2485,7 @@ URL</Text>
         </Node>
         <Node ToolID="174">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="2494" y="198" width="59" height="59" />
+            <Position x="2595" y="194.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1931,7 +2498,7 @@ URL</Text>
         </Node>
         <Node ToolID="175">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="2374" y="282" width="59" height="59" />
+            <Position x="2475" y="278.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1944,7 +2511,7 @@ URL</Text>
         </Node>
         <Node ToolID="176">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="2494" y="282" width="59" height="59" />
+            <Position x="2595" y="278.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1957,7 +2524,7 @@ URL</Text>
         </Node>
         <Node ToolID="276">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="110" y="198" width="59" height="59" />
+            <Position x="223.0001" y="194.0005" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2139,16 +2706,16 @@ Support Macro(s)
       <Destination ToolID="255" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="260" Connection="True" />
-      <Destination ToolID="269" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="260" Connection="False" />
       <Destination ToolID="259" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="260" Connection="True" />
-      <Destination ToolID="20" Connection="Input" />
+      <Destination ToolID="264" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="260" Connection="True" />
+      <Destination ToolID="284" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="264" Connection="Output" />
@@ -2171,10 +2738,6 @@ Support Macro(s)
       <Destination ToolID="266" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="269" Connection="True" />
-      <Destination ToolID="264" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="275" Connection="Output" />
       <Destination ToolID="277" Connection="Input" />
     </Connection>
@@ -2189,6 +2752,98 @@ Support Macro(s)
     <Connection>
       <Origin ToolID="271" Connection="Output" />
       <Destination ToolID="254" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="285" Connection="Output" />
+      <Destination ToolID="289" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="287" Connection="True" />
+      <Destination ToolID="285" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="289" Connection="True" />
+      <Destination ToolID="290" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="290" Connection="Output" />
+      <Destination ToolID="292" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="294" Connection="Output" />
+      <Destination ToolID="292" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="283" Connection="Output" />
+      <Destination ToolID="287" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="283" Connection="Output" />
+      <Destination ToolID="295" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="283" Connection="Output" />
+      <Destination ToolID="286" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="284" Connection="Output" />
+      <Destination ToolID="283" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="286" Connection="True" />
+      <Destination ToolID="288" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="288" Connection="Output" />
+      <Destination ToolID="291" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="291" Connection="Output" />
+      <Destination ToolID="306" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="305" Connection="Output" />
+      <Destination ToolID="306" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="292" Connection="Output" />
+      <Destination ToolID="293" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="293" Connection="Output" />
+      <Destination ToolID="302" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="295" Connection="True" />
+      <Destination ToolID="296" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="296" Connection="Output" />
+      <Destination ToolID="297" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="297" Connection="Output" />
+      <Destination ToolID="298" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="298" Connection="True" />
+      <Destination ToolID="299" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="298" Connection="False" />
+      <Destination ToolID="300" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="299" Connection="Output" />
+      <Destination ToolID="300" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="300" Connection="Output" />
+      <Destination ToolID="301" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="306" Connection="Output" />
+      <Destination ToolID="294" Connection="Input" />
     </Connection>
     <Connection name="#1">
       <Origin ToolID="49" Connection="Question" />
@@ -2464,6 +3119,18 @@ Support Macro(s)
         <Value />
         <IsNumeric value="False" />
       </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (301)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (302)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
     </Constants>
     <MetaInfo>
       <NameIsFileName value="True" />
@@ -2723,12 +3390,6 @@ column	17</DynamicConfiguration>
           <ToolId value="9" />
           <Questions>
             <Question>
-              <Type>MacroOutput</Type>
-              <Description>Macro Output (46)</Description>
-              <Name>Output</Name>
-              <ToolId value="20" />
-            </Question>
-            <Question>
               <Type>TextBox</Type>
               <Description>client_id</Description>
               <Name>client_id</Name>
@@ -2899,6 +3560,18 @@ column	17</DynamicConfiguration>
               <Multiline value="False" />
               <Hidden value="False" />
             </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Summary</Description>
+              <Name>Macro Output (301)</Name>
+              <ToolId value="301" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Data</Description>
+              <Name>Macro Output (302)</Name>
+              <ToolId value="302" />
+            </Question>
           </Questions>
         </Question>
       </Questions>
@@ -2912,8 +3585,9 @@ column	17</DynamicConfiguration>
       <Wiz_CustomGraphic value="False" />
       <Wiz_ShowOutput value="True" />
       <Wiz_OpenOutputTools>
-        <Tool ToolId="20" Selected="True" />
         <Tool ToolId="138" Selected="True" />
+        <Tool ToolId="301" Selected="True" />
+        <Tool ToolId="302" Selected="True" />
       </Wiz_OpenOutputTools>
       <Wiz_OutputMessage />
       <Wiz_NoOutputFilesMessage />
