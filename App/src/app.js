@@ -176,6 +176,17 @@ Alteryx.Gui.AfterLoad = (manager) => {
     }
   })
 
+  autorun(() => {
+    const target = document.getElementById('datePickersNextBtn')
+    const invalidDateRange = store.startIsAfterEnd
+
+    if (invalidDateRange) {
+      target.setAttribute('disabled', 'true')
+    } else {
+      target.removeAttribute('disabled')
+    }
+  })
+
   // Render react component which handles Metric selection messaging
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'))
 
