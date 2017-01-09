@@ -549,7 +549,7 @@ R:  Offline method</Text>
                     <FormulaField field="dimensionsURL" type="V_WString" size="1500" expression="IF IsEmpty([dimensionsList])&#xA;	THEN IF IsEmpty([dimensionsGoalsList])&#xA;		THEN ''&#xA;		ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;		ENDIF&#xA;	ELSE IF IsNull([dimensionsGoalsList])&#xA;		THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;		ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;		ENDIF &#xA;	ENDIF" />
                     <FormulaField field="segmentURL" type="V_WString" size="1500" expression="IF IsEmpty([segmentsList])&#xA;	THEN ''&#xA;	ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" />
                     <FormulaField field="max-resultsURL" type="V_WString" size="1500" expression="IF [advOptions]&#xA;	THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA;	ELSE ''&#xA;ENDIF" />
-                    <FormulaField field="fullQueryURL" type="V_WString" size="2500" expression="[baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" />
+                    <FormulaField field="fullQueryURL" type="V_WString" size="2500" expression="[baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" />
                   </FormulaFields>
                 </Configuration>
                 <Annotation DisplayMode="0">
@@ -587,7 +587,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                     <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
               </Properties>
@@ -658,7 +658,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                     <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
@@ -710,7 +710,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                     <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
@@ -783,7 +783,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                     <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
@@ -816,7 +816,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                     <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
@@ -885,7 +885,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                         <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                         <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                         <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                         <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -936,7 +936,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                         <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                         <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                         <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                         <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -970,7 +970,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                         <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                         <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                         <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                         <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1111,7 +1111,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                         <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                         <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                         <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
                         <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
@@ -1144,7 +1144,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                         <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                         <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                         <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
                         <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
@@ -1295,7 +1295,7 @@ Error Messaging</Text>
                     <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                     <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                     <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1350,7 +1350,7 @@ Error Messaging</Text>
                     <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                     <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE ''&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]&#xA;+&quot;&amp;prettyPrint=true&quot;" type="V_WString" />
+                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                     <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
