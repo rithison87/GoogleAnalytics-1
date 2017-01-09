@@ -162,23 +162,19 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
     conditionallyEnable('profileSelectorsNextBtn', profileConditions)
   })
-  // autorun(() => {
-  //   const dateConditions = [
-  //     //store.preDefDropDown.value,
-  //     store.startDatePicker,
-  //     store.endDatePicker
-  //   ]
-  //   console.log(dateConditions)
-  //   const isValidSelection = () => {
-  //     if (store.startDatePicker.value <= store.endDatePicker.value){
-  //       return true
-  //     } else {
-  //       return false
-  //     }
-  //   }
-  //
-  //   conditionallyEnable('datePickersNextBtn', dateConditions, isValidSelection)
-  // })
+
+  autorun(() => {
+    const target = document.getElementById('metricsNextBtn')
+    const total = store.totalMetricsAndGoals
+
+    if (total < 1) {
+      target.setAttribute('disabled', 'true')
+    } else if (total > 10) {
+      target.setAttribute('disabled', 'true')
+    } else {
+      target.removeAttribute('disabled')
+    }
+  })
 
   // Render react component which handles Metric selection messaging
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'))
