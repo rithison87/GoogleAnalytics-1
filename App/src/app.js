@@ -4,7 +4,7 @@ import { setFreshAccessToken, login, displayFieldset, setPage } from './utils/ut
 import AyxStore from './stores/AyxStore'
 import * as accounts from './utils/accountUtils'
 import * as metadataRequest from './utils/metadataRequest'
-import { extendObservable, autorun, autorunAsync, toJS } from 'mobx'
+import { extendObservable, autorun, toJS } from 'mobx'
 import * as goals from './utils/goals'
 import * as segments from './utils/segments'
 import MetricMessage from './components/metricMessage.jsx'
@@ -16,10 +16,6 @@ import DateMessage from './components/dateMessage.jsx'
 import conditionallyEnable from './utils/interfaceStateControl'
 
 Alteryx.Gui.AfterLoad = (manager) => {
-  // Adds metrics.metricsSelectionCheck to UserDataChanged of metricsList
-  // bind functions no longer necessary due to metricMessage.js and dimensionMessage.js
-  // metrics.bindMetricCheck()
-  // dimensions.bindDimensionCheck()
 
   const collection = [
     {key: 'client_id', type: 'value'},
@@ -53,26 +49,26 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   extendObservable(store, {
     // Compute total selections for metrics and metric goals for use in react messaging
-    totalMetricsAndGoals: () => {
+    get totalMetricsAndGoals () {
       let total = store.metricsList.selection.length + store.metricsGoalsList.selection.length
       return total
     },
     // Compute total selections for dimensions and dimension goals for use in react messaging
-    totalDimensionsAndGoals: () => {
+    get totalDimensionsAndGoals () {
       let total = store.dimensionsList.selection.length + store.dimensionsGoalsList.selection.length
       return total
     },
     // Compute total number of selected segments, for use in react messaging
-    totalSegments: () => {
+    get totalSegments () {
       let total = store.segmentsList.selection.length
       return total
     },
     // Compute if startDatePicker value is greater than endDatePicker value
-    startIsAfterEnd: () => {
+    get startIsAfterEnd () {
       return store.startDatePicker > store.endDatePicker
     },
     // Compute start date for currently selected preDefDropDown value
-    preDefStart: () => {
+    get preDefStart () {
       if (store.preDefDropDown === 'custom') {
         return store.startDatePicker
       } else {
@@ -80,7 +76,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
       }
     },
     // Compute end date for currently selected preDefDropDown value
-    preDefEnd: () => {
+    get preDefEnd () {
       if (store.preDefDropDown === 'custom') {
         return store.endDatePicker
       } else {
@@ -88,7 +84,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
       }
     },
     // Compute if preDefined date values match currently set picker values
-    isCustomDate: () => {
+    get isCustomDate () {
       return store.startDatePicker !== store.preDefStart ||
              store.endDatePicker !== store.preDefEnd
     }
@@ -203,36 +199,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
   let optionList = [{uiobject: 'test1', dataname: 'test1 value'},
                     {uiobject: 'test2', dataname: 'test2 value'}]
 
-  // const triggerInputControlOnLoad = () => {
-  //   const original = store.maxResults
-  //   console.log('trigger: store original val of ' + original)
-  //   store.maxResults += 1
-  //   console.log('trigger: set new val to ' + store.maxResults)
-  //   store.maxResults = original
-  //   console.log('trigger: reset val to ' + store.maxResults)
-  // }
-
-  // triggerInputControlOnLoad()
-
-  // ////// ALTERYX CREDS //////
-  store.client_id = '734530915454-u7qs1p0dvk5d3i0hogfr0mpmdnjj24u2.apps.googleusercontent.com'
-  store.client_secret = 'Fty30QrWsKLQW-TmyJdrk9qf'
-  store.refresh_token = '1/58fo4PUozzcHFs2VJaY23wxyHc-x3-pb-2dUbNw33W4'
-
-  // ////// CHINESE CHARSET CREDS //////
-  // store.client_id = '762585493927-3mkdpr3960s48p03gqk9sm0u13co8aht.apps.googleusercontent.com'
-  // store.client_secret = 'JNc1NiYYiDYFGhzQE1Ir_xsU'
-  // store.refresh_token = '1/8oUvgmJUO_HmZcx6tfChpdcmRfp_hcfSaXXK35QTEt8'
-
   accounts.populateAccountsList(store)
-  // accounts.populateWebPropertiesList(store)
-  // accounts.populateProfilesMenu(store)
-  // metadataRequest.pushCombinedMetadata(store)
-  // goals.populateMetricsGoalsList(store)
-  // goals.populateDimensionsGoalsList(store)
-  // segments.populateSegmentsList(store)
-
-  let promiseTest = Promise.resolve(store.totalMetricsAndGoals)
 
   window.optionList = optionList
 
