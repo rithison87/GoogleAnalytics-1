@@ -1,17 +1,8 @@
-import {toJS} from 'mobx'
-
-// hard-coded IDs may be temp (discuss further)
-const accountId = '226181' // Alteryx //'336856' // Asian chars //
-const webPropertyId = 'UA-226181-9' // Alteryx //'UA-336856-1' // Asian chars //
-const metadataRequestUri = 'https://www.googleapis.com/analytics/v3/metadata/ga/columns'
-const customMetricsMetadataRequestUri = 'https://www.googleapis.com/analytics/v3/management/accounts/' + accountId + '/webproperties/' + webPropertyId + '/customMetrics'
-const customDimensionsMetadataRequestUri = 'https://www.googleapis.com/analytics/v3/management/accounts/' + accountId + '/webproperties/' + webPropertyId + '/customDimensions'
-
 // Top level function that contains promises for both Metrics and Dimensions
 const pushCombinedMetadata = (store) => {
-  const metadata = getMetadata(store.accessToken)
-  const customMetrics = getCustomMetadata(store.accessToken, 'METRIC')
-  const customDimensions = getCustomMetadata(store.accessToken, 'DIMENSION')
+  const metadata = getMetadata(store)
+  const customMetrics = getCustomMetadata(store, 'METRIC')
+  const customDimensions = getCustomMetadata(store, 'DIMENSION')
   const promises = [metadata, customMetrics, customDimensions]
 
   Promise.all(promises)
@@ -22,7 +13,9 @@ const pushCombinedMetadata = (store) => {
 }
 
 // get metadata for standard metrics and dimensions
-const getMetadata = (accessToken) => {
+const getMetadata = (store) => {
+  const metadataRequestUri = 'https://www.googleapis.com/analytics/v3/metadata/ga/columns'
+
   const settings = {
     'async': true,
     'crossDomain': true,
@@ -30,7 +23,7 @@ const getMetadata = (accessToken) => {
     'method': 'GET',
     'dataType': 'json',
     'headers': {
-      'Authorization': 'Bearer ' + accessToken,
+      'Authorization': 'Bearer ' + store.accessToken,
       'cache-control': 'private, max-age=0, must-revalidate, no-transform',
       'content-type': 'application/json; charset=UTF-8'
     }
@@ -84,8 +77,14 @@ const filterMetadata = (response) => {
 }
 
 // get metadata for custom metrics or dimensions
-const getCustomMetadata = (accessToken, metadataType) => {
+const getCustomMetadata = (store, metadataType) => {
   // metadataType is our argument when invoking getCustomMetadata() inside pushCombinedMetadata()
+  const accountId = store.accountsList.selection
+  const webPropertyId = store.webPropertiesList.selection
+  const customMetadataUri = 'https://www.googleapis.com/analytics/v3/management/accounts/'
+  const customMetricsMetadataRequestUri = customMetadataUri + accountId + '/webproperties/' + webPropertyId + '/customMetrics'
+  const customDimensionsMetadataRequestUri = customMetadataUri + accountId + '/webproperties/' + webPropertyId + '/customDimensions'
+
   const requestUri = metadataType === 'METRIC' ? customMetricsMetadataRequestUri : customDimensionsMetadataRequestUri
   const settings = {
     'async': true,
@@ -94,7 +93,7 @@ const getCustomMetadata = (accessToken, metadataType) => {
     'method': 'GET',
     'dataType': 'json',
     'headers': {
-      'Authorization': 'Bearer ' + accessToken,
+      'Authorization': 'Bearer ' + store.accessToken,
       'cache-control': 'private, max-age=0, must-revalidate, no-transform',
       'content-type': 'application/json; charset=UTF-8'
     }
@@ -172,8 +171,6 @@ const storePush = (results) => {
     const storeType = d.attributes.type === 'METRIC' ? store.metricsList : store.dimensionsList
     storeType.stringList.push({ uiobject: d.attributes.uiName, dataname: d.id })
   })
-  // console.log(toJS(store.metricsList.stringList))
-  // console.log(toJS(store.dimensionsList.stringList))
 }
 
 export { getMetadata, filterMetadata, getCustomMetadata, pushCombinedMetadata, storePush, preSortMetadata };
