@@ -38,6 +38,8 @@ const sortSegmentsList = (segmentsList) => {
 }
 
 const segmentsStorePush = (result) => {
+  store.segmentsList.stringList = []
+
   result.map((d) => {
     store.segmentsList.stringList.push({uiobject: d.uiobject, dataname: d.definition})
   })
