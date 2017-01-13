@@ -149,7 +149,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   // Disable Next Buttons until all page requirements are met
   autorun(() => {
-    console.log('disable next button autorun triggered')
     const profileConditions = [
       store.accountsList.selection,
       store.webPropertiesList.selection,
@@ -199,8 +198,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
   let optionList = [{uiobject: 'test1', dataname: 'test1 value'},
                     {uiobject: 'test2', dataname: 'test2 value'}]
 
-  accounts.populateAccountsList(store)
-
+  // All window declarations, below, are simply to expose functionality to the console, and
+  // should probably be removed or commented out before shipping the connector.
   window.optionList = optionList
 
   window.store = store

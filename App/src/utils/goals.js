@@ -48,6 +48,8 @@ const populateMetricsGoalsList = (store) => {
 
   // push to metrics goals list
   const goalsStorePush = (results) => {
+    store.metricsGoalsList.stringList = []
+
     results.map((d) => {
       store.metricsGoalsList.stringList.push({uiobject: d.uiobject, dataname: d.dataname})
     })
@@ -84,6 +86,8 @@ const populateDimensionsGoalsList = (store) => {
 
   // push to Dimensions goals list
   const goalsStorePush = (results) => {
+    store.dimensionsGoalsList.stringList = []
+
     results.map((d) => {
       store.dimensionsGoalsList.stringList.push({uiobject: d.uiobject, dataname: d.dataname})
     })

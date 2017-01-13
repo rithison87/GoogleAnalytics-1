@@ -43,7 +43,6 @@ const toggleDisabled = (elementId) => {
 
 // Enable a specific button if all required fields have a value
 const conditionallyEnable = (elementId, conditionArray) => {
-  console.log('conditionallyEnable called...')
   const target = document.getElementById(elementId)
   let conditionsMet = true
 
@@ -54,15 +53,11 @@ const conditionallyEnable = (elementId, conditionArray) => {
     }
   })
 
-  console.log('conditionsMet value: ' + conditionsMet)
-
   if (conditionsMet) {
     // enable button
-    console.log('enabling button "' + elementId + '"')
     target.removeAttribute('disabled')
   } else {
     // disable button
-    console.log('disabling button "' + elementId + '"')
     target.setAttribute('disabled', true)
   }
 }

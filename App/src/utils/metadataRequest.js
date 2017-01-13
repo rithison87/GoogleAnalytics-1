@@ -84,8 +84,8 @@ const getCustomMetadata = (store, metadataType) => {
   const customMetadataUri = 'https://www.googleapis.com/analytics/v3/management/accounts/'
   const customMetricsMetadataRequestUri = customMetadataUri + accountId + '/webproperties/' + webPropertyId + '/customMetrics'
   const customDimensionsMetadataRequestUri = customMetadataUri + accountId + '/webproperties/' + webPropertyId + '/customDimensions'
-
   const requestUri = metadataType === 'METRIC' ? customMetricsMetadataRequestUri : customDimensionsMetadataRequestUri
+
   const settings = {
     'async': true,
     'crossDomain': true,
@@ -166,6 +166,9 @@ const sortMetadata = (results) => {
 /* promise function to update the stores;
 the map function is a gateway that checks each type and pushes to the appropriate store */
 const storePush = (results) => {
+  store.metricsList.stringList = []
+  store.dimensionsList.stringList = []
+
   results.map((d) => {
     // This works because we define each METRIC or DIMENSION in mapCustomMetadata()
     const storeType = d.attributes.type === 'METRIC' ? store.metricsList : store.dimensionsList
@@ -173,4 +176,4 @@ const storePush = (results) => {
   })
 }
 
-export { getMetadata, filterMetadata, getCustomMetadata, pushCombinedMetadata, storePush, preSortMetadata };
+export { getMetadata, filterMetadata, getCustomMetadata, pushCombinedMetadata, storePush, preSortMetadata }
