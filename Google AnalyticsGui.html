@@ -27,8 +27,14 @@ Google Analytics Input GUI
             margin: 5px 0px 5px 10px;
         }
 
+        .listboxLegend {
+            margin: 0px 0px 0px 0px;
+            font-family: "Segoe UI Semibold"
+        }
+
         #metricsGoalsList .searchable-list-box, #dimensionsGoalsList .searchable-list-box {
                 height:126px;
+
         }
 
         .prevBtn {
@@ -79,10 +85,11 @@ Google Analytics Input GUI
             padding-top: 5px;
             padding-left: 10px;
             padding-right: 5px;
-            background-color: rgb(238,238,238);
-            border: #D5D5D5;
+            border: #EAF7FF;
             border-style: solid;
             border-width: 1px;
+            background-color: #EAF7FF;
+            font-family: "Segoe UI Semibold";
         }
 
         .selectionMessage-inner {
@@ -100,8 +107,36 @@ Google Analytics Input GUI
             margin-bottom: 0px;
             padding: 6px 10px 7px 10px;
             border-width: 1px;
+            border-left: 8px;
             border-style: solid;
-            border-color: rgb(187,187,187);
+            border-color: #1357da;
+            font-color: #1691C6;
+            font-family: "Segoe UI";
+
+        }
+        /*.selectionMessage-btn {
+            display: inline-block;
+            margin-top: 5px;
+            margin-right: 5px;
+            margin-bottom: 0px;
+            padding: 6px 10px 7px 10px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(187,187,187);*/
+
+
+        .goalSelectionMessage-btn {
+            display: inline-block;
+            margin-top: 5px;
+            margin-right: 5px;
+            margin-bottom: 0px;
+            padding: 6px 10px 7px 10px;
+            border-width: 1px;
+            border-left: 8px;
+            border-style: solid;
+            border-color: #00a89e;
+            font-color: #1691C6;
+
         }
 
         .datePicker {
@@ -260,11 +295,13 @@ Google Analytics Input GUI
 
 <!-- Metrics fieldset -->
     <fieldset id="metrics" style="display:none;"><!--Add a display:none during process story-->
-        <legend>Select Metrics to Include</legend>
+        <legend>Select Metrics and Goals to Include</legend>
         <hr>
-        <p class="selectionLegend">Select up to ten metrics and goals...</p>
+        <p class="selectionLegend">Choose a combined maximum of 10 metrics and goals...</p>
+        <p class="listboxLegend">Metrics</p>
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
           ismultiselect="true" issearchable="true" id="metricsList" dataName="metricsList" showsearchrow="true"></alteryx-pluginwidget>
+        <p class="listboxLegend">Goals</p>
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
           ismultiselect="true" issearchable="true" id="metricsGoalsList" dataName="metricsGoalsList" showsearchrow="true"></alteryx-pluginwidget>
         <div id="selectedMetrics"></div>
