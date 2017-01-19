@@ -105,35 +105,22 @@ const getAccessTokenAjaxCall = () => {
 // 1st step - Online login method
 const login = (store) => {
   const OAUTHURL = 'https://accounts.google.com/o/oauth2/auth?'
-  const VALIDURL = 'https://www.googleapis.com/oauth2/v1/tokeninfo?access_token='
   const SCOPE = 'https://www.googleapis.com/auth/analytics.readonly'
-    // const CLIENTID    =   '848225068776-9gs7ugqmespd53h65vh058pr7sae1h4c.apps.googleusercontent.com';
   const CLIENTID = '552512737410-g6admen5hqg6q268dmt3d9bminlri7en.apps.googleusercontent.com'
   const REDIRECT = 'https://developers.google.com/oauthplayground'
-  const LOGOUT = 'http://accounts.google.com/Logout'
   const TYPE = 'token'
   const _url = OAUTHURL + 'scope=' + SCOPE + '&client_id=' + CLIENTID + '&redirect_uri=' + REDIRECT + '&response_type=' + TYPE
-
-  console.log('login() called')
-  console.log('_url')
-  console.log(_url)
-
   const win = window.open(_url, 'windowname1', 'width=800, height=600')
 
   const pollTimer = window.setInterval(() => {
-    console.log('pollTimer() called')
-        // window.location.href = toolGuiUrl;
     try {
       if (win.document.location.origin === 'https://developers.google.com') {
         const url = win.document.URL
-        accessToken = gup(url, 'access_token')
-        console.log('Online Access Token:')
-        console.log(accessToken)
+        const accessToken = gup(url, 'access_token')
         Alteryx.Gui.manager.GetDataItem('accessToken').setValue(accessToken)
         validateToken(accessToken)
-                // window.location.href = toolGuiUrl;
         win.close()
-        displayFieldset(['#accessMethod', '#onlineCreds'])
+        setPage('#profileSelectors')
       }
     } catch (e) {
                 // console.log("catch");
@@ -188,6 +175,7 @@ const errParse = (jqXHR, textStatus, errorThrown) => {
     // changeCredentials();
 }
 const ajaxSuccess = (data, textStatus) => {
+  const accessToken = store.accessToken
     // loggedIn = true;
   document.getElementById('connectionStatus').innerHTML = ''
   document.getElementById('connectionStatusBox').setAttribute('style', 'display: none')
