@@ -63,6 +63,7 @@ const checkToken = (data) => {
       displayFieldset('#accessMethod')
       break
     case '#offlineCreds':
+      store.page = '#profileSelectors'
       displayFieldset('#profileSelectors')
       break
     default:
@@ -174,8 +175,9 @@ const setPage = (page) => {
   store.page = page
 }
 
+// Used to show/hide different fielsets
 const displayFieldset = (fieldsetName) => {
-   // Array containing all fieldsets
+  // Array containing all fieldsets
   let fieldsetArray = [
     '#accessMethod',
     '#onlineCreds',
@@ -207,8 +209,30 @@ const displayFieldset = (fieldsetName) => {
   })
 }
 
+// Used to initially hide all fieldsets on load
+const hideAllFieldsets = () => {
+  const fieldsetArray = [
+    '#accessMethod',
+    '#onlineCreds',
+    '#offlineCreds',
+    '#profileSelectors',
+    '#datePickers',
+    '#metrics',
+    '#dimensions',
+    '#segments',
+    '#token']
+
+  $(document).ready(() => {
+    // Hide each item in the hideArray
+    fieldsetArray.forEach((v) => {
+      $(v).hide()
+    })
+  })
+}
+
 // Used to check that token is still valid within the AfterLoad function
 const tokenValid = (store) => {
+  hideAllFieldsets()
   if (store.accessToken === '') {
     return
   }
@@ -248,4 +272,4 @@ const resetFields = () => {
   // To be added - clear out client id, etc.
 }
 
-export { getAccessTokenAjaxCall, login, gup, validateToken, displayFieldset, setPage, tokenValid, resetFields }
+export { getAccessTokenAjaxCall, login, gup, validateToken, displayFieldset, setPage, tokenValid, resetFields, hideAllFieldsets }
