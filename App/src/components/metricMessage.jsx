@@ -7,30 +7,10 @@ class MetricMessage extends React.Component {
     this.store = props.store
   }
 
-  addClass (total) {
-    return total < 1 || total > 10 ? 'warning' : ''
-  }
-
-  messageText (total) {
-    let text
-
-    if (total < 1) {
-      text = 'At least one metric must be selected.'
-    } else if (total > 10) {
-      text = 'Maximum of ten metrics can be chosen.  Please remove metric(s).'
-    } else {
-      text = ''
-    };
-
-    return text
-  }
-
   render () {
     const metrics = this.store.metricsList.selectedValues
     const goals = this.store.metricsGoalsList.selectedValues
     const total = this.store.totalMetricsAndGoals
-    const text = this.messageText(total)
-    const divClass = this.addClass(total)
 
     return (
       <div>
@@ -45,9 +25,6 @@ class MetricMessage extends React.Component {
             {
               goals.map((selection, idx) => <p className='goalSelectionMessage-btn' key={idx}>{selection}</p>)
             }
-          </div>
-          <div id='metricWarning' className={divClass}>
-            {text}
           </div>
         </div>
       </div>
