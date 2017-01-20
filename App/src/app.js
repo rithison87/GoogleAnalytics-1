@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { setFreshAccessToken, login, displayFieldset, setPage } from './utils/utils'
+import { login, displayFieldset, setPage, getAccessTokenAjaxCall, tokenValid, resetFields } from './utils/utils'
 import AyxStore from './stores/AyxStore'
 import * as accounts from './utils/accountUtils'
 import * as metadataRequest from './utils/metadataRequest'
@@ -15,9 +15,9 @@ import * as picker from './utils/datePickers'
 import SegmentMessage from './components/segmentMessage.jsx'
 import DateMessage from './components/dateMessage.jsx'
 import conditionallyEnable from './utils/interfaceStateControl'
+import ConnectionErrorMessage from './components/connectionErrorMessage.jsx'
 
 Alteryx.Gui.AfterLoad = (manager) => {
-
   const collection = [
     {key: 'client_id', type: 'value'},
     {key: 'client_secret', type: 'value'},
@@ -36,7 +36,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'segmentsList', type: 'listBox'},
     {key: 'advOptions', type: 'value'},
     {key: 'maxResults', type: 'value'},
-    {key: 'page', type: 'value'}
+    {key: 'page', type: 'value'},
+    {key: 'errorStatus', type: 'value'}
   ]
 
   // Instantiate the mobx store which will sync all dataItems
@@ -47,6 +48,9 @@ Alteryx.Gui.AfterLoad = (manager) => {
   if (!store.preDefDropDown) {
     store.preDefDropDown = 'custom'
   }
+
+  // Check that accessToken is valid
+  tokenValid(store)
 
   extendObservable(store, {
     // Compute total selections for metrics and metric goals for use in react messaging
@@ -188,6 +192,9 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   ReactDOM.render(<MetricBubbleMessage store={store} />, document.querySelector('#metricBubbleMessage'))
 
+  // Render react component which handles connection error messaging
+  ReactDOM.render(<ConnectionErrorMessage store={store} />, document.querySelector('#connectionErrorMessage'))
+
   // Render react component which handles Dimension selection messaging.
   ReactDOM.render(<DimensionMessage store={store} />, document.querySelector('#selectedDimensions'))
 
@@ -203,13 +210,16 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   // All window declarations, below, are simply to expose functionality to the console, and
   // should probably be removed or commented out before shipping the connector.
+  // Steve - I've found that if a function is referenced by the Gui.html file they need to be defined below
   window.optionList = optionList
 
   window.store = store
 
-  window.setFreshAccessToken = setFreshAccessToken
+  window.getAccessTokenAjaxCall = getAccessTokenAjaxCall
 
   window.login = login
+
+  window.resetFields = resetFields
 
   window.displayFieldset = displayFieldset
 
@@ -233,3 +243,4 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.toJS = toJS
 }
+
