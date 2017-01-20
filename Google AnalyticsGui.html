@@ -230,7 +230,7 @@ Google Analytics Input GUI
         <br/>
         <br/>
         <br/>
-        <a href="javascript:void(0)" onclick="setPage('#accessMethod'); myIFrame.location='https://www.google.com/accounts/Logout';">Change Login Credentials</a>
+        <a href="javascript:void(0)" onclick="resetFields();setPage('#accessMethod');myIFrame.location='https://www.google.com/accounts/Logout';">Change Login Credentials</a>
     </fieldset>
 
 <!-- 1b view - Offline credentials -->
@@ -251,7 +251,7 @@ Google Analytics Input GUI
         <br/>
         <br/>
         <br/>
-        <a href="javascript:void(0)" onclick="setPage('#accessMethod'); myIFrame.location='https://www.google.com/accounts/Logout';">Change Login Credentials</a>
+        <a href="javascript:void(0)" onclick="resetFields();setPage('#accessMethod');myIFrame.location='https://www.google.com/accounts/Logout';">Change Login Credentials</a>
     </fieldset>
 
 <!-- Account/WebProperties/Profiles Selectors fieldset -->
@@ -387,7 +387,7 @@ Google Analytics Input GUI
         <alteryx-pluginwidget type="TextBox" id="dataItemAccessToken" dataName="accessToken"></alteryx-pluginwidget>
         <alteryx-pluginwidget type="TextBox" id="page" dataName="page"></alteryx-pluginwidget>
         <alteryx-pluginwidget type="TextBox" id="errorStatus" dataName="errorStatus"></alteryx-pluginwidget>
-        
+
         <a href="#" style="display:none" id="logoutText" target='myIFrame' onclick="myIFrame.location='https://www.google.com/accounts/Logout';"></a>
         <iframe name='myIFrame' id="myIFrame" style='display:none'></iframe>
     </fieldset>
