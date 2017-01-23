@@ -9,6 +9,7 @@ import populateGoalsLists from './utils/goals'
 import * as segments from './utils/segments'
 import MetricMessage from './components/metricMessage.jsx'
 import MetricBubbleMessage from './components/MetricBubbleMessage.jsx'
+import DimensionBubbleMessage from './components/dimensionBubbleMessage.jsx'
 import DimensionMessage from './components/dimensionMessage.jsx'
 import moment from 'moment'
 import * as picker from './utils/datePickers'
@@ -16,6 +17,7 @@ import SegmentMessage from './components/segmentMessage.jsx'
 import DateMessage from './components/dateMessage.jsx'
 import conditionallyEnable from './utils/interfaceStateControl'
 import ConnectionErrorMessage from './components/connectionErrorMessage.jsx'
+import Summary from './components/summary.jsx'
 
 Alteryx.Gui.AfterLoad = (manager) => {
   const collection = [
@@ -176,6 +178,17 @@ Alteryx.Gui.AfterLoad = (manager) => {
   })
 
   autorun(() => {
+    const target = document.getElementById('dimensionsNextBtn')
+    const total = store.totalDimensionsAndGoals
+
+    if (total > 7) {
+      target.setAttribute('disabled', 'true')
+    } else {
+      target.removeAttribute('disabled')
+    }
+  })
+
+  autorun(() => {
     const target = document.getElementById('datePickersNextBtn')
     const invalidDateRange = store.startIsAfterEnd
 
@@ -190,6 +203,11 @@ Alteryx.Gui.AfterLoad = (manager) => {
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'))
 
   ReactDOM.render(<MetricBubbleMessage store={store} />, document.querySelector('#metricBubbleMessage'))
+                  
+  ReactDOM.render(<DimensionBubbleMessage store={store} />, document.querySelector('#dimensionBubbleMessage'))
+
+  // Render react component which handles the summary page
+  ReactDOM.render(<Summary store={store} />, document.querySelector('#summaryDiv'))
 
   // Render react component which handles connection error messaging
   ReactDOM.render(<ConnectionErrorMessage store={store} />, document.querySelector('#connectionErrorMessage'))
@@ -238,4 +256,3 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.toJS = toJS
 }
-
