@@ -185,6 +185,34 @@ Google Analytics Input GUI
             margin-top: 0px;
         }
 
+        tr {
+            display: block;
+            text-align: left;
+            vertical-align: middle;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 9pt;
+            font-style: normal;
+            font-weight: normal;
+            margin: 0px;
+            padding-right: 0px;
+            height: auto;
+        }
+
+        th {
+            display: inline-block;
+            text-align: left;
+            vertical-align: middle;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 9pt;
+            font-style: normal;
+            font-weight: normal;
+            margin-right: 10px;
+            padding: 0px;
+/*            border-width: 1px;
+            border-style: solid;*/
+            height: auto;
+        }
+
         #preDefDateRange {
             max-width: 200px;
         }
@@ -390,9 +418,24 @@ Google Analytics Input GUI
         </div>
         <div>
             <!-- Add id name and onclick function during process story -->
-            <button type="submit" class="nextBtn" id="segmentsNextBtn" onclick="">Next</button>
+            <button type="submit" class="nextBtn" id="segmentsNextBtn" onclick="setPage('#summary');">Done</button>
             <button class="prevBtn" id="segmentsPrevBtn" onclick="setPage('#dimensions')">Previous</button>
         </div>
+    </fieldset>
+
+<!-- Fieldset to display configuration summary -->
+    <fieldset id="summary" style="display:none">
+        <legend>Configuration Summary</legend>
+        <div id="summaryDiv"></div>
+        <br style="line-height:10px"/>
+        <hr>
+        <div style="margin-top: 5px;">
+            <button type="secondary" style="float: right" id="previous" onclick="setPage('#segments');">Previous</button>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <a href="javascript:void(0)" onclick="resetFields();setPage('#accessMethod');myIFrame.location='https://www.google.com/accounts/Logout';">Change Login Credentials</a>
     </fieldset>
 
 <!-- fieldset for the non-captured fields -->
