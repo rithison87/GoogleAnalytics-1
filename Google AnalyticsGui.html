@@ -38,6 +38,10 @@ Google Analytics Input GUI
                 height:126px;
 
         }
+        #metricBubbleMessage {
+          position: absolute;
+
+        }
 
         .bubbleWarning:before {
            background-color: transparent;
@@ -46,11 +50,12 @@ Google Analytics Input GUI
            border-bottom: 8px solid #9f1d20;
            content: "\00a0";
            height: 0px;
-           position: fixed;
-           top: 112px;
+           position: relative;
+           top: -14px;
            width: 0px;
-           bottom: 20px;
-           left: 140px;
+           left: 0px;
+           display: inline-block;
+
        }
        .bubbleWarning {
            background-color: #ec2227;
@@ -60,11 +65,12 @@ Google Analytics Input GUI
            display: inline-block;
            font-family: 'Segoe UI Semibold';
            font-size: 12px;
-           left: 120px;
-           top: 120px;
-           padding: 5px 5px 5px 5px;
-           position: fixed;
-           /*bottom: px;*/
+           left: 100px;
+           top: 42px;
+           right: 40px;
+           padding: 5px 20px 5px 5px;
+           position: relative;
+           text-align: center;
 
        }
 
@@ -147,8 +153,9 @@ Google Analytics Input GUI
             border-left: 8px;
             border-style: solid;
             border-color: #00698C;
-            font-color: #1691C6;
+            font-color: #135d7a;
             font-family: "Segoe UI";
+            background-color: #F2F2F2;
 
         }
 
@@ -164,6 +171,7 @@ Google Analytics Input GUI
             border-color: #00a89e;
             font-color: #1691C6;
             font-family: "Segoe UI";
+            background-color: #ffffff;
 
         }
 
@@ -326,8 +334,9 @@ Google Analytics Input GUI
         <legend>Select Metrics and Goals to Include</legend>
         <hr>
         <p class="selectionLegend">Choose a combined maximum of 10 metrics and goals...</p>
+
         <p class="listboxLegend">Metrics</p>
-        <div id="metricBubbleMessage"></div>
+        <div id="metricBubbleMessage" text-center='true'></div>
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
           ismultiselect="true" issearchable="true" id="metricsList" dataName="metricsList" showsearchrow="true"></alteryx-pluginwidget>
 
@@ -346,11 +355,14 @@ Google Analytics Input GUI
 
 <!-- Dimensions fieldset -->
     <fieldset id="dimensions" style="display:none;"><!--Add a display:none during process story-->
-        <legend>Select Dimensions to Include (Optional)</legend>
+        <legend>Select Dimensions and Goals to Include (Optional)</legend>
         <hr>
-        <p class="selectionLegend">Select up to seven dimensions and goals...</p>
+        <p class="selectionLegend">Choose a combined maximum of 7 dimensions and goals...</p>
+        <p class="listboxLegend">Dimensions</p>
+        <div id="dimensionBubbleMessage"></div>
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
           ismultiselect="true" issearchable="true" id="dimensionsList" dataName="dimensionsList" showsearchrow="true"></alteryx-pluginwidget>
+          <p class="listboxLegend">Goals</p>
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
           ismultiselect="true" issearchable="true" id="dimensionsGoalsList" dataName="dimensionsGoalsList" showsearchrow="true"></alteryx-pluginwidget>
         <div id="selectedDimensions"></div>

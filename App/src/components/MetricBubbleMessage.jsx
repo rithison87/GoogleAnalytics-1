@@ -15,9 +15,9 @@ class MetricBubbleMessage extends React.Component {
     let text
 
     if (total < 1) {
-      text = 'At least one metric must be selected.'
+      text = 'At least one metric or goal must be selected'
     } else if (total > 10) {
-      text = 'Maximum of ten metrics and goals may be selected.'
+      text = 'Maximum of ten metrics and goals may be selected'
     } else {
       text = ''
     };
