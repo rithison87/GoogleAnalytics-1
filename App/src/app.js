@@ -5,7 +5,7 @@ import AyxStore from './stores/AyxStore'
 import * as accounts from './utils/accountUtils'
 import * as metadataRequest from './utils/metadataRequest'
 import { extendObservable, autorun, toJS } from 'mobx'
-import * as goals from './utils/goals'
+import populateGoalsLists from './utils/goals'
 import * as segments from './utils/segments'
 import MetricMessage from './components/metricMessage.jsx'
 import MetricBubbleMessage from './components/MetricBubbleMessage.jsx'
@@ -135,8 +135,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
     if (store.accessToken !== '' || store.accountsList.stringList.length < 1) {
       accounts.populateAccountsList(store)
       metadataRequest.pushCombinedMetadata(store)
-      goals.populateMetricsGoalsList(store)
-      goals.populateDimensionsGoalsList(store)
+      populateGoalsLists(store)
       segments.populateSegmentsList(store)
     }
   })
@@ -230,10 +229,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.populateWebPropertiesList = accounts.populateWebPropertiesList
 
   window.populateProfilesMenu = accounts.populateProfilesMenu
-
-  window.populateMetricsGoalsList = goals.populateMetricsGoalsList
-
-  window.populateDimensionsGoalsList = goals.populateDimensionsGoalsList
 
   window.moment = moment
 
