@@ -178,7 +178,7 @@ const setPage = (page) => {
 // Used to show/hide different fielsets
 const displayFieldset = (fieldsetName) => {
   // Array containing all fieldsets
-  let fieldsetArray = [
+  let hideArray = [
     '#accessMethod',
     '#onlineCreds',
     '#offlineCreds',
@@ -187,15 +187,12 @@ const displayFieldset = (fieldsetName) => {
     '#metrics',
     '#dimensions',
     '#segments',
-    '#token']
+    '#token',
+    '#summary']
 
   let showArray = []
 
   showArray.push(fieldsetName)
-
-   // Do we need to exclude the one that's about to be shown?
-   // Array containing all fieldsets except for fieldsetName
-  let hideArray = fieldsetArray.filter((v) => v !== fieldsetName)
 
   $(document).ready(() => {
     // Hide each item in the hideArray

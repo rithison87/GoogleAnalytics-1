@@ -16,6 +16,7 @@ import SegmentMessage from './components/segmentMessage.jsx'
 import DateMessage from './components/dateMessage.jsx'
 import conditionallyEnable from './utils/interfaceStateControl'
 import ConnectionErrorMessage from './components/connectionErrorMessage.jsx'
+import Summary from './components/summary.jsx'
 
 Alteryx.Gui.AfterLoad = (manager) => {
   const collection = [
@@ -191,6 +192,9 @@ Alteryx.Gui.AfterLoad = (manager) => {
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'))
 
   ReactDOM.render(<MetricBubbleMessage store={store} />, document.querySelector('#metricBubbleMessage'))
+
+  // Render react component which handles the summary page
+  ReactDOM.render(<Summary store={store} />, document.querySelector('#summaryDiv'))
 
   // Render react component which handles connection error messaging
   ReactDOM.render(<ConnectionErrorMessage store={store} />, document.querySelector('#connectionErrorMessage'))
