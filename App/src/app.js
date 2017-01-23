@@ -9,6 +9,7 @@ import * as goals from './utils/goals'
 import * as segments from './utils/segments'
 import MetricMessage from './components/metricMessage.jsx'
 import MetricBubbleMessage from './components/MetricBubbleMessage.jsx'
+import DimensionBubbleMessage from './components/dimensionBubbleMessage.jsx'
 import DimensionMessage from './components/dimensionMessage.jsx'
 import moment from 'moment'
 import * as picker from './utils/datePickers'
@@ -178,6 +179,17 @@ Alteryx.Gui.AfterLoad = (manager) => {
   })
 
   autorun(() => {
+    const target = document.getElementById('dimensionsNextBtn')
+    const total = store.totalDimensionsAndGoals
+
+    if (total > 7) {
+      target.setAttribute('disabled', 'true')
+    } else {
+      target.removeAttribute('disabled')
+    }
+  })
+
+  autorun(() => {
     const target = document.getElementById('datePickersNextBtn')
     const invalidDateRange = store.startIsAfterEnd
 
@@ -192,6 +204,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'))
 
   ReactDOM.render(<MetricBubbleMessage store={store} />, document.querySelector('#metricBubbleMessage'))
+                  
+  ReactDOM.render(<DimensionBubbleMessage store={store} />, document.querySelector('#dimensionBubbleMessage'))
 
   // Render react component which handles the summary page
   ReactDOM.render(<Summary store={store} />, document.querySelector('#summaryDiv'))
@@ -247,4 +261,3 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   window.toJS = toJS
 }
-
