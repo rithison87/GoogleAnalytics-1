@@ -269,6 +269,7 @@ const resetFields = () => {
     'client_secret',
     'refresh_token',
     'accessToken',
+    'accountsList',
     'webPropertiesList',
     'profilesList',
     'metricsList',
