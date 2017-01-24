@@ -179,8 +179,6 @@ const preSortMetadata = (results) => {
 }
 
 const sortMetadata = (results) => {
-  console.log('sortMetadata results')
-  console.table(results)
   return results.sort((a, b) => {
     let uiNameA = a.attributes.uiName.toLowerCase()
     let uiNameB = b.attributes.uiName.toLowerCase()
