@@ -7,7 +7,7 @@ Google Analytics Input GUI
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Google Analytics Input</title>
+    <title>Google Analytics</title>
     <script type="text/javascript">
         // Include version 1 of the base GUI library.
         document.write('<link rel="import" href="' + window.Alteryx.LibDir + '1/lib/alteryx/gui/includes.html">');
@@ -340,7 +340,7 @@ Google Analytics Input GUI
         <legend>Select Dates to Include</legend>
         <div id="preDefDateRange">
             <label for="preDefDropDown">Preset Date Range</label>
-            <alteryx-pluginwidget type="DropDown" id="preDefDropDown" dataName="preDefDropDown" value="today">
+            <alteryx-pluginwidget type="DropDown" id="preDefDropDown" dataName="preDefDropDown">
                 <alteryx-option uiobject="Custom">custom</alteryx-option>
                 <alteryx-option uiobject="Today">today</alteryx-option>
                 <alteryx-option uiobject="Yesterday">yesterday</alteryx-option>
@@ -463,7 +463,7 @@ Google Analytics Input GUI
 
 <!-- Fieldset to display configuration summary -->
     <fieldset id="summary" style="display:none">
-        <legend>Verify Selections</legend>
+        <legend>Configuration Summary</legend>
         <div id="summaryDiv"></div>
         <div style="height:72px;"></div>
         <div class='footer'>
