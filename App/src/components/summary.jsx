@@ -8,7 +8,7 @@ class Summary extends React.Component {
   }
 
   maxResults(advOptions) {
-    return advOptions ? 'Results limited to a maximum of ' + this.store.maxResults + ' rows' : ''
+    return advOptions ? `Results limited to a maximum of ${this.store.maxResults} rows` : ''
   }
 
   render () {
