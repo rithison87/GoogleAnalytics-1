@@ -166,8 +166,6 @@ const connectionError = (jqXHR, textStatus, errorThrown) => {
 
 const ajaxSuccess = (data, textStatus) => {
   const accessToken = store.accessToken
-  document.getElementById('connectionStatus').innerHTML = ''
-  document.getElementById('connectionStatusBox').setAttribute('style', 'display: none')
   Alteryx.Gui.manager.GetDataItem('accessToken').setValue(accessToken)
 }
 

@@ -39,6 +39,7 @@ class Summary extends React.Component {
         <div>
           <a href="javascript:setPage('#profileSelectors')">Selected Account Details</a>
           <table style={tableStyle}>
+            <tbody>
             <tr>
               <th style={thNarrowStyle}>Account:</th>
               <th style={thStyle}>{account}</th>
@@ -51,12 +52,14 @@ class Summary extends React.Component {
               <th style={thNarrowStyle}>Profile:</th>
               <th style={thStyle}>{profile}</th>
             </tr>
+            </tbody>
           </table>
         </div>
         <br></br>
         <div>
           <a href="javascript:setPage('#datePickers')">Selected Date</a>
           <table style={tableStyle}>
+            <tbody>
             <tr>
               <th style={thNarrowStyle}>Start Date:</th>
               <th style={thStyle}>{startDate}</th>
@@ -65,6 +68,7 @@ class Summary extends React.Component {
               <th style={thNarrowStyle}>End Date:</th>
               <th style={thStyle}>{endDate}</th>
             </tr>
+            </tbody>
           </table>
         </div>
         <br></br>
@@ -72,12 +76,14 @@ class Summary extends React.Component {
           <a href="javascript:setPage('#metrics')">Selected Metrics and Goals</a>
           <div>
             <table>
+            <tbody>
             {
               metrics.map((selection, idx) => <tr><th key={idx}>{selection}</th></tr>)
             }
             {
               metricGoals.map((selection, idx) => <tr><th key={idx}>{selection}</th></tr>)
             }
+            </tbody>
             </table>
           </div>
         </div>
@@ -86,12 +92,14 @@ class Summary extends React.Component {
           <a href="javascript:setPage('#dimensions')">Selected Dimensions and Goals</a>
           <div>
             <table>
+            <tbody>
             {
               dimensions.map((selection, idx) => <tr><th key={idx}>{selection}</th></tr>)
             }
             {
               dimensionGoals.map((selection, idx) => <tr><th key={idx}>{selection}</th></tr>)
             }
+            </tbody>
             </table>
           </div>
         </div>
@@ -100,9 +108,11 @@ class Summary extends React.Component {
           <a href="javascript:setPage('#segments')">Selected Segments</a>
           <div>
             <table>
+            <tbody>
             {
               segments.map((selection, idx) => <tr><th key={idx}>{selection}</th></tr>)
             }
+            </tbody>
             </table>
           </div>
         </div>
