@@ -37,7 +37,7 @@ Google Analytics Input</Text>
     </Node>
     <Node ToolID="123">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="373.9703" width="2550" height="462" />
+        <Position x="54" y="369.9703" width="2550" height="462" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -250,7 +250,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
         </Node>
         <Node ToolID="115">
           <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-            <Position x="318.0001" y="417.9703" width="443.9999" height="393" />
+            <Position x="318.0001" y="413.9703" width="443.9999" height="393" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -268,7 +268,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
           <ChildNodes>
             <Node ToolID="93">
               <GuiSettings Plugin="AlteryxBasePluginsGui.DetourEnd.DetourEnd">
-                <Position x="678" y="613.9705" />
+                <Position x="678" y="614" />
               </GuiSettings>
               <Properties>
                 <Configuration />
@@ -296,6 +296,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
                     <Field name="segmentsList" size="1500" source="TextInput:" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
+                    <Field name="Authorization" size="2500" source="Formula: &quot;Bearer &quot;+[accessToken]" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
               </Properties>
@@ -303,7 +304,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
             </Node>
             <Node ToolID="138">
               <GuiSettings>
-                <Position x="475.0001" y="665.9704" />
+                <Position x="475.0001" y="661.9704" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -327,7 +328,7 @@ refresh_token=refresh_token
             </Node>
             <Node ToolID="129">
               <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-                <Position x="343.0001" y="677.9706" width="108" height="36" />
+                <Position x="343.0001" y="673.9706" width="108" height="36" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -348,7 +349,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="114">
               <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-                <Position x="464.0001" y="729.9703" width="192" height="56.00006" />
+                <Position x="464.0001" y="725.9703" width="192" height="56.00006" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -368,7 +369,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="98">
               <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-                <Position x="572.0001" y="653.9703" />
+                <Position x="572.0001" y="649.9703" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -415,7 +416,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="94">
               <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-                <Position x="368.0001" y="537.9703" width="59" height="59" />
+                <Position x="368.0001" y="533.9703" width="59" height="59" />
               </GuiSettings>
               <Properties>
                 <Configuration />
@@ -428,7 +429,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="92">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
-                <Position x="367.0001" y="613.9705" />
+                <Position x="366" y="614" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -486,7 +487,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="89">
               <GuiSettings Plugin="AlteryxGuiToolkit.Condition.Condition">
-                <Position x="368.0002" y="461.9703" width="59" height="59" />
+                <Position x="368.0002" y="457.9703" width="59" height="59" />
               </GuiSettings>
               <Properties>
                 <Configuration />
@@ -496,6 +497,46 @@ R:  Offline method</Text>
                   <Left value="False" />
                 </Annotation>
               </Properties>
+            </Node>
+            <Node ToolID="308">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+                <Position x="522" y="602" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <FormulaFields>
+                    <FormulaField field="Authorization" type="V_WString" size="2500" expression="&quot;Bearer &quot;+[accessToken]" />
+                  </FormulaFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>Authorization="Bearer "+[accessToken]</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
+                    <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
+                    <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="segmentsList" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="advOptions" source="TextInput:" type="Bool" />
+                    <Field name="maxResults" source="TextInput:" type="Int64" />
+                    <Field name="Authorization" size="2500" source="Formula: &quot;Bearer &quot;+[accessToken]" type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
             </Node>
           </ChildNodes>
         </Node>
@@ -562,6 +603,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="segmentsList" size="1500" source="Formula: // replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
+                    <Field name="Authorization" size="2500" source="Formula: &quot;Bearer &quot;+[accessToken]" type="V_WString" />
                     <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
                     <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
                     <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
@@ -590,6 +632,31 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <NameValues />
                     <Fields orderChanged="False">
                       <Field name="Authorization" />
+                      <Field name="accessToken" selected="False" />
+                      <Field name="client_secret" selected="False" />
+                      <Field name="client_id" selected="False" />
+                      <Field name="refresh_token" selected="False" />
+                      <Field name="startDatePicker" selected="False" />
+                      <Field name="endDatePicker" selected="False" />
+                      <Field name="preDefDropDown" selected="False" />
+                      <Field name="dimensionsList" selected="False" />
+                      <Field name="metricsList" selected="False" />
+                      <Field name="webPropertiesList" selected="False" />
+                      <Field name="accountsList" selected="False" />
+                      <Field name="profilesList" selected="False" />
+                      <Field name="metricsGoalsList" selected="False" />
+                      <Field name="dimensionsGoalsList" selected="False" />
+                      <Field name="segmentsList" selected="False" />
+                      <Field name="advOptions" selected="False" />
+                      <Field name="maxResults" selected="False" />
+                      <Field name="baseURL" selected="False" />
+                      <Field name="idsURL" selected="False" />
+                      <Field name="startDateURL" selected="False" />
+                      <Field name="endDateURL" selected="False" />
+                      <Field name="metricsURL" selected="False" />
+                      <Field name="dimensionsURL" selected="False" />
+                      <Field name="segmentURL" selected="False" />
+                      <Field name="max-resultsURL" selected="False" />
                       <Field name="fullQueryURL" selected="False" />
                       <Field name="*Unknown" selected="False" />
                     </Fields>
@@ -599,7 +666,32 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <QueryStringBodyMode>Compose</QueryStringBodyMode>
                     <ComposeNameValues />
                     <ComposeFields orderChanged="False">
+                      <Field name="accessToken" selected="False" />
+                      <Field name="client_secret" selected="False" />
+                      <Field name="client_id" selected="False" />
+                      <Field name="refresh_token" selected="False" />
+                      <Field name="startDatePicker" selected="False" />
+                      <Field name="endDatePicker" selected="False" />
+                      <Field name="preDefDropDown" selected="False" />
+                      <Field name="dimensionsList" selected="False" />
+                      <Field name="metricsList" selected="False" />
+                      <Field name="webPropertiesList" selected="False" />
+                      <Field name="accountsList" selected="False" />
+                      <Field name="profilesList" selected="False" />
+                      <Field name="metricsGoalsList" selected="False" />
+                      <Field name="dimensionsGoalsList" selected="False" />
+                      <Field name="segmentsList" selected="False" />
+                      <Field name="advOptions" selected="False" />
+                      <Field name="maxResults" selected="False" />
                       <Field name="Authorization" selected="False" />
+                      <Field name="baseURL" selected="False" />
+                      <Field name="idsURL" selected="False" />
+                      <Field name="startDateURL" selected="False" />
+                      <Field name="endDateURL" selected="False" />
+                      <Field name="metricsURL" selected="False" />
+                      <Field name="dimensionsURL" selected="False" />
+                      <Field name="segmentURL" selected="False" />
+                      <Field name="max-resultsURL" selected="False" />
                       <Field name="fullQueryURL" selected="False" />
                       <Field name="*Unknown" selected="False" />
                     </ComposeFields>
@@ -633,6 +725,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="segmentsList" size="1500" source="Formula: // replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
+                    <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                     <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
                     <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
                     <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
@@ -642,7 +735,6 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                     <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
                     <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
-                    <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                   </RecordInfo>
@@ -685,6 +777,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="segmentsList" size="1500" source="Formula: // replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
+                    <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                     <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
                     <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
                     <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
@@ -694,7 +787,6 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                     <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
                     <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
-                    <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
               </Properties>
@@ -758,6 +850,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="segmentsList" size="1500" source="Formula: // replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
+                    <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                     <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
                     <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
                     <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
@@ -767,7 +860,6 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                     <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
                     <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
-                    <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                   </RecordInfo>
@@ -791,6 +883,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="segmentsList" size="1500" source="Formula: // replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
+                    <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                     <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
                     <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
                     <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
@@ -800,7 +893,6 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                     <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
                     <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
-                    <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                   </RecordInfo>
@@ -860,6 +952,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="segmentsList" size="1500" source="Formula: // replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" type="V_WString" />
                         <Field name="advOptions" source="TextInput:" type="Bool" />
                         <Field name="maxResults" source="TextInput:" type="Int64" />
+                        <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                         <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
                         <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
                         <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
@@ -869,7 +962,6 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                         <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
                         <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
-                        <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                         <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
                         <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -911,6 +1003,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="segmentsList" size="1500" source="Formula: // replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" type="V_WString" />
                         <Field name="advOptions" source="TextInput:" type="Bool" />
                         <Field name="maxResults" source="TextInput:" type="Int64" />
+                        <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                         <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
                         <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
                         <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
@@ -920,7 +1013,6 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                         <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
                         <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
-                        <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                         <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
                         <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -945,6 +1037,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="segmentsList" size="1500" source="Formula: // replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" type="V_WString" />
                         <Field name="advOptions" source="TextInput:" type="Bool" />
                         <Field name="maxResults" source="TextInput:" type="Int64" />
+                        <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                         <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
                         <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
                         <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
@@ -954,7 +1047,6 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                         <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
                         <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
-                        <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                         <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
                         <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1181,6 +1273,7 @@ Error Messaging</Text>
                     <Field name="segmentsList" size="1500" source="Formula: // replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
+                    <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                     <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
                     <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
                     <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
@@ -1190,7 +1283,6 @@ Error Messaging</Text>
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                     <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
                     <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
-                    <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                     <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
                     <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1236,6 +1328,7 @@ Error Messaging</Text>
                     <Field name="segmentsList" size="1500" source="Formula: // replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
+                    <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                     <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
                     <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
                     <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
@@ -1245,7 +1338,6 @@ Error Messaging</Text>
                     <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot;+[segmentsList]&#xA;ENDIF" type="V_WString" />
                     <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
                     <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
-                    <Field name="Authorization" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                     <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
                     <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1298,6 +1390,7 @@ segmentsList=// replace two commas before users with semicolo...
                     <Field name="segmentsList" size="1500" source="Formula: // replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
+                    <Field name="Authorization" size="2500" source="Formula: &quot;Bearer &quot;+[accessToken]" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
               </Properties>
@@ -2096,7 +2189,7 @@ Category - Descending</DefaultAnnotationText>
     </Node>
     <Node ToolID="113">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="55" y="150" width="2512" height="212.0008" />
+        <Position x="21" y="150" width="2546" height="212.0008" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -2567,6 +2660,19 @@ Category - Descending</DefaultAnnotationText>
             </Annotation>
           </Properties>
         </Node>
+        <Node ToolID="309">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
+            <Position x="111.0001" y="270" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="1">
+              <Name>errorStatus</Name>
+              <DefaultAnnotationText />
+              <Left value="True" />
+            </Annotation>
+          </Properties>
+        </Node>
       </ChildNodes>
     </Node>
     <Node ToolID="126">
@@ -2710,12 +2816,16 @@ Support Macro(s)
       <Destination ToolID="93" Connection="Right" />
     </Connection>
     <Connection>
-      <Origin ToolID="92" Connection="Left" />
+      <Origin ToolID="308" Connection="Output" />
       <Destination ToolID="93" Connection="Left" />
     </Connection>
     <Connection>
       <Origin ToolID="92" Connection="Right" />
       <Destination ToolID="138" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="92" Connection="Left" />
+      <Destination ToolID="308" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="89" Connection="True Condition" />
@@ -3167,6 +3277,12 @@ Support Macro(s)
         <Value />
         <IsNumeric value="False" />
       </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>errorStatus</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
     </Constants>
     <MetaInfo>
       <NameIsFileName value="True" />
@@ -3607,6 +3723,16 @@ column	17</DynamicConfiguration>
               <Description>Data</Description>
               <Name>Macro Output (302)</Name>
               <ToolId value="302" />
+            </Question>
+            <Question>
+              <Type>TextBox</Type>
+              <Description>errorStatus</Description>
+              <Name>errorStatus</Name>
+              <ToolId value="309" />
+              <Default />
+              <Password value="False" />
+              <Multiline value="False" />
+              <Hidden value="False" />
             </Question>
           </Questions>
         </Question>
