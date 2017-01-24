@@ -25,6 +25,7 @@ class Summary extends React.Component {
     const segments = this.store.segmentsList.selectedValues
     const advOptions = this.store.advOptions
     const maxResults = this.maxResults(advOptions)
+    const divClass = 'summary'
     const tableStyle = {
       width: '95%'
     }
@@ -35,7 +36,7 @@ class Summary extends React.Component {
       width: '60%'
     }
     return (
-      <div>
+      <div className={divClass}>
         <div>
           <a href="javascript:setPage('#profileSelectors')">Selected Account Details</a>
           <table style={tableStyle}>
