@@ -263,8 +263,35 @@ const tokenValid = (store) => {
 }
 
 const resetFields = () => {
-  Alteryx.Gui.manager.GetDataItem('errorStatus').setValue('')
-  // To be added - clear out client id, etc.
+  const val = ''
+  const valArray = []
+
+  // Reset selection value
+  Alteryx.Gui.manager.GetDataItem('errorStatus').setValue(val)
+  Alteryx.Gui.manager.GetDataItem('client_id').setValue(val)
+  Alteryx.Gui.manager.GetDataItem('client_secret').setValue(val)
+  Alteryx.Gui.manager.GetDataItem('refresh_token').setValue(val)
+  Alteryx.Gui.manager.GetDataItem('accessToken').setValue(val)
+  Alteryx.Gui.manager.GetDataItem('accountsList').setValue(val)
+  Alteryx.Gui.manager.GetDataItem('webPropertiesList').setValue(val)
+  Alteryx.Gui.manager.GetDataItem('profilesList').setValue(val)
+  Alteryx.Gui.manager.GetDataItem('preDefDropDown').setValue('today')
+  // Alteryx.Gui.manager.GetDataItem('metricsList').setValue(val)
+  // Alteryx.Gui.manager.GetDataItem('metricsGoalsList').setValue(val)
+  // Alteryx.Gui.manager.GetDataItem('dimensionsList').setValue(val)
+  // Alteryx.Gui.manager.GetDataItem('dimensionsGoalsList').setValue(val)
+  // Alteryx.Gui.manager.GetDataItem('segmentsList').setValue(val)
+  Alteryx.Gui.manager.GetDataItem('advOptions').setValue(false)
+
+  // Reset string list
+  Alteryx.Gui.manager.GetDataItem('accountsList').setStringList(valArray)
+  Alteryx.Gui.manager.GetDataItem('webPropertiesList').setStringList(valArray)
+  Alteryx.Gui.manager.GetDataItem('profilesList').setStringList(valArray)
+  // Alteryx.Gui.manager.GetDataItem('metricsList').setStringList(valArray)
+  // Alteryx.Gui.manager.GetDataItem('metricsGoalsList').setStringList(valArray)
+  // Alteryx.Gui.manager.GetDataItem('dimensionsList').setStringList(valArray)
+  // Alteryx.Gui.manager.GetDataItem('dimensionsGoalsList').setStringList(valArray)
+  // Alteryx.Gui.manager.GetDataItem('segmentsList').setStringList(valArray)
 }
 
 export { getAccessTokenAjaxCall, login, gup, validateToken, displayFieldset, setPage, tokenValid, resetFields, hideAllFieldsets }
