@@ -47,7 +47,7 @@ const populateGoalsLists = store => {
     resp[0].map(goal => {
       resp[1].map(column => {
         constructedGoals.push({
-          uiobject: goal.name + ' (Goal ' + goal.id + ') - ' + column.suffix,
+          uiobject: goal.name + ' (Goal ' + goal.id + ' ' + column.suffix + ')',
           dataname: column.id.replace(/(.*)XX(.*)/, '$1' + goal.id + '$2'),
           type: goal.type
         })
