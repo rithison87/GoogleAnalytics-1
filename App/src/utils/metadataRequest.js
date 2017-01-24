@@ -8,6 +8,30 @@ const pushCombinedMetadata = (store) => {
   Promise.all(promises)
     .then(preSortMetadata)
     .then(filterBadMetadata)
+    // Prototype code for recognizing duplicate uiName values.
+    // .then(resp => {
+    //   let firstValue = []
+    //   let dupeValue = []
+    //   resp.map(d => {
+    //     if (dupeValue.includes(d.attributes.uiName)) {
+    //       // if already in dupeValues array, do nothing. Duplicate already captured.
+    //       console.log('doing nothing...')
+    //     } else if (firstValue.includes(d.attributes.uiName)) {
+    //       // if already in firstValue array, push to dupeValue array and set flag to true
+    //       dupeValue.push(d.attributes.uiName)
+    //       console.log('adding to dupeValue')
+    //       // d.hasDuplicateUinames = true
+    //     } else {
+    //       // if not in either array, push to firstValue array a
+    //       firstValue.push(d.attributes.uiName)
+    //       console.log('adding to firstValue')
+    //       // d.hasDuplicateUinames = false
+    //     }
+    //   })
+    //   console.log('created hasDuplicateUinames attribute:')
+    //   console.log([firstValue, dupeValue])
+    //   return resp
+    // })
     .then(sortMetadata)
     .then(storePush)
 }
@@ -51,7 +75,32 @@ const filterBadMetadata = (response) => {
     'ga:dimensionXX',
     'ga:customVarNameXX',
     'ga:customVarValueXX',
-    'ga:productCategoryLevelXX'
+    'ga:productCategoryLevelXX',
+    'ga:acquisitionCampaign',
+    'ga:acquisitionMedium',
+    'ga:acquisitionSource',
+    'ga:acquisitionSourceMedium',
+    'ga:acquisitionTrafficChannel',
+    'ga:cohort',
+    'ga:cohortNthDay',
+    'ga:cohortNthMonth',
+    'ga:cohortNthWeek',
+    'ga:cohortActiveUsers',
+    'ga:cohortAppviewsPerUser',
+    'ga:cohortAppviewsPerUserWithLifetimeCriteria',
+    'ga:cohortGoalCompletionsPerUser',
+    'ga:cohortGoalCompletionsPerUserWithLifetimeCriteria',
+    'ga:cohortPageviewsPerUser',
+    'ga:cohortPageviewsPerUserWithLifetimeCriteria',
+    'ga:cohortRetentionRate',
+    'ga:cohortRevenuePerUser',
+    'ga:cohortRevenuePerUserWithLifetimeCriteria',
+    'ga:cohortSessionDurationPerUser',
+    'ga:cohortSessionDurationPerUserWithLifetimeCriteria',
+    'ga:cohortSessionsPerUser',
+    'ga:cohortSessionsPerUserWithLifetimeCriteria',
+    'ga:cohortTotalUsers',
+    'ga:cohortTotalUsersWithLifetimeCriteria'
   ]
 
   // loop through each item in matchArray to exclude bad metadata
@@ -172,8 +221,8 @@ const storePush = (results) => {
   results.map((d) => {
     // This works because we define each METRIC or DIMENSION in mapCustomMetadata()
     const storeType = d.attributes.type === 'METRIC' ? store.metricsList : store.dimensionsList
-    storeType.stringList.push({ uiobject: d.attributes.uiName, dataname: d.id })
-  })
+    storeType.stringList.push({ uiobject: d.attributes.uiName + '  |  ' + d.id, dataname: d.id })
+  }) 
 }
 
 export { getMetadata, filterMetadata, getCustomMetadata, pushCombinedMetadata, storePush, preSortMetadata }
