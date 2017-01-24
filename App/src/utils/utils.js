@@ -263,35 +263,57 @@ const tokenValid = (store) => {
 }
 
 const resetFields = () => {
-  const val = ''
-  const valArray = []
+  const setValueArray = [
+    'errorStatus',
+    'client_id',
+    'client_secret',
+    'refresh_token',
+    'accessToken',
+    'webPropertiesList',
+    'profilesList',
+    'metricsList',
+    'metricsGoalsList',
+    'dimensionsList',
+    'dimensionsGoalsList',
+    'segmentsList'
+  ]
+  const stringListArray = [
+    'accountsList',
+    'webPropertiesList',
+    'profilesList',
+    'metricsList',
+    'metricsGoalsList',
+    'dimensionsList',
+    'dimensionsGoalsList',
+    'segmentsList'
+  ]
+  const renderArray = [
+    'metricsList',
+    'metricsGoalsList',
+    'dimensionsList',
+    'dimensionsGoalsList',
+    'segmentsList'
+  ]
 
-  // Reset selection value
-  Alteryx.Gui.manager.GetDataItem('errorStatus').setValue(val)
-  Alteryx.Gui.manager.GetDataItem('client_id').setValue(val)
-  Alteryx.Gui.manager.GetDataItem('client_secret').setValue(val)
-  Alteryx.Gui.manager.GetDataItem('refresh_token').setValue(val)
-  Alteryx.Gui.manager.GetDataItem('accessToken').setValue(val)
-  Alteryx.Gui.manager.GetDataItem('accountsList').setValue(val)
-  Alteryx.Gui.manager.GetDataItem('webPropertiesList').setValue(val)
-  Alteryx.Gui.manager.GetDataItem('profilesList').setValue(val)
+  // Resets the selection value for widgets
+  setValueArray.map(d => {
+    Alteryx.Gui.manager.GetDataItem(d).setValue('')
+  })
+
+  // Resets the stringList for widgets
+  stringListArray.map(d => {
+    Alteryx.Gui.manager.GetDataItem(d).setStringList([])
+  })
+
+  // Remove prior selections from ListBox widgets
+  renderArray.map(d => {
+    Alteryx.Gui.renderer.getReactComponentByDataName(d).selectedItemsMap = {}
+    Alteryx.Gui.renderer.getReactComponentByDataName(d).forceUpdate()
+  })
+
+  // Set default value for preDefDropDown and advOptions
   Alteryx.Gui.manager.GetDataItem('preDefDropDown').setValue('today')
-  // Alteryx.Gui.manager.GetDataItem('metricsList').setValue(val)
-  // Alteryx.Gui.manager.GetDataItem('metricsGoalsList').setValue(val)
-  // Alteryx.Gui.manager.GetDataItem('dimensionsList').setValue(val)
-  // Alteryx.Gui.manager.GetDataItem('dimensionsGoalsList').setValue(val)
-  // Alteryx.Gui.manager.GetDataItem('segmentsList').setValue(val)
   Alteryx.Gui.manager.GetDataItem('advOptions').setValue(false)
-
-  // Reset string list
-  Alteryx.Gui.manager.GetDataItem('accountsList').setStringList(valArray)
-  Alteryx.Gui.manager.GetDataItem('webPropertiesList').setStringList(valArray)
-  Alteryx.Gui.manager.GetDataItem('profilesList').setStringList(valArray)
-  // Alteryx.Gui.manager.GetDataItem('metricsList').setStringList(valArray)
-  // Alteryx.Gui.manager.GetDataItem('metricsGoalsList').setStringList(valArray)
-  // Alteryx.Gui.manager.GetDataItem('dimensionsList').setStringList(valArray)
-  // Alteryx.Gui.manager.GetDataItem('dimensionsGoalsList').setStringList(valArray)
-  // Alteryx.Gui.manager.GetDataItem('segmentsList').setStringList(valArray)
 }
 
 export { getAccessTokenAjaxCall, login, gup, validateToken, displayFieldset, setPage, tokenValid, resetFields, hideAllFieldsets }
