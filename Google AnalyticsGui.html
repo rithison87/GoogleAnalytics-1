@@ -40,12 +40,12 @@ Google Analytics Input GUI
         }
         #metricBubbleMessage {
           position: absolute;
-          z-index: -10000;
+          pointer-events: none;
 
         }
         #dimensionBubbleMessage {
           position: absolute;
-          z-index: -10000;
+          pointer-events: none;
 
         }
 
@@ -72,7 +72,7 @@ Google Analytics Input GUI
            font-family: 'Segoe UI Semibold';
            font-size: 12px;
            left: 100px;
-           top: 42px;
+           top: 35px;
            right: 40px;
            padding: 5px 20px 5px 5px;
            position: relative;
@@ -328,7 +328,6 @@ Google Analytics Input GUI
             <div style="margin-top: 8px;margin-bottom: 8px;">
                 <!-- Add id name and onclick function during process story -->
                 <button type="submit" class="nextBtn" id="profileSelectorsNextBtn" onclick="setPage('#datePickers');">Next</button>
-                <button class="prevBtn" id="profileSelectorsPrevBtn" onclick="setPage('#accessMethod');">Previous</button>
             </div>
             <br>
             <br>
@@ -341,7 +340,7 @@ Google Analytics Input GUI
         <legend>Select Dates to Include</legend>
         <div id="preDefDateRange">
             <label for="preDefDropDown">Preset Date Range</label>
-            <alteryx-pluginwidget type="DropDown" id="preDefDropDown" dataName="preDefDropDown">
+            <alteryx-pluginwidget type="DropDown" id="preDefDropDown" dataName="preDefDropDown" value="today">
                 <alteryx-option uiobject="Custom">custom</alteryx-option>
                 <alteryx-option uiobject="Today">today</alteryx-option>
                 <alteryx-option uiobject="Yesterday">yesterday</alteryx-option>
