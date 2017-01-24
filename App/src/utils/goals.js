@@ -56,41 +56,21 @@ const populateGoalsLists = store => {
     return constructedGoals
   }
 
-  const createGoalType = resp => {
-    // set new goalType attribute to either metric or dimension based on incoming type value
-    resp.map(d => {
-      const isMetric = _.includes(['VISIT_TIME_ON_SITE', 'VISIT_NUM_PAGES', 'EVENT'], d.type)
-      if (isMetric) {
-        d.goalType = 'METRIC'
-      } else {
-        d.goalType = 'DIMENSION'
-      }
-    })
-    return resp
-  }
-
   const orderGoalsAsc = resp => {
     // sort all goals alphabetically, ascending
     return _.orderBy(resp, d => d.uiobject.toLowerCase(), 'asc')
   }
 
-  const pushToGoalsLists = resp => {
+  const pushToGoalsList = resp => {
     // push metric and dimension goals to the correct list
     store.metricsGoalsList.stringList = []
     store.dimensionsGoalsList.stringList = []
 
     resp.map(d => {
-      if (d.goalType === 'METRIC') {
-        store.metricsGoalsList.stringList.push({
-          uiobject: d.uiobject,
-          dataname: d.dataname
-        })
-      } else if (d.goalType === 'DIMENSION') {
-        store.dimensionsGoalsList.stringList.push({
-          uiobject: d.uiobject,
-          dataname: d.dataname
-        })
-      }
+      store.metricsGoalsList.stringList.push({
+        uiobject: d.uiobject,
+        dataname: d.dataname
+      })
     })
   }
 
@@ -102,9 +82,8 @@ const populateGoalsLists = store => {
     .then(filterGoalsAndColumns)
     .then(createGoalSuffix)
     .then(combineGoalsAndColumnsData)
-    .then(createGoalType)
     .then(orderGoalsAsc)
-    .then(pushToGoalsLists)
+    .then(pushToGoalsList)
 }
 
 export default populateGoalsLists
