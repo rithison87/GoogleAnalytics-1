@@ -265,8 +265,58 @@ const tokenValid = (store) => {
 }
 
 const resetFields = () => {
-  Alteryx.Gui.manager.GetDataItem('errorStatus').setValue('')
-  // To be added - clear out client id, etc.
+  const setValueArray = [
+    'errorStatus',
+    'client_id',
+    'client_secret',
+    'refresh_token',
+    'accessToken',
+    'accountsList',
+    'webPropertiesList',
+    'profilesList',
+    'metricsList',
+    'metricsGoalsList',
+    'dimensionsList',
+    'dimensionsGoalsList',
+    'segmentsList'
+  ]
+  const stringListArray = [
+    'accountsList',
+    'webPropertiesList',
+    'profilesList',
+    'metricsList',
+    'metricsGoalsList',
+    'dimensionsList',
+    'dimensionsGoalsList',
+    'segmentsList'
+  ]
+  const renderArray = [
+    'metricsList',
+    'metricsGoalsList',
+    'dimensionsList',
+    'dimensionsGoalsList',
+    'segmentsList'
+  ]
+
+  // Resets the selection value for widgets
+  setValueArray.map(d => {
+    Alteryx.Gui.manager.GetDataItem(d).setValue('')
+  })
+
+  // Resets the stringList for widgets
+  stringListArray.map(d => {
+    Alteryx.Gui.manager.GetDataItem(d).setStringList([])
+  })
+
+  // Remove prior selections from ListBox widgets
+  renderArray.map(d => {
+    Alteryx.Gui.renderer.getReactComponentByDataName(d).selectedItemsMap = {}
+    Alteryx.Gui.renderer.getReactComponentByDataName(d).forceUpdate()
+  })
+
+  // Set default value for preDefDropDown and advOptions
+  Alteryx.Gui.manager.GetDataItem('preDefDropDown').setValue('today')
+  Alteryx.Gui.manager.GetDataItem('advOptions').setValue(false)
 }
 
 export { getAccessTokenAjaxCall, login, gup, validateToken, displayFieldset, setPage, tokenValid, resetFields, hideAllFieldsets }

@@ -7,7 +7,7 @@ Google Analytics Input GUI
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Google Analytics Input</title>
+    <title>Google Analytics</title>
     <script type="text/javascript">
         // Include version 1 of the base GUI library.
         document.write('<link rel="import" href="' + window.Alteryx.LibDir + '1/lib/alteryx/gui/includes.html">');
@@ -72,11 +72,12 @@ Google Analytics Input GUI
            font-family: 'Segoe UI Semibold';
            font-size: 12px;
            left: 100px;
-           top: 35px;
+           top: 42px;
            right: 40px;
            padding: 5px 20px 5px 5px;
            position: relative;
            text-align: center;
+
 
        }
 
@@ -197,12 +198,16 @@ Google Analytics Input GUI
            margin-right: 8px;
            left:0px;
            bottom:0px;
-           height:72px;
+           height:82px;
            width:96%;
            background: white;
         }
 
-        tr {
+        .footer_spacer {
+            height: 82px;
+        }
+
+        .summary tr {
             display: block;
             text-align: left;
             vertical-align: middle;
@@ -215,7 +220,7 @@ Google Analytics Input GUI
             height: auto;
         }
 
-        th {
+        .summary th {
             display: inline-block;
             text-align: left;
             vertical-align: middle;
@@ -297,7 +302,7 @@ Google Analytics Input GUI
         <label>Refresh Token</label>
         <alteryx-pluginwidget type="TextBox" password="true" id="dataItemRefreshToken" dataName="refresh_token"></alteryx-pluginwidget>
         <label></label>
-        <div style="height:72px;"></div>
+        <div class='footer_spacer'></div>
         <div class='footer'>
             <hr>
             <div style="margin-top: 8px;margin-bottom: 8px;">
@@ -321,13 +326,12 @@ Google Analytics Input GUI
         <label>Available Profiles</label>
         <alteryx-pluginwidget type="DropDown"  id="profilesList" dataName="profilesList"></alteryx-pluginwidget>
         <p style="margin: 5px;"></p>
-        <div style="height:72px;"></div>
+        <div class='footer_spacer'></div>
         <div class='footer'>
             <hr>
             <div style="margin-top: 8px;margin-bottom: 8px;">
                 <!-- Add id name and onclick function during process story -->
                 <button type="submit" class="nextBtn" id="profileSelectorsNextBtn" onclick="setPage('#datePickers');">Next</button>
-                <button class="prevBtn" id="profileSelectorsPrevBtn" onclick="setPage('#accessMethod');">Previous</button>
             </div>
             <br>
             <br>
@@ -364,7 +368,7 @@ Google Analytics Input GUI
             <alteryx-pluginwidget type="DateTimeField" dateFormat="YYYY-MM-DD" id="endDatePicker" dataType="SimpleDate" dataName="endDatePicker"></alteryx-pluginwidget>
         </div>
         <div id="dateWarning"></div>
-        <div style="height:72px;"></div>
+        <div class='footer_spacer'></div>
         <div class='footer'>
             <hr>
             <div style="margin-top: 8px;margin-bottom: 8px;">
@@ -391,7 +395,7 @@ Google Analytics Input GUI
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
           ismultiselect="true" issearchable="true" id="metricsGoalsList" dataName="metricsGoalsList" showsearchrow="true"></alteryx-pluginwidget>
         <div id="selectedMetrics"></div>
-        <div style="height:72px;"></div>
+        <div class='footer_spacer'></div>
         <div class='footer'>
             <hr>
             <div style="margin-top: 8px;margin-bottom: 8px;">
@@ -418,7 +422,7 @@ Google Analytics Input GUI
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
           ismultiselect="true" issearchable="true" id="dimensionsGoalsList" dataName="dimensionsGoalsList" showsearchrow="true"></alteryx-pluginwidget>
         <div id="selectedDimensions"></div>
-        <div style="height:72px;"></div>
+        <div class='footer_spacer'></div>
         <div class='footer'>
             <hr>
             <div style="margin-top: 8px;margin-bottom: 8px;">
@@ -447,7 +451,7 @@ Google Analytics Input GUI
             <label for="maxResults">Maximum Results</label>
             <alteryx-pluginwidget type="NumericSpinner" id="maxResults" default="1000" min="0" max="10000" step="100" dataName="maxResults"></alteryx-pluginwidget>
         </div>
-        <div style="height:72px;"></div>
+        <div class='footer_spacer'></div>
         <div class='footer'>
             <hr>
             <div style="margin-top: 8px;margin-bottom: 8px;">
@@ -463,9 +467,9 @@ Google Analytics Input GUI
 
 <!-- Fieldset to display configuration summary -->
     <fieldset id="summary" style="display:none">
-        <legend>Verify Selections</legend>
+        <legend>Configuration Summary</legend>
         <div id="summaryDiv"></div>
-        <div style="height:72px;"></div>
+        <div class='footer_spacer'></div>
         <div class='footer'>
             <hr>
             <div style="margin-top: 8px;margin-bottom: 8px;">
