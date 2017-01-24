@@ -8,7 +8,7 @@ class Summary extends React.Component {
   }
 
   maxResults(advOptions) {
-    return advOptions ? 'Results limited to a maximum of ' + this.store.maxResults + ' rows' : ''
+    return advOptions ? `Results limited to a maximum of ${this.store.maxResults} rows` : ''
   }
 
   render () {
@@ -26,48 +26,50 @@ class Summary extends React.Component {
     const advOptions = this.store.advOptions
     const maxResults = this.maxResults(advOptions)
     const tableStyle = {
-      width: '90%'
+      width: '95%'
+    }
+    const thNarrowStyle = {
+      width: '25%'
     }
     const thStyle = {
-      width: '20%'
+      width: '60%'
     }
-
     return (
       <div>
         <div>
-          <b>Selected Account Details</b>
+          <a href="javascript:setPage('#profileSelectors')">Selected Account Details</a>
           <table style={tableStyle}>
             <tr>
-              <th style={thStyle}>Account:</th>
+              <th style={thNarrowStyle}>Account:</th>
               <th style={thStyle}>{account}</th>
             </tr>
             <tr>
-              <th style={thStyle}>WebProperty:</th>
+              <th style={thNarrowStyle}>WebProperty:</th>
               <th style={thStyle}>{webProperty}</th>
             </tr>
             <tr>
-              <th style={thStyle}>Profile:</th>
+              <th style={thNarrowStyle}>Profile:</th>
               <th style={thStyle}>{profile}</th>
             </tr>
           </table>
         </div>
-        
+        <br></br>
         <div>
-          <b>Selected Date</b>
+          <a href="javascript:setPage('#datePickers')">Selected Date</a>
           <table style={tableStyle}>
             <tr>
-              <th style={thStyle}>Start Date:</th>
+              <th style={thNarrowStyle}>Start Date:</th>
               <th style={thStyle}>{startDate}</th>
             </tr>
             <tr>
-              <th style={thStyle}>End Date:</th>
+              <th style={thNarrowStyle}>End Date:</th>
               <th style={thStyle}>{endDate}</th>
             </tr>
           </table>
         </div>
-
+        <br></br>
         <div>
-          <b>Selected Metrics and Goals</b>
+          <a href="javascript:setPage('#metrics')">Selected Metrics and Goals</a>
           <div>
             <table>
             {
@@ -79,8 +81,9 @@ class Summary extends React.Component {
             </table>
           </div>
         </div>
+        <br></br>
         <div>
-          <b>Selected Dimensions and Goals</b>
+          <a href="javascript:setPage('#dimensions')">Selected Dimensions and Goals</a>
           <div>
             <table>
             {
@@ -92,8 +95,9 @@ class Summary extends React.Component {
             </table>
           </div>
         </div>
+        <br></br>
         <div>
-          <b>Selected Segments</b>
+          <a href="javascript:setPage('#segments')">Selected Segments</a>
           <div>
             <table>
             {
