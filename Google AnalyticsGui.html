@@ -47,6 +47,11 @@ Google Analytics Input GUI
           pointer-events: none;
         }
 
+        #segmentBubbleMessage {
+          position: absolute;
+          pointer-events: none;
+        }
+
         .bubbleWarning:before {
            background-color: transparent;
            border-left: 8px solid transparent;
@@ -137,13 +142,13 @@ Google Analytics Input GUI
             background-color: #EAF7FF;
             font-family: "Segoe UI Semibold", Arial, sans-serif;
         }
-        
-        .selectionMessage-inner { 
-            max-height: auto; 
-            margin-bottom: 5px; 
-            padding-left: 5px; 
-            border-style: none; 
-        } 
+
+        .selectionMessage-inner {
+            max-height: auto;
+            margin-bottom: 5px;
+            padding-left: 5px;
+            border-style: none;
+        }
 
         .selectionMessage-btn {
             display: inline-block;
@@ -157,7 +162,7 @@ Google Analytics Input GUI
             border-color: #00698C;
             font-color: #135d7a;
             font-family: "Segoe UI", Arial, sans-serif;
-            background-color: #F2F2F2;
+            background-color: #FFFFFF; // #F2F2F2
         }
 
         .goalSelectionMessage-btn {
@@ -417,7 +422,9 @@ Google Analytics Input GUI
     <fieldset id="segments" style="display:none;"><!--Add a display:none during process story-->
         <legend>Select Segments to Include (Optional)</legend>
         <hr>
-        <p class="selectionLegend">Select up to four segments...</p>
+        <p class="selectionLegend">Select up to 4 segments...</p>
+        <p class="listboxLegend">Segments</p>
+        <div id="segmentBubbleMessage"></div>
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
           ismultiselect="true" issearchable="true" id="segmentsList" dataName="segmentsList" showsearchrow="true"></alteryx-pluginwidget>
         <div id="selectedSegments"></div>
