@@ -277,7 +277,6 @@ const resetFields = () => {
     'metricsList',
     'metricsGoalsList',
     'dimensionsList',
-    'dimensionsGoalsList',
     'segmentsList'
   ]
   const stringListArray = [
@@ -287,14 +286,12 @@ const resetFields = () => {
     'metricsList',
     'metricsGoalsList',
     'dimensionsList',
-    'dimensionsGoalsList',
     'segmentsList'
   ]
   const renderArray = [
     'metricsList',
     'metricsGoalsList',
     'dimensionsList',
-    'dimensionsGoalsList',
     'segmentsList'
   ]
 
