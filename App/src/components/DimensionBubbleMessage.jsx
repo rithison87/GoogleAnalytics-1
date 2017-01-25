@@ -7,14 +7,19 @@ class DimensionBubbleMessage extends React.Component {
     this.store = props.store
   }
 
-  addClass (total) {
-    return total > 7 ? 'bubbleWarning' : ''
+  addClass (total, loading) {
+    if (loading) {
+      return 'bubbleWarning'
+    } else {
+      return total > 7 ? 'bubbleWarning' : ''
+    }
   }
 
-  messageText (total) {
+  messageText (total, loading) {
     let text
-
-    if (total > 7) {
+    if (loading) {
+      text = 'Fetching menu options from the Google API'
+    } else if (total > 7) {
       text = 'Maximum of 7 dimensions may be selected'
     } else {
       text = ''
@@ -25,8 +30,9 @@ class DimensionBubbleMessage extends React.Component {
 
   render () {
     const total = this.store.totalDimensions
-    const text = this.messageText(total)
-    const divClass = this.addClass(total)
+    const loading = this.store.dimensionsList.loading
+    const text = this.messageText(total, loading)
+    const divClass = this.addClass(total, loading)
 
     return (
       <div id='dimensionWarning' className={divClass}>
