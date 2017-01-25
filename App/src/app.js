@@ -14,6 +14,7 @@ import DimensionMessage from './components/dimensionMessage.jsx'
 import moment from 'moment'
 import * as picker from './utils/datePickers'
 import SegmentMessage from './components/segmentMessage.jsx'
+import SegmentBubbleMessage from './components/SegmentBubbleMessage.jsx'
 import DateMessage from './components/dateMessage.jsx'
 import conditionallyEnable from './utils/interfaceStateControl'
 import ConnectionErrorMessage from './components/connectionErrorMessage.jsx'
@@ -203,6 +204,17 @@ Alteryx.Gui.AfterLoad = (manager) => {
     store.client_id === '' || store.client_secret === '' || store.refresh_token === '' ? target.setAttribute('disabled', 'true') : target.removeAttribute('disabled')
   })
 
+  autorun(() => {
+    const target = document.getElementById('segmentsNextBtn')
+    const total = store.totalSegments
+
+    if (total > 4) {
+      target.setAttribute('disabled', 'true')
+    } else {
+      target.removeAttribute('disabled')
+    }
+  })
+
   // Render react component which handles Metric selection messaging
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'))
 
@@ -221,6 +233,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   // Render react component which handles Segment selection messaging.
   ReactDOM.render(<SegmentMessage store={store} />, document.querySelector('#selectedSegments'))
+
+  ReactDOM.render(<SegmentBubbleMessage store={store} />, document.querySelector('#segmentBubbleMessage'))
 
   // Render react component which handles a warning message for End Date not at or after Start Date.
   ReactDOM.render(<DateMessage store={store} />, document.querySelector('#dateWarning'))
