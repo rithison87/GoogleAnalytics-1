@@ -39,6 +39,9 @@ const sortSegmentsList = (segmentsList) => {
 
 const segmentsStorePush = (result) => {
   store.segmentsList.stringList = []
+  setTimeout(() => {
+    store.segmentsList.loading = false
+  }, 2000)
 
   result.map((d) => {
     store.segmentsList.stringList.push({uiobject: d.uiobject, dataname: d.definition})
@@ -46,6 +49,7 @@ const segmentsStorePush = (result) => {
 }
 
 const populateSegmentsList = (store) => {
+  store.segmentsList.loading = true
   const fetchSegments = getSegmentsMetadata(store)
 
   fetchSegments
