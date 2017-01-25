@@ -21,7 +21,6 @@ class Summary extends React.Component {
     const metrics = this.store.metricsList.selectedValues
     const metricGoals = this.store.metricsGoalsList.selectedValues
     const dimensions = this.store.dimensionsList.selectedValues
-    const dimensionGoals = this.store.dimensionsGoalsList.selectedValues
     const segments = this.store.segmentsList.selectedValues
     const advOptions = this.store.advOptions
     const maxResults = this.maxResults(advOptions)
@@ -83,14 +82,11 @@ class Summary extends React.Component {
         </div>
         <br></br>
         <div>
-          <a href="javascript:setPage('#dimensions')">Selected Dimensions and Goals</a>
+          <a href="javascript:setPage('#dimensions')">Selected Dimensions</a>
           <div>
             <table>
             {
               dimensions.map((selection, idx) => <tr><th key={idx}>{selection}</th></tr>)
-            }
-            {
-              dimensionGoals.map((selection, idx) => <tr><th key={idx}>{selection}</th></tr>)
             }
             </table>
           </div>

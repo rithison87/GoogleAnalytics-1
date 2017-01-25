@@ -2,7 +2,7 @@ import _ from 'lodash'
 import { getMetadata } from './metadataRequest'
 
 // get goals for all profiles
-const populateGoalsLists = store => {
+const populateGoalsList = store => {
   const getGoalsListAjaxCall = store => {
     const accountId = store.accountsList.selection
     const webPropertyId = store.webPropertiesList.selection
@@ -64,7 +64,6 @@ const populateGoalsLists = store => {
   const pushToGoalsList = resp => {
     // push metric and dimension goals to the correct list
     store.metricsGoalsList.stringList = []
-    store.dimensionsGoalsList.stringList = []
 
     resp.map(d => {
       store.metricsGoalsList.stringList.push({
@@ -86,4 +85,4 @@ const populateGoalsLists = store => {
     .then(pushToGoalsList)
 }
 
-export default populateGoalsLists
+export default populateGoalsList

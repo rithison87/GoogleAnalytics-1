@@ -5,7 +5,7 @@ import AyxStore from './stores/AyxStore'
 import * as accounts from './utils/accountUtils'
 import * as metadataRequest from './utils/metadataRequest'
 import { extendObservable, autorun, toJS } from 'mobx'
-import populateGoalsLists from './utils/goals'
+import populateGoalsList from './utils/goals'
 import * as segments from './utils/segments'
 import MetricMessage from './components/metricMessage.jsx'
 import MetricBubbleMessage from './components/MetricBubbleMessage.jsx'
@@ -27,7 +27,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'accessToken', type: 'value'},
     {key: 'metricsList', type: 'listBox'},
     {key: 'metricsGoalsList', type: 'listBox'},
-    {key: 'dimensionsGoalsList', type: 'listBox'},
     {key: 'accountsList', type: 'dropDown'},
     {key: 'webPropertiesList', type: 'dropDown'},
     {key: 'profilesList', type: 'dropDown'},
@@ -61,8 +60,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
       return total
     },
     // Compute total selections for dimensions and dimension goals for use in react messaging
-    get totalDimensionsAndGoals () {
-      let total = store.dimensionsList.selection.length + store.dimensionsGoalsList.selection.length
+    get totalDimensions () {
+      let total = store.dimensionsList.selection.length
       return total
     },
     // Compute total number of selected segments, for use in react messaging
@@ -137,7 +136,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
     if (store.accessToken !== '' || store.accountsList.stringList.length < 1) {
       accounts.populateAccountsList(store)
       metadataRequest.pushCombinedMetadata(store)
-      populateGoalsLists(store)
+      populateGoalsList(store)
       segments.populateSegmentsList(store)
     }
   })
@@ -179,7 +178,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   autorun(() => {
     const target = document.getElementById('dimensionsNextBtn')
-    const total = store.totalDimensionsAndGoals
+    const total = store.totalDimensions
 
     if (total > 7) {
       target.setAttribute('disabled', 'true')

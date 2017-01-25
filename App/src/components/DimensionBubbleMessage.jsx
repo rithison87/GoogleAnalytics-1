@@ -15,7 +15,7 @@ class DimensionBubbleMessage extends React.Component {
     let text
 
     if (total > 7) {
-      text = 'Maximum of seven dimensions and goals may be selected'
+      text = 'Maximum of seven dimensions may be selected'
     } else {
       text = ''
     };
@@ -24,7 +24,7 @@ class DimensionBubbleMessage extends React.Component {
   }
 
   render () {
-    const total = this.store.totalDimensionsAndGoals
+    const total = this.store.totalDimensions
     const text = this.messageText(total)
     const divClass = this.addClass(total)
 
