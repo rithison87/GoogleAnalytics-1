@@ -203,6 +203,17 @@ Alteryx.Gui.AfterLoad = (manager) => {
     store.client_id === '' || store.client_secret === '' || store.refresh_token === '' ? target.setAttribute('disabled', 'true') : target.removeAttribute('disabled')
   })
 
+  autorun(() => {
+    const target = document.getElementById('segmentsNextBtn')
+    const total = store.totalSegments
+
+    if (total > 4) {
+      target.setAttribute('disabled', 'true')
+    } else {
+      target.removeAttribute('disabled')
+    }
+  })
+
   // Render react component which handles Metric selection messaging
   ReactDOM.render(<MetricMessage store={store} />, document.querySelector('#selectedMetrics'))
 
