@@ -226,7 +226,12 @@ Alteryx.Gui.AfterLoad = (manager) => {
   ReactDOM.render(<Summary store={store} />, document.querySelector('#summaryDiv'))
 
   // Render react component which handles connection error messaging
-  ReactDOM.render(<ConnectionErrorMessage store={store} />, document.querySelector('#connectionErrorMessage'))
+  autorun(() => {
+    const offlineErrorDiv = ReactDOM.render(<ConnectionErrorMessage store={store} />, document.querySelector('#offlineConnectionErrorMessage'))
+    const onlineErrorDiv = ReactDOM.render(<ConnectionErrorMessage store={store} />, document.querySelector('#connectionErrorMessage'))
+    // If user on offline credentials page then show error in #offlineConnectionErrorMessage div else #connectionErrorMessage div
+    store.page === '#offlineCreds' ? offlineErrorDiv : onlineErrorDiv
+  })
 
   // Render react component which handles Dimension selection messaging.
   ReactDOM.render(<DimensionMessage store={store} />, document.querySelector('#selectedDimensions'))
