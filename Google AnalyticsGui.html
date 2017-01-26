@@ -251,19 +251,26 @@ Google Analytics Input GUI
     <fieldset id="accessMethod" style="display:none">
         <legend>Sign in to Google Analytics</legend>
         <table>
-            <tr>
-                <td>
-                <button style="width:116px;" type="submit" id="onlineMode" onclick="resetFields();login();">Online</button><br/><br/>
-                Sign in using Google Analytics credentials. This option requires re-entering credentials every 60 minutes or any time a new workflow is opened.
-                </td>
-            </tr>
-            <tr><td height="3"></td></tr>
-            <tr>
-                <td>
-                <button style="width:116px;" type="submit" id="offlineMode" onclick="resetFields();setPage('#offlineCreds');">Offline</button><br/><br/>
-                Sign in using API credentials. This option requires obtaining a Client ID, Secret, and Token and does not require re-entering credentials to run a workflow.
-                </td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td>
+                    <button style="width:116px;" type="submit" id="onlineMode" onclick="resetFields();login();">Online</button><br/><br/>
+                    Sign in using Google Analytics credentials. This option requires re-entering credentials every 60 minutes or any time a new workflow is opened.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <div id="connectionErrorMessage" style="height: 0px;"></div>
+                    </td>
+                </tr>
+                <tr><td height="3"></td></tr>
+                <tr>
+                    <td>
+                    <button style="width:116px;" type="submit" id="offlineMode" onclick="resetFields();setPage('#offlineCreds');">Offline</button><br/><br/>
+                    Sign in using API credentials. This option requires obtaining a Client ID, Secret, and Token and does not require re-entering credentials to run a workflow.
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </fieldset>
 
@@ -286,8 +293,8 @@ Google Analytics Input GUI
         <br/>
         <label>Refresh Token</label>
         <alteryx-pluginwidget type="TextBox" password="true" id="dataItemRefreshToken" dataName="refresh_token"></alteryx-pluginwidget>
-        <label></label>
-        <div class='footer_spacer'></div>
+        <div id="offlineConnectionErrorMessage" style="height: 0px;"></div>
+        <div class='footer_spacer' style="height: 100px;"></div>
         <div class='footer'>
             <hr>
             <div style="margin-top: 8px;margin-bottom: 8px;">

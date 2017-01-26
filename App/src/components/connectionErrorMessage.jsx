@@ -7,14 +7,14 @@ class ConnectionErrorMessage extends React.Component {
     this.store = props.store
   }
 
-  addClass (errorStatus) {
-    return errorStatus !== '' ? 'connectionErrorMessage' : ''
+  addClass (errorStatus, page) {
+    return errorStatus !== '' ? 'bubbleWarning' : ''
   }
 
   messageText (errorStatus) {
     console.log('errorStatus:  ' + errorStatus)
     let text
-// The original error messages are commented right after the new messages
+    // The original error messages are commented right after the new messages
     switch (errorStatus) {
       case '':
         text = ''
@@ -39,12 +39,16 @@ class ConnectionErrorMessage extends React.Component {
   }
 
   render () {
-    let errorStatus = this.store.errorStatus
-    let text = this.messageText(errorStatus)
-    let divClass = this.addClass(errorStatus)
+    const errorStatus = this.store.errorStatus
+    const page = this.store.page
+    const text = this.messageText(errorStatus)
+    const divClass = this.addClass(errorStatus, page)
+    const bubbleStyle = {
+      top: '0px'
+    }
 
     return (
-      <div id='connectionErrorMessageWarning' className={divClass}>
+      <div className={divClass} style={bubbleStyle}>
         {text}
       </div>
     )
