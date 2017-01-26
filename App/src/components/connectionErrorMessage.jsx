@@ -8,7 +8,11 @@ class ConnectionErrorMessage extends React.Component {
   }
 
   addClass (errorStatus, page) {
-    return errorStatus !== '' ? 'bubbleWarning' : ''
+    if (page === '#offlineCreds') {
+      return errorStatus !== '' ? 'offlineConnectionWarning' : ''
+    } else {
+      return errorStatus !== '' ? 'onlineConnectionWarning' : ''
+    }
   }
 
   messageText (errorStatus) {
@@ -32,7 +36,7 @@ class ConnectionErrorMessage extends React.Component {
         text = 'Google API is unreachable, try again later' // '503 Service Unavailable Error:  Google API is unreachable, try again later'
         break
       default:
-        text = 'Error - Unable to reach API:  Reconfigure tool and try again'
+        text = 'Unable to reach API:  Reconfigure tool and try again'
     }
 
     return text
@@ -43,12 +47,9 @@ class ConnectionErrorMessage extends React.Component {
     const page = this.store.page
     const text = this.messageText(errorStatus)
     const divClass = this.addClass(errorStatus, page)
-    const bubbleStyle = {
-      top: '0px'
-    }
 
     return (
-      <div className={divClass} style={bubbleStyle}>
+      <div className={divClass}>
         {text}
       </div>
     )

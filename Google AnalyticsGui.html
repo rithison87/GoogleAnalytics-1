@@ -82,6 +82,53 @@ Google Analytics Input GUI
            text-align: center;
        }
 
+        .offlineConnectionWarning:before {
+           background-color: transparent;
+           border-left: 8px solid transparent;
+           border-right: 8px solid transparent;
+           border-bottom: 8px solid #9f1d20;
+           content: "\00a0";
+           height: 0px;
+           position: relative;
+           top: -14px;
+           width: 0px;
+           left: 0px;
+           display: inline-block;
+       }
+
+       .offlineConnectionWarning {
+           background-color: #ec2227;
+           border: 1px solid #9f1d20;
+           border-radius: 5px;
+           color: #ffffff;
+           display: inline-block;
+           font-family: 'Segoe UI Semibold', Arial, sans-serif;
+           font-size: 12px;
+           left: 0px;
+           top: 0px;
+           right: 40px;
+           padding: 5px 20px 5px 5px;
+           position: relative;
+           text-align: center;
+       }
+
+       .onlineConnectionWarning {
+           background-color: #ec2227;
+           border: 1px solid #9f1d20;
+           border-radius: 5px;
+           color: #ffffff;
+           display: inline-block;
+           font-family: 'Segoe UI Semibold', Arial, sans-serif;
+           font-size: 12px;
+           left: 145px;
+           top: 44.5px;
+           right: 20px;
+           padding: 5px 5px 5px 5px;
+           position: absolute;
+           text-align: center;
+           width: auto;
+       }
+
         .prevBtn {
             border-color: rgb(228, 228, 228);
             background-color: white;
@@ -258,11 +305,6 @@ Google Analytics Input GUI
                     Sign in using Google Analytics credentials. This option requires re-entering credentials every 60 minutes or any time a new workflow is opened.
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                    <div id="connectionErrorMessage" style="height: 0px;"></div>
-                    </td>
-                </tr>
                 <tr><td height="3"></td></tr>
                 <tr>
                     <td>
@@ -272,6 +314,7 @@ Google Analytics Input GUI
                 </tr>
             </tbody>
         </table>
+        <div id="connectionErrorMessage" style="height: 0px;"></div>
     </fieldset>
 
 <!-- 1a view - Online credentials -->
