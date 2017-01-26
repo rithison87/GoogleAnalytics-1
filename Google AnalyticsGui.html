@@ -244,6 +244,8 @@ Google Analytics Input GUI
             display: inline-block;
             max-width: 150px;
             padding: 0px 5px 10px 0px;
+            position: relative;
+            float: left;
         }
 
         .form-control {
@@ -297,6 +299,8 @@ Google Analytics Input GUI
 
         #dateWarning {
             float: left;
+            position: relative;
+            width: 100%;
         }
 
         input:disabled {
@@ -417,7 +421,7 @@ Google Analytics Input GUI
             <alteryx-pluginwidget type="DateTimeField" dateFormat="YYYY-MM-DD" id="endDatePicker" dataType="SimpleDate" dataName="endDatePicker"></alteryx-pluginwidget>
         </div>
         <div id="dateWarning"></div>
-        <div class='footer_spacer'></div>
+        <!-- <div class='footer_spacer'></div> -->
         <div class='footer'>
             <hr>
             <div style="margin-top: 8px;margin-bottom: 8px;">
