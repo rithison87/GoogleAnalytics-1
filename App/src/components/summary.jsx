@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { observer } from 'mobx-react'
 
@@ -39,32 +40,36 @@ class Summary extends React.Component {
         <div>
           <a href="javascript:setPage('#profileSelectors')">Selected Account Details</a>
           <table style={tableStyle}>
-            <tr>
-              <th style={thNarrowStyle}>Account:</th>
-              <th style={thStyle}>{account}</th>
-            </tr>
-            <tr>
-              <th style={thNarrowStyle}>WebProperty:</th>
-              <th style={thStyle}>{webProperty}</th>
-            </tr>
-            <tr>
-              <th style={thNarrowStyle}>Profile:</th>
-              <th style={thStyle}>{profile}</th>
-            </tr>
+            <tbody>
+              <tr>
+                <th style={thNarrowStyle}>Account:</th>
+                <th style={thStyle}>{account}</th>
+              </tr>
+              <tr>
+                <th style={thNarrowStyle}>WebProperty:</th>
+                <th style={thStyle}>{webProperty}</th>
+              </tr>
+              <tr>
+                <th style={thNarrowStyle}>Profile:</th>
+                <th style={thStyle}>{profile}</th>
+              </tr>
+            </tbody>
           </table>
         </div>
         <br></br>
         <div>
           <a href="javascript:setPage('#datePickers')">Selected Date</a>
           <table style={tableStyle}>
-            <tr>
-              <th style={thNarrowStyle}>Start Date:</th>
-              <th style={thStyle}>{startDate}</th>
-            </tr>
-            <tr>
-              <th style={thNarrowStyle}>End Date:</th>
-              <th style={thStyle}>{endDate}</th>
-            </tr>
+            <tbody>
+              <tr>
+                <th style={thNarrowStyle}>Start Date:</th>
+                <th style={thStyle}>{startDate}</th>
+              </tr>
+              <tr>
+                <th style={thNarrowStyle}>End Date:</th>
+                <th style={thStyle}>{endDate}</th>
+              </tr>
+            </tbody>
           </table>
         </div>
         <br></br>
@@ -72,12 +77,14 @@ class Summary extends React.Component {
           <a href="javascript:setPage('#metrics')">Selected Metrics and Goals</a>
           <div>
             <table>
-            {
-              metrics.map((selection, idx) => <tr><th key={idx}>{selection}</th></tr>)
-            }
-            {
-              metricGoals.map((selection, idx) => <tr><th key={idx}>{selection}</th></tr>)
-            }
+              <tbody>
+                {
+                  metrics.map((selection, idx) => <tr><th key={idx}>{selection}</th></tr>)
+                }
+                {
+                  metricGoals.map((selection, idx) => <tr><th key={idx}>{selection}</th></tr>)
+                }
+              </tbody>
             </table>
           </div>
         </div>
@@ -86,9 +93,11 @@ class Summary extends React.Component {
           <a href="javascript:setPage('#dimensions')">Selected Dimensions</a>
           <div>
             <table>
-            {
-              dimensions.map((selection, idx) => <tr><th key={idx}>{selection}</th></tr>)
-            }
+              <tbody>
+                {
+                  dimensions.map((selection, idx) => <tr><th key={idx}>{selection}</th></tr>)
+                }
+              </tbody>
             </table>
           </div>
         </div>
@@ -97,9 +106,11 @@ class Summary extends React.Component {
           <a href="javascript:setPage('#segments')">Selected Segments</a>
           <div>
             <table>
-            {
-              segments.map((selection, idx) => <tr><th key={idx}>{selection}</th></tr>)
-            }
+              <tbody>
+                {
+                  segments.map((selection, idx) => <tr><th key={idx}>{selection}</th></tr>)
+                }
+              </tbody>
             </table>
           </div>
         </div>
