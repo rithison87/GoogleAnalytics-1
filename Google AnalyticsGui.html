@@ -302,13 +302,14 @@ Google Analytics Input GUI
 <!-- Account/WebProperties/Profiles Selectors fieldset -->
     <fieldset id="profileSelectors" style="display:none;">
         <legend>Select an Account, WebProperty, and Profile</legend>
-        <label>Available Accounts</label>
+        <p style="margin: 10px;"></p>
+        <p class="listboxLegend">Available Accounts</p>
         <alteryx-pluginwidget type="DropDown"  id="accountsList" dataName="accountsList"></alteryx-pluginwidget>
-        <p style="margin: 10px;"></p>
-        <label>Available WebProperties</label>
+        <p style="margin: 20px;"></p>
+        <p class="listboxLegend">Available WebProperties</p>
         <alteryx-pluginwidget type="DropDown"  id="webPropertiesList" dataName="webPropertiesList"></alteryx-pluginwidget>
-        <p style="margin: 10px;"></p>
-        <label>Available Profiles</label>
+        <p style="margin: 20px;"></p>
+        <p class="listboxLegend">Available Profiles</p>
         <alteryx-pluginwidget type="DropDown"  id="profilesList" dataName="profilesList"></alteryx-pluginwidget>
         <p style="margin: 5px;"></p>
         <div class='footer_spacer'></div>
@@ -422,7 +423,7 @@ Google Analytics Input GUI
     <fieldset id="segments" style="display:none;"><!--Add a display:none during process story-->
         <legend>Select Segments to Include (Optional)</legend>
         <hr>
-        <p class="selectionLegend">Select up to 4 segments...</p>
+        <p class="selectionLegend">Choose a maximum of 4 segments...</p>
         <p class="listboxLegend">Segments</p>
         <div id="segmentBubbleMessage"></div>
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
