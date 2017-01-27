@@ -33,6 +33,11 @@ Google Analytics Input GUI
             font-family: "Segoe UI Semibold", Arial, sans-serif;
         }
 
+        .accountInfoSubheaders {
+            margin: 0px 0px 0px 0px;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
         #metricsGoalsList .searchable-list-box {
             height:126px;
         }
@@ -80,6 +85,53 @@ Google Analytics Input GUI
            padding: 5px 20px 5px 5px;
            position: relative;
            text-align: center;
+       }
+
+        .offlineConnectionWarning:before {
+           background-color: transparent;
+           border-left: 8px solid transparent;
+           border-right: 8px solid transparent;
+           border-bottom: 8px solid #9f1d20;
+           content: "\00a0";
+           height: 0px;
+           position: relative;
+           top: -14px;
+           width: 0px;
+           left: 0px;
+           display: inline-block;
+       }
+
+       .offlineConnectionWarning {
+           background-color: #ec2227;
+           border: 1px solid #9f1d20;
+           border-radius: 5px;
+           color: #ffffff;
+           display: inline-block;
+           font-family: 'Segoe UI Semibold', Arial, sans-serif;
+           font-size: 12px;
+           left: 0px;
+           top: 0px;
+           right: 40px;
+           padding: 5px 20px 5px 5px;
+           position: relative;
+           text-align: center;
+       }
+
+       .onlineConnectionWarning {
+           background-color: #ec2227;
+           border: 1px solid #9f1d20;
+           border-radius: 5px;
+           color: #ffffff;
+           display: inline-block;
+           font-family: 'Segoe UI Semibold', Arial, sans-serif;
+           font-size: 12px;
+           left: 145px;
+           top: 44.5px;
+           right: 20px;
+           padding: 5px 5px 5px 5px;
+           position: absolute;
+           text-align: center;
+           width: auto;
        }
 
         .prevBtn {
@@ -197,6 +249,8 @@ Google Analytics Input GUI
             display: inline-block;
             max-width: 150px;
             padding: 0px 5px 10px 0px;
+            position: relative;
+            float: left;
         }
 
         .form-control {
@@ -250,6 +304,8 @@ Google Analytics Input GUI
 
         #dateWarning {
             float: left;
+            position: relative;
+            width: 100%;
         }
 
         input:disabled {
@@ -264,20 +320,23 @@ Google Analytics Input GUI
     <fieldset id="accessMethod" style="display:none">
         <legend>Sign in to Google Analytics</legend>
         <table>
-            <tr>
-                <td>
-                <button style="width:116px;" type="submit" id="onlineMode" onclick="resetFields();login();">Online</button><br/><br/>
-                Sign in using Google Analytics credentials. This option requires re-entering credentials every 60 minutes or any time a new workflow is opened.
-                </td>
-            </tr>
-            <tr><td height="3"></td></tr>
-            <tr>
-                <td>
-                <button style="width:116px;" type="submit" id="offlineMode" onclick="resetFields();setPage('#offlineCreds');">Offline</button><br/><br/>
-                Sign in using API credentials. This option requires obtaining a Client ID, Secret, and Token and does not require re-entering credentials to run a workflow.
-                </td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td>
+                    <button style="width:116px;" type="submit" id="onlineMode" onclick="resetFields();login();">Online</button><br/><br/>
+                    Sign in using Google Analytics credentials. This option requires re-entering credentials every 60 minutes or any time a new workflow is opened.
+                    </td>
+                </tr>
+                <tr><td height="3"></td></tr>
+                <tr>
+                    <td>
+                    <button style="width:116px;" type="submit" id="offlineMode" onclick="resetFields();setPage('#offlineCreds');">Offline</button><br/><br/>
+                    Sign in using API credentials. This option requires obtaining a Client ID, Secret, and Token and does not require re-entering credentials to run a workflow.
+                    </td>
+                </tr>
+            </tbody>
         </table>
+        <div id="connectionErrorMessage" style="height: 0px;"></div>
     </fieldset>
 
 <!-- 1a view - Online credentials -->
@@ -299,8 +358,8 @@ Google Analytics Input GUI
         <br/>
         <label>Refresh Token</label>
         <alteryx-pluginwidget type="TextBox" password="true" id="dataItemRefreshToken" dataName="refresh_token"></alteryx-pluginwidget>
-        <label></label>
-        <div class='footer_spacer'></div>
+        <div id="offlineConnectionErrorMessage" style="height: 0px;"></div>
+        <div class='footer_spacer' style="height: 100px;"></div>
         <div class='footer'>
             <hr>
             <div style="margin-top: 8px;margin-bottom: 8px;">
@@ -316,13 +375,13 @@ Google Analytics Input GUI
     <fieldset id="profileSelectors" style="display:none;">
         <legend>Select an Account, WebProperty, and Profile</legend>
         <p style="margin: 10px;"></p>
-        <p class="listboxLegend">Available Accounts</p>
+        <p class="accountInfoSubheaders">Available Accounts</p>
         <alteryx-pluginwidget type="DropDown"  id="accountsList" dataName="accountsList"></alteryx-pluginwidget>
         <p style="margin: 20px;"></p>
-        <p class="listboxLegend">Available WebProperties</p>
+        <p class="accountInfoSubheaders">Available WebProperties</p>
         <alteryx-pluginwidget type="DropDown"  id="webPropertiesList" dataName="webPropertiesList"></alteryx-pluginwidget>
         <p style="margin: 20px;"></p>
-        <p class="listboxLegend">Available Profiles</p>
+        <p class="accountInfoSubheaders">Available Profiles</p>
         <alteryx-pluginwidget type="DropDown"  id="profilesList" dataName="profilesList"></alteryx-pluginwidget>
         <p style="margin: 5px;"></p>
         <div class='footer_spacer'></div>
@@ -367,7 +426,7 @@ Google Analytics Input GUI
             <alteryx-pluginwidget type="DateTimeField" dateFormat="YYYY-MM-DD" id="endDatePicker" dataType="SimpleDate" dataName="endDatePicker"></alteryx-pluginwidget>
         </div>
         <div id="dateWarning"></div>
-        <div class='footer_spacer'></div>
+        <!-- <div class='footer_spacer'></div> -->
         <div class='footer'>
             <hr>
             <div style="margin-top: 8px;margin-bottom: 8px;">
