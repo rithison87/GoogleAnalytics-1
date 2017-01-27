@@ -37,7 +37,7 @@ Google Analytics Input</Text>
     </Node>
     <Node ToolID="123">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="87.00012" y="369.9702" width="2550" height="462" />
+        <Position x="87.0001" y="369.9702" width="2550" height="462.0001" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -149,21 +149,21 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                <Field name="accessToken" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="client_secret" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                 <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
                 <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="segmentsList" size="1500" source="TextInput:" type="V_WString" />
+                <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="webPropertiesList" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="accountsList" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="profilesList" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="segmentsList" size="1073741823" source="TextInput:" type="V_WString" />
                 <Field name="advOptions" source="TextInput:" type="Bool" />
                 <Field name="maxResults" source="TextInput:" type="Int64" />
               </RecordInfo>
@@ -179,21 +179,21 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
             <Configuration>
               <OrderChanged value="True" />
               <SelectFields>
-                <SelectField field="accessToken" selected="True" type="V_WString" size="1500" />
-                <SelectField field="client_secret" selected="True" type="V_WString" size="1500" />
-                <SelectField field="client_id" selected="True" type="V_WString" size="1500" />
-                <SelectField field="refresh_token" selected="True" type="V_WString" size="1500" />
+                <SelectField field="accessToken" selected="True" type="V_WString" size="1073741823" />
+                <SelectField field="client_secret" selected="True" type="V_WString" size="1073741823" />
+                <SelectField field="client_id" selected="True" type="V_WString" size="1073741823" />
+                <SelectField field="refresh_token" selected="True" type="V_WString" size="1073741823" />
                 <SelectField field="startDatePicker" selected="True" type="Date" size="10" />
                 <SelectField field="endDatePicker" selected="True" type="Date" size="10" />
-                <SelectField field="preDefDropDown" selected="True" type="V_WString" size="1500" />
-                <SelectField field="dimensionsList" selected="True" type="V_WString" size="1500" />
-                <SelectField field="metricsList" selected="True" type="V_WString" size="1500" />
-                <SelectField field="webPropertiesList" selected="True" type="V_WString" size="1500" />
-                <SelectField field="accountsList" selected="True" type="V_WString" size="1500" />
-                <SelectField field="profilesList" selected="True" type="V_WString" size="1500" />
-                <SelectField field="metricsGoalsList" selected="True" type="V_WString" size="1500" />
-                <SelectField field="dimensionsGoalsList" selected="True" type="V_WString" size="1500" />
-                <SelectField field="segmentsList" selected="True" type="V_WString" size="1500" />
+                <SelectField field="preDefDropDown" selected="True" type="V_WString" size="1073741823" />
+                <SelectField field="dimensionsList" selected="True" type="V_WString" size="1073741823" />
+                <SelectField field="metricsList" selected="True" type="V_WString" size="1073741823" />
+                <SelectField field="webPropertiesList" selected="True" type="V_WString" size="1073741823" />
+                <SelectField field="accountsList" selected="True" type="V_WString" size="1073741823" />
+                <SelectField field="profilesList" selected="True" type="V_WString" size="1073741823" />
+                <SelectField field="metricsGoalsList" selected="True" type="V_WString" size="1073741823" />
+                <SelectField field="dimensionsGoalsList" selected="True" type="V_WString" size="1073741823" />
+                <SelectField field="segmentsList" selected="True" type="V_WString" size="1073741823" />
                 <SelectField field="advOptions" selected="True" type="Bool" size="1" />
                 <SelectField field="maxResults" selected="True" type="Int64" size="8" />
                 <SelectField field="*Unknown" selected="True" />
@@ -206,21 +206,21 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                <Field name="accessToken" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="client_secret" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                 <Field name="startDatePicker" source="TextInput:" type="Date" />
                 <Field name="endDatePicker" source="TextInput:" type="Date" />
-                <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                <Field name="segmentsList" size="1500" source="TextInput:" type="V_WString" />
+                <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="webPropertiesList" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="accountsList" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="profilesList" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="segmentsList" size="1073741823" source="TextInput:" type="V_WString" />
                 <Field name="advOptions" source="TextInput:" type="Bool" />
                 <Field name="maxResults" source="TextInput:" type="Int64" />
               </RecordInfo>
@@ -250,7 +250,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
         </Node>
         <Node ToolID="115">
           <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-            <Position x="351.0001" y="413.9702" width="443.9999" height="393" />
+            <Position x="351.0001" y="413.9702" width="443.9999" height="393.0001" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -279,24 +279,24 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
                 </Annotation>
                 <MetaInfo connection="Output">
                   <RecordInfo>
-                    <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="accessToken" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_secret" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
                     <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                    <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="segmentsList" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="webPropertiesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="accountsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="profilesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="segmentsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
-                    <Field name="Authorization" size="2500" source="Formula: &quot;Bearer &quot;+[accessToken]" type="V_WString" />
+                    <Field name="Authorization" size="1073741823" source="Formula: &quot;Bearer &quot;+[accessToken]" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
               </Properties>
@@ -442,42 +442,42 @@ R:  Offline method</Text>
                 </Annotation>
                 <MetaInfo connection="Left">
                   <RecordInfo>
-                    <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="accessToken" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_secret" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
                     <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                    <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="segmentsList" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="webPropertiesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="accountsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="profilesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="segmentsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                   </RecordInfo>
                 </MetaInfo>
                 <MetaInfo connection="Right">
                   <RecordInfo>
-                    <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="accessToken" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_secret" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
                     <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                    <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="segmentsList" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="webPropertiesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="accountsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="profilesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="segmentsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                   </RecordInfo>
@@ -505,7 +505,7 @@ R:  Offline method</Text>
               <Properties>
                 <Configuration>
                   <FormulaFields>
-                    <FormulaField field="Authorization" type="V_WString" size="2500" expression="&quot;Bearer &quot;+[accessToken]" />
+                    <FormulaField field="Authorization" type="V_WString" size="1073741823" expression="&quot;Bearer &quot;+[accessToken]" />
                   </FormulaFields>
                 </Configuration>
                 <Annotation DisplayMode="0">
@@ -515,24 +515,24 @@ R:  Offline method</Text>
                 </Annotation>
                 <MetaInfo connection="Output">
                   <RecordInfo>
-                    <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="accessToken" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_secret" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
                     <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                    <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="segmentsList" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="webPropertiesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="accountsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="profilesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="segmentsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
-                    <Field name="Authorization" size="2500" source="Formula: &quot;Bearer &quot;+[accessToken]" type="V_WString" />
+                    <Field name="Authorization" size="1073741823" source="Formula: &quot;Bearer &quot;+[accessToken]" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
               </Properties>
@@ -565,53 +565,55 @@ R:  Offline method</Text>
               <Properties>
                 <Configuration>
                   <FormulaFields>
-                    <FormulaField expression="&quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" field="baseURL" size="1500" type="V_WString" />
-                    <FormulaField expression="&quot;?ids=ga:&quot;+[profilesList]" field="idsURL" size="1500" type="V_WString" />
-                    <FormulaField expression="&quot;&amp;start-date=&quot;+[startDatePicker]" field="startDateURL" size="1500" type="V_WString" />
-                    <FormulaField expression="&quot;&amp;end-date=&quot;+[endDatePicker]" field="endDateURL" size="1500" type="V_WString" />
-                    <FormulaField expression="IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" field="metricsURL" size="1500" type="V_WString" />
-                    <FormulaField expression="IF IsEmpty([dimensionsList])&#xA;	THEN IF IsEmpty([dimensionsGoalsList])&#xA;		THEN ''&#xA;		ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;		ENDIF&#xA;	ELSE IF IsNull([dimensionsGoalsList])&#xA;		THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;		ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;		ENDIF &#xA;	ENDIF" field="dimensionsURL" size="1500" type="V_WString" />
-                    <FormulaField expression="replace([segmentsList], '|||', ',')" field="segmentsList" size="1500" type="V_WString" />
-                    <FormulaField expression="IF IsEmpty([segmentsList])&#xA;	THEN ''&#xA;	ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" field="segmentURL" size="1500" type="V_WString" />
-                    <FormulaField expression="IF [advOptions]&#xA;	THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA;	ELSE '&amp;max-results=10000'&#xA;ENDIF" field="max-resultsURL" size="1500" type="V_WString" />
-                    <FormulaField expression="[baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" field="fullQueryURL" size="2500" type="V_WString" />
+                    <FormulaField field="baseURL" type="V_WString" size="1073741823" expression="&quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" />
+                    <FormulaField field="idsURL" type="V_WString" size="1073741823" expression="&quot;?ids=ga:&quot;+[profilesList]" />
+                    <FormulaField field="startDateURL" type="V_WString" size="1073741823" expression="&quot;&amp;start-date=&quot;+[startDatePicker]" />
+                    <FormulaField field="endDateURL" type="V_WString" size="1073741823" expression="&quot;&amp;end-date=&quot;+[endDatePicker]" />
+                    <FormulaField field="metricsURL" type="V_WString" size="1073741823" expression="IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" />
+                    <FormulaField field="dimensionsURL" type="V_WString" size="1073741823" expression="IF IsEmpty([dimensionsList])&#xA;	THEN IF IsEmpty([dimensionsGoalsList])&#xA;		THEN ''&#xA;		ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;		ENDIF&#xA;	ELSE IF IsNull([dimensionsGoalsList])&#xA;		THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;		ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;		ENDIF &#xA;	ENDIF" />
+                    <FormulaField field="segmentsList" type="V_WString" size="1073741823" expression="replace([segmentsList], '|||', ',')" />
+                    <FormulaField field="segmentURL" type="V_WString" size="1073741823" expression="IF IsEmpty([segmentsList])&#xA;	THEN ''&#xA;	ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" />
+                    <FormulaField field="max-resultsURL" type="V_WString" size="1073741823" expression="IF [advOptions]&#xA;	THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA;	ELSE '&amp;max-results=10000'&#xA;ENDIF" />
+                    <FormulaField field="fullQueryURL" type="V_WString" size="1073741823" expression="[baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" />
                   </FormulaFields>
                 </Configuration>
                 <Annotation DisplayMode="0">
                   <Name />
-                  <DefaultAnnotationText>baseURL = "https://www.googleapis.com/analytics/v3/data/ga"
-idsURL = "?ids=ga:"+...</DefaultAnnotationText>
+                  <DefaultAnnotationText>baseURL="https://www.googleapis.com/analytics/v3/data/ga"
+idsURL="?ids=ga:"+[profilesList]
+startDateURL="&amp;start-date="+[startDatePicker]
+...</DefaultAnnotationText>
                   <Left value="False" />
                 </Annotation>
                 <MetaInfo connection="Output">
                   <RecordInfo>
-                    <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="accessToken" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_secret" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
                     <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                    <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="segmentsList" size="1500" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
+                    <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="webPropertiesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="accountsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="profilesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
-                    <Field name="Authorization" size="2500" source="Formula: &quot;Bearer &quot;+[accessToken]" type="V_WString" />
-                    <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
-                    <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
-                    <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
-                    <Field name="endDateURL" size="1500" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
-                    <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
-                    <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
-                    <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
+                    <Field name="Authorization" size="1073741823" source="Formula: &quot;Bearer &quot;+[accessToken]" type="V_WString" />
+                    <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
+                    <Field name="idsURL" size="1073741823" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
+                    <Field name="startDateURL" size="1073741823" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
+                    <Field name="endDateURL" size="1073741823" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
+                    <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
+                    <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
+                    <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
+                    <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
               </Properties>
@@ -707,33 +709,33 @@ idsURL = "?ids=ga:"+...</DefaultAnnotationText>
                 </Annotation>
                 <MetaInfo connection="Output">
                   <RecordInfo>
-                    <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="accessToken" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_secret" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
                     <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                    <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="segmentsList" size="1500" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
+                    <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="webPropertiesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="accountsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="profilesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
-                    <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
-                    <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
-                    <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
-                    <Field name="endDateURL" size="1500" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
-                    <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
-                    <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
-                    <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
+                    <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
+                    <Field name="idsURL" size="1073741823" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
+                    <Field name="startDateURL" size="1073741823" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
+                    <Field name="endDateURL" size="1073741823" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
+                    <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
+                    <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
+                    <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
+                    <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                   </RecordInfo>
@@ -759,33 +761,33 @@ idsURL = "?ids=ga:"+...</DefaultAnnotationText>
                 </Annotation>
                 <MetaInfo connection="Output">
                   <RecordInfo>
-                    <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="accessToken" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_secret" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
                     <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                    <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="segmentsList" size="1500" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
+                    <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="webPropertiesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="accountsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="profilesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
-                    <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
-                    <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
-                    <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
-                    <Field name="endDateURL" size="1500" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
-                    <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
-                    <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
-                    <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
+                    <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
+                    <Field name="idsURL" size="1073741823" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
+                    <Field name="startDateURL" size="1073741823" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
+                    <Field name="endDateURL" size="1073741823" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
+                    <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
+                    <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
+                    <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
+                    <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
               </Properties>
@@ -832,66 +834,66 @@ idsURL = "?ids=ga:"+...</DefaultAnnotationText>
                 </Annotation>
                 <MetaInfo connection="True">
                   <RecordInfo>
-                    <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="accessToken" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_secret" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
                     <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                    <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="segmentsList" size="1500" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
+                    <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="webPropertiesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="accountsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="profilesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
-                    <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
-                    <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
-                    <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
-                    <Field name="endDateURL" size="1500" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
-                    <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
-                    <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
-                    <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
+                    <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
+                    <Field name="idsURL" size="1073741823" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
+                    <Field name="startDateURL" size="1073741823" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
+                    <Field name="endDateURL" size="1073741823" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
+                    <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
+                    <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
+                    <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
+                    <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                   </RecordInfo>
                 </MetaInfo>
                 <MetaInfo connection="False">
                   <RecordInfo>
-                    <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="accessToken" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_secret" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
                     <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                    <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="segmentsList" size="1500" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
+                    <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="webPropertiesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="accountsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="profilesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
-                    <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
-                    <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
-                    <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
-                    <Field name="endDateURL" size="1500" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
-                    <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
-                    <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
-                    <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
+                    <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
+                    <Field name="idsURL" size="1073741823" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
+                    <Field name="startDateURL" size="1073741823" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
+                    <Field name="endDateURL" size="1073741823" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
+                    <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
+                    <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
+                    <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
+                    <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                   </RecordInfo>
@@ -934,33 +936,33 @@ idsURL = "?ids=ga:"+...</DefaultAnnotationText>
                     </Annotation>
                     <MetaInfo connection="Output">
                       <RecordInfo>
-                        <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                        <Field name="accessToken" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="client_secret" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
                         <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                        <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="segmentsList" size="1500" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
+                        <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="webPropertiesList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="accountsList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="profilesList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
                         <Field name="advOptions" source="TextInput:" type="Bool" />
                         <Field name="maxResults" source="TextInput:" type="Int64" />
                         <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
-                        <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
-                        <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
-                        <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
-                        <Field name="endDateURL" size="1500" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
-                        <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
-                        <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
-                        <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                        <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
-                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
+                        <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
+                        <Field name="idsURL" size="1073741823" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
+                        <Field name="startDateURL" size="1073741823" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
+                        <Field name="endDateURL" size="1073741823" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
+                        <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
+                        <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
+                        <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
+                        <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                        <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                         <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                         <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
                         <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -985,33 +987,33 @@ idsURL = "?ids=ga:"+...</DefaultAnnotationText>
                     </Annotation>
                     <MetaInfo connection="True">
                       <RecordInfo>
-                        <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                        <Field name="accessToken" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="client_secret" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
                         <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                        <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="segmentsList" size="1500" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
+                        <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="webPropertiesList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="accountsList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="profilesList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
                         <Field name="advOptions" source="TextInput:" type="Bool" />
                         <Field name="maxResults" source="TextInput:" type="Int64" />
                         <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
-                        <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
-                        <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
-                        <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
-                        <Field name="endDateURL" size="1500" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
-                        <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
-                        <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
-                        <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                        <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
-                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
+                        <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
+                        <Field name="idsURL" size="1073741823" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
+                        <Field name="startDateURL" size="1073741823" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
+                        <Field name="endDateURL" size="1073741823" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
+                        <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
+                        <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
+                        <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
+                        <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                        <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                         <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                         <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
                         <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1019,33 +1021,33 @@ idsURL = "?ids=ga:"+...</DefaultAnnotationText>
                     </MetaInfo>
                     <MetaInfo connection="False">
                       <RecordInfo>
-                        <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                        <Field name="accessToken" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="client_secret" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
                         <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                        <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                        <Field name="segmentsList" size="1500" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
+                        <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="webPropertiesList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="accountsList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="profilesList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                        <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
                         <Field name="advOptions" source="TextInput:" type="Bool" />
                         <Field name="maxResults" source="TextInput:" type="Int64" />
                         <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
-                        <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
-                        <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
-                        <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
-                        <Field name="endDateURL" size="1500" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
-                        <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
-                        <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
-                        <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                        <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
-                        <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
+                        <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
+                        <Field name="idsURL" size="1073741823" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
+                        <Field name="startDateURL" size="1073741823" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
+                        <Field name="endDateURL" size="1073741823" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
+                        <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
+                        <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
+                        <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
+                        <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                        <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                         <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                         <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
                         <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1255,33 +1257,33 @@ Error Messaging</Text>
                 </Annotation>
                 <MetaInfo connection="Output">
                   <RecordInfo>
-                    <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="accessToken" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_secret" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
                     <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                    <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="segmentsList" size="1500" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
+                    <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="webPropertiesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="accountsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="profilesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
-                    <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
-                    <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
-                    <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
-                    <Field name="endDateURL" size="1500" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
-                    <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
-                    <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
-                    <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
+                    <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
+                    <Field name="idsURL" size="1073741823" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
+                    <Field name="startDateURL" size="1073741823" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
+                    <Field name="endDateURL" size="1073741823" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
+                    <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
+                    <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
+                    <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
+                    <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                     <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
                     <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1310,33 +1312,33 @@ Error Messaging</Text>
                 </Annotation>
                 <MetaInfo connection="Output">
                   <RecordInfo>
-                    <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="accessToken" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_secret" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
                     <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                    <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="segmentsList" size="1500" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
+                    <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="webPropertiesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="accountsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="profilesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
-                    <Field name="baseURL" size="1500" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
-                    <Field name="idsURL" size="1500" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
-                    <Field name="startDateURL" size="1500" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
-                    <Field name="endDateURL" size="1500" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
-                    <Field name="metricsURL" size="1500" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
-                    <Field name="dimensionsURL" size="1500" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
-                    <Field name="segmentURL" size="1500" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1500" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
-                    <Field name="fullQueryURL" size="2500" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
+                    <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
+                    <Field name="idsURL" size="1073741823" source="Formula: &quot;?ids=ga:&quot;+[profilesList]" type="V_WString" />
+                    <Field name="startDateURL" size="1073741823" source="Formula: &quot;&amp;start-date=&quot;+[startDatePicker]" type="V_WString" />
+                    <Field name="endDateURL" size="1073741823" source="Formula: &quot;&amp;end-date=&quot;+[endDatePicker]" type="V_WString" />
+                    <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
+                    <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
+                    <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
+                    <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                     <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
                     <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1352,12 +1354,12 @@ Error Messaging</Text>
               <Properties>
                 <Configuration>
                   <FormulaFields>
-                    <FormulaField field="segmentsList" type="V_WString" size="1500" expression="// remove a comma at the beginning of a string&#xA;IF Left([segmentsList],1) = ','&#xA;THEN Right([segmentsList],(Length([segmentsList])-1))&#xA;ELSE [segmentsList]&#xA;ENDIF" />
-                    <FormulaField field="segmentsList" type="V_WString" size="1500" expression="// remove a comma at the end of a string&#xA;IF Right([segmentsList],1) = ','&#xA;THEN Left([segmentsList],(Length([segmentsList])-1))&#xA;ELSE [segmentsList]&#xA;ENDIF" />
-                    <FormulaField field="segmentsList" type="V_WString" size="1500" expression="// replace two commas before users with semicolon&#xA;Replace([segmentsList], &quot;,,users::&quot;, &quot;;users::&quot;)" />
-                    <FormulaField field="segmentsList" type="V_WString" size="1500" expression="// replace a comma before users with semicolon&#xA;Replace([segmentsList], &quot;,users::&quot;, &quot;;users::&quot;)" />
-                    <FormulaField field="segmentsList" type="V_WString" size="1500" expression="// replace two commas before sessions with semicolon&#xA;Replace([segmentsList], &quot;,,sessions::&quot;, &quot;;sessions::&quot;)" />
-                    <FormulaField field="segmentsList" type="V_WString" size="1500" expression="// replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" />
+                    <FormulaField field="segmentsList" type="V_WString" size="1073741823" expression="// remove a comma at the beginning of a string&#xA;IF Left([segmentsList],1) = ','&#xA;THEN Right([segmentsList],(Length([segmentsList])-1))&#xA;ELSE [segmentsList]&#xA;ENDIF" />
+                    <FormulaField field="segmentsList" type="V_WString" size="1073741823" expression="// remove a comma at the end of a string&#xA;IF Right([segmentsList],1) = ','&#xA;THEN Left([segmentsList],(Length([segmentsList])-1))&#xA;ELSE [segmentsList]&#xA;ENDIF" />
+                    <FormulaField field="segmentsList" type="V_WString" size="1073741823" expression="// replace two commas before users with semicolon&#xA;Replace([segmentsList], &quot;,,users::&quot;, &quot;;users::&quot;)" />
+                    <FormulaField field="segmentsList" type="V_WString" size="1073741823" expression="// replace a comma before users with semicolon&#xA;Replace([segmentsList], &quot;,users::&quot;, &quot;;users::&quot;)" />
+                    <FormulaField field="segmentsList" type="V_WString" size="1073741823" expression="// replace two commas before sessions with semicolon&#xA;Replace([segmentsList], &quot;,,sessions::&quot;, &quot;;sessions::&quot;)" />
+                    <FormulaField field="segmentsList" type="V_WString" size="1073741823" expression="// replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" />
                   </FormulaFields>
                 </Configuration>
                 <Annotation DisplayMode="0">
@@ -1372,24 +1374,24 @@ segmentsList=// replace two commas before users with semicolo...
                 </Annotation>
                 <MetaInfo connection="Output">
                   <RecordInfo>
-                    <Field name="accessToken" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_secret" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="client_id" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="refresh_token" size="1500" source="TextInput:" type="V_WString" />
+                    <Field name="accessToken" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_secret" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
                     <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
-                    <Field name="preDefDropDown" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="webPropertiesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="accountsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="profilesList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="metricsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="dimensionsGoalsList" size="1500" source="TextInput:" type="V_WString" />
-                    <Field name="segmentsList" size="1500" source="Formula: // replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" type="V_WString" />
+                    <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="webPropertiesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="accountsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="profilesList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
+                    <Field name="segmentsList" size="1073741823" source="Formula: // replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" type="V_WString" />
                     <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
-                    <Field name="Authorization" size="2500" source="Formula: &quot;Bearer &quot;+[accessToken]" type="V_WString" />
+                    <Field name="Authorization" size="1073741823" source="Formula: &quot;Bearer &quot;+[accessToken]" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
               </Properties>
@@ -2188,7 +2190,7 @@ Category - Descending</DefaultAnnotationText>
     </Node>
     <Node ToolID="113">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="149.9998" width="2546" height="212.0008" />
+        <Position x="54" y="149.9998" width="2546" height="212.0007" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -3296,10 +3298,6 @@ Support Macro(s)
       <Company>Alteryx, Inc.</Company>
       <Copyright>2016</Copyright>
       <DescriptionLink actual="" displayed="" />
-      <Example>
-        <Description />
-        <File />
-      </Example>
     </MetaInfo>
     <Events>
       <Enabled value="True" />
