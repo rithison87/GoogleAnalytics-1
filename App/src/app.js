@@ -117,6 +117,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
     switch (store.page) {
       case '#profileSelectors':
         loading(store.accountsList.loading)
+        break
       case '#metrics':
         loading(store.metricsList.loading)
         break
