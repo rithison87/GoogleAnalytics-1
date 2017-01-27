@@ -33,6 +33,11 @@ Google Analytics Input GUI
             font-family: "Segoe UI Semibold", Arial, sans-serif;
         }
 
+        .accountInfoSubheaders {
+            margin: 0px 0px 0px 0px;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
         #metricsGoalsList .searchable-list-box {
             height:126px;
         }
@@ -370,13 +375,13 @@ Google Analytics Input GUI
     <fieldset id="profileSelectors" style="display:none;">
         <legend>Select an Account, WebProperty, and Profile</legend>
         <p style="margin: 10px;"></p>
-        <p class="listboxLegend">Available Accounts</p>
+        <p class="accountInfoSubheaders">Available Accounts</p>
         <alteryx-pluginwidget type="DropDown"  id="accountsList" dataName="accountsList"></alteryx-pluginwidget>
         <p style="margin: 20px;"></p>
-        <p class="listboxLegend">Available WebProperties</p>
+        <p class="accountInfoSubheaders">Available WebProperties</p>
         <alteryx-pluginwidget type="DropDown"  id="webPropertiesList" dataName="webPropertiesList"></alteryx-pluginwidget>
         <p style="margin: 20px;"></p>
-        <p class="listboxLegend">Available Profiles</p>
+        <p class="accountInfoSubheaders">Available Profiles</p>
         <alteryx-pluginwidget type="DropDown"  id="profilesList" dataName="profilesList"></alteryx-pluginwidget>
         <p style="margin: 5px;"></p>
         <div class='footer_spacer'></div>
