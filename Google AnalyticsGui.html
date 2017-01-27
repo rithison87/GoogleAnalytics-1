@@ -449,7 +449,7 @@ Google Analytics Input GUI
             <label for="endDatePicker" class="datePickerLabel">End</label>
             <alteryx-pluginwidget type="DateTimeField" dateFormat="YYYY-MM-DD" id="endDatePicker" dataType="SimpleDate" dataName="endDatePicker"></alteryx-pluginwidget>
         </div>
-        <div id="dateWarning"></div>
+        <div id="dateWarning" style="z-index: 99999; height:0px;"></div>
         <!-- <div class='footer_spacer'></div> -->
         <div class='footer'>
             <hr>
@@ -554,7 +554,7 @@ Google Analytics Input GUI
         <div class='footer'>
             <hr>
             <div style="margin-top: 8px;margin-bottom: 8px;">
-                <button type="secondary" style="float: right;" id="previous" onclick="setPage('#segments');">Previous</button>
+                <button class="prevBtn" id="previous" onclick="setPage('#segments');">Previous</button>
             </div>
             <br>
             <br>
