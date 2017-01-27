@@ -101,6 +101,47 @@ Alteryx.Gui.AfterLoad = (manager) => {
     store.page === '' ? displayFieldset('#accessMethod') : displayFieldset(store.page)
   })
 
+  autorun(() => {
+    switch (store.page) {
+      case '#metrics':
+        if (store.metricsList.loading) {
+          document.getElementById('loading').style.display = 'block'
+          document.getElementById('loading-inner').style.display = 'block'
+        } else {
+          document.getElementById('loading').style.display = 'none'
+          document.getElementById('loading-inner').style.display = 'none'
+        }
+        break
+      case '#dimensions':
+        if (store.dimensionsList.loading) {
+          document.getElementById('loading').style.display = 'block'
+          document.getElementById('loading-inner').style.display = 'block'
+        } else {
+          document.getElementById('loading').style.display = 'none'
+          document.getElementById('loading-inner').style.display = 'none'
+        }
+        break
+      case '#segments':
+        if (store.segmentsList.loading) {
+          document.getElementById('loading').style.display = 'block'
+          document.getElementById('loading-inner').style.display = 'block'
+        } else {
+          document.getElementById('loading').style.display = 'none'
+          document.getElementById('loading-inner').style.display = 'none'
+        }
+        break
+      case '#summary':
+        if (store.metricsList.loading || store.dimensionsList.loading || store.segmentsList.loading) {
+          document.getElementById('loading').style.display = 'block'
+          document.getElementById('loading-inner').style.display = 'block'
+        } else {
+          document.getElementById('loading').style.display = 'none'
+          document.getElementById('loading-inner').style.display = 'none'
+        }
+        break
+    }
+  })
+
   // Update preDefined selector to 'custom' when a custom date is selected/entered
   autorun(() => {
     if (store.isCustomDate) {
