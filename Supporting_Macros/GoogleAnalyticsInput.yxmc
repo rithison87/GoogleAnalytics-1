@@ -3517,6 +3517,10 @@ Support Macro(s)
       <Company>Alteryx, Inc.</Company>
       <Copyright>2016</Copyright>
       <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
     </MetaInfo>
     <Events>
       <Enabled value="True" />
