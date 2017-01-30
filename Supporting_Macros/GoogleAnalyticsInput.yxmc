@@ -37,7 +37,7 @@ Google Analytics Input</Text>
     </Node>
     <Node ToolID="123">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="87.00001" y="369.9703" width="2713" height="462.0001" />
+        <Position x="87" y="369.9691" width="2713" height="462.0001" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -55,7 +55,7 @@ Google Analytics Input</Text>
       <ChildNodes>
         <Node ToolID="3">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="112" y="613.9709" />
+            <Position x="112" y="613.97" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -132,7 +132,7 @@ Google Analytics Input</Text>
         </Node>
         <Node ToolID="95">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="279.9996" y="613.9693" />
+            <Position x="279.9992" y="613.9684" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -173,7 +173,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
         </Node>
         <Node ToolID="99">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="196.0003" y="613.9704" />
+            <Position x="196.0003" y="613.9692" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -230,7 +230,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
         </Node>
         <Node ToolID="116">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="112.0004" y="673.9707" width="228" height="40" />
+            <Position x="112.0003" y="673.9695" width="228" height="40" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -250,7 +250,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
         </Node>
         <Node ToolID="115">
           <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-            <Position x="351.0001" y="413.9703" width="443.9999" height="393.0001" />
+            <Position x="351.0001" y="413.9691" width="443.9999" height="393.0001" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -268,7 +268,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
           <ChildNodes>
             <Node ToolID="93">
               <GuiSettings Plugin="AlteryxBasePluginsGui.DetourEnd.DetourEnd">
-                <Position x="711" y="613.9999" />
+                <Position x="711" y="613.9987" />
               </GuiSettings>
               <Properties>
                 <Configuration />
@@ -304,7 +304,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
             </Node>
             <Node ToolID="138">
               <GuiSettings>
-                <Position x="508.0001" y="661.9703" />
+                <Position x="508.0001" y="661.9691" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -328,7 +328,7 @@ refresh_token=refresh_token
             </Node>
             <Node ToolID="129">
               <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-                <Position x="376.0001" y="673.9706" width="108" height="36" />
+                <Position x="376.0001" y="673.9694" width="108" height="36" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -349,7 +349,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="114">
               <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-                <Position x="497.0001" y="725.9703" width="192" height="56.00006" />
+                <Position x="497.0001" y="725.9691" width="192" height="56.00006" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -369,7 +369,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="98">
               <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-                <Position x="605.0001" y="649.9703" />
+                <Position x="605.0001" y="649.9691" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -416,7 +416,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="94">
               <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-                <Position x="401.0001" y="533.9703" width="59" height="59" />
+                <Position x="401.0001" y="533.9691" width="59" height="59" />
               </GuiSettings>
               <Properties>
                 <Configuration />
@@ -429,7 +429,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="92">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
-                <Position x="399" y="613.9999" />
+                <Position x="399" y="613.9987" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -487,7 +487,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="89">
               <GuiSettings Plugin="AlteryxGuiToolkit.Condition.Condition">
-                <Position x="401.0002" y="457.9703" width="59" height="59" />
+                <Position x="401.0002" y="457.9691" width="59" height="59" />
               </GuiSettings>
               <Properties>
                 <Configuration />
@@ -500,7 +500,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="308">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-                <Position x="555" y="601.9999" />
+                <Position x="555" y="601.9987" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1443,7 +1443,7 @@ URL</Text>
         </Node>
         <Node ToolID="303">
           <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-            <Position x="1799" y="445" width="976" height="319.0001" />
+            <Position x="1799" y="444.9999" width="976" height="319.0002" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1491,7 +1491,7 @@ URL</Text>
             </Node>
             <Node ToolID="287">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-                <Position x="1965" y="474" />
+                <Position x="1965" y="473.9999" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1642,7 +1642,7 @@ URL</Text>
             </Node>
             <Node ToolID="286">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-                <Position x="1965" y="575" />
+                <Position x="1965" y="575.0001" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1766,7 +1766,6 @@ URL</Text>
                     <Field name="0" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                     <Field name="1" size="2048" source="(Multiple Sources)" type="V_WString" />
                     <Field name="2" size="2048" source="(Multiple Sources)" type="V_WString" />
-                    <Field name="Field1" source="Formula: Replace([_CurrentField_], &quot;ga:&quot;,&quot;&quot;)" type="Byte" />
                   </RecordInfo>
                 </MetaInfo>
               </Properties>
@@ -1800,7 +1799,6 @@ URL</Text>
                     <Field name="0" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                     <Field name="1" size="2048" source="(Multiple Sources)" type="V_WString" />
                     <Field name="2" size="2048" source="(Multiple Sources)" type="V_WString" />
-                    <Field name="Field1" source="Formula: Replace([_CurrentField_], &quot;ga:&quot;,&quot;&quot;)" type="Byte" />
                   </RecordInfo>
                 </MetaInfo>
               </Properties>
@@ -2125,6 +2123,7 @@ Category - Descending</DefaultAnnotationText>
                     <Field name="0" />
                     <Field name="1" />
                     <Field name="2" />
+                    <Field name="JSON_Name" />
                     <Field name="*Unknown" />
                   </Fields>
                   <CopyOutput value="False" />
@@ -2138,10 +2137,9 @@ Category - Descending</DefaultAnnotationText>
                 </Annotation>
                 <MetaInfo connection="Output">
                   <RecordInfo>
-                    <Field name="0" size="2048" source="Formula: Replace([_CurrentField_], &quot;ga:&quot;,&quot;&quot;)" type="V_WString" />
+                    <Field name="0" size="1073741823" source="Formula: Replace([_CurrentField_], &quot;ga:&quot;,&quot;&quot;)" type="V_WString" />
                     <Field name="1" size="2048" source="Formula: Replace([_CurrentField_], &quot;ga:&quot;,&quot;&quot;)" type="V_WString" />
                     <Field name="2" size="2048" source="Formula: Replace([_CurrentField_], &quot;ga:&quot;,&quot;&quot;)" type="V_WString" />
-                    <Field name="Field1" source="Formula: Replace([_CurrentField_], &quot;ga:&quot;,&quot;&quot;)" type="Byte" />
                   </RecordInfo>
                 </MetaInfo>
               </Properties>
@@ -2165,10 +2163,9 @@ Category - Descending</DefaultAnnotationText>
                 </Annotation>
                 <MetaInfo connection="Output">
                   <RecordInfo>
-                    <Field name="0" size="2048" source="CrossTab:Header:JSON_Name2:0:Concat:" type="V_WString" />
+                    <Field name="0" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                     <Field name="1" size="2048" source="CrossTab:Header:JSON_Name2:1:Concat:" type="V_WString" />
                     <Field name="2" size="2048" source="CrossTab:Header:JSON_Name2:2:Concat:" type="V_WString" />
-                    <Field name="Field1" source="TextInput:" type="Byte" />
                   </RecordInfo>
                 </MetaInfo>
               </Properties>
@@ -2180,15 +2177,11 @@ Category - Descending</DefaultAnnotationText>
               </GuiSettings>
               <Properties>
                 <Configuration>
-                  <NumRows value="1" />
+                  <NumRows value="0" />
                   <Fields>
-                    <Field name="Field1" />
+                    <Field name="0" />
                   </Fields>
-                  <Data>
-                    <r>
-                      <c>0</c>
-                    </r>
-                  </Data>
+                  <Data />
                 </Configuration>
                 <Annotation DisplayMode="0">
                   <Name />
@@ -2197,7 +2190,7 @@ Category - Descending</DefaultAnnotationText>
                 </Annotation>
                 <MetaInfo connection="Output">
                   <RecordInfo>
-                    <Field name="Field1" source="TextInput:" type="Byte" />
+                    <Field name="0" size="1073741823" source="TextInput:" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
               </Properties>
@@ -2249,7 +2242,7 @@ Category - Descending</DefaultAnnotationText>
     </Node>
     <Node ToolID="113">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="150" width="2546" height="212.0009" />
+        <Position x="54" y="150" width="2546" height="212.0007" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -2267,7 +2260,7 @@ Category - Descending</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="49">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="393.2513" y="194.0004" width="59" height="59" />
+            <Position x="393.2513" y="194.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2293,7 +2286,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="51">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="525.2514" y="194.0006" width="59" height="59" />
+            <Position x="525.2514" y="194.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2306,7 +2299,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="52">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="525.2512" y="278.0008" width="59" height="59" />
+            <Position x="525.2512" y="278.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2319,7 +2312,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="53">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="669.2513" y="194.0001" width="59" height="59" />
+            <Position x="669.2513" y="194" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2332,7 +2325,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="54">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="669.2509" y="278.0008" width="59" height="59" />
+            <Position x="669.2509" y="278.0007" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2345,7 +2338,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="56">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="285.2515" y="194.0003" width="59" height="59" />
+            <Position x="285.2515" y="194.0002" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2358,7 +2351,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="57">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="285.2515" y="278" width="59" height="59" />
+            <Position x="285.2514" y="277.9993" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2527,7 +2520,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="162">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="800.0001" y="194.0003" width="59" height="59" />
+            <Position x="800.0001" y="194.0002" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2579,7 +2572,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="166">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="800.0002" y="278.0006" width="59" height="59" />
+            <Position x="800.0002" y="278.0007" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2709,7 +2702,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="276">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="144.0002" y="194.0007" width="59" height="59" />
+            <Position x="144.0002" y="194.0009" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2722,7 +2715,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="309">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="144.0001" y="270" width="59" height="59" />
+            <Position x="144.0001" y="269.9999" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
