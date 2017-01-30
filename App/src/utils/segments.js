@@ -37,6 +37,10 @@ const sortSegmentsList = (segmentsList) => {
   return _.orderBy(segmentsList, [a => a.uiobject.toLowerCase()], ['asc'])
 }
 
+const filterSegmentsList = (sortedSegments) => {
+  return sortedSegments.filter(value => { return value.definition !== '' })
+}
+
 const segmentsStorePush = (result) => {
   store.segmentsList.stringList = []
   setTimeout(() => {
@@ -44,7 +48,7 @@ const segmentsStorePush = (result) => {
   }, 2000)
 
   result.map((d) => {
-    // handling rogue commas in multiple condtion segments breaking listBox value 
+    // handling rogue commas in multiple condtion segments breaking listBox value
     d.definition = d.definition.replace(',', '|||')
     store.segmentsList.stringList.push({uiobject: d.uiobject, dataname: d.definition})
   })
@@ -57,6 +61,7 @@ const populateSegmentsList = (store) => {
   fetchSegments
     .then(parseSegments)
     .then(sortSegmentsList)
+    .then(filterSegmentsList)
     .done(segmentsStorePush)
 }
 

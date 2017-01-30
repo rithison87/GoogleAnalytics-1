@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { login, displayFieldset, setPage, getAccessTokenAjaxCall, tokenValid, resetFields } from './utils/utils'
+import { login, displayFieldset, setPage, getAccessTokenAjaxCall, tokenValid, resetFields, loading } from './utils/utils'
 import AyxStore from './stores/AyxStore'
 import * as accounts from './utils/accountUtils'
 import * as metadataRequest from './utils/metadataRequest'
@@ -99,6 +99,39 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   autorun(() => {
     store.page === '' ? displayFieldset('#accessMethod') : displayFieldset(store.page)
+  })
+
+  // Determines whether to show/hide the loading spinner based on page
+  autorun(() => {
+    // Shows or hides the loading spinner based on flag
+    const loading = (flag) => {
+      if (flag) {
+        document.getElementById('loading').style.display = 'block'
+        document.getElementById('loading-inner').style.display = 'block'
+      } else {
+        document.getElementById('loading').style.display = 'none'
+        document.getElementById('loading-inner').style.display = 'none'
+      }
+    }
+
+    switch (store.page) {
+      case '#profileSelectors':
+        loading(store.accountsList.loading)
+        break
+      case '#metrics':
+        loading(store.metricsList.loading)
+        break
+      case '#dimensions':
+        loading(store.dimensionsList.loading)
+        break
+      case '#segments':
+        loading(store.segmentsList.loading)
+        break
+      case '#summary':
+        const flag = (store.metricsList.loading || store.dimensionsList.loading || store.segmentsList.loading)
+        loading(flag)
+        break
+    }
   })
 
   // Update preDefined selector to 'custom' when a custom date is selected/entered
