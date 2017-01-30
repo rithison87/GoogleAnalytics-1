@@ -35,9 +35,30 @@ Google Analytics Input</Text>
         </Annotation>
       </Properties>
     </Node>
+    <Node ToolID="104">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2610" y="258" width="432" height="48" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Error checking ensures that credentials, Account, WebProperty, Profile,
+and at least one metric or goal were selected.</Text>
+          <Font name="Segoe UI" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
     <Node ToolID="123">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="87" y="369.9691" width="2713" height="462.0001" />
+        <Position x="87" y="369.9685" width="2713" height="462.0002" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -55,7 +76,7 @@ Google Analytics Input</Text>
       <ChildNodes>
         <Node ToolID="3">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="112" y="613.97" />
+            <Position x="112" y="613.9698" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -132,7 +153,7 @@ Google Analytics Input</Text>
         </Node>
         <Node ToolID="95">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="279.9992" y="613.9684" />
+            <Position x="279.9992" y="613.9678" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -173,7 +194,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
         </Node>
         <Node ToolID="99">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="196.0003" y="613.9692" />
+            <Position x="196.0005" y="613.9689" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -230,7 +251,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
         </Node>
         <Node ToolID="116">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="112.0003" y="673.9695" width="228" height="40" />
+            <Position x="112.0006" y="673.9689" width="228" height="40" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -250,7 +271,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
         </Node>
         <Node ToolID="115">
           <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-            <Position x="351.0001" y="413.9691" width="443.9999" height="393.0001" />
+            <Position x="351.0001" y="413.9685" width="443.9999" height="393.0002" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -268,7 +289,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
           <ChildNodes>
             <Node ToolID="93">
               <GuiSettings Plugin="AlteryxBasePluginsGui.DetourEnd.DetourEnd">
-                <Position x="711" y="613.9987" />
+                <Position x="711" y="613.9982" />
               </GuiSettings>
               <Properties>
                 <Configuration />
@@ -304,7 +325,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
             </Node>
             <Node ToolID="138">
               <GuiSettings>
-                <Position x="508.0001" y="661.9691" />
+                <Position x="508.0001" y="661.9686" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -328,7 +349,7 @@ refresh_token=refresh_token
             </Node>
             <Node ToolID="129">
               <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-                <Position x="376.0001" y="673.9694" width="108" height="36" />
+                <Position x="376.0001" y="673.9689" width="108" height="36" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -349,7 +370,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="114">
               <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-                <Position x="497.0001" y="725.9691" width="192" height="56.00006" />
+                <Position x="497.0001" y="725.9686" width="192" height="56.00006" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -369,7 +390,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="98">
               <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-                <Position x="605.0001" y="649.9691" />
+                <Position x="605.0001" y="649.9686" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -416,7 +437,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="94">
               <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-                <Position x="401.0001" y="533.9691" width="59" height="59" />
+                <Position x="401.0001" y="533.9686" width="59" height="59" />
               </GuiSettings>
               <Properties>
                 <Configuration />
@@ -429,7 +450,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="92">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
-                <Position x="399" y="613.9987" />
+                <Position x="399" y="613.9982" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -487,7 +508,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="89">
               <GuiSettings Plugin="AlteryxGuiToolkit.Condition.Condition">
-                <Position x="401.0002" y="457.9691" width="59" height="59" />
+                <Position x="401.0002" y="457.9685" width="59" height="59" />
               </GuiSettings>
               <Properties>
                 <Configuration />
@@ -500,7 +521,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="308">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-                <Position x="555" y="601.9987" />
+                <Position x="555" y="601.9982" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -2202,12 +2223,12 @@ Category - Descending</DefaultAnnotationText>
     </Node>
     <Node ToolID="107">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="2615" y="150" width="302" height="105" />
+        <Position x="2610" y="150" width="438" height="98" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Error check</Caption>
-          <Style TextColor="#ffffff" FillColor="#c80000" BorderColor="#ffffff" Transparency="1" Margin="25" />
+          <Style TextColor="#ffffff" FillColor="#c80000" BorderColor="#ffffff" Transparency="1" Margin="10" />
           <Disabled value="False" />
           <Folded value="False" />
         </Configuration>
@@ -2218,19 +2239,77 @@ Category - Descending</DefaultAnnotationText>
         </Annotation>
       </Properties>
       <ChildNodes>
-        <Node ToolID="104">
-          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="2640" y="194" width="252" height="36" />
+        <Node ToolID="312">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Error.Error">
+            <Position x="2620" y="179" width="59" height="59" />
           </GuiSettings>
           <Properties>
-            <Configuration>
-              <Text>Error checking ensures...</Text>
-              <Font name="Segoe UI" size="8.25" style="0" />
-              <TextColor name="Black" />
-              <FillColor name="White" />
-              <Shape shape="0" />
-              <Justification Justification="4" />
-            </Configuration>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="313">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Error.Error">
+            <Position x="2979" y="179" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="314">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Error.Error">
+            <Position x="2763" y="179" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="315">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Error.Error">
+            <Position x="2835" y="179" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="316">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Error.Error">
+            <Position x="2907" y="179" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="317">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Error.Error">
+            <Position x="2694" y="179" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
             <Annotation DisplayMode="0">
               <Name />
               <DefaultAnnotationText />
@@ -2273,7 +2352,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="50">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="393.2513" y="278.0005" width="59" height="59" />
+            <Position x="393.2513" y="278.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2286,7 +2365,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="51">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="525.2514" y="194.0001" width="59" height="59" />
+            <Position x="525.2514" y="194" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2299,7 +2378,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="52">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="525.2512" y="278.0003" width="59" height="59" />
+            <Position x="525.2512" y="278.0002" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2351,7 +2430,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="57">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="285.2514" y="277.9993" width="59" height="59" />
+            <Position x="285.2513" y="277.9991" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2468,7 +2547,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="158">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="956" y="194.0004" width="59" height="59" />
+            <Position x="956" y="194.0005" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2702,7 +2781,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="276">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="144.0002" y="194.0009" width="59" height="59" />
+            <Position x="144.0003" y="194.001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -3069,6 +3148,58 @@ Support Macro(s)
       <Destination ToolID="89" Connection="Question" />
     </Connection>
     <Connection name="#2" Wireless="True">
+      <Origin ToolID="49" Connection="Question" />
+      <Destination ToolID="312" Connection="Question" />
+    </Connection>
+    <Connection name="#3" Wireless="True">
+      <Origin ToolID="51" Connection="Question" />
+      <Destination ToolID="312" Connection="Question" />
+    </Connection>
+    <Connection name="#4" Wireless="True">
+      <Origin ToolID="53" Connection="Question" />
+      <Destination ToolID="312" Connection="Question" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="56" Connection="Question" />
+      <Destination ToolID="312" Connection="Question" />
+    </Connection>
+    <Connection name="#3" Wireless="True">
+      <Origin ToolID="49" Connection="Question" />
+      <Destination ToolID="314" Connection="Question" />
+    </Connection>
+    <Connection name="#4" Wireless="True">
+      <Origin ToolID="51" Connection="Question" />
+      <Destination ToolID="314" Connection="Question" />
+    </Connection>
+    <Connection name="#5" Wireless="True">
+      <Origin ToolID="53" Connection="Question" />
+      <Destination ToolID="314" Connection="Question" />
+    </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="56" Connection="Question" />
+      <Destination ToolID="314" Connection="Question" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="162" Connection="Question" />
+      <Destination ToolID="314" Connection="Question" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="49" Connection="Question" />
+      <Destination ToolID="317" Connection="Question" />
+    </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="51" Connection="Question" />
+      <Destination ToolID="317" Connection="Question" />
+    </Connection>
+    <Connection name="#3" Wireless="True">
+      <Origin ToolID="53" Connection="Question" />
+      <Destination ToolID="317" Connection="Question" />
+    </Connection>
+    <Connection name="#4" Wireless="True">
+      <Origin ToolID="56" Connection="Question" />
+      <Destination ToolID="317" Connection="Question" />
+    </Connection>
+    <Connection name="#2" Wireless="True">
       <Origin ToolID="50" Connection="Action" />
       <Destination ToolID="3" Connection="Action" />
     </Connection>
@@ -3152,6 +3283,18 @@ Support Macro(s)
       <Origin ToolID="146" Connection="Question" />
       <Destination ToolID="159" Connection="Question" />
     </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="146" Connection="Question" />
+      <Destination ToolID="313" Connection="Question" />
+    </Connection>
+    <Connection name="#3" Wireless="True">
+      <Origin ToolID="163" Connection="Question" />
+      <Destination ToolID="313" Connection="Question" />
+    </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="164" Connection="Question" />
+      <Destination ToolID="313" Connection="Question" />
+    </Connection>
     <Connection name="#1">
       <Origin ToolID="148" Connection="Question" />
       <Destination ToolID="160" Connection="Question" />
@@ -3171,6 +3314,22 @@ Support Macro(s)
     <Connection name="#1">
       <Origin ToolID="158" Connection="Question" />
       <Destination ToolID="161" Connection="Question" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="158" Connection="Question" />
+      <Destination ToolID="315" Connection="Question" />
+    </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="162" Connection="Question" />
+      <Destination ToolID="315" Connection="Question" />
+    </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="158" Connection="Question" />
+      <Destination ToolID="316" Connection="Question" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="163" Connection="Question" />
+      <Destination ToolID="316" Connection="Question" />
     </Connection>
     <Connection name="#1">
       <Origin ToolID="162" Connection="Question" />
@@ -3575,6 +3734,54 @@ column	16</DynamicConfiguration>
               <DynamicConfiguration>row	1
 column	17</DynamicConfiguration>
               <DefaultConfiguration value="False" />
+            </Action>
+            <Action>
+              <Type>Error</Type>
+              <Description>Please login using your Google credentials or enter a Client ID, Client Secret, and Refresh Token and click Connect.</Description>
+              <ToolId value="312" />
+              <Expression>([#1]='')
+AND
+([#2]='' AND [#3]='' AND [#4]='')</Expression>
+            </Action>
+            <Action>
+              <Type>Error</Type>
+              <Description>Please select a metric or goal.</Description>
+              <ToolId value="313" />
+              <Expression>[#1]='' AND [#2]=''
+AND
+[#3]!=''</Expression>
+            </Action>
+            <Action>
+              <Type>Error</Type>
+              <Description>Please select an Account.</Description>
+              <ToolId value="314" />
+              <Expression>[#1]=''
+AND
+([#2]!='' OR ([#3]!='' AND [#4]!='' AND [#5]!=''))</Expression>
+            </Action>
+            <Action>
+              <Type>Error</Type>
+              <Description>Please select a WebProperty.</Description>
+              <ToolId value="315" />
+              <Expression>[#1]=''
+AND
+[#2]!=''</Expression>
+            </Action>
+            <Action>
+              <Type>Error</Type>
+              <Description>Please select a Profile.</Description>
+              <ToolId value="316" />
+              <Expression>[#1]=''
+AND
+[#2]!=''</Expression>
+            </Action>
+            <Action>
+              <Type>Error</Type>
+              <Description>Please enter a Client ID, Client Secret, and Refresh Token and click Connect.</Description>
+              <ToolId value="317" />
+              <Expression>([#4]='' AND ([#2]='' OR [#3]='' AND [#4]=''))
+AND
+!([#1]='' AND [#2]='' AND [#3]='' AND [#4]='')</Expression>
             </Action>
           </True>
         </NoCondition>
