@@ -37,7 +37,7 @@ Google Analytics Input</Text>
     </Node>
     <Node ToolID="104">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="2610" y="258" width="360" height="48" />
+        <Position x="2610" y="258" width="432" height="48" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -2223,7 +2223,7 @@ Category - Descending</DefaultAnnotationText>
     </Node>
     <Node ToolID="107">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="2610" y="150" width="366" height="98" />
+        <Position x="2610" y="150" width="438" height="98" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -2254,7 +2254,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="313">
           <GuiSettings Plugin="AlteryxGuiToolkit.Error.Error">
-            <Position x="2907" y="179" width="59" height="59" />
+            <Position x="2979" y="179" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2267,7 +2267,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="314">
           <GuiSettings Plugin="AlteryxGuiToolkit.Error.Error">
-            <Position x="2691" y="179" width="59" height="59" />
+            <Position x="2763" y="179" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2280,7 +2280,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="315">
           <GuiSettings Plugin="AlteryxGuiToolkit.Error.Error">
-            <Position x="2763" y="179" width="59" height="59" />
+            <Position x="2835" y="179" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2293,7 +2293,20 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="316">
           <GuiSettings Plugin="AlteryxGuiToolkit.Error.Error">
-            <Position x="2835" y="179" width="59" height="59" />
+            <Position x="2907" y="179" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="317">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Error.Error">
+            <Position x="2694" y="179" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -3170,6 +3183,22 @@ Support Macro(s)
       <Origin ToolID="162" Connection="Question" />
       <Destination ToolID="314" Connection="Question" />
     </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="49" Connection="Question" />
+      <Destination ToolID="317" Connection="Question" />
+    </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="51" Connection="Question" />
+      <Destination ToolID="317" Connection="Question" />
+    </Connection>
+    <Connection name="#3" Wireless="True">
+      <Origin ToolID="53" Connection="Question" />
+      <Destination ToolID="317" Connection="Question" />
+    </Connection>
+    <Connection name="#4" Wireless="True">
+      <Origin ToolID="56" Connection="Question" />
+      <Destination ToolID="317" Connection="Question" />
+    </Connection>
     <Connection name="#2" Wireless="True">
       <Origin ToolID="50" Connection="Action" />
       <Destination ToolID="3" Connection="Action" />
@@ -3704,7 +3733,7 @@ column	17</DynamicConfiguration>
             </Action>
             <Action>
               <Type>Error</Type>
-              <Description>Please login using your Google credentials or enter a Client ID, Client Secret, and Refresh Token</Description>
+              <Description>Please login using your Google credentials or enter a Client ID, Client Secret, and Refresh Token and click Connect.</Description>
               <ToolId value="312" />
               <Expression>([#1]='')
 AND
@@ -3741,6 +3770,14 @@ AND
               <Expression>[#1]=''
 AND
 [#2]!=''</Expression>
+            </Action>
+            <Action>
+              <Type>Error</Type>
+              <Description>Please enter a Client ID, Client Secret, and Refresh Token and click Connect.</Description>
+              <ToolId value="317" />
+              <Expression>([#4]='' AND ([#2]='' OR [#3]='' AND [#4]=''))
+AND
+!([#1]='' AND [#2]='' AND [#3]='' AND [#4]='')</Expression>
             </Action>
           </True>
         </NoCondition>
