@@ -49,7 +49,7 @@ const populateGoalsList = store => {
         constructedGoals.push({
           id: Number(goal.id),
           suffix: column.suffix,
-          uiobject: 'Goal ' + goal.id + ' ' + column.suffix + ' (' + goal.name + ')',
+          uiobject: `Goal ${goal.id} ${column.suffix} (${goal.name})`,
           dataname: column.id.replace(/(.*)XX(.*)/, '$1' + goal.id + '$2'),
           type: goal.type
         })
@@ -60,7 +60,7 @@ const populateGoalsList = store => {
 
   const orderGoalsAsc = resp => {
     // sort all goals alphabetically, ascending
-    return _.sortBy(resp, d => [d.id, d.suffix])
+    return _.sortBy(resp, ['id', 'suffix'])
   }
 
   const pushToGoalsList = resp => {
@@ -83,11 +83,6 @@ const populateGoalsList = store => {
     .then(filterGoalsAndColumns)
     .then(createGoalSuffix)
     .then(combineGoalsAndColumnsData)
-    .then((resp) => {
-      console.log('id check')
-      console.log(resp)
-      return resp
-    })
     .then(orderGoalsAsc)
     .then(pushToGoalsList)
 }
