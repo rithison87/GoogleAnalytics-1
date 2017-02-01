@@ -50,7 +50,7 @@ const segmentsStorePush = (result) => {
   result.map((d) => {
     // handling rogue commas in multiple condtion segments breaking listBox value
     d.definition = d.definition.replace(',', '|||')
-    store.segmentsList.stringList.push({uiobject: d.uiobject, dataname: d.definition})
+    store.segmentsList.stringList.push({uiobject: `${d.uiobject} | ${d.segmentId}`, dataname: d.definition})
   })
 }
 
