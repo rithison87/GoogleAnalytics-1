@@ -17,9 +17,9 @@
     <MetaInfo>
       <NameIsFileName value="false" />
       <Name>Google Analytics Prototype</Name>
-      <Description><![CDATA[Allows you to download data from a Google Sheets spreadsheet.                                                                             v1.0.0.1]]></Description>
-      <RootToolName></RootToolName>
-      <ToolVersion>1.0.0.1</ToolVersion>
+      <Description>Query and download data from Google Analytics' Core Reporting API with multiple configuration options.</Description>
+      <RootToolName>Google_Analytics.yxmc</RootToolName>
+      <ToolVersion>7</ToolVersion>
       <ToolInDb value="False" />
       <CategoryName>Connectors</CategoryName>
       <SearchTags>cloud,connector,input,web,internet,google,spreadsheet,sheets,connectors category,API,download,read</SearchTags>
