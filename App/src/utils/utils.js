@@ -311,9 +311,8 @@ const resetFields = () => {
     Alteryx.Gui.renderer.getReactComponentByDataName(d).forceUpdate()
   })
 
-  // Set default value for preDefDropDown and advOptions
+  // Set default value for preDefDropDown
   Alteryx.Gui.manager.GetDataItem('preDefDropDown').setValue('today')
-  Alteryx.Gui.manager.GetDataItem('advOptions').setValue(false)
 }
 
 export { getAccessTokenAjaxCall, login, gup, validateToken, displayFieldset, setPage, tokenValid, resetFields, hideAllFieldsets }
