@@ -16,16 +16,16 @@
   <Properties>
     <MetaInfo>
       <NameIsFileName value="false" />
-      <Name>Google Analytics Prototype</Name>
-      <Description>Query and download data from Google Analytics' Core Reporting API with multiple configuration options.</Description>
+      <Name>Google Analytics</Name>
+      <Description>Query and download data from Google Analytics' Core Reporting API with multiple configuration options. Google Analytics version 7.</Description>
       <RootToolName>Google_Analytics.yxmc</RootToolName>
       <ToolVersion>7</ToolVersion>
       <ToolInDb value="False" />
       <CategoryName>Connectors</CategoryName>
-      <SearchTags>cloud,connector,input,web,internet,google,spreadsheet,sheets,connectors category,API,download,read</SearchTags>
+      <SearchTags>cloud,connector,input,web,internet,google,connectors category,API,download,analytics,adwords</SearchTags>
       <Author>Alteryx, Inc.</Author>
       <Company>Alteryx, Inc.</Company>
-      <Copyright>2016 Alteryx, Inc.  All Rights Reserved.</Copyright>
+      <Copyright>2017 Alteryx, Inc.  All Rights Reserved.</Copyright>
 	  <DescriptionLink actual="" displayed="" />
     </MetaInfo>
   </Properties>
