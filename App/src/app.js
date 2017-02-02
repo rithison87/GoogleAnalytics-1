@@ -36,7 +36,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'endDatePicker', type: 'value'},
     {key: 'preDefDropDown', type: 'value'},
     {key: 'segmentsList', type: 'listBox'},
-    {key: 'advOptions', type: 'value'},
     {key: 'maxResults', type: 'value'},
     {key: 'page', type: 'value'},
     {key: 'errorStatus', type: 'value'}
@@ -172,17 +171,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
       metadataRequest.pushCombinedMetadata(store)
       populateGoalsList(store)
       segments.populateSegmentsList(store)
-    }
-  })
-
-  // Displays the maxResults spinner input if advOptions is true else hides it
-  autorun(() => {
-    if (store.advOptions) {
-      document.getElementById('maxResults').style.display = 'block'
-    } else {
-      document.getElementById('maxResults').style.display = 'none'
-      // resets maxResults to default if advOptions is deselected
-      store.maxResults = 1000
     }
   })
 

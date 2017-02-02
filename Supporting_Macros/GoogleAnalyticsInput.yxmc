@@ -16,7 +16,7 @@
     </Node>
     <Node ToolID="124">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="87.2513" y="78" width="616" height="80" />
+        <Position x="87.2513" y="54" width="616" height="80" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -37,7 +37,7 @@ Google Analytics Input</Text>
     </Node>
     <Node ToolID="104">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="2610" y="282" width="432" height="48" />
+        <Position x="2610" y="258" width="432" height="48" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -58,7 +58,7 @@ and at least one metric or goal were selected.</Text>
     </Node>
     <Node ToolID="123">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="87" y="393.9685" width="2713" height="462.0002" />
+        <Position x="87" y="369.9685" width="2713" height="462.0002" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -76,7 +76,7 @@ and at least one metric or goal were selected.</Text>
       <ChildNodes>
         <Node ToolID="3">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="112" y="637.9698" />
+            <Position x="112" y="613.9698" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -97,7 +97,6 @@ and at least one metric or goal were selected.</Text>
                 <Field name="metricsGoalsList" />
                 <Field name="dimensionsGoalsList" />
                 <Field name="segmentsList" />
-                <Field name="advOptions" />
                 <Field name="maxResults" />
               </Fields>
               <Data>
@@ -117,7 +116,6 @@ and at least one metric or goal were selected.</Text>
                   <c>____metricsGoalsList_placeholder____</c>
                   <c>____dimensionsGoalsList_placeholder____</c>
                   <c>____segmentsList_placeholder____</c>
-                  <c>______advOptions_placeholder_____</c>
                   <c>_____maxResults_placeholder____</c>
                 </r>
               </Data>
@@ -144,7 +142,6 @@ and at least one metric or goal were selected.</Text>
                 <Field name="metricsGoalsList" size="36" source="TextInput:" type="String" />
                 <Field name="dimensionsGoalsList" size="39" source="TextInput:" type="String" />
                 <Field name="segmentsList" size="32" source="TextInput:" type="String" />
-                <Field name="advOptions" size="33" source="TextInput:" type="String" />
                 <Field name="maxResults" size="31" source="TextInput:" type="String" />
               </RecordInfo>
             </MetaInfo>
@@ -153,7 +150,7 @@ and at least one metric or goal were selected.</Text>
         </Node>
         <Node ToolID="95">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="279.9992" y="637.9678" />
+            <Position x="279.9992" y="613.9678" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -185,7 +182,6 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
                 <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                 <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                 <Field name="segmentsList" size="1073741823" source="TextInput:" type="V_WString" />
-                <Field name="advOptions" source="TextInput:" type="Bool" />
                 <Field name="maxResults" source="TextInput:" type="Int64" />
               </RecordInfo>
             </MetaInfo>
@@ -194,7 +190,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
         </Node>
         <Node ToolID="99">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="196.0005" y="637.9689" />
+            <Position x="196.0005" y="613.9689" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -242,7 +238,6 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
                 <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                 <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                 <Field name="segmentsList" size="1073741823" source="TextInput:" type="V_WString" />
-                <Field name="advOptions" source="TextInput:" type="Bool" />
                 <Field name="maxResults" source="TextInput:" type="Int64" />
               </RecordInfo>
             </MetaInfo>
@@ -251,7 +246,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
         </Node>
         <Node ToolID="116">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="112.0006" y="697.9689" width="228" height="40" />
+            <Position x="112.0006" y="673.9689" width="228" height="40" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -271,7 +266,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
         </Node>
         <Node ToolID="115">
           <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-            <Position x="351.0001" y="437.9685" width="443.9999" height="393.0002" />
+            <Position x="351.0001" y="413.9685" width="443.9999" height="393.0002" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -289,7 +284,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
           <ChildNodes>
             <Node ToolID="93">
               <GuiSettings Plugin="AlteryxBasePluginsGui.DetourEnd.DetourEnd">
-                <Position x="711" y="637.9982" />
+                <Position x="711" y="613.9982" />
               </GuiSettings>
               <Properties>
                 <Configuration />
@@ -315,7 +310,6 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
                     <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="segmentsList" size="1073741823" source="TextInput:" type="V_WString" />
-                    <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1073741823" source="Formula: &quot;Bearer &quot;+[accessToken]" type="V_WString" />
                   </RecordInfo>
@@ -325,7 +319,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
             </Node>
             <Node ToolID="138">
               <GuiSettings>
-                <Position x="508.0001" y="685.9686" />
+                <Position x="508.0001" y="661.9686" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -349,7 +343,7 @@ refresh_token=refresh_token
             </Node>
             <Node ToolID="129">
               <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-                <Position x="376.0001" y="697.9689" width="108" height="36" />
+                <Position x="376.0001" y="673.9689" width="108" height="36" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -370,7 +364,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="114">
               <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-                <Position x="497.0001" y="749.9686" width="192" height="56.00006" />
+                <Position x="497.0001" y="725.9686" width="192" height="56.00006" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -390,7 +384,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="98">
               <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-                <Position x="605.0001" y="673.9686" />
+                <Position x="605.0001" y="649.9686" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -437,7 +431,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="94">
               <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-                <Position x="401.0001" y="557.9686" width="59" height="59" />
+                <Position x="401.0001" y="533.9686" width="59" height="59" />
               </GuiSettings>
               <Properties>
                 <Configuration />
@@ -450,7 +444,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="92">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
-                <Position x="399" y="637.9982" />
+                <Position x="399" y="613.9982" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -478,7 +472,6 @@ R:  Offline method</Text>
                     <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="segmentsList" size="1073741823" source="TextInput:" type="V_WString" />
-                    <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                   </RecordInfo>
                 </MetaInfo>
@@ -499,7 +492,6 @@ R:  Offline method</Text>
                     <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="segmentsList" size="1073741823" source="TextInput:" type="V_WString" />
-                    <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                   </RecordInfo>
                 </MetaInfo>
@@ -508,7 +500,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="89">
               <GuiSettings Plugin="AlteryxGuiToolkit.Condition.Condition">
-                <Position x="401.0002" y="481.9685" width="59" height="59" />
+                <Position x="401.0002" y="457.9685" width="59" height="59" />
               </GuiSettings>
               <Properties>
                 <Configuration />
@@ -521,7 +513,7 @@ R:  Offline method</Text>
             </Node>
             <Node ToolID="308">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-                <Position x="555" y="625.9982" />
+                <Position x="555" y="601.9982" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -551,7 +543,6 @@ R:  Offline method</Text>
                     <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="segmentsList" size="1073741823" source="TextInput:" type="V_WString" />
-                    <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1073741823" source="Formula: &quot;Bearer &quot;+[accessToken]" type="V_WString" />
                   </RecordInfo>
@@ -563,7 +554,7 @@ R:  Offline method</Text>
         </Node>
         <Node ToolID="261">
           <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-            <Position x="809" y="464" width="973" height="312" />
+            <Position x="809" y="440" width="973" height="312" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -581,7 +572,7 @@ R:  Offline method</Text>
           <ChildNodes>
             <Node ToolID="254">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-                <Position x="915" y="637.9708" />
+                <Position x="915" y="613.9708" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -594,7 +585,7 @@ R:  Offline method</Text>
                     <FormulaField field="dimensionsURL" type="V_WString" size="1073741823" expression="IF IsEmpty([dimensionsList])&#xA;	THEN IF IsEmpty([dimensionsGoalsList])&#xA;		THEN ''&#xA;		ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;		ENDIF&#xA;	ELSE IF IsNull([dimensionsGoalsList])&#xA;		THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;		ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;		ENDIF &#xA;	ENDIF" />
                     <FormulaField field="segmentsList" type="V_WString" size="1073741823" expression="replace([segmentsList], '|||', ',')" />
                     <FormulaField field="segmentURL" type="V_WString" size="1073741823" expression="IF IsEmpty([segmentsList])&#xA;	THEN ''&#xA;	ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" />
-                    <FormulaField field="max-resultsURL" type="V_WString" size="1073741823" expression="IF [advOptions]&#xA;	THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA;	ELSE '&amp;max-results=10000'&#xA;ENDIF" />
+                    <FormulaField field="max-resultsURL" type="V_WString" size="1073741823" expression="&quot;&amp;max-results=&quot;+ToString([maxResults])" />
                     <FormulaField field="fullQueryURL" type="V_WString" size="1073741823" expression="[baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" />
                   </FormulaFields>
                 </Configuration>
@@ -623,7 +614,6 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
-                    <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1073741823" source="Formula: &quot;Bearer &quot;+[accessToken]" type="V_WString" />
                     <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
@@ -633,7 +623,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                     <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="max-resultsURL" size="1073741823" source="Formula: &quot;&amp;max-results=&quot;+ToString([maxResults])" type="V_WString" />
                     <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
@@ -642,7 +632,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
             </Node>
             <Node ToolID="255">
               <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
-                <Position x="1069" y="637.9705" />
+                <Position x="1069" y="613.9705" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -745,7 +735,6 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
-                    <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                     <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
@@ -755,7 +744,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                     <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="max-resultsURL" size="1073741823" source="Formula: &quot;&amp;max-results=&quot;+ToString([maxResults])" type="V_WString" />
                     <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
@@ -766,7 +755,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
             </Node>
             <Node ToolID="256">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-                <Position x="997" y="637.9706" />
+                <Position x="997" y="613.9706" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -797,7 +786,6 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
-                    <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                     <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
@@ -807,7 +795,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                     <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="max-resultsURL" size="1073741823" source="Formula: &quot;&amp;max-results=&quot;+ToString([maxResults])" type="V_WString" />
                     <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
@@ -816,7 +804,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
             </Node>
             <Node ToolID="257">
               <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-                <Position x="915" y="702.0002" />
+                <Position x="915" y="678.0002" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -841,7 +829,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
             </Node>
             <Node ToolID="260">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-                <Position x="1139" y="642" />
+                <Position x="1139" y="618" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -870,7 +858,6 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
-                    <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                     <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
@@ -880,7 +867,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                     <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="max-resultsURL" size="1073741823" source="Formula: &quot;&amp;max-results=&quot;+ToString([maxResults])" type="V_WString" />
                     <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
@@ -903,7 +890,6 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
-                    <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                     <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
@@ -913,7 +899,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                     <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="max-resultsURL" size="1073741823" source="Formula: &quot;&amp;max-results=&quot;+ToString([maxResults])" type="V_WString" />
                     <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
@@ -924,7 +910,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
             </Node>
             <Node ToolID="270">
               <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-                <Position x="1239" y="493" width="533" height="158" />
+                <Position x="1239" y="469" width="533" height="158" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -942,7 +928,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
               <ChildNodes>
                 <Node ToolID="264">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
-                    <Position x="1249" y="522" />
+                    <Position x="1249" y="498" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -972,7 +958,6 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
-                        <Field name="advOptions" source="TextInput:" type="Bool" />
                         <Field name="maxResults" source="TextInput:" type="Int64" />
                         <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                         <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
@@ -982,7 +967,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                         <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                         <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                        <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                        <Field name="max-resultsURL" size="1073741823" source="Formula: &quot;&amp;max-results=&quot;+ToString([maxResults])" type="V_WString" />
                         <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                         <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                         <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -994,7 +979,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                 </Node>
                 <Node ToolID="265">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-                    <Position x="1321" y="522" />
+                    <Position x="1321" y="498" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -1023,7 +1008,6 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
-                        <Field name="advOptions" source="TextInput:" type="Bool" />
                         <Field name="maxResults" source="TextInput:" type="Int64" />
                         <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                         <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
@@ -1033,7 +1017,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                         <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                         <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                        <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                        <Field name="max-resultsURL" size="1073741823" source="Formula: &quot;&amp;max-results=&quot;+ToString([maxResults])" type="V_WString" />
                         <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                         <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                         <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1057,7 +1041,6 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                         <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
-                        <Field name="advOptions" source="TextInput:" type="Bool" />
                         <Field name="maxResults" source="TextInput:" type="Int64" />
                         <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                         <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
@@ -1067,7 +1050,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                         <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                         <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                         <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                        <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                        <Field name="max-resultsURL" size="1073741823" source="Formula: &quot;&amp;max-results=&quot;+ToString([maxResults])" type="V_WString" />
                         <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                         <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                         <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1079,7 +1062,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                 </Node>
                 <Node ToolID="266">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
-                    <Position x="1467" y="522" />
+                    <Position x="1467" y="498" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -1108,7 +1091,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                 </Node>
                 <Node ToolID="267">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-                    <Position x="1393" y="522" />
+                    <Position x="1393" y="498" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -1135,7 +1118,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                 </Node>
                 <Node ToolID="268">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.Message.Message">
-                    <Position x="1703" y="522" />
+                    <Position x="1703" y="498" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -1163,7 +1146,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                 </Node>
                 <Node ToolID="275">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-                    <Position x="1559" y="522" />
+                    <Position x="1559" y="498" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -1188,7 +1171,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                 </Node>
                 <Node ToolID="274">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-                    <Position x="1467" y="582" />
+                    <Position x="1467" y="558" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -1215,7 +1198,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                 </Node>
                 <Node ToolID="277">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-                    <Position x="1631" y="522" />
+                    <Position x="1631" y="498" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -1242,7 +1225,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
             </Node>
             <Node ToolID="262">
               <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-                <Position x="1240" y="726" width="144" height="40" />
+                <Position x="1240" y="702" width="144" height="40" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1263,7 +1246,7 @@ Error Messaging</Text>
             </Node>
             <Node ToolID="259">
               <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
-                <Position x="1249" y="671" />
+                <Position x="1249" y="647" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1293,7 +1276,6 @@ Error Messaging</Text>
                     <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
-                    <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                     <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
@@ -1303,7 +1285,7 @@ Error Messaging</Text>
                     <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                     <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="max-resultsURL" size="1073741823" source="Formula: &quot;&amp;max-results=&quot;+ToString([maxResults])" type="V_WString" />
                     <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                     <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1315,7 +1297,7 @@ Error Messaging</Text>
             </Node>
             <Node ToolID="258">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Message.Message">
-                <Position x="1321" y="671" />
+                <Position x="1321" y="647" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1348,7 +1330,6 @@ Error Messaging</Text>
                     <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="segmentsList" size="1073741823" source="Formula: replace([segmentsList], '|||', ',')" type="V_WString" />
-                    <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                     <Field name="baseURL" size="1073741823" source="Formula: &quot;https://www.googleapis.com/analytics/v3/data/ga&quot;" type="V_WString" />
@@ -1358,7 +1339,7 @@ Error Messaging</Text>
                     <Field name="metricsURL" size="1073741823" source="Formula: IF IsEmpty([metricsList])&#xA;THEN &quot;&amp;metrics=&quot;+[metricsGoalsList]&#xA;ELSE &quot;&amp;metrics=&quot;+[metricsList]+IIF(IsEmpty([metricsGoalsList]),&quot;&quot;,(&quot;,&quot;+[metricsGoalsList]))&#xA;ENDIF" type="V_WString" />
                     <Field name="dimensionsURL" size="1073741823" source="Formula: IF IsEmpty([dimensionsList])&#xA; THEN IF IsEmpty([dimensionsGoalsList])&#xA;  THEN ''&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsGoalsList] &#xA;  ENDIF&#xA; ELSE IF IsNull([dimensionsGoalsList])&#xA;  THEN &quot;&amp;dimensions=&quot;+[dimensionsList]&#xA;  ELSE &quot;&amp;dimensions=&quot;+[dimensionsList]+&quot;,&quot;+[dimensionsGoalsList] &#xA;  ENDIF &#xA; ENDIF" type="V_WString" />
                     <Field name="segmentURL" size="1073741823" source="Formula: IF IsEmpty([segmentsList])&#xA; THEN ''&#xA; ELSE &quot;&amp;segment=&quot; + [segmentsList]&#xA;ENDIF" type="V_WString" />
-                    <Field name="max-resultsURL" size="1073741823" source="Formula: IF [advOptions]&#xA; THEN &quot;&amp;max-results=&quot;+ToString([maxResults])&#xA; ELSE '&amp;max-results=10000'&#xA;ENDIF" type="V_WString" />
+                    <Field name="max-resultsURL" size="1073741823" source="Formula: &quot;&amp;max-results=&quot;+ToString([maxResults])" type="V_WString" />
                     <Field name="fullQueryURL" size="1073741823" source="Formula: [baseURL]&#xA;+[idsURL]&#xA;+[startDateURL]&#xA;+[endDateURL]&#xA;+[metricsURL]&#xA;+[dimensionsURL]&#xA;+[segmentURL]&#xA;+[max-resultsURL]" type="V_WString" />
                     <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
                     <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1370,7 +1351,7 @@ Error Messaging</Text>
             </Node>
             <Node ToolID="271">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-                <Position x="831" y="637.9705" />
+                <Position x="831" y="613.9705" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1410,7 +1391,6 @@ segmentsList=// replace two commas before users with semicolo...
                     <Field name="metricsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsGoalsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="segmentsList" size="1073741823" source="Formula: // replace a comma before sessions with semicolon&#xA;Replace([segmentsList], &quot;,sessions::&quot;, &quot;;sessions::&quot;)" type="V_WString" />
-                    <Field name="advOptions" source="TextInput:" type="Bool" />
                     <Field name="maxResults" source="TextInput:" type="Int64" />
                     <Field name="Authorization" size="1073741823" source="Formula: &quot;Bearer &quot;+[accessToken]" type="V_WString" />
                   </RecordInfo>
@@ -1420,7 +1400,7 @@ segmentsList=// replace two commas before users with semicolo...
             </Node>
             <Node ToolID="272">
               <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-                <Position x="819" y="546.0001" width="84" height="84" />
+                <Position x="819" y="522.0001" width="84" height="84" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1440,7 +1420,7 @@ segmentsList=// replace two commas before users with semicolo...
             </Node>
             <Node ToolID="273">
               <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-                <Position x="915" y="546" width="60" height="84" />
+                <Position x="915" y="522" width="60" height="84" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1464,7 +1444,7 @@ URL</Text>
         </Node>
         <Node ToolID="303">
           <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-            <Position x="1799" y="468.9999" width="976" height="319.0002" />
+            <Position x="1799" y="444.9999" width="976" height="319.0002" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1482,7 +1462,7 @@ URL</Text>
           <ChildNodes>
             <Node ToolID="285">
               <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-                <Position x="2061" y="498.0001" />
+                <Position x="2061" y="474.0001" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1512,7 +1492,7 @@ URL</Text>
             </Node>
             <Node ToolID="287">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-                <Position x="1965" y="497.9999" />
+                <Position x="1965" y="473.9999" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1547,7 +1527,7 @@ URL</Text>
             </Node>
             <Node ToolID="289">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-                <Position x="2145" y="498" />
+                <Position x="2145" y="474" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1582,7 +1562,7 @@ URL</Text>
             </Node>
             <Node ToolID="290">
               <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
-                <Position x="2226" y="498" />
+                <Position x="2226" y="474" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1614,7 +1594,7 @@ URL</Text>
             </Node>
             <Node ToolID="283">
               <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
-                <Position x="1881" y="551.0001" />
+                <Position x="1881" y="527.0001" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1638,7 +1618,7 @@ URL</Text>
             </Node>
             <Node ToolID="284">
               <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-                <Position x="1809" y="550.9998" />
+                <Position x="1809" y="526.9998" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1663,7 +1643,7 @@ URL</Text>
             </Node>
             <Node ToolID="286">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-                <Position x="1965" y="599.0001" />
+                <Position x="1965" y="575.0001" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1698,7 +1678,7 @@ URL</Text>
             </Node>
             <Node ToolID="288">
               <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-                <Position x="2061" y="599" />
+                <Position x="2061" y="575" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1728,7 +1708,7 @@ URL</Text>
             </Node>
             <Node ToolID="291">
               <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
-                <Position x="2145" y="599" />
+                <Position x="2145" y="575" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1764,7 +1744,7 @@ URL</Text>
             </Node>
             <Node ToolID="292">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-                <Position x="2514" y="498" />
+                <Position x="2514" y="474" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1794,7 +1774,7 @@ URL</Text>
             </Node>
             <Node ToolID="293">
               <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
-                <Position x="2610" y="498" />
+                <Position x="2610" y="474" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1827,7 +1807,7 @@ URL</Text>
             </Node>
             <Node ToolID="294">
               <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-                <Position x="2315" y="599" />
+                <Position x="2315" y="575" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1854,7 +1834,7 @@ URL</Text>
             </Node>
             <Node ToolID="295">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-                <Position x="1965" y="719.0001" />
+                <Position x="1965" y="695.0001" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1893,7 +1873,7 @@ AND
             </Node>
             <Node ToolID="296">
               <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-                <Position x="2061" y="719" />
+                <Position x="2061" y="695" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1923,7 +1903,7 @@ AND
             </Node>
             <Node ToolID="297">
               <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-                <Position x="2145" y="719" />
+                <Position x="2145" y="695" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1954,7 +1934,7 @@ AND
             </Node>
             <Node ToolID="298">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-                <Position x="2229" y="719" />
+                <Position x="2229" y="695" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1988,7 +1968,7 @@ AND
             </Node>
             <Node ToolID="299">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-                <Position x="2315" y="719" />
+                <Position x="2315" y="695" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -2019,7 +1999,7 @@ Category - Descending</DefaultAnnotationText>
             </Node>
             <Node ToolID="300">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-                <Position x="2399" y="719" />
+                <Position x="2399" y="695" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -2049,7 +2029,7 @@ Category - Descending</DefaultAnnotationText>
             </Node>
             <Node ToolID="301">
               <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-                <Position x="2543" y="719" />
+                <Position x="2543" y="695" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -2066,7 +2046,7 @@ Category - Descending</DefaultAnnotationText>
             </Node>
             <Node ToolID="302">
               <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-                <Position x="2706" y="498" />
+                <Position x="2706" y="474" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -2083,7 +2063,7 @@ Category - Descending</DefaultAnnotationText>
             </Node>
             <Node ToolID="305">
               <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-                <Position x="2145" y="654" />
+                <Position x="2145" y="630" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -2108,7 +2088,7 @@ Category - Descending</DefaultAnnotationText>
             </Node>
             <Node ToolID="306">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-                <Position x="2229" y="599" />
+                <Position x="2229" y="575" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -2135,7 +2115,7 @@ Category - Descending</DefaultAnnotationText>
             </Node>
             <Node ToolID="307">
               <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
-                <Position x="2418" y="498" />
+                <Position x="2418" y="474" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -2168,7 +2148,7 @@ Category - Descending</DefaultAnnotationText>
             </Node>
             <Node ToolID="310">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-                <Position x="2322" y="498" />
+                <Position x="2322" y="474" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -2194,7 +2174,7 @@ Category - Descending</DefaultAnnotationText>
             </Node>
             <Node ToolID="311">
               <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-                <Position x="2226" y="546" />
+                <Position x="2226" y="522" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -2223,7 +2203,7 @@ Category - Descending</DefaultAnnotationText>
     </Node>
     <Node ToolID="107">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="2610" y="174" width="438" height="98" />
+        <Position x="2610" y="150" width="438" height="98" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -2241,7 +2221,7 @@ Category - Descending</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="312">
           <GuiSettings Plugin="AlteryxGuiToolkit.Error.Error">
-            <Position x="2620" y="203" width="59" height="59" />
+            <Position x="2620" y="179" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2254,7 +2234,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="313">
           <GuiSettings Plugin="AlteryxGuiToolkit.Error.Error">
-            <Position x="2979" y="203" width="59" height="59" />
+            <Position x="2979" y="179" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2267,7 +2247,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="314">
           <GuiSettings Plugin="AlteryxGuiToolkit.Error.Error">
-            <Position x="2763" y="203" width="59" height="59" />
+            <Position x="2763" y="179" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2280,7 +2260,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="315">
           <GuiSettings Plugin="AlteryxGuiToolkit.Error.Error">
-            <Position x="2835" y="203" width="59" height="59" />
+            <Position x="2835" y="179" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2293,7 +2273,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="316">
           <GuiSettings Plugin="AlteryxGuiToolkit.Error.Error">
-            <Position x="2907" y="203" width="59" height="59" />
+            <Position x="2907" y="179" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2306,7 +2286,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="317">
           <GuiSettings Plugin="AlteryxGuiToolkit.Error.Error">
-            <Position x="2694" y="203" width="59" height="59" />
+            <Position x="2694" y="179" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2321,7 +2301,7 @@ Category - Descending</DefaultAnnotationText>
     </Node>
     <Node ToolID="113">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="174" width="2546" height="212.0007" />
+        <Position x="66" y="126" width="2448" height="216" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -2339,7 +2319,7 @@ Category - Descending</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="49">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="393.2513" y="218.0003" width="59" height="59" />
+            <Position x="405.2513" y="170.0005" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2352,7 +2332,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="50">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="393.2513" y="302.0004" width="59" height="59" />
+            <Position x="405.2513" y="254.0006" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2365,7 +2345,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="51">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="525.2514" y="218" width="59" height="59" />
+            <Position x="537.2514" y="170" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2378,7 +2358,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="52">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="525.2512" y="302.0002" width="59" height="59" />
+            <Position x="537.2512" y="254.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2391,7 +2371,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="53">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="669.2513" y="218" width="59" height="59" />
+            <Position x="681.2513" y="170.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2404,7 +2384,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="54">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="669.2509" y="302.0007" width="59" height="59" />
+            <Position x="681.2509" y="254.0008" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2417,7 +2397,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="56">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="285.2515" y="218.0002" width="59" height="59" />
+            <Position x="297.2515" y="170.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2430,7 +2410,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="57">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="285.2513" y="301.9991" width="59" height="59" />
+            <Position x="297.2513" y="253.9991" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2443,7 +2423,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="146">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="1220" y="218.0004" width="59" height="59" />
+            <Position x="1232" y="170.0005" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2456,7 +2436,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="148">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="1532" y="218.0004" width="59" height="59" />
+            <Position x="1544" y="170.0005" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2469,7 +2449,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="151">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Date.Date">
-            <Position x="1988" y="218.0004" width="59" height="59" />
+            <Position x="2000" y="170.0005" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2482,7 +2462,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="152">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Date.Date">
-            <Position x="2120" y="218.0004" width="59" height="59" />
+            <Position x="2132" y="170.0005" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2495,7 +2475,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="153">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="2276" y="218.0004" width="59" height="59" />
+            <Position x="2288" y="170.0005" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2508,7 +2488,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="154">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1988" y="302.0003" width="59" height="59" />
+            <Position x="2000" y="254.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2521,7 +2501,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="155">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="2120" y="302.0003" width="59" height="59" />
+            <Position x="2132" y="254.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2534,7 +2514,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="156">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="2276" y="302.0003" width="59" height="59" />
+            <Position x="2288" y="254.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2547,7 +2527,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="158">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="956" y="218.0005" width="59" height="59" />
+            <Position x="968" y="170.0005" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2560,7 +2540,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="159">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1220" y="302.0003" width="59" height="59" />
+            <Position x="1232" y="254.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2573,7 +2553,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="160">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1532" y="302.0003" width="59" height="59" />
+            <Position x="1544" y="254.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2586,7 +2566,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="161">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="956" y="302.0004" width="59" height="59" />
+            <Position x="968" y="254.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2599,7 +2579,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="162">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="800.0001" y="218.0002" width="59" height="59" />
+            <Position x="812.0001" y="170.0002" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2612,7 +2592,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="163">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="1088" y="218.0003" width="59" height="59" />
+            <Position x="1100" y="170.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2625,7 +2605,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="164">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="1376" y="218.0004" width="59" height="59" />
+            <Position x="1388" y="170.0005" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2638,7 +2618,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="165">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="1700" y="218.0004" width="59" height="59" />
+            <Position x="1712" y="170.0005" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2651,7 +2631,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="166">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="800.0002" y="302.0007" width="59" height="59" />
+            <Position x="812.0002" y="254.0008" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2664,7 +2644,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="167">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1088" y="302.0001" width="59" height="59" />
+            <Position x="1100" y="254.0002" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2677,7 +2657,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="168">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1376" y="302.0003" width="59" height="59" />
+            <Position x="1388" y="254.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2690,7 +2670,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="169">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1700" y="302.0003" width="59" height="59" />
+            <Position x="1712" y="254.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2703,7 +2683,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="170">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="1832" y="218.0003" width="59" height="59" />
+            <Position x="1844" y="170.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2716,7 +2696,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="171">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1832" y="302.0003" width="59" height="59" />
+            <Position x="1844" y="254.0004" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2727,22 +2707,9 @@ Category - Descending</DefaultAnnotationText>
             </Annotation>
           </Properties>
         </Node>
-        <Node ToolID="172">
-          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="2396" y="218.0003" width="59" height="59" />
-          </GuiSettings>
-          <Properties>
-            <Configuration />
-            <Annotation DisplayMode="1">
-              <Name>advOptions</Name>
-              <DefaultAnnotationText />
-              <Left value="True" />
-            </Annotation>
-          </Properties>
-        </Node>
         <Node ToolID="174">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="2516" y="218.0003" width="59" height="59" />
+            <Position x="2430" y="174.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2753,22 +2720,9 @@ Category - Descending</DefaultAnnotationText>
             </Annotation>
           </Properties>
         </Node>
-        <Node ToolID="175">
-          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="2396" y="302.0003" width="59" height="59" />
-          </GuiSettings>
-          <Properties>
-            <Configuration />
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-        </Node>
         <Node ToolID="176">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="2516" y="302.0003" width="59" height="59" />
+            <Position x="2418" y="258" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2781,7 +2735,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="276">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="144.0003" y="218.001" width="59" height="59" />
+            <Position x="156.0003" y="170.0009" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2794,7 +2748,7 @@ Category - Descending</DefaultAnnotationText>
         </Node>
         <Node ToolID="309">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="144.0001" y="293.9999" width="59" height="59" />
+            <Position x="156.0002" y="246.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2809,7 +2763,7 @@ Category - Descending</DefaultAnnotationText>
     </Node>
     <Node ToolID="126">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="557.2513" y="97" width="132.9484" height="19" />
+        <Position x="557.2513" y="73" width="132.9484" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -2827,7 +2781,7 @@ Category - Descending</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="125">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="567.2513" y="126" width="195" height="102" />
+            <Position x="567.2513" y="102" width="195" height="102" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -2849,7 +2803,7 @@ Category - Descending</DefaultAnnotationText>
     </Node>
     <Node ToolID="128">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="591.2513" y="126" width="98.89567" height="19" />
+        <Position x="591.2513" y="102" width="98.89567" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -2867,7 +2821,7 @@ Category - Descending</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="127">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="601.2513" y="155" width="350" height="421.2" />
+            <Position x="601.2513" y="131" width="350" height="421.2" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -3259,10 +3213,6 @@ Support Macro(s)
       <Origin ToolID="171" Connection="Action" />
       <Destination ToolID="3" Connection="Action" />
     </Connection>
-    <Connection name="#17" Wireless="True">
-      <Origin ToolID="175" Connection="Action" />
-      <Destination ToolID="3" Connection="Action" />
-    </Connection>
     <Connection name="#18" Wireless="True">
       <Origin ToolID="176" Connection="Action" />
       <Destination ToolID="3" Connection="Action" />
@@ -3350,10 +3300,6 @@ Support Macro(s)
     <Connection name="#1">
       <Origin ToolID="170" Connection="Question" />
       <Destination ToolID="171" Connection="Question" />
-    </Connection>
-    <Connection name="#1">
-      <Origin ToolID="172" Connection="Question" />
-      <Destination ToolID="175" Connection="Question" />
     </Connection>
     <Connection name="#1">
       <Origin ToolID="174" Connection="Question" />
@@ -3464,12 +3410,6 @@ Support Macro(s)
       <Constant>
         <Namespace>Question</Namespace>
         <Name>segmentsList</Name>
-        <Value />
-        <IsNumeric value="False" />
-      </Constant>
-      <Constant>
-        <Namespace>Question</Namespace>
-        <Name>advOptions</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
@@ -3710,25 +3650,13 @@ column	15</DynamicConfiguration>
             <Action>
               <Type>Dynamic</Type>
               <Description />
-              <ToolId value="175" />
+              <ToolId value="176" />
               <Expression>{{INPUT}}</Expression>
               <Destination>3/Data/r[1]/c[16]</Destination>
               <Mapping>Update Cell</Mapping>
               <Mode>Expression</Mode>
               <DynamicConfiguration>row	1
 column	16</DynamicConfiguration>
-              <DefaultConfiguration value="False" />
-            </Action>
-            <Action>
-              <Type>Dynamic</Type>
-              <Description />
-              <ToolId value="176" />
-              <Expression>{{INPUT}}</Expression>
-              <Destination>3/Data/r[1]/c[17]</Destination>
-              <Mapping>Update Cell</Mapping>
-              <Mode>Expression</Mode>
-              <DynamicConfiguration>row	1
-column	17</DynamicConfiguration>
               <DefaultConfiguration value="False" />
             </Action>
             <Action>
@@ -3956,15 +3884,6 @@ AND
               <Password value="False" />
               <Multiline value="False" />
               <Hidden value="False" />
-            </Question>
-            <Question>
-              <Type>BooleanGroup</Type>
-              <Description>advOptions</Description>
-              <Name>advOptions</Name>
-              <ToolId value="172" />
-              <Questions />
-              <Default value="False" />
-              <Collapsable value="False" />
             </Question>
             <Question>
               <Type>TextBox</Type>
