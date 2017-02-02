@@ -15,6 +15,7 @@ class AyxStore extends ObservableStore {
         item.UserDataChanged.push(() => { // This a computed value which needs to be refactored to the idiomatic structure for mobx v3.x
           this[d.key].stringList = item.StringList.enums
           this[d.key].selection = item.value
+          this[d.key].selectionName = item.StringList.enums.filter((d) => d.dataName === item.value)[0].uiObject
         })
       } else if (d.type === 'listBox') {
         item.UserDataChanged.push(() => { // This a computed value which needs to be refactored to the idiomatic structure for mobx v3.x
