@@ -3,9 +3,9 @@
    <Properties>
       <MetaInfo>
          <Name>Google Analytics</Name>
-         <Description>Read and query data from Google Analytics' Core Reporting API.  v7.0.0.0.</Description>
-         <ToolVersion>7.0.0.0</ToolVersion>
-         <CategoryName>Connector</CategoryName>
+         <Description>Read and query data from Google Analytics' Core Reporting API.</Description>
+         <ToolVersion>7</ToolVersion>
+         <CategoryName>Connectors</CategoryName>
          <Author>Alteryx</Author>
          <Icon>Google Analytics\Google AnalyticsIcon.png</Icon>
       </MetaInfo>
