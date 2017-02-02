@@ -3,7 +3,7 @@
    <Properties>
       <MetaInfo>
          <Name>Google Analytics</Name>
-         <Description>Read and query data from Google Analytics' Core Reporting API.</Description>
+         <Description>Read and query data from Google Analytics Core Reporting API.</Description>
          <ToolVersion>7</ToolVersion>
          <CategoryName>Connectors</CategoryName>
          <Author>Alteryx</Author>
