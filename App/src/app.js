@@ -19,6 +19,7 @@ import DateMessage from './components/dateMessage.jsx'
 import conditionallyEnable from './utils/interfaceStateControl'
 import ConnectionErrorMessage from './components/connectionErrorMessage.jsx'
 import Summary from './components/summary.jsx'
+// import _ from 'lodash'
 
 Alteryx.Gui.AfterLoad = (manager) => {
   const collection = [
@@ -151,50 +152,24 @@ Alteryx.Gui.AfterLoad = (manager) => {
   })
 
   // Populate webPropertiesList when account has been chosen
-  // Using incrementer to skip the first n runs at startup so it only runs when triggered AFTER load time.
-  // THIS WILL PROBABLY BREAK IF WE CHANGE OR ADD AUTORUNS IN THE FUTURE.
-  //
-  // TO FIX: increment and console the corresponding 'runsCount(n)' variable OUTSIDE the if statements to know
-  // how many times it is triggered during startup, then set the corresponding 'skipIntitialRuns' value to that number.
-  let runsCount1 = 0
-
   autorun(() => {
-    const skipInitialRuns = 2
     if (store.accountsList.selection !== '') {
-      if (runsCount1 < skipInitialRuns - 1 ) {
-        runsCount1++
-      } else if (runsCount1 < skipInitialRuns) {
-        runsCount1++
-        accounts.populateWebPropertiesList(store)
-      } else {
-        Alteryx.Gui.manager.GetDataItem('webPropertiesList').setValue()
-        Alteryx.Gui.manager.GetDataItem('profilesList').setValue()
-        accounts.populateWebPropertiesList(store)
-      }
+      accounts.populateWebPropertiesList(store)
     }
   })
 
   // Populate profiles list if webproperties has no selection and no stringlist
-  // Using incrementer to skip the first n runs at startup so it only runs when triggered AFTER load time.
-  // THIS WILL PROBABLY BREAK IF WE CHANGE OR ADD AUTORUNS IN THE FUTURE.
-  //
-  // TO FIX: increment and console the corresponding 'runsCount(n)' variable OUTSIDE the if statements to know
-  // how many times it is triggered during startup, then set the corresponding 'skipIntitialRuns' value to that number.
-  let runsCount2 = 0
-
   autorun(() => {
-    const skipInitialRuns = 4
     if (store.webPropertiesList.selection !== '' &&
         store.webPropertiesList.stringList.length > 0) {
-      if (runsCount2 < skipInitialRuns - 1) {
-        runsCount2++
-      } else if (runsCount2 < skipInitialRuns) {
-        runsCount2++
-        accounts.populateProfilesMenu(store)
-      } else {
-        Alteryx.Gui.manager.GetDataItem('profilesList').setValue()
-        accounts.populateProfilesMenu(store)
-      }
+      accounts.populateProfilesMenu(store)
+    }
+  })
+
+  // clear profiles list selection when web properties selection is empty
+  autorun(() => {
+    if (store.webPropertiesList.selection === '') {
+      store.profilesList.selection = ''
     }
   })
 
@@ -322,6 +297,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.populateAccountsList = accounts.populateAccountsList
 
   window.populateWebPropertiesList = accounts.populateWebPropertiesList
+
+  window.clearProfiles = accounts.clearProfiles
 
   window.populateProfilesMenu = accounts.populateProfilesMenu
 
