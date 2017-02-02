@@ -8,17 +8,16 @@ class Summary extends React.Component {
     this.store = props.store
   }
 
-  maxResults(advOptions) {
+  maxResults (advOptions) {
     return advOptions ? `Results limited to a maximum of ${this.store.maxResults} rows` : ''
   }
 
   render () {
-    const account = this.store.accountsList.selection
-    const webProperty = this.store.webPropertiesList.selection
-    const profile = this.store.profilesList.selection
+    const account = this.store.accountsList.selectionName
+    const webProperty = this.store.webPropertiesList.selectionName
+    const profile = this.store.profilesList.selectionName
     const startDate = this.store.startDatePicker
     const endDate = this.store.endDatePicker
-    const preDefDropDown = this.store.preDefDropDown
     const metrics = this.store.metricsList.selectedValues
     const metricGoals = this.store.metricsGoalsList.selectedValues
     const dimensions = this.store.dimensionsList.selectedValues
