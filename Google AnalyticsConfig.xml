@@ -17,9 +17,9 @@
     <MetaInfo>
       <NameIsFileName value="false" />
       <Name>Google Analytics</Name>
-      <Description>Query and download data from Google Analytics' Core Reporting API with multiple configuration options. Google Analytics version 7.</Description>
+      <Description>Read and query data from Google Analytics' Core Reporting API.  v7.0.0.0.</Description>
       <RootToolName>Google_Analytics.yxmc</RootToolName>
-      <ToolVersion>7</ToolVersion>
+      <ToolVersion>7.0.0.0</ToolVersion>
       <ToolInDb value="False" />
       <CategoryName>Connectors</CategoryName>
       <SearchTags>cloud,connector,input,web,internet,google,connectors category,API,download,analytics,adwords</SearchTags>
