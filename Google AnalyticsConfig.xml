@@ -3,8 +3,8 @@
 	The variables [Engine.EngineDirectory], [Engine.PluginDirectory]
 	and [Engine.JavaScriptPluginDirectory] can also be used-->
 <AlteryxJavaScriptPlugin>
-  <EngineSettings EngineDllEntryPoint="Google Analytics\Supporting_Macros\GoogleAnalyticsInput.yxmc" EngineDll="Macro" SDKVersion="10.1"/>
-  <GuiSettings Html="Google AnalyticsGui.html" Icon="Google AnalyticsIcon.png" Help="GoogleAnalyticsInput.htm" SDKVersion="10.1">
+  <EngineSettings EngineDllEntryPoint="Google Analytics\Supporting_Macros\Google_Analytics.yxmc" EngineDll="Macro" SDKVersion="10.1"/>
+  <GuiSettings Html="Google AnalyticsGui.html" Icon="Google AnalyticsIcon.png" Help="GoogleAnalytics.htm" SDKVersion="10.1">
     <InputConnections>
       <!--Connection Name="Input" AllowMultiple="False" Optional="True" Type="Connection" Label=""/-->
     </InputConnections>
@@ -17,9 +17,9 @@
     <MetaInfo>
       <NameIsFileName value="false" />
       <Name>Google Analytics</Name>
-      <Description>Read and query data from Google Analytics' Core Reporting API.  v7.0.0.0.</Description>
+      <Description>Read and query data from Google Analytics Core Reporting API.  v7</Description>
       <RootToolName>Google_Analytics.yxmc</RootToolName>
-      <ToolVersion>7.0.0.0</ToolVersion>
+      <ToolVersion>7</ToolVersion>
       <ToolInDb value="False" />
       <CategoryName>Connectors</CategoryName>
       <SearchTags>cloud,connector,input,web,internet,google,connectors category,API,download,analytics,adwords</SearchTags>
