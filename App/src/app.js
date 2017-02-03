@@ -19,6 +19,7 @@ import DateMessage from './components/dateMessage.jsx'
 import conditionallyEnable from './utils/interfaceStateControl'
 import ConnectionErrorMessage from './components/connectionErrorMessage.jsx'
 import Summary from './components/summary.jsx'
+// import _ from 'lodash'
 
 Alteryx.Gui.AfterLoad = (manager) => {
   const collection = [
@@ -165,6 +166,13 @@ Alteryx.Gui.AfterLoad = (manager) => {
     }
   })
 
+  // clear profiles list selection when web properties selection is empty
+  autorun(() => {
+    if (store.webPropertiesList.selection === '') {
+      store.profilesList.selection = ''
+    }
+  })
+
   autorun(() => {
     if (store.accessToken !== '' || store.accountsList.stringList.length < 1) {
       accounts.populateAccountsList(store)
@@ -289,6 +297,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
   window.populateAccountsList = accounts.populateAccountsList
 
   window.populateWebPropertiesList = accounts.populateWebPropertiesList
+
+  window.clearProfiles = accounts.clearProfiles
 
   window.populateProfilesMenu = accounts.populateProfilesMenu
 
