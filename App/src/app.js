@@ -36,6 +36,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
     {key: 'startDatePicker', type: 'value'},
     {key: 'endDatePicker', type: 'value'},
     {key: 'preDefDropDown', type: 'value'},
+    {key: 'advOptions', type: 'value'},
     {key: 'segmentsList', type: 'listBox'},
     {key: 'maxResults', type: 'value'},
     {key: 'page', type: 'value'},
@@ -170,6 +171,16 @@ Alteryx.Gui.AfterLoad = (manager) => {
   autorun(() => {
     if (store.webPropertiesList.selection === '') {
       store.profilesList.selection = ''
+    }
+  })
+     // Displays the maxResults spinner input if advOptions is true else hides it
+  autorun(() => {
+    if (store.advOptions) {
+      document.getElementById('maxResults').style.display = 'block'
+    } else {
+      document.getElementById('maxResults').style.display = 'none'
+      // resets maxResults to default if advOptions is deselected
+      store.maxResults = 10000
     }
   })
 
