@@ -201,9 +201,12 @@ Google Analytics Input GUI
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
           ismultiselect="true" issearchable="true" id="segmentsList" dataName="segmentsList" showsearchrow="true"></alteryx-pluginwidget>
         <div id="selectedSegments"></div>
-        <div id="maxResults">
+        <div id="advOptions">
+            <alteryx-pluginwidget type="CheckBox" showAsToggle="true" id="advOptions" dataName="advOptions" text="Additional Options"></alteryx-pluginwidget>
+        </div>
+        <div id="maxResults" style="margin-left: 20px;">
             <label for="maxResults">Maximum Results</label>
-            <alteryx-pluginwidget type="NumericSpinner" id="maxResults" default="10000" min="0" max="10000" step="100" dataName="maxResults"></alteryx-pluginwidget>
+            <alteryx-pluginwidget type="NumericSpinner" id="maxResults" default="10000" min="0" max="10000000" step="1000" dataName="maxResults"></alteryx-pluginwidget>
         </div>
         <div class='footer_spacer'></div>
         <div class='footer'>
