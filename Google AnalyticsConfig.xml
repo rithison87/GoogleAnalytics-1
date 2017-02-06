@@ -4,7 +4,7 @@
 	and [Engine.JavaScriptPluginDirectory] can also be used-->
 <AlteryxJavaScriptPlugin>
   <EngineSettings EngineDllEntryPoint="Google Analytics\Supporting_Macros\Google_Analytics.yxmc" EngineDll="Macro" SDKVersion="10.1"/>
-  <GuiSettings Html="Google AnalyticsGui.html" Icon="Google AnalyticsIcon.png" Help="GoogleAnalytics.htm" SDKVersion="10.1">
+  <GuiSettings Html="Google AnalyticsGui.html" Icon="Google AnalyticsIcon.png" Help="GoogleAnalyticsInput.htm" SDKVersion="10.1">
     <InputConnections>
       <!--Connection Name="Input" AllowMultiple="False" Optional="True" Type="Connection" Label=""/-->
     </InputConnections>
