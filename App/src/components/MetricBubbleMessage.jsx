@@ -18,12 +18,12 @@ class MetricBubbleMessage extends React.Component {
   messageText (total, loading) {
     let text
     if (loading) {
-      text = 'Fetching menu options from the Google API'
+      text = 'XMSG("Fetching menu options from the Google API")'
     }
     else if (total < 1) {
-      text = 'At least 1 metric or goal must be selected'
+      text = 'XMSG("At least 1 metric or goal must be selected")'
     } else if (total > 10) {
-      text = 'Maximum of 10 metrics and goals may be selected'
+      text = 'XMSG("Maximum of 10 metrics and goals may be selected")'
     } else {
       text = ''
     };
