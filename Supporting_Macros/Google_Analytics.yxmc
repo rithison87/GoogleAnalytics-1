@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<AlteryxDocument yxmdVer="10.5">
+<AlteryxDocument yxmdVer="11.0">
   <Nodes>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
@@ -58,7 +58,7 @@ and at least one metric or goal were selected.</Text>
     </Node>
     <Node ToolID="123">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="369.968" width="2506" height="462.0002" />
+        <Position x="54.00004" y="369.968" width="2506" height="462.0002" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -76,7 +76,7 @@ and at least one metric or goal were selected.</Text>
       <ChildNodes>
         <Node ToolID="3">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="79" y="613.9689" />
+            <Position x="79.00004" y="613.9691" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -153,19 +153,19 @@ and at least one metric or goal were selected.</Text>
         </Node>
         <Node ToolID="95">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="246.9992" y="613.9676" />
+            <Position x="246.9991" y="613.9673" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <FormulaFields>
-                <FormulaField field="startDatePicker" type="Date" size="10" expression="// startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA;	-(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA;	,'Sun',1&#xA;	,'Mon',2&#xA;	,'Tue',3&#xA;	,'Wed',4&#xA;	,'Thu',5&#xA;	,'Fri',6&#xA;	,'Sat',7))&#xA;	,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" />
-                <FormulaField field="endDatePicker" type="Date" size="10" expression="// endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" />
+                <FormulaField expression="// startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA;	-(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA;	,'Sun',1&#xA;	,'Mon',2&#xA;	,'Tue',3&#xA;	,'Wed',4&#xA;	,'Thu',5&#xA;	,'Fri',6&#xA;	,'Sat',7))&#xA;	,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" field="startDatePicker" size="10" type="Date" />
+                <FormulaField expression="// endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'day') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" field="endDatePicker" size="10" type="Date" />
               </FormulaFields>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
-              <DefaultAnnotationText>startDatePicker=// startDatePicker logic based on predefined ...
-endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotationText>
+              <DefaultAnnotationText>startDatePicker = // startDatePicker logic based on predefined date dropdown
+// ...</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
             <MetaInfo connection="Output">
@@ -175,7 +175,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
                 <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
                 <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                 <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
-                <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
+                <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'day') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
                 <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
                 <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
                 <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
@@ -194,7 +194,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
         </Node>
         <Node ToolID="99">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="163.0004" y="613.9681" />
+            <Position x="163.0002" y="613.9683" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -251,7 +251,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
         </Node>
         <Node ToolID="116">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="79.00067" y="673.9684" width="228" height="40" />
+            <Position x="79.00061" y="673.9683" width="228" height="40" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -305,7 +305,7 @@ endDatePicker=// endDatePicker logic based on predefined date...</DefaultAnnotat
                     <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
-                    <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
+                    <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'day') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
                     <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
@@ -468,7 +468,7 @@ R:  Offline method</Text>
                     <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
-                    <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
+                    <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'day') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
                     <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
@@ -489,7 +489,7 @@ R:  Offline method</Text>
                     <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
-                    <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
+                    <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'day') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
                     <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
@@ -541,7 +541,7 @@ R:  Offline method</Text>
                     <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
-                    <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
+                    <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'day') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
                     <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
@@ -563,7 +563,7 @@ R:  Offline method</Text>
         </Node>
         <Node ToolID="261">
           <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-            <Position x="764" y="440" width="1241" height="312" />
+            <Position x="764" y="439.9999" width="1241" height="312.0001" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -581,7 +581,7 @@ R:  Offline method</Text>
           <ChildNodes>
             <Node ToolID="254">
               <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-                <Position x="930" y="613.9705" />
+                <Position x="930" y="613.9706" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -613,7 +613,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
-                    <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
+                    <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'day') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
                     <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsList" size="1073741823" source="Formula: urlEncode([_CurrentField_])" type="V_WString" />
                     <Field name="metricsList" size="1073741823" source="Formula: urlEncode([_CurrentField_])" type="V_WString" />
@@ -663,7 +663,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                     <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
-                    <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
+                    <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'day') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
                     <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsList" size="1073741823" source="Formula: urlEncode([_CurrentField_])" type="V_WString" />
                     <Field name="metricsList" size="1073741823" source="Formula: urlEncode([_CurrentField_])" type="V_WString" />
@@ -798,7 +798,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
             </Node>
             <Node ToolID="270">
               <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-                <Position x="1268" y="469" width="727" height="158" />
+                <Position x="1268" y="468.9999" width="727" height="158.0001" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -816,7 +816,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
               <ChildNodes>
                 <Node ToolID="264">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
-                    <Position x="1350" y="498" />
+                    <Position x="1350" y="498.0001" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -1111,7 +1111,7 @@ startDateURL="&amp;start-date="+[startDatePicker]
                 </Node>
                 <Node ToolID="324">
                   <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
-                    <Position x="1278" y="498" />
+                    <Position x="1278" y="497.9999" />
                   </GuiSettings>
                   <Properties>
                     <Configuration>
@@ -1319,7 +1319,7 @@ segmentsList=// replace two commas before users with semicolo...
                     <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
-                    <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
+                    <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'day') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
                     <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsList" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="metricsList" size="1073741823" source="TextInput:" type="V_WString" />
@@ -1359,7 +1359,7 @@ segmentsList=// replace two commas before users with semicolo...
             </Node>
             <Node ToolID="273">
               <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-                <Position x="930" y="522" width="60" height="84" />
+                <Position x="930" y="522.0001" width="60" height="84" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1461,7 +1461,7 @@ Authorization=Authorization
             </Node>
             <Node ToolID="319">
               <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
-                <Position x="858" y="613.9705" />
+                <Position x="858" y="613.9706" />
               </GuiSettings>
               <Properties>
                 <Configuration>
@@ -1500,7 +1500,7 @@ Authorization=Authorization
                     <Field name="client_id" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="refresh_token" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="startDatePicker" source="Formula: // startDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Sunday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd(DateTimeToday(),-7,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd((DateTimeAdd(DateTimeToday(),&#xA; -(Switch(DateTimeFormat(DateTimeToday(),&quot;%a&quot;),0&#xA; ,'Sun',1&#xA; ,'Mon',2&#xA; ,'Tue',3&#xA; ,'Wed',4&#xA; ,'Thu',5&#xA; ,'Fri',6&#xA; ,'Sat',7))&#xA; ,'days')),-6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd(DateTimeToday(),-30,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeFirstOfMonth() &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeTrim(DateTimeToday(),'year')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year') &#xA;ELSE [startDatePicker] ENDIF" type="Date" />
-                    <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeLastOfMonth(),-1,'month') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
+                    <Field name="endDatePicker" source="Formula: // endDatePicker logic based on predefined date dropdown&#xA;// ToDate selections end on the previous day&#xA;// Monday is start of week&#xA;IF [preDefDropDown]=&quot;today&quot; THEN DateTimeToday() &#xA;ELSEIF [preDefDropDown]=&quot;yesterday&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;last7Days&quot; THEN DateTimeAdd([startDatePicker],6,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastWeek&quot; THEN DateTimeAdd([startDatePicker],6,'days')&#xA;ELSEIF [preDefDropDown]=&quot;last30Days&quot; THEN DateTimeAdd([startDatePicker],29,'days') &#xA;ELSEIF [preDefDropDown]=&quot;lastMonth&quot; THEN DateTimeAdd(DateTimeFirstOfMonth(),-1,'day') &#xA;ELSEIF [preDefDropDown]=&quot;monthToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days') &#xA;ELSEIF [preDefDropDown]=&quot;yearToDate&quot; THEN DateTimeAdd(DateTimeToday(),-1,'days')&#xA;ELSEIF [preDefDropDown]=&quot;lastYear&quot; THEN DateTimeFormat(DateTimeAdd(DateTimeTrim(DateTimeToday(),'year'),-1,'year'),&quot;%Y&quot;)+&quot;-12-31&quot; &#xA;ELSE [endDatePicker] ENDIF" type="Date" />
                     <Field name="preDefDropDown" size="1073741823" source="TextInput:" type="V_WString" />
                     <Field name="dimensionsList" size="1073741823" source="Formula: urlEncode([_CurrentField_])" type="V_WString" />
                     <Field name="metricsList" size="1073741823" source="Formula: urlEncode([_CurrentField_])" type="V_WString" />
@@ -1617,17 +1617,17 @@ Input=DownloadData
                 </Annotation>
                 <MetaInfo connection="Data">
                   <RecordInfo>
-                    <Field name="browser,browser,browser,browser,browser,browser,browser,browser,browser" size="1073741823" source="(Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
-                    <Field name="browserSize,browserSize,browserSize,browserSize,browserSize,browserSize,browserSize,browserSize,browserSize" size="2048" source="(Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
-                    <Field name="browserVersion,browserVersion,browserVersion,browserVersion,browserVersion,browserVersion,browserVersion,browserVersion,browserVersion" size="2048" source="(Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
-                    <Field name="sessions,sessions,sessions,sessions,sessions,sessions,sessions,sessions,sessions" size="2048" source="(Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field name="browser,browser,browser,browser,browser,browser,browser,browser,browser" size="1073741823" source="(Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field name="browserSize,browserSize,browserSize,browserSize,browserSize,browserSize,browserSize,browserSize,browserSize" size="2048" source="(Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field name="browserVersion,browserVersion,browserVersion,browserVersion,browserVersion,browserVersion,browserVersion,browserVersion,browserVersion" size="2048" source="(Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field name="sessions,sessions,sessions,sessions,sessions,sessions,sessions,sessions,sessions" size="2048" source="(Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
                 <MetaInfo connection="Summary">
                   <RecordInfo>
-                    <Field description="TextToColumns: Parsed from JSON_Name" name="Parameter" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
-                    <Field description="TextToColumns: Parsed from JSON_Name" name="Category" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
-                    <Field name="Detail" size="1073741823" source="JSONParse:  (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Parameter" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Category" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field name="Detail" size="1073741823" source="JSONParse:  (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
                   </RecordInfo>
                 </MetaInfo>
               </Properties>
@@ -1652,9 +1652,9 @@ Input=DownloadData
                 </Annotation>
                 <MetaInfo connection="Unique">
                   <RecordInfo>
-                    <Field description="TextToColumns: Parsed from JSON_Name" name="Parameter" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
-                    <Field description="TextToColumns: Parsed from JSON_Name" name="Category" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
-                    <Field name="Detail" size="1073741823" source="JSONParse:  (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Parameter" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Category" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field name="Detail" size="1073741823" source="JSONParse:  (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
                   </RecordInfo>
                   <SortInfo>
                     <Field field="Parameter" order="Asc" />
@@ -1664,9 +1664,9 @@ Input=DownloadData
                 </MetaInfo>
                 <MetaInfo connection="Duplicates">
                   <RecordInfo>
-                    <Field description="TextToColumns: Parsed from JSON_Name" name="Parameter" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
-                    <Field description="TextToColumns: Parsed from JSON_Name" name="Category" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
-                    <Field name="Detail" size="1073741823" source="JSONParse:  (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Parameter" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Category" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field name="Detail" size="1073741823" source="JSONParse:  (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
                   </RecordInfo>
                   <SortInfo>
                     <Field field="Parameter" order="Asc" />
@@ -1697,9 +1697,9 @@ AND
                 </Annotation>
                 <MetaInfo connection="True">
                   <RecordInfo>
-                    <Field description="TextToColumns: Parsed from JSON_Name" name="Parameter" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
-                    <Field description="TextToColumns: Parsed from JSON_Name" name="Category" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
-                    <Field name="Detail" size="1073741823" source="JSONParse:  (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Parameter" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Category" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field name="Detail" size="1073741823" source="JSONParse:  (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
                   </RecordInfo>
                   <SortInfo>
                     <Field field="Parameter" order="Asc" />
@@ -1709,9 +1709,9 @@ AND
                 </MetaInfo>
                 <MetaInfo connection="False">
                   <RecordInfo>
-                    <Field description="TextToColumns: Parsed from JSON_Name" name="Parameter" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
-                    <Field description="TextToColumns: Parsed from JSON_Name" name="Category" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
-                    <Field name="Detail" size="1073741823" source="JSONParse:  (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Parameter" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field description="TextToColumns: Parsed from JSON_Name" name="Category" size="1073741823" source="TextToColumns: Parsed from JSON_Name (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                    <Field name="Detail" size="1073741823" source="JSONParse:  (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
                   </RecordInfo>
                   <SortInfo>
                     <Field field="Parameter" order="Asc" />
@@ -1844,7 +1844,7 @@ AND
       <ChildNodes>
         <Node ToolID="49">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="396.2513" y="194.0004" width="59" height="59" />
+            <Position x="396.2514" y="194.0005" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1857,7 +1857,7 @@ AND
         </Node>
         <Node ToolID="50">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="396.2513" y="278.0008" width="59" height="59" />
+            <Position x="396.2513" y="278.0007" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1870,7 +1870,7 @@ AND
         </Node>
         <Node ToolID="51">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="528.2514" y="194.0004" width="59" height="59" />
+            <Position x="528.2513" y="194.0002" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1883,7 +1883,7 @@ AND
         </Node>
         <Node ToolID="52">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="528.2513" y="278.0002" width="59" height="59" />
+            <Position x="528.2513" y="278.0003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1896,7 +1896,7 @@ AND
         </Node>
         <Node ToolID="53">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="672.2513" y="194.0003" width="59" height="59" />
+            <Position x="672.2513" y="194.0002" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1935,7 +1935,7 @@ AND
         </Node>
         <Node ToolID="57">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="288.2515" y="277.9991" width="59" height="59" />
+            <Position x="288.2515" y="277.9993" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2052,7 +2052,7 @@ AND
         </Node>
         <Node ToolID="158">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="959" y="194.0006" width="59" height="59" />
+            <Position x="959" y="194.0005" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2104,7 +2104,7 @@ AND
         </Node>
         <Node ToolID="162">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="803.0001" y="194.0002" width="59" height="59" />
+            <Position x="803.0001" y="194.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2260,7 +2260,7 @@ AND
         </Node>
         <Node ToolID="276">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="147.0002" y="194.001" width="59" height="59" />
+            <Position x="147.0002" y="194.0008" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2273,7 +2273,7 @@ AND
         </Node>
         <Node ToolID="309">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="147.0002" y="270" width="59" height="59" />
+            <Position x="147.0003" y="270.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -2945,6 +2945,10 @@ Transform
       <Company>Alteryx, Inc.</Company>
       <Copyright>2017 Alteryx, Inc.  All Rights Reserved.</Copyright>
       <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
     </MetaInfo>
     <Events>
       <Enabled value="True" />
