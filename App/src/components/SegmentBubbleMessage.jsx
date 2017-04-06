@@ -18,9 +18,9 @@ class SegmentBubbleMessage extends React.Component {
   messageText (total, loading) {
     let text
     if (loading) {
-      text = 'Fetching menu options from the Google API'
+      text = 'XMSG("Fetching menu options from the Google API")'
     } else if (total > 4) {
-      text = 'Maximum of 4 segments may be selected'
+      text = 'XMSG("Maximum of 4 segments may be selected")'
     } else {
       text = ''
     };

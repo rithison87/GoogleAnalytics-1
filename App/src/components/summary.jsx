@@ -37,19 +37,19 @@ class Summary extends React.Component {
     return (
       <div className={divClass}>
         <div>
-          <a href="javascript:setPage('#profileSelectors')">Selected Account Details</a>
+          <a href="javascript:setPage('#profileSelectors')">XMSG("Selected Account Details")</a>
           <table style={tableStyle}>
             <tbody>
               <tr>
-                <th style={thNarrowStyle}>Account:</th>
+                <th style={thNarrowStyle}>XMSG("Account:")</th>
                 <th style={thStyle}>{account}</th>
               </tr>
               <tr>
-                <th style={thNarrowStyle}>WebProperty:</th>
+                <th style={thNarrowStyle}>XMSG("WebProperty:")</th>
                 <th style={thStyle}>{webProperty}</th>
               </tr>
               <tr>
-                <th style={thNarrowStyle}>Profile:</th>
+                <th style={thNarrowStyle}>XMSG("Profile:")</th>
                 <th style={thStyle}>{profile}</th>
               </tr>
             </tbody>
@@ -57,15 +57,15 @@ class Summary extends React.Component {
         </div>
         <br></br>
         <div>
-          <a href="javascript:setPage('#datePickers')">Selected Date</a>
+          <a href="javascript:setPage('#datePickers')">XMSG("Selected Date")</a>
           <table style={tableStyle}>
             <tbody>
               <tr>
-                <th style={thNarrowStyle}>Start Date:</th>
+                <th style={thNarrowStyle}>XMSG("Start Date:")</th>
                 <th style={thStyle}>{startDate}</th>
               </tr>
               <tr>
-                <th style={thNarrowStyle}>End Date:</th>
+                <th style={thNarrowStyle}>XMSG("End Date:")</th>
                 <th style={thStyle}>{endDate}</th>
               </tr>
             </tbody>
@@ -73,7 +73,7 @@ class Summary extends React.Component {
         </div>
         <br></br>
         <div>
-          <a href="javascript:setPage('#metrics')">Selected Metrics and Goals</a>
+          <a href="javascript:setPage('#metrics')">XMSG("Selected Metrics and Goals")</a>
           <div>
             <table>
               <tbody>
@@ -89,7 +89,7 @@ class Summary extends React.Component {
         </div>
         <br></br>
         <div>
-          <a href="javascript:setPage('#dimensions')">Selected Dimensions</a>
+          <a href="javascript:setPage('#dimensions')">XMSG("Selected Dimensions")</a>
           <div>
             <table>
               <tbody>
@@ -102,7 +102,7 @@ class Summary extends React.Component {
         </div>
         <br></br>
         <div>
-          <a href="javascript:setPage('#segments')">Selected Segments</a>
+          <a href="javascript:setPage('#segments')">XMSG("Selected Segments")</a>
           <div>
             <table>
               <tbody>

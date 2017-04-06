@@ -18,9 +18,9 @@ class DimensionBubbleMessage extends React.Component {
   messageText (total, loading) {
     let text
     if (loading) {
-      text = 'Fetching menu options from the Google API'
+      text = 'XMSG("Fetching menu options from the Google API")'
     } else if (total > 7) {
-      text = 'Maximum of 7 dimensions may be selected'
+      text = 'XMSG("Maximum of 7 dimensions may be selected")'
     } else {
       text = ''
     };

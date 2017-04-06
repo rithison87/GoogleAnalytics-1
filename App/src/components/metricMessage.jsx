@@ -14,7 +14,7 @@ class MetricMessage extends React.Component {
 
     return (
       <div>
-        <div className='selectionMessage-outer'>Selected Metrics and Goals ({total}/10)  :
+        <div className='selectionMessage-outer'>XMSG("Selected Metrics and Goals") ({total}/10)  :
           <div className='selectionMessage-inner'>
             {
               // onClick={() => this.clicked(idx)}
