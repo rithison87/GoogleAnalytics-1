@@ -76,7 +76,7 @@ Google Analytics Input GUI
         <p class="accountInfoSubheaders">XMSG("Available Accounts")</p>
         <alteryx-pluginwidget type="DropDown"  id="accountsList" dataName="accountsList"></alteryx-pluginwidget>
         <p style="margin: 20px;"></p>
-       <p class="accountInfoSubheaders">XMSG("Available WebProperties")</p>
+        <p class="accountInfoSubheaders">XMSG("Available WebProperties")</p>
         <alteryx-pluginwidget type="DropDown"  id="webPropertiesList" dataName="webPropertiesList"></alteryx-pluginwidget>
         <p style="margin: 20px;"></p>
         <p class="accountInfoSubheaders">XMSG("Available Profiles")</p>
@@ -97,7 +97,7 @@ Google Analytics Input GUI
 
     <!-- Date Pickers fieldset -->
     <fieldset id="datePickers" style="display:none;"><!--Add a display:none during process story-->
-        <legend>XMSG("Select Dates")</legend>
+        <legend>XMSG("Select Dates to Include")</legend>
         <div id="preDefDateRange">
             <label for="preDefDropDown">XMSG("Preset Date Range")</label>
             <alteryx-pluginwidget type="DropDown" id="preDefDropDown" dataName="preDefDropDown">
@@ -140,7 +140,7 @@ Google Analytics Input GUI
 
 <!-- Metrics fieldset -->
     <fieldset id="metrics" style="display:none;"><!--Add a display:none during process story-->
-        <legend>XMSG("Select Metrics and Goals")</legend>
+        <legend>XMSG("Select Metrics and Goals to Include")</legend>
         <hr>
         <p class="selectionLegend">XMSG("Choose a combined maximum of 10 metrics and goals...")</p>
         <p class="listboxLegend">XMSG("Metrics")</p>
@@ -167,7 +167,7 @@ Google Analytics Input GUI
 
 <!-- Dimensions fieldset -->
     <fieldset id="dimensions" style="display:none;"><!--Add a display:none during process story-->
-        <legend>XMSG("Select Dimensions (Optional)")</legend>
+        <legend>XMSG("Select Dimensions to Include (Optional)")</legend>
         <hr>
         <p class="selectionLegend">XMSG("Choose a combined maximum of 7 dimensions...")</p>
         <p class="listboxLegend">XMSG("Dimensions")</p>
@@ -191,9 +191,9 @@ Google Analytics Input GUI
 
 <!-- Segments fieldset -->
     <fieldset id="segments" style="display:none;"><!--Add a display:none during process story-->
-        <legend>XMSG("Select Segments (Optional)")</legend>
+        <legend>XMSG("Select Segments to Include (Optional)")</legend>
         <hr>
-        <p class="selectionLegend">XMSG("Select up to 4 segments...")</p>
+        <p class="selectionLegend">XMSG("Choose a maximum of 4 segments...")</p>
         <p class="listboxLegend">XMSG("Segments")</p>
         <div id="segmentBubbleMessage"></div>
         <alteryx-pluginwidget type="ListBox" datatype="MultiStringSelector"
@@ -228,7 +228,7 @@ Google Analytics Input GUI
         <div class='footer'>
             <hr>
             <div style="margin-top: 8px;margin-bottom: 8px;">
-                <button type="secondary" style="float: right;" id="previous" onclick="setPage('#segments');">XMSG("Previous")</button>
+                <button class="prevBtn" id="previous" onclick="setPage('#segments');">XMSG("Previous")</button>
             </div>
             <br>
             <br>
