@@ -71,14 +71,16 @@ Google Analytics Input GUI
 
 <!-- Account/WebProperties/Profiles Selectors fieldset -->
     <fieldset id="profileSelectors" style="display:none;">
+        <p class="accountInfoSubheaders">XMSG("Select an Account, WebProperty, and Profile")</p>
+        <p style="margin: 10px;"></p>
         <legend>XMSG("Select Account Information")</legend>
-        <label>XMSG("Available Accounts")</label>
+        <p class="accountInfoSubheaders">XMSG("Available Accounts")</p>
         <alteryx-pluginwidget type="DropDown"  id="accountsList" dataName="accountsList"></alteryx-pluginwidget>
-        <p style="margin: 10px;"></p>
-        <label>XMSG("Available WebProperties")</label>
+        <p style="margin: 20px;"></p>
+       <p class="accountInfoSubheaders">XMSG("Available WebProperties")</p>
         <alteryx-pluginwidget type="DropDown"  id="webPropertiesList" dataName="webPropertiesList"></alteryx-pluginwidget>
-        <p style="margin: 10px;"></p>
-        <label>XMSG("Available Profiles")</label>
+        <p style="margin: 20px;"></p>
+        <p class="accountInfoSubheaders">XMSG("Available Profiles")</p>
         <alteryx-pluginwidget type="DropDown"  id="profilesList" dataName="profilesList"></alteryx-pluginwidget>
         <p style="margin: 5px;"></p>
         <div class='footer_spacer'></div>
