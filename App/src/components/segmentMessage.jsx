@@ -13,7 +13,7 @@ class SegmentMessage extends React.Component {
 
     return (
       <div>
-        <div className='selectionMessage-outer'>Selected Segments ({total}/4) :
+        <div className='selectionMessage-outer'>XMSG("Selected Segments") ({total}/4) :
           <div className='selectionMessage-inner'>
             {
               // onClick={() => this.clicked(idx)}

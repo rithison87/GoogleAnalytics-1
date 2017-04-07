@@ -15,7 +15,7 @@ class DimensionMessage extends React.Component {
 
     return (
       <div>
-        <div className='selectionMessage-outer'>Selected Dimensions ({total}/7)  :
+        <div className='selectionMessage-outer'>XMSG("Selected Dimensions") ({total}/7)  :
           <div className='selectionMessage-inner'>
             {
               // onClick={() => this.clicked(idx)}
