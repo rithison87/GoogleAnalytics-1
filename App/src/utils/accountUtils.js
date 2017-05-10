@@ -79,6 +79,20 @@ const populateWebPropertiesList = (store) => {
     return filteredResults
   }
 
+  const filterWebProperties = (results) => {
+    results.forEach((item) => {
+      // remove all webProperties that don't have profiles array
+      const filteredWebProps = item.webProperties.filter((item) => {
+        return item.hasOwnProperty('profiles')
+      })
+      // remove original webProperties array
+      delete item.webProperties
+      // add filtered webProperties array
+      item.webProperties = filteredWebProps
+    })
+    return results
+  }
+
   const flatten = (list) => list.reduce(
     (a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []
   )
@@ -112,6 +126,7 @@ const populateWebPropertiesList = (store) => {
   }
   fetchProfiles
     .then(filterProfiles)
+    .then(filterWebProperties)
     .then(createProfilesList)
     .then(populateWebPropertiesMenuObjects)
     // .done((results) => {console.log(results)});
