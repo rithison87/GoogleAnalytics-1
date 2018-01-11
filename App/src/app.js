@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { login, displayFieldset, setPage, getAccessTokenAjaxCall, tokenValid, resetFields, loading } from './utils/utils'
+import { login, displayFieldset, setPage, getAccessTokenAjaxCall, tokenValid, resetFields, loading, validateToken } from './utils/utils'
 import AyxStore from './stores/AyxStore'
 import * as accounts from './utils/accountUtils'
 import * as metadataRequest from './utils/metadataRequest'
@@ -95,6 +95,16 @@ Alteryx.Gui.AfterLoad = (manager) => {
     get isCustomDate () {
       return store.startDatePicker !== store.preDefStart ||
              store.endDatePicker !== store.preDefEnd
+    },
+
+    get checkProfile () {
+      if (store.webPropertiesList.selection !== '' && store.profilesList.selection !== '' && store.profilesList.stringList.length > 0) {
+        const profiles = []
+        store.profilesList.data.forEach(d => {
+          return profiles.push(d.profileId)
+        })
+        return profiles.includes(store.profilesList.selection)
+      }
     }
   })
 
@@ -198,7 +208,9 @@ Alteryx.Gui.AfterLoad = (manager) => {
     const profileConditions = [
       store.accountsList.selection,
       store.webPropertiesList.selection,
-      store.profilesList.selection
+      store.profilesList.selection,
+      store.profilesList.stringList.length > 0,
+      store.checkProfile
     ]
 
     conditionallyEnable('profileSelectorsNextBtn', profileConditions)
